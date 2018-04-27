@@ -1,0 +1,9 @@
+E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\UI.exe.config
+E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\UI.exe
+E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\UI.pdb
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.Properties.Resources.resources
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.GenerateResource.cache
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.exe
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.pdb

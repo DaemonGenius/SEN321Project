@@ -1,0 +1,2 @@
+E:\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.csprojResolveAssemblyReference.cache
+E:\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.csproj.CoreCompileInputs.cache
