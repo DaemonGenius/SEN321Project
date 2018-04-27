@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.Linq.Mapping;
-using System.Data.Linq;
 using System.Threading.Tasks;
 
 namespace DATALAYER.DataHandler
 {
-    class Db
+    class Department
     {
     }
 }

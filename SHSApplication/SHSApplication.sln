@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.2037
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{888C84C0-FA5F-419D-9CA3-10EA7032F40A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LOGIC", "LOGIC\LOGIC.csproj", "{C7B8FB5E-82A1-4D8F-A8BA-169F2983E047}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATALAYER", "DATALAYER\DATALAYER.csproj", "{4EBF55D7-E1DA-4F6A-8CD5-C260676B05AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingPurposes", "TestingPurposes\TestingPurposes.csproj", "{13177C52-AAFA-4D62-9114-82EEA8AF82D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4EBF55D7-E1DA-4F6A-8CD5-C260676B05AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EBF55D7-E1DA-4F6A-8CD5-C260676B05AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EBF55D7-E1DA-4F6A-8CD5-C260676B05AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13177C52-AAFA-4D62-9114-82EEA8AF82D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13177C52-AAFA-4D62-9114-82EEA8AF82D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13177C52-AAFA-4D62-9114-82EEA8AF82D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13177C52-AAFA-4D62-9114-82EEA8AF82D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
