@@ -1,0 +1,10 @@
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\TestingPurposes.exe.config
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\TestingPurposes.exe
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\TestingPurposes.pdb
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\DATALAYER.dll
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\DATALAYER.pdb
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\DATALAYER.dll.config
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.csprojResolveAssemblyReference.cache
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.csproj.CoreCompileInputs.cache
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.exe
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.pdb

@@ -1,0 +1,6 @@
+E:\_GIT\sen321project\SHSApplication\LOGIC\bin\Debug\LOGIC.dll
+E:\_GIT\sen321project\SHSApplication\LOGIC\bin\Debug\LOGIC.pdb
+E:\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.csprojResolveAssemblyReference.cache
+E:\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.csproj.CoreCompileInputs.cache
+E:\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.dll
+E:\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.pdb
