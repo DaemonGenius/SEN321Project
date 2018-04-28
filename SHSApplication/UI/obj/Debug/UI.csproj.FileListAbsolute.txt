@@ -7,3 +7,15 @@ E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.GenerateResource.cac
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.exe
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.pdb
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.LoginPage.resources
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.exe
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.pdb
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\UI.exe.config
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\UI.exe
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\UI.pdb
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\LOGIC.dll
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\LOGIC.pdb

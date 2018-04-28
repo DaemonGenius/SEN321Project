@@ -3,7 +3,7 @@ E:\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.csproj.CoreCo
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\DATALAYER\bin\Debug\DATALAYER.dll.config
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\DATALAYER\bin\Debug\DATALAYER.dll
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\DATALAYER\bin\Debug\DATALAYER.pdb
-C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.csprojResolveAssemblyReference.cache
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.csproj.CoreCompileInputs.cache
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.dll
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.pdb
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.csprojResolveAssemblyReference.cache

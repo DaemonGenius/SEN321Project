@@ -4,3 +4,12 @@ E:\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.csprojResolveAssembly
 E:\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.csproj.CoreCompileInputs.cache
 E:\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.dll
 E:\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.pdb
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\bin\Debug\LOGIC.dll
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\bin\Debug\LOGIC.pdb
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\bin\Debug\DATALAYER.dll
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\bin\Debug\DATALAYER.pdb
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\bin\Debug\DATALAYER.dll.config
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.csprojResolveAssemblyReference.cache
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.csproj.CoreCompileInputs.cache
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.dll
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.pdb
