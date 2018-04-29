@@ -23,7 +23,7 @@ namespace TestingPurposes
                 select per;
 
             var addressQuery =
-                from ad in db.Address
+                from ad in db.Addresses
                 where ad._Person.Entity.ID == ad._AddressID
                 select ad;
 
