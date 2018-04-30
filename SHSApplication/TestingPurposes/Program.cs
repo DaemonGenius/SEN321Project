@@ -23,15 +23,15 @@ namespace TestingPurposes
                 select per;
 
             var addressQuery =
-                from ad in db.Addresses
-                where ad._Person.Entity.ID == ad._AddressID
+                from ad in db.Address
+                where ad.adr_Country == " South Africa"
                 select ad;
 
 
             //Console.WriteLine( personQuery);
             foreach (var item in addressQuery)
             {
-                Console.WriteLine("FirstNAme = {0} ", item._adr_County);
+                Console.WriteLine("FirstNAme = {0} ", item.adr_City);
             }
 
 

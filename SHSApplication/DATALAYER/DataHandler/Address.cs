@@ -12,67 +12,67 @@ namespace DATALAYER.DataHandler
     public class Address
     {
         private int adr_ID;
-        private string adr_Street;
-        private string adr_StreetNum;
-        private string adr_Zipcode;
-        private string adr_City;
-        private string adr_Province;
-        private string adr_Country;
-        private int Person_ID;
+        private string _adr_Street;
+        private string _adr_StreetNum;
+        private string _adr_Zipcode;
+        private string _adr_City;
+        private string _adr_Province;
+        private string _adr_Country;
+        private int _Person_ID;
 
         public EntityRef<Person> _Person;
         public Address() { this._Person = new EntityRef<Person>(); }
 
-        [Column(Storage ="_addressID", IsPrimaryKey =true)]
-        public int _AddressID
+        [Column(Storage ="adr_ID", IsPrimaryKey =true)]
+        public int AddressID
         {
-            get { return this._AddressID; }
-            set { this._AddressID = value; }
+            get { return this.AddressID; }
+            set { this.AddressID = value; }
         }
-        [Column(Storage ="_adr_Street")]
-        public string _adr_Street
+        [Column(Storage = "_adr_Street")]
+        public string adr_Street
         {
-            get { return this._adr_Street; }
-            set { this._adr_Street = value; }
+            get { return this.adr_Street; }
+            set { this.adr_Street = value; }
         }
         [Column(Storage = "_adr_StreetNum")]
-        public string _adr_StreetNum
+        public string adr_StreetNum
         {
-            get { return this._adr_StreetNum; }
-            set { this._adr_StreetNum = value; }
+            get { return this.adr_StreetNum; }
+            set { this.adr_StreetNum = value; }
         }
         [Column(Storage = "_adr_Zipcode")]
-        public string _adr_Zipcode
+        public string adr_Zipcode
         {
-            get { return this._adr_Zipcode; }
-            set { this._adr_Zipcode = value; }
+            get { return this.adr_Zipcode; }
+            set { this.adr_Zipcode = value; }
         }
         [Column(Storage = "_adr_City")]
-        public string _adr_City
+        public string adr_City
         {
-            get { return this._adr_City; }
-            set { this._adr_City = value; }
+            get { return this.adr_City; }
+            set { this.adr_City = value; }
         }
         [Column(Storage = "_adr_Province")]
-        public string _adr_Province
+        public string adr_Province
         {
-            get { return this._adr_Province; }
-            set { this._adr_Province = value; }
+            get { return this.adr_Province; }
+            set { this.adr_Province = value; }
         }
-        [Column(Storage = "_adr_County")]
-        public string _adr_County
+        [Column(Storage = "_adr_Country")]
+        public string adr_Country
         {
-            get { return this._adr_County; }
-            set { this._adr_County = value; }
+            get { return this.adr_Country; }
+            set { this.adr_Country = value; }
         }
-        [Column(Storage = "_PersonID", DbType = "Int")]
-        public int _PersonID
+        [Column(Storage = "PersonID", DbType = "Int")]
+        public int Person_ID
         {
-            get { return this._PersonID; }
-            set { this._PersonID = value; }
+            get { return this.Person_ID; }
+            set { this.Person_ID = value; }
         }
 
-        [Association(Storage = "_PersonID", ThisKey = "Person_ID")]
+        [Association(Storage = "PersonID", ThisKey = "Person_ID")]
         public Person Person
         {
             get { return this._Person.Entity; }
