@@ -20,18 +20,18 @@ namespace TestingPurposes
             var personQuery =
                 from per in db.People
                 where per.p_FirstName == "Christian" 
-                select per;
+                select per.Department;
 
-            var addressQuery =
-                from ad in db.Address
-                where ad.adr_Country == " South Africa"
-                select ad;
+            //var addressQuery =
+            //    from ad in db.Address
+            //    where ad.adr_Country == " South Africa"
+            //    select ad;
 
 
             //Console.WriteLine( personQuery);
-            foreach (var item in addressQuery)
+            foreach (var item in personQuery)
             {
-                Console.WriteLine("FirstNAme = {0} ", item.adr_City);
+                Console.WriteLine("FirstNAme = {0} ", item.dept_Type);
             }
 
 

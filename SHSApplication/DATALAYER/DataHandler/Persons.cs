@@ -69,20 +69,20 @@ namespace DATALAYER.DataHandler
                 get { return this._CellNumber; }
                 set { this._CellNumber = value; }
             }
-         
-            [Column(Storage = "_DepartmentID", DbType = "Int")]
-            public int p_Department_dept_ID
-            {
-                get { return this._DepartmentID; }
-                set { this._DepartmentID = value; }
-            }
 
-            [Association(Storage = "_DepartmentID", ThisKey = "p_Department_dept_ID")]
-            public Department Department
-            {
-                get { return this._Department.Entity; }
-                set { this._Department.Entity = value; }
-            }
+        [Column(Storage = "_DepartmentID", DbType = "Int")]
+        public int p_Department_dept_ID
+        {
+            get { return this._DepartmentID; }
+            set { this._DepartmentID = value; }
+        }
+
+        [Association(Storage = "_DepartmentID", ThisKey = "p_Department_dept_ID", IsForeignKey = true)]
+        public Department Department
+        {
+            get { return this._Department.Entity; }
+            set { this._Department.Entity = value; }
+        }
     }
     
 }
