@@ -11,7 +11,7 @@ namespace DATALAYER.DataHandler
     {
         public Table<Person> People;
         public Table<Department> Department;
-        //public Table<Address> Address;
+        public Table<Address> Address;
         public SHSdb2(string connection) : base(connection) { }
     }
 }

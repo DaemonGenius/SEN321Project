@@ -22,16 +22,19 @@ namespace TestingPurposes
                 where per.p_FirstName == "Christian" 
                 select per.Department;
 
-            //var addressQuery =
-            //    from ad in db.Address
-            //    where ad.adr_Country == " South Africa"
-            //    select ad;
+            var addressQuery =
+                from ad in db.Address
+                where ad.Person_ID == 1
+                select ad.adr_Province;
 
-
-            //Console.WriteLine( personQuery);
+      
             foreach (var item in personQuery)
             {
-                Console.WriteLine("FirstNAme = {0} ", item.dept_Type);
+                Console.WriteLine("FirstName = {0} ", item.dept_Type);
+            }
+            foreach (var item in addressQuery)
+            {
+                Console.WriteLine("FirstName = {0} ", item);
             }
 
 
