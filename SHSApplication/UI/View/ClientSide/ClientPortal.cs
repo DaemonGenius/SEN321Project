@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI
+namespace UI.View.ClientSide
 {
-    public partial class LoginPage : Form
+    public partial class ClientPortal : Form
     {
-        public LoginPage()
+        public ClientPortal()
         {
             InitializeComponent();
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
