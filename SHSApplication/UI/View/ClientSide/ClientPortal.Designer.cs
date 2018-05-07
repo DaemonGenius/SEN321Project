@@ -37,7 +37,7 @@
             this.tbpBilInfo = new System.Windows.Forms.TabPage();
             this.tbpCurSys = new System.Windows.Forms.TabPage();
             this.tbpPurHist = new System.Windows.Forms.TabPage();
-            this.tbpMaintenDue = new System.Windows.Forms.TabPage();
+            this.tbpChat = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -122,6 +122,11 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -130,6 +135,7 @@
             this.tbpBilInfo.SuspendLayout();
             this.tbpCurSys.SuspendLayout();
             this.tbpPurHist.SuspendLayout();
+            this.tbpChat.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -175,7 +181,7 @@
             this.tabControl1.Controls.Add(this.tbpBilInfo);
             this.tabControl1.Controls.Add(this.tbpCurSys);
             this.tabControl1.Controls.Add(this.tbpPurHist);
-            this.tabControl1.Controls.Add(this.tbpMaintenDue);
+            this.tabControl1.Controls.Add(this.tbpChat);
             this.tabControl1.Location = new System.Drawing.Point(3, 18);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -234,14 +240,15 @@
             this.tbpPurHist.Text = "Purchase History";
             this.tbpPurHist.UseVisualStyleBackColor = true;
             // 
-            // tbpMaintenDue
+            // tbpChat
             // 
-            this.tbpMaintenDue.Location = new System.Drawing.Point(4, 25);
-            this.tbpMaintenDue.Name = "tbpMaintenDue";
-            this.tbpMaintenDue.Size = new System.Drawing.Size(713, 473);
-            this.tbpMaintenDue.TabIndex = 5;
-            this.tbpMaintenDue.Text = "Maintenance Due";
-            this.tbpMaintenDue.UseVisualStyleBackColor = true;
+            this.tbpChat.Controls.Add(this.panel7);
+            this.tbpChat.Location = new System.Drawing.Point(4, 25);
+            this.tbpChat.Name = "tbpChat";
+            this.tbpChat.Size = new System.Drawing.Size(713, 473);
+            this.tbpChat.TabIndex = 5;
+            this.tbpChat.Text = "Chat";
+            this.tbpChat.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -888,6 +895,10 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel5.Controls.Add(this.label43);
+            this.panel5.Controls.Add(this.textBox21);
+            this.panel5.Controls.Add(this.label31);
+            this.panel5.Controls.Add(this.textBox15);
             this.panel5.Controls.Add(this.richTextBox1);
             this.panel5.Controls.Add(this.label50);
             this.panel5.Controls.Add(this.rtxtbxSafProc);
@@ -943,7 +954,7 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(382, 125);
+            this.label51.Location = new System.Drawing.Point(472, 164);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(126, 20);
             this.label51.TabIndex = 2;
@@ -953,7 +964,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(37, 126);
+            this.label52.Location = new System.Drawing.Point(58, 165);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(130, 20);
             this.label52.TabIndex = 1;
@@ -971,7 +982,7 @@
             // 
             // etxtbxEnergyProc
             // 
-            this.etxtbxEnergyProc.Location = new System.Drawing.Point(197, 127);
+            this.etxtbxEnergyProc.Location = new System.Drawing.Point(62, 188);
             this.etxtbxEnergyProc.Name = "etxtbxEnergyProc";
             this.etxtbxEnergyProc.Size = new System.Drawing.Size(159, 139);
             this.etxtbxEnergyProc.TabIndex = 16;
@@ -979,7 +990,7 @@
             // 
             // rtxtbxSafProc
             // 
-            this.rtxtbxSafProc.Location = new System.Drawing.Point(523, 125);
+            this.rtxtbxSafProc.Location = new System.Drawing.Point(476, 188);
             this.rtxtbxSafProc.Name = "rtxtbxSafProc";
             this.rtxtbxSafProc.Size = new System.Drawing.Size(159, 139);
             this.rtxtbxSafProc.TabIndex = 17;
@@ -987,7 +998,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(197, 279);
+            this.richTextBox1.Location = new System.Drawing.Point(272, 189);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(159, 139);
             this.richTextBox1.TabIndex = 19;
@@ -997,7 +1008,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(37, 280);
+            this.label50.Location = new System.Drawing.Point(273, 165);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(154, 20);
             this.label50.TabIndex = 18;
@@ -1083,6 +1094,48 @@
             this.label36.TabIndex = 1;
             this.label36.Text = "Energy Products:";
             // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(197, 117);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(159, 22);
+            this.textBox15.TabIndex = 20;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(37, 119);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(139, 20);
+            this.label31.TabIndex = 21;
+            this.label31.Text = "Maintenance Due:";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(378, 118);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(128, 20);
+            this.label43.TabIndex = 23;
+            this.label43.Text = "Contract Length:";
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(523, 116);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(159, 22);
+            this.textBox21.TabIndex = 22;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.DarkGray;
+            this.panel7.Location = new System.Drawing.Point(2, 2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(710, 473);
+            this.panel7.TabIndex = 0;
+            // 
             // ClientPortal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1099,6 +1152,7 @@
             this.tbpBilInfo.ResumeLayout(false);
             this.tbpCurSys.ResumeLayout(false);
             this.tbpPurHist.ResumeLayout(false);
+            this.tbpChat.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1127,7 +1181,7 @@
         private System.Windows.Forms.TabPage tbpBilInfo;
         private System.Windows.Forms.TabPage tbpCurSys;
         private System.Windows.Forms.TabPage tbpPurHist;
-        private System.Windows.Forms.TabPage tbpMaintenDue;
+        private System.Windows.Forms.TabPage tbpChat;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label23;
@@ -1213,5 +1267,10 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Panel panel7;
     }
 }

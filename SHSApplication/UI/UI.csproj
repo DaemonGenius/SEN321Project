@@ -45,17 +45,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoginPage.Designer.cs">
-      <DependentUpon>LoginPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LoginPage.resx">
-      <DependentUpon>LoginPage.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="View\App_LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\App_LoginPage.Designer.cs">
+      <DependentUpon>App_LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClientSide\ClientPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClientSide\ClientPortal.Designer.cs">
+      <DependentUpon>ClientPortal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeSide\App_ManagementPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EmployeeSide\App_ManagementPortal.Designer.cs">
+      <DependentUpon>App_ManagementPortal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SharedViews\App_RegisterClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SharedViews\App_RegisterClient.Designer.cs">
+      <DependentUpon>App_RegisterClient.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,6 +80,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\App_LoginPage.resx">
+      <DependentUpon>App_LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClientSide\ClientPortal.resx">
+      <DependentUpon>ClientPortal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeSide\App_ManagementPortal.resx">
+      <DependentUpon>App_ManagementPortal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SharedViews\App_RegisterClient.resx">
+      <DependentUpon>App_RegisterClient.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -84,5 +111,6 @@
       <Name>LOGIC</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
