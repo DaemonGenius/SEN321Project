@@ -44,13 +44,22 @@ namespace TestingPurposes
             person.p_DOB = "1996/07/25";
             person.p_Password = pass;
             person.p_SSID = ssid;
-            
+
 
             db.People.InsertOnSubmit(person);
             db.SubmitChanges();
 
-            
-            
+
+            Person personUp = db.People.Single(Person => Person.ID == 1);
+            personUp.p_FirstName = "Christian Martin";
+            db.SubmitChanges();
+
+
+
+            Person personDel = db.People.Single(Person => person.p_FirstName == "Christian");
+            db.People.DeleteOnSubmit(personDel);
+            db.SubmitChanges();
+
 
 
 
