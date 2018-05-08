@@ -14,7 +14,7 @@ namespace DATALAYER.DataHandler
         public EntityRef<Department> _Department;
         public Person() { this._Department = new EntityRef<Department>(); }
         private int _ID;
-            [Column(IsPrimaryKey =true, Storage ="_ID")]
+            [Column(IsPrimaryKey =true, Storage ="_ID", CanBeNull =false)]
             public int ID
             {
                 get { return this._ID; }

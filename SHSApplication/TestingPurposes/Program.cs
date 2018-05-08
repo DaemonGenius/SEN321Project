@@ -14,6 +14,13 @@ namespace TestingPurposes
     {
         static void Main(string[] args)
         {
+            string fname = "awed";
+            string lname = "awed";
+            int streetnum  = 15;
+            string email = "asd";
+            string pass = "asd";
+            string ssid = "sdf";
+            string Country = "fdssfd";
 
             SHSdb2 db = new SHSdb2("Data Source=.;Initial Catalog=SHSdb2;Integrated Security=True");
 
@@ -22,20 +29,28 @@ namespace TestingPurposes
                 where per.p_FirstName == "Christian" 
                 select per.Department;
 
-            var addressQuery =
-                from ad in db.Address
-                where ad.Person_ID == 1
-                select ad.adr_Province;
+          
 
       
             foreach (var item in personQuery)
             {
                 Console.WriteLine("FirstName = {0} ", item.dept_Type);
             }
-            foreach (var item in addressQuery)
-            {
-                Console.WriteLine("FirstName = {0} ", item);
-            }
+
+            Person person = new Person();
+            person.p_FirstName = fname;
+            person.p_LastName = lname;
+            person.p_EmailAddress = email;
+            person.p_DOB = "1996/07/25";
+            person.p_Password = pass;
+            person.p_SSID = ssid;
+            
+
+            db.People.InsertOnSubmit(person);
+            db.SubmitChanges();
+
+            
+            
 
 
 

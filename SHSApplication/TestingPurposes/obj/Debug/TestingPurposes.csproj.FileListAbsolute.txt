@@ -8,3 +8,14 @@ C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\obj\D
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.csproj.CoreCompileInputs.cache
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.exe
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.pdb
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\TestingPurposes.exe.config
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\TestingPurposes.exe
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\TestingPurposes.pdb
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\DATALAYER.dll
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\DATALAYER.pdb
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\bin\Debug\DATALAYER.dll.config
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.csprojResolveAssemblyReference.cache
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.csproj.CoreCompileInputs.cache
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.csproj.CopyComplete
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.exe
+E:\_GIT\sen321project\SHSApplication\TestingPurposes\obj\Debug\TestingPurposes.pdb
