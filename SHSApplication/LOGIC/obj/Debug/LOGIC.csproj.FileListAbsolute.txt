@@ -13,3 +13,7 @@ C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.csproj.CoreCompileInputs.cache
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.dll
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.pdb
+E:\_GIT\sen321project\SHSApplication\LOGIC\bin\Debug\DATALAYER.dll
+E:\_GIT\sen321project\SHSApplication\LOGIC\bin\Debug\DATALAYER.pdb
+E:\_GIT\sen321project\SHSApplication\LOGIC\bin\Debug\DATALAYER.dll.config
+E:\_GIT\sen321project\SHSApplication\LOGIC\obj\Debug\LOGIC.csproj.CopyComplete
