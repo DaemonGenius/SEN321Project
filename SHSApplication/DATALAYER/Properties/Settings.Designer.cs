@@ -32,5 +32,15 @@ namespace DATALAYER.Properties {
                 return ((string)(this["SHSdb2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=SHSdb3;Integrated Security=True")]
+        public string SHSdb3ConnectionString {
+            get {
+                return ((string)(this["SHSdb3ConnectionString"]));
+            }
+        }
     }
 }

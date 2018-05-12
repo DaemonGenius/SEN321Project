@@ -1,4 +1,6 @@
-﻿using DATALAYER.DataHandler;
+﻿using DATALAYER;
+using DATALAYER.Controllers;
+using DATALAYER.DatabaseConnection;
 using System;
 using System.Collections.Generic;
 using System.Data.Linq;
@@ -16,127 +18,93 @@ namespace TestingPurposes
         {
             string fname = "awed";
             string lname = "awed";
-            int streetnum  = 15;
+            string cell = "4560515616";
             string email = "asd";
             string pass = "asd";
             string ssid = "sdf";
-            string Country = "fdssfd";
+            string DOB = "sdf";
 
-            SHSdb2 db = new SHSdb2("Data Source=.;Initial Catalog=SHSdb2;Integrated Security=True");
+            #region Select Christian
+            DataContext db = new DataContext("Data Source=.;Initial Catalog=SHSdb3;Integrated Security=True;");
+           
+            Table<Persons> People = db.GetTable<Persons>();
 
-            var personQuery =
-                from per in db.People
-                where per.p_FirstName == "Christian" 
-                select per.Department;
+            
 
-          
 
-      
-            foreach (var item in personQuery)
+            IQueryable<Persons> perQuery =
+                from p in People
+                where p.p_FirstName == "Christian"
+                select p;
+
+
+            foreach (Persons item in perQuery)
             {
-                Console.WriteLine("FirstName = {0} ", item.dept_Type);
+                Console.WriteLine("Customer Name: {0}", item.p_FirstName);
             }
 
-            Person person = new Person();
-            person.p_FirstName = fname;
-            person.p_LastName = lname;
-            person.p_EmailAddress = email;
-            person.p_DOB = "1996/07/25";
-            person.p_Password = pass;
-            person.p_SSID = ssid;
-
-
-            db.People.InsertOnSubmit(person);
-            db.SubmitChanges();
-
-
-            Person personUp = db.People.Single(Person => Person.ID == 1);
-            personUp.p_FirstName = "Christian Martin";
-            db.SubmitChanges();
-
-
-
-            Person personDel = db.People.Single(Person => person.p_FirstName == "Christian");
-            db.People.DeleteOnSubmit(personDel);
-            db.SubmitChanges();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            #region SqlTest1
-            //DataContext db = new DataContext("Data Source=.;Initial Catalog=SHSdb2;Integrated Security=True");
-            //Table<Person> Person = db.GetTable<Person>();
-
-            //db.Log = Console.Out;
-            //IQueryable<Person> perQuery =
-            //                               from Per in Person
-            //                               where Per.p_FirstName == "Christian"
-            //                               where Per.Department.dept_ID == Per.ID
-
-
-            //                               select Per;
-
-            //foreach (Person item in perQuery)
-            //{
-            //    Console.WriteLine("ID = {0}, FName = {1}, LName = {2}, DepartmentType = {3}", item.ID, item.p_FirstName, item.p_LastName, item.Department.dept_Type);
-            //}
             #endregion
 
+            #region Insert Someone
+            Persons persons = new Persons
+            {
+                ID = 3,
+                p_FirstName = fname,
+                p_LastName = lname,
+                p_EmailAddress = lname,
+                p_CellNumber = cell,
+                p_Password = pass,
+                p_DOB = DOB,
+                p_SSID = ssid
+            };
 
-
-
-
-            //Table<Department> department = db.GetTable<Department>();
-            //IQueryable<Department> depQuery = from dep in department
-            //                                  where dep.dept_ID == 1
-            //                                  select dep;
-
-            //foreach (Department item in depQuery)
-            //{
-            //    Console.WriteLine("ID = {0}, DepType = {1}", item.dept_ID, item.dept_Type);
-            //}
-
-            #region Example
-            //SqlConnection sqlConnection = new SqlConnection("Data Source=.;Initial Catalog=SHSdb2;Integrated Security=True");
-            //SqlCommand cmd = new SqlCommand();
-
-            //cmd.CommandText = "Select * FROM People";
-            //cmd.CommandType = System.Data.CommandType.Text;
-            //cmd.Connection = sqlConnection;
-            //sqlConnection.Open();
-            //using (SqlDataReader reader = cmd.ExecuteReader())
-            //{
-            //    while (reader.Read())
-            //    {
-            //        for (int i = 0; i < reader.FieldCount; i++)
-            //        {
-            //            Console.WriteLine(reader.GetValue(i));
-            //        }
-            //        Console.WriteLine();
-            //    }
-            //}
-            //sqlConnection.Close();
+            People.InsertOnSubmit(persons);
+            db.SubmitChanges();
             #endregion
 
+            #region Update
+            var query =
+                from p in People
+                where p.ID == 2
+                select p;
+            
+            foreach (Persons item in query)
+            {
+                item.p_FirstName = "Christian Martin";
+                
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                
+            }
+            #endregion
 
-            //"C:\\Program Files\\Microsoft SQL Server\\MSSQL14.MSSQLSERVER\\MSSQL\\DATA\\SHSdb2.mdf"
+            #region Delete
+            var deleteUser =
+                from p in People
+                where p.ID == 2
+                select p;
+
+            foreach (var Person in deleteUser)
+            {
+                People.DeleteOnSubmit(Person);
+            }
+
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                // Provide for exceptions.
+            }
+            #endregion
 
             Console.ReadKey();
         }
