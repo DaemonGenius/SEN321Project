@@ -48,7 +48,7 @@ namespace TestingPurposes
             #region Insert Someone
             Persons persons = new Persons
             {
-                ID = 3,
+               
                 p_FirstName = fname,
                 p_LastName = lname,
                 p_EmailAddress = lname,

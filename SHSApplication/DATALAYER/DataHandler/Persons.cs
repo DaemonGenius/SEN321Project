@@ -77,12 +77,12 @@ namespace DATALAYER.DataHandler
             set { this._DepartmentID = value; }
         }
 
-        [Association(Storage = "_DepartmentID", ThisKey = "p_Department_dept_ID", IsForeignKey = true)]
-        public Department Department
-        {
-            get { return this._Department.Entity; }
-            set { this._Department.Entity = value; }
-        }
+        //[Association(Storage = "_DepartmentID", ThisKey = "p_Department_dept_ID", IsForeignKey = true)]
+        //public Department Department
+        //{
+        //    get { return this._Department.Entity; }
+        //    set { this._Department.Entity = value; }
+        //}
     }
     
 }

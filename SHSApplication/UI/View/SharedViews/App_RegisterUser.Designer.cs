@@ -1,6 +1,6 @@
 ﻿namespace UI.View.SharedViews
 {
-    partial class App_RegisterClient
+    partial class App_RegisterUser
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
-﻿namespace UI.View
+﻿namespace UI.View.SharedViews
 {
-    partial class App_LoginPage
+    partial class App_Start
     {
         /// <summary>
         /// Required designer variable.

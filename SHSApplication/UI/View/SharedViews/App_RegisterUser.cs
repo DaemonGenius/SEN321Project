@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UI.View.SharedViews
 {
-    public partial class App_RegisterClient : Form
+    public partial class App_RegisterUser : Form
     {
-        public App_RegisterClient()
+        public App_RegisterUser()
         {
             InitializeComponent();
         }

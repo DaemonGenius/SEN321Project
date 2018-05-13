@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI.View
+namespace UI.View.SharedViews
 {
-    public partial class App_LoginPage : Form
+    public partial class App_Start : Form
     {
-        public App_LoginPage()
+        public App_Start()
         {
             InitializeComponent();
         }
