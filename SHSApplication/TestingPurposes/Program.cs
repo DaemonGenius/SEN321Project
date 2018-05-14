@@ -34,13 +34,13 @@ namespace TestingPurposes
 
             IQueryable<People> perQuery =
                 from p in People
-                where p.p_FirstName == "Christian"
+                where p.FirstName == "Christian"
                 select p;
 
 
             foreach (People item in perQuery)
             {
-                Console.WriteLine("Customer Name: {0}", item.p_FirstName);
+                Console.WriteLine("Customer Name: {0}", item.FirstName);
             }
 
             #endregion
@@ -70,7 +70,7 @@ namespace TestingPurposes
             
             foreach (People item in query)
             {
-                item.p_FirstName = "Christian Martin";
+                item.FirstName = "Christian Martin";
                 
             }
             try

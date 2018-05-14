@@ -18,8 +18,6 @@ C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\UI.exe
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\UI.pdb
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\LOGIC.dll
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\LOGIC.pdb
-E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.ClientSide.ClientPortal.resources
-E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.EmployeeSide.App_ManagementPortal.resources
 E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\LOGIC.dll
 E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\LOGIC.pdb
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.CopyComplete
@@ -28,3 +26,8 @@ C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\DATALAYE
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\DATALAYER.dll.config
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.SharedViews.App_RegisterUser.resources
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.SharedViews.App_Start.resources
+E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\DATALAYER.dll
+E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\DATALAYER.pdb
+E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\DATALAYER.dll.config
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.SharedViews.App_RegisterUser.resources
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.SharedViews.App_Start.resources

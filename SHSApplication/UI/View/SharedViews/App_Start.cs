@@ -19,6 +19,23 @@ namespace UI.View.SharedViews
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            LOGIC.ApplicationLogic.RegisterValidation registerValidation = new LOGIC.ApplicationLogic.RegisterValidation();
+            if (registerValidation.EmailValidation(txtbxEmail.Text, txtbxPass.Text) == true)
+            {
+                View.EmployeeSide.App_ManagementProtalView managementProtalView = new EmployeeSide.App_ManagementProtalView();
+                managementProtalView.Show();
+                lblErrorEmail.Visible = false;
+            }
+            else
+            {
+                lblErrorEmail.Visible = true;
+                txtbxEmail.Clear();
+            }
+            
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
             View.SharedViews.App_RegisterUser registerForm = new App_RegisterUser();
             registerForm.Show();
         }

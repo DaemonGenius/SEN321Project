@@ -13,7 +13,7 @@ namespace DATALAYER.Controllers
       
             public People() { }
             private int _ID;
-            private string _p_FirstName;
+            private string _FirstName;
             private string _LastName;
             private string _EmailAddress;
             private string _Password;
@@ -29,50 +29,50 @@ namespace DATALAYER.Controllers
             set { this._ID = value; }
         }
        
-        [Column(Storage = "_p_FirstName")]
-        public string p_FirstName
+        [Column(Storage = "_FirstName")]
+        public string FirstName
         {
-            get { return this._p_FirstName; }
-            set { this._p_FirstName = value; }
+            get { return this._FirstName; }
+            set { this._FirstName = value; }
         }
       
         [Column(Storage = "_LastName")]
-        public string p_LastName
+        public string LastName
         {
             get { return this._LastName; }
             set { this._LastName = value; }
         }
        
         [Column(Storage = "_EmailAddress")]
-        public string p_EmailAddress
+        public string EmailAddress
         {
             get { return this._EmailAddress; }
             set { this._EmailAddress = value; }
         }
   
         [Column(Storage = "_Password")]
-        public string p_Password
+        public string Password
         {
             get { return this._Password; }
             set { this._Password = value; }
         }
     
         [Column(Storage = "_SSID")]
-        public string p_SSID
+        public string SSID
         {
             get { return this._SSID; }
             set { this._SSID = value; }
         }
  
         [Column(Storage = "_DOB")]
-        public string p_DOB
+        public string DOB
         {
             get { return this._DOB; }
             set { this._DOB = value; }
         }
         
         [Column(Storage = "_CellNumber")]
-        public string p_CellNumber
+        public string CellNumber
         {
             get { return this._CellNumber; }
             set { this._CellNumber = value; }
