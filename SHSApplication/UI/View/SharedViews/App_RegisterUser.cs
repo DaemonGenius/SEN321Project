@@ -16,5 +16,19 @@ namespace UI.View.SharedViews
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            string fname = txtbxFName.Text;
+            string lname = txtbxLname.Text;
+            string email = txtbxEmail.Text;
+            string pass = txtbxPass.Text;
+            string DOB = txtbxDateofB.Text;
+            string cell = txtbxCell.Text;
+            string ssid = txtbxSSID.Text;
+
+            LOGIC.BusinessLogic.RegistrationProcess registerProcess = new LOGIC.BusinessLogic.RegistrationProcess();
+            registerProcess.RegisterUser(fname, lname, email, pass, DOB, cell, ssid);
+        }
     }
 }

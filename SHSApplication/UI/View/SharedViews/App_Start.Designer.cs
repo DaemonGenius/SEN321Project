@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtbxEmail = new System.Windows.Forms.TextBox();
-            this.txtbxPass = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtbxPass = new System.Windows.Forms.TextBox();
+            this.txtbxEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,68 +58,16 @@
             this.panel1.Size = new System.Drawing.Size(833, 532);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(226, 206);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Email Address:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(226, 245);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password:";
-            // 
-            // txtbxEmail
-            // 
-            this.txtbxEmail.Location = new System.Drawing.Point(347, 206);
-            this.txtbxEmail.Name = "txtbxEmail";
-            this.txtbxEmail.Size = new System.Drawing.Size(207, 22);
-            this.txtbxEmail.TabIndex = 2;
-            // 
-            // txtbxPass
-            // 
-            this.txtbxPass.Location = new System.Drawing.Point(347, 245);
-            this.txtbxPass.Name = "txtbxPass";
-            this.txtbxPass.PasswordChar = '*';
-            this.txtbxPass.Size = new System.Drawing.Size(207, 22);
-            this.txtbxPass.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(343, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Login Or Register";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(216, 329);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(163, 53);
-            this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(426, 329);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(163, 53);
-            this.btnRegister.TabIndex = 6;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(560, 247);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(127, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Invalid Password";
             // 
             // label4
             // 
@@ -132,24 +80,77 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Invalid Email Address";
             // 
-            // label5
+            // btnRegister
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(560, 247);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Invalid Password";
+            this.btnRegister.Location = new System.Drawing.Point(426, 329);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(163, 53);
+            this.btnRegister.TabIndex = 6;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
             // 
-            // App_LoginPage
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(216, 329);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(163, 53);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(343, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Login Or Register";
+            // 
+            // txtbxPass
+            // 
+            this.txtbxPass.Location = new System.Drawing.Point(347, 245);
+            this.txtbxPass.Name = "txtbxPass";
+            this.txtbxPass.PasswordChar = '*';
+            this.txtbxPass.Size = new System.Drawing.Size(207, 22);
+            this.txtbxPass.TabIndex = 3;
+            // 
+            // txtbxEmail
+            // 
+            this.txtbxEmail.Location = new System.Drawing.Point(347, 206);
+            this.txtbxEmail.Name = "txtbxEmail";
+            this.txtbxEmail.Size = new System.Drawing.Size(207, 22);
+            this.txtbxEmail.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(226, 245);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Password:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(226, 206);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Email Address:";
+            // 
+            // App_Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 529);
             this.Controls.Add(this.panel1);
-            this.Name = "App_LoginPage";
+            this.Name = "App_Start";
             this.Text = "App_LoginPage";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

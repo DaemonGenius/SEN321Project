@@ -82,6 +82,12 @@
     <EmbeddedResource Include="View\EmployeeSide\App_ManagementPortal.resx">
       <DependentUpon>App_ManagementPortal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SharedViews\App_RegisterUser.resx">
+      <DependentUpon>App_RegisterUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SharedViews\App_Start.resx">
+      <DependentUpon>App_Start.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
