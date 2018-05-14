@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Address.cs" />
     <Compile Include="Controllers\People.cs" />
     <Compile Include="DatabaseConnection\SHSdb.cs" />
     <Compile Include="DataHandler\Address.cs" />

@@ -27,18 +27,18 @@ namespace TestingPurposes
             #region Select Christian
             DataContext db = new DataContext("Data Source=.;Initial Catalog=SHSdb3;Integrated Security=True;");
            
-            Table<Persons> People = db.GetTable<Persons>();
+            Table<People> People = db.GetTable<People>();
 
             
 
 
-            IQueryable<Persons> perQuery =
+            IQueryable<People> perQuery =
                 from p in People
                 where p.p_FirstName == "Christian"
                 select p;
 
 
-            foreach (Persons item in perQuery)
+            foreach (People item in perQuery)
             {
                 Console.WriteLine("Customer Name: {0}", item.p_FirstName);
             }
@@ -46,12 +46,12 @@ namespace TestingPurposes
             #endregion
 
             #region Insert Someone
-            Persons persons = new Persons
+            People persons = new People
             {
                
                 p_FirstName = fname,
                 p_LastName = lname,
-                p_EmailAddress = lname,
+                p_EmailAddress = email,
                 p_CellNumber = cell,
                 p_Password = pass,
                 p_DOB = DOB,
@@ -68,7 +68,7 @@ namespace TestingPurposes
                 where p.ID == 2
                 select p;
             
-            foreach (Persons item in query)
+            foreach (People item in query)
             {
                 item.p_FirstName = "Christian Martin";
                 

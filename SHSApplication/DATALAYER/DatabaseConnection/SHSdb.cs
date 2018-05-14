@@ -10,7 +10,9 @@ namespace DATALAYER.DatabaseConnection
 {
     public partial class SHSdb : DataContext
     {
-        public Table<Persons> peoples;
+        public Table<People> peoples;
         public SHSdb(string connection) : base(connection) { }
+
+        
     }
 }

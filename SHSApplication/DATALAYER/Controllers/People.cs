@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace DATALAYER.Controllers
 {
     [Table(Name = "People")]
-    public class Persons
+    public class People
     {      
       
-            public Persons() { }
+            public People() { }
             private int _ID;
             private string _p_FirstName;
             private string _LastName;
@@ -19,7 +19,7 @@ namespace DATALAYER.Controllers
             private string _Password;
             private string _SSID;
             private string _DOB;
-            private string _Cell;
+            private string _CellNumber;
 
        
         [Column(IsPrimaryKey = true, Storage = "_ID", CanBeNull = false)]
@@ -70,13 +70,16 @@ namespace DATALAYER.Controllers
             get { return this._DOB; }
             set { this._DOB = value; }
         }
-        private string _CellNumber;
+        
         [Column(Storage = "_CellNumber")]
         public string p_CellNumber
         {
             get { return this._CellNumber; }
             set { this._CellNumber = value; }
         }
+
+
+
     }
     }
 

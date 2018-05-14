@@ -63,12 +63,12 @@ namespace DATALAYER.DataHandler
                 set { this._DOB = value; }
             }
             private string _CellNumber;
-            [Column(Storage = "_CellNumber")]
-            public string p_CellNumber
-            {
-                get { return this._CellNumber; }
-                set { this._CellNumber = value; }
-            }
+            //[Column(Storage = "_CellNumber")]
+            //public string p_CellNumber
+            //{
+            //    get { return this._CellNumber; }
+            //    set { this._CellNumber = value; }
+            //}
 
         [Column(Storage = "_DepartmentID", DbType = "Int")]
         public int p_Department_dept_ID
