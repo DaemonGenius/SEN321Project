@@ -47,13 +47,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\ClientSide\ClientPortal.cs" />
-    <Compile Include="View\ClientSide\ClientPortal.Designer.cs">
-      <DependentUpon>ClientPortal.cs</DependentUpon>
+    <Compile Include="View\ClientSide\ClientPortalView.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\EmployeeSide\App_ManagementPortal.cs" />
-    <Compile Include="View\EmployeeSide\App_ManagementPortal.Designer.cs">
-      <DependentUpon>App_ManagementPortal.cs</DependentUpon>
+    <Compile Include="View\ClientSide\ClientPortalView.Designer.cs">
+      <DependentUpon>ClientPortalView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeSide\App_ManagementProtalView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EmployeeSide\App_ManagementProtalView.Designer.cs">
+      <DependentUpon>App_ManagementProtalView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SharedViews\App_RegisterUser.cs">
       <SubType>Form</SubType>
@@ -76,12 +80,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\ClientSide\ClientPortal.resx">
-      <DependentUpon>ClientPortal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\EmployeeSide\App_ManagementPortal.resx">
-      <DependentUpon>App_ManagementPortal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\SharedViews\App_RegisterUser.resx">
       <DependentUpon>App_RegisterUser.cs</DependentUpon>
     </EmbeddedResource>

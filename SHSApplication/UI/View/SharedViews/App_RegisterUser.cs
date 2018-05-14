@@ -30,5 +30,11 @@ namespace UI.View.SharedViews
             LOGIC.BusinessLogic.RegistrationProcess registerProcess = new LOGIC.BusinessLogic.RegistrationProcess();
             registerProcess.RegisterUser(fname, lname, email, pass, DOB, cell, ssid);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            View.SharedViews.App_Start startForm = new App_Start();
+            startForm.Show();
+        }
     }
 }

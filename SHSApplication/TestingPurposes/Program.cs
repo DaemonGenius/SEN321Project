@@ -44,24 +44,24 @@ namespace TestingPurposes
             }
 
             #endregion
-
+            Console.ReadKey();
             #region Insert Someone
-            People persons = new People
-            {
-               
-                p_FirstName = fname,
-                p_LastName = lname,
-                p_EmailAddress = email,
-                p_CellNumber = cell,
-                p_Password = pass,
-                p_DOB = DOB,
-                p_SSID = ssid
-            };
+            //People persons = new People
+            //{
 
-            People.InsertOnSubmit(persons);
-            db.SubmitChanges();
+            //    p_FirstName = fname,
+            //    p_LastName = lname,
+            //    p_EmailAddress = email,
+            //    p_CellNumber = cell,
+            //    p_Password = pass,
+            //    p_DOB = DOB,
+            //    p_SSID = ssid
+            //};
+
+            //People.InsertOnSubmit(persons);
+            //db.SubmitChanges();
             #endregion
-
+            Console.ReadKey();
             #region Update
             var query =
                 from p in People
@@ -83,7 +83,7 @@ namespace TestingPurposes
                 
             }
             #endregion
-
+            Console.ReadKey();
             #region Delete
             var deleteUser =
                 from p in People
