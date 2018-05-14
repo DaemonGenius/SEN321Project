@@ -11,6 +11,9 @@ namespace DATALAYER.DatabaseConnection
     public partial class SHSdb : DataContext
     {
         public Table<People> peoples;
+        public Table<Address> Address;
+        public Table<BillingInfo> BillingInfo;
+        public Table<Client> Client;
         public SHSdb(string connection) : base(connection) { }
 
         

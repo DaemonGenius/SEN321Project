@@ -8,7 +8,6 @@ E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.CoreCompileInputs.ca
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.exe
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.pdb
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.LoginPage.resources
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.Properties.Resources.resources
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
@@ -24,3 +23,8 @@ E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.EmployeeSide.App_Manag
 E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\LOGIC.dll
 E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\LOGIC.pdb
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.CopyComplete
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\DATALAYER.dll
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\DATALAYER.pdb
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\bin\Debug\DATALAYER.dll.config
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.SharedViews.App_RegisterUser.resources
+C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.SharedViews.App_Start.resources

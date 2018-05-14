@@ -1,6 +1,6 @@
 ﻿namespace UI.View.EmployeeSide
 {
-    partial class App_ManagementPortal
+    partial class App_ManagementProtalView
     {
         /// <summary>
         /// Required designer variable.

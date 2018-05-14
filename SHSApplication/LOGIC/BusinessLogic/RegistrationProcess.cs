@@ -12,13 +12,13 @@ namespace LOGIC.BusinessLogic
 {
     public class RegistrationProcess
     {
-        RegistrationProcess() { }
+        public RegistrationProcess() { }
         //DATALAYER.DatabaseConnection.SHSdb db1 = new DATALAYER.DatabaseConnection.SHSdb();
        static DataContext db = new DataContext("Data Source=.;Initial Catalog=SHSdb3;Integrated Security=True;");
         Table<People> People =  db.GetTable<People>();
         #region RegisterUser
 
-        public People RegisterUser(string fname, string lname, string email, string cell, string pass, string DOB, string ssid)
+        public void RegisterUser(string fname, string lname, string email, string cell, string pass, string DOB, string ssid)
         {
             People persons = new People
             {
@@ -30,11 +30,11 @@ namespace LOGIC.BusinessLogic
                 p_DOB = DOB,
                 p_SSID = ssid
             };
-
                 People.InsertOnSubmit(persons);
-                db.SubmitChanges();
-            return ;
+                db.SubmitChanges();            
+            
         }
+        
 
         
         #endregion

@@ -1,6 +1,6 @@
 ﻿namespace UI.View.ClientSide
 {
-    partial class ClientPortal
+    partial class ClientPortalView
     {
         /// <summary>
         /// Required designer variable.

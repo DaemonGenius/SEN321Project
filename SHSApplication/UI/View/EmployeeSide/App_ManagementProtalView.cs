@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UI.View.EmployeeSide
 {
-    public partial class App_ManagementPortal : Form
+    public partial class App_ManagementProtalView : Form
     {
-        public App_ManagementPortal()
+        public App_ManagementProtalView()
         {
             InitializeComponent();
         }

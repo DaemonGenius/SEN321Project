@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UI.View.ClientSide
 {
-    public partial class ClientPortal : Form
+    public partial class ClientPortalView : Form
     {
-        public ClientPortal()
+        public ClientPortalView()
         {
             InitializeComponent();
         }

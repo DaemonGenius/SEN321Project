@@ -16,5 +16,11 @@ namespace UI.View.SharedViews
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            View.SharedViews.App_RegisterUser registerForm = new App_RegisterUser();
+            registerForm.Show();
+        }
     }
 }
