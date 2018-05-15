@@ -20,9 +20,10 @@ namespace DATALAYER.Controllers
             private string _SSID;
             private string _DOB;
             private string _CellNumber;
+            private string _Department;
 
-       
-        [Column(IsPrimaryKey = true, Storage = "_ID", CanBeNull = false)]
+
+         [Column(IsPrimaryKey = true, Storage = "_ID", CanBeNull = false)]
         public int ID
         {
             get { return this._ID; }
@@ -76,6 +77,12 @@ namespace DATALAYER.Controllers
         {
             get { return this._CellNumber; }
             set { this._CellNumber = value; }
+        }
+        [Column(Storage = "_Department")]
+        public string Department
+        {
+            get { return this._Department; }
+            set { this._Department = value; }
         }
 
 

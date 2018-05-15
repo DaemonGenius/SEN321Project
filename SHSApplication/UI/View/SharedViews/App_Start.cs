@@ -22,9 +22,23 @@ namespace UI.View.SharedViews
             LOGIC.ApplicationLogic.RegisterValidation registerValidation = new LOGIC.ApplicationLogic.RegisterValidation();
             if (registerValidation.EmailValidation(txtbxEmail.Text, txtbxPass.Text) == true)
             {
-                View.EmployeeSide.App_ManagementProtalView managementProtalView = new EmployeeSide.App_ManagementProtalView();
-                managementProtalView.Show();
-                lblErrorEmail.Visible = false;
+                if (registerValidation.DepartmentType() == "Client")
+                {
+                    View.ClientSide.ClientPortalView clientPortal = new ClientSide.ClientPortalView();
+                    clientPortal.Show();
+                    lblErrorEmail.Visible = false;
+                }
+                else if (registerValidation.DepartmentType() == "Admin")
+                {
+                    
+                }
+                else if (registerValidation.DepartmentType() == "Employee")
+                {
+                    View.EmployeeSide.App_ManagementProtalView managementProtalView = new EmployeeSide.App_ManagementProtalView();
+                    managementProtalView.Show();
+                    lblErrorEmail.Visible = false;
+                }
+
             }
             else
             {
@@ -38,6 +52,11 @@ namespace UI.View.SharedViews
         {
             View.SharedViews.App_RegisterUser registerForm = new App_RegisterUser();
             registerForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

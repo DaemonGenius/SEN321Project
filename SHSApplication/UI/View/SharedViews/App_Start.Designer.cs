@@ -54,7 +54,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(2, -3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(625, 437);
             this.panel1.TabIndex = 0;
@@ -88,7 +88,7 @@
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(294, 267);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(122, 43);
             this.btnRegister.TabIndex = 6;
@@ -99,7 +99,7 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(134, 267);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(122, 43);
             this.btnLogin.TabIndex = 5;
@@ -121,7 +121,7 @@
             // txtbxPass
             // 
             this.txtbxPass.Location = new System.Drawing.Point(260, 199);
-            this.txtbxPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxPass.Name = "txtbxPass";
             this.txtbxPass.PasswordChar = '*';
             this.txtbxPass.Size = new System.Drawing.Size(156, 20);
@@ -130,7 +130,7 @@
             // txtbxEmail
             // 
             this.txtbxEmail.Location = new System.Drawing.Point(260, 167);
-            this.txtbxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEmail.Name = "txtbxEmail";
             this.txtbxEmail.Size = new System.Drawing.Size(156, 20);
             this.txtbxEmail.TabIndex = 2;
@@ -163,7 +163,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 430);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "App_Start";
             this.Text = "App_LoginPage";
             this.panel1.ResumeLayout(false);

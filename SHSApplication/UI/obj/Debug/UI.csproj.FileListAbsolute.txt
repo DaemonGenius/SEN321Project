@@ -31,3 +31,4 @@ E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\DATALAYER.pdb
 E:\_GIT\sen321project\SHSApplication\UI\bin\Debug\DATALAYER.dll.config
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.SharedViews.App_RegisterUser.resources
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.SharedViews.App_Start.resources
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.ClientSide.ClientPortalView.resources

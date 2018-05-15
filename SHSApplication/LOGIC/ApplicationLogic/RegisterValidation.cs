@@ -28,11 +28,32 @@ namespace LOGIC.ApplicationLogic
             if (r.IsMatch(Email))
             {
                 LoginProcess.Login(Email,pass);
+                DepartmentType();
                 return true;
             }
             else
                 
             return false;
+        }
+
+        public string DepartmentType()
+        {
+            string Department = null;
+            
+            if (LoginProcess.PortalType() == "Client")
+            {
+                Department = "Client";
+            }
+            else if (LoginProcess.PortalType() == "Admin")
+            {
+                Department = "Admin";
+            }
+            else if (LoginProcess.PortalType() == "Employee")
+            {
+                Department = "Employee";
+            }
+
+            return Department;
         }
     }
 }
