@@ -33,3 +33,5 @@ E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.SharedViews.App_Regist
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.SharedViews.App_Start.resources
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.ClientSide.ClientPortalView.resources
 C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.ClientSide.ClientPortalView.resources
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.Admin.App_AdminPage.resources
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.AppliocationStart.App_Launch.resources

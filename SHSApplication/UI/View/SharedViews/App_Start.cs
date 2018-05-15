@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,7 +15,15 @@ namespace UI.View.SharedViews
     {
         public App_Start()
         {
+            Thread thread = new Thread(new ThreadStart(StartForm));
+            thread.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
+            thread.Abort();
+        }
+        public void StartForm()
+        {
+            Application.Run(new View.AppliocationStart.App_Launch());
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
