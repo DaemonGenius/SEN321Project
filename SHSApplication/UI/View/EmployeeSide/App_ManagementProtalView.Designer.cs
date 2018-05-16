@@ -61,6 +61,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtbxSCUSername = new System.Windows.Forms.TextBox();
+            this.txtbxCcellNumber = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -181,6 +183,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.txtbxCcellNumber);
             this.groupBox3.Controls.Add(this.txtbxCSSID);
             this.groupBox3.Controls.Add(this.txtbxCDOB);
             this.groupBox3.Controls.Add(this.txtbxCPassword);
@@ -396,6 +400,23 @@
             this.txtbxSCUSername.Size = new System.Drawing.Size(147, 22);
             this.txtbxSCUSername.TabIndex = 5;
             // 
+            // txtbxCcellNumber
+            // 
+            this.txtbxCcellNumber.Location = new System.Drawing.Point(135, 199);
+            this.txtbxCcellNumber.Name = "txtbxCcellNumber";
+            this.txtbxCcellNumber.Size = new System.Drawing.Size(164, 22);
+            this.txtbxCcellNumber.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(15, 204);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 17);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "CellNumber:";
+            // 
             // App_ManagementProtalView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -453,5 +474,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnSearchCli;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtbxCcellNumber;
     }
 }

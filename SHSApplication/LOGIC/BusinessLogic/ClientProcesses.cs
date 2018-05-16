@@ -16,7 +16,7 @@ namespace LOGIC.BusinessLogic
         {
             using (var dbe = new SHSdb())
             {
-                People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
+                People person =  dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
                 return new People()
                 {
                     FirstName = person.FirstName,
