@@ -16,6 +16,9 @@ namespace DATALAYER.DatabaseConnection
         public Table<Client> Client;
         public SHSdb(string connection) : base(connection) { }
 
-        
+        public SHSdb() : base("EF")
+        {
+
+        }
     }
 }

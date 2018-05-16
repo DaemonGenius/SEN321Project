@@ -101,6 +101,9 @@
     <EmbeddedResource Include="View\ClientSide\ClientPortalView.resx">
       <DependentUpon>ClientPortalView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeSide\App_ManagementProtalView.resx">
+      <DependentUpon>App_ManagementProtalView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SharedViews\App_RegisterUser.resx">
       <DependentUpon>App_RegisterUser.cs</DependentUpon>
     </EmbeddedResource>
