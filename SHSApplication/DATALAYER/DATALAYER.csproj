@@ -47,6 +47,11 @@
     <Compile Include="Controllers\BillingInfo.cs" />
     <Compile Include="Controllers\Client.cs" />
     <Compile Include="Controllers\People.cs" />
+    <Compile Include="DataAccess\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseConnection\SHSdb.cs" />
     <Compile Include="DataHandler\Address.cs" />
     <Compile Include="DataHandler\Client.cs" />
@@ -64,6 +69,17 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DataAccess\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccess\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccess\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
