@@ -26,23 +26,35 @@ namespace UI.View.EmployeeSide
 
         private async void btnSearchCli_Click(object sender, EventArgs e)
         {
-                        
-            
-            using (var dbe = new DataContext("Data Source=.;Initial Catalog=SHSdb4;Integrated Security=True;"))
+            LOGIC.ApplicationLogic.ClientProcessesApp cpa = new LOGIC.ApplicationLogic.ClientProcessesApp();
+            People people = await cpa.ClientSearch(txtbxSCUSername.Text);
+            txtbxCFName.Text = people.FirstName;
+            txtbxCLName.Text = people.LastName;
+            txtbxcEmail.Text = people.EmailAddress;
+            txtbxCPassword.Text = people.Password;
+            txtbxCDOB.Text = people.DOB;
+            txtbxCSSID.Text = people.SSID;
+            txtbxCcellNumber.Text = people.CellNumber;
+            txtbxEStreetNum.Text = people.Address.StreetNum.ToString();
+            txtbxEStreetName.Text = people.Address.Street;
+            txtbxEZipCode.Text = people.Address.Zipcode;
+            txtbxEProvince.Text = people.Address.Province;
+            txtbxECity.Text = people.Address.City;
+            txtbxECountry.Text = people.Address.Country;
+            if (people.Gender == "Male")
             {
-                LOGIC.ApplicationLogic.ClientProcessesApp cpa = new LOGIC.ApplicationLogic.ClientProcessesApp();
-                People people = await cpa.ClientSearch(txtbxSCUSername.Text);
-                txtbxCFName.Text = people.FirstName;
-                txtbxCLName.Text = people.LastName;
-                txtbxcEmail.Text = people.EmailAddress;
-                txtbxCPassword.Text = people.Password;
-                txtbxCDOB.Text = people.DOB;
-                txtbxCSSID.Text = people.SSID;
-                txtbxCcellNumber.Text = people.CellNumber;
-               // txtbxEStreetName.Text = people
+                radbtnMale.Checked = true;
             }
-            
-            
+            else if (people.Gender == "Female")
+            {
+                radbtnFemale.Checked = true;
+            }
+            else if (people.Gender == "Other")
+            {
+                radbtnOther.Checked = true;
+            }
+
+
         }
     }
 }
