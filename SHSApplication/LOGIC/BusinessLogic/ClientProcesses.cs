@@ -16,7 +16,7 @@ namespace LOGIC.BusinessLogic
         {
             using (var dbe = new SHSdb())
             {
-                Address address = new Address();
+                
                 People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
                 return new People()
                 {
@@ -37,6 +37,7 @@ namespace LOGIC.BusinessLogic
                         Country = person.Address.Country,
                         Province = person.Address.Province
                     }
+                   
                 };
             }
 
