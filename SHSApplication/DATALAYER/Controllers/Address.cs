@@ -18,10 +18,12 @@ namespace DATALAYER.Controllers
         private string _adr_City;
         private string _adr_Province;
         private string _adr_Country;
-        private int _Person_ID;
+        private EntityRef<People> _People;
 
-        public EntityRef<People> _Person;
-        public Address() { this._Person = new EntityRef<People>(); }
+
+        public Address() {
+            this._People =  new EntityRef<People>();
+        }
 
         [Column(Storage = "_adr_ID", IsPrimaryKey = true)]
         public int adr_ID
@@ -65,11 +67,11 @@ namespace DATALAYER.Controllers
             get { return this._adr_Country; }
             set { this._adr_Country = value; }
         }
-        [Column(Storage = "_Person_ID", DbType = "Int")]
-        public int Person_ID
+        [Association(Storage = "_People", ThisKey = "_ID")]
+        public People People
         {
-            get { return this._Person_ID; }
-            set { this._Person_ID = value; }
+            get { return this._People.Entity; }
+            set { this._People.Entity = value; }
         }
 
 

@@ -39,6 +39,7 @@ namespace UI.View.EmployeeSide
                 txtbxCDOB.Text = people.DOB;
                 txtbxCSSID.Text = people.SSID;
                 txtbxCcellNumber.Text = people.CellNumber;
+               // txtbxEStreetName.Text = people
             }
             
             

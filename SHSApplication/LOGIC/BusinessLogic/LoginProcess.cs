@@ -1,4 +1,5 @@
 ﻿using DATALAYER.Controllers;
+using DATALAYER.DatabaseConnection;
 using System;
 using System.Collections.Generic;
 using System.Data.Linq;
@@ -17,10 +18,12 @@ namespace LOGIC.BusinessLogic
         #region Login
         public bool Login(string Username, string Password)
         {
-            using (var dbe = new DataContext("Data Source=.;Initial Catalog=SHSdb4;Integrated Security=True;"))
+            using (var dbe = new SHSdb())
             {
                 bool value = false;
-                foreach (People item in dbe.GetTable<People>())
+               
+               //(from i in dbe.GetTable<People>() where i.EmailAddress == Username).FirstOrDefault();
+                foreach (People item in dbe.GetTable<People>().ToList())
                 {
                     // Person person = db.Person.FirstOrDefault(x => x.p_EmailAddress == Username && x.p_Password == Password);
                     if (item == null)
@@ -29,7 +32,7 @@ namespace LOGIC.BusinessLogic
                     }
                     else
                     if (item.EmailAddress == Username && item.Password == Password)
-                    {
+                    {                       
                         Email = item.EmailAddress;
                         Pass = item.Password;
                         return value = true;

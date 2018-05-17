@@ -16,7 +16,20 @@ namespace LOGIC.BusinessLogic
         {
             using (var dbe = new SHSdb())
             {
+                Address address = new Address();
                 People person =  dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
+                address = dbe.Address.FirstOrDefault((x => x.adr_ID == person.ID));
+                address = new Address()
+                {
+                    adr_ID = person.ID,
+                    adr_Street = address.adr_Street,
+                    adr_StreetNum = address.adr_StreetNum,
+                    adr_Zipcode = address.adr_Zipcode,
+                    adr_City = address.adr_City,
+                    adr_Country = address.adr_Country,
+                    adr_Province = address.adr_Province
+                };
+
                 return new People()
                 {
                     FirstName = person.FirstName,
@@ -25,7 +38,8 @@ namespace LOGIC.BusinessLogic
                     Password = person.Password,
                     CellNumber = person.CellNumber,
                     SSID = person.SSID,
-                    DOB = person.DOB,
+                    DOB = person.DOB,                   
+                    
 
                 };
             }

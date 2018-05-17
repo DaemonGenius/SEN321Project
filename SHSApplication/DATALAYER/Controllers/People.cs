@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace DATALAYER.Controllers
     public class People
     {      
       
-            public People() { }
+           
             private int _ID;
             private string _FirstName;
             private string _LastName;
@@ -20,10 +21,16 @@ namespace DATALAYER.Controllers
             private string _SSID;
             private string _DOB;
             private string _CellNumber;
+            private string _Gender;
             private string _Department;
+            private string _adr_ID;
 
+            private EntitySet<Address> _Address;
 
-         [Column(IsPrimaryKey = true, Storage = "_ID", CanBeNull = false)]
+        
+        public People() { this._Address = new EntitySet<Address>(); }
+
+        [Column(IsPrimaryKey = true, Storage = "_ID", CanBeNull = false)]
         public int ID
         {
             get { return this._ID; }
@@ -78,11 +85,30 @@ namespace DATALAYER.Controllers
             get { return this._CellNumber; }
             set { this._CellNumber = value; }
         }
+        //[Column(Storage = "_Gender")]
+        //public string Gender
+        //{
+        //    get { return this._Gender; }
+        //    set { this._Gender = value; }
+        //}
         [Column(Storage = "_Department")]
         public string Department
         {
             get { return this._Department; }
             set { this._Department = value; }
+        }
+        [Column(Storage = "_adr_ID")]
+        public string AddressID
+        {
+            get { return this._adr_ID; }
+            set { this._adr_ID = value; }
+        }
+
+        [Association(Storage = "_Address", OtherKey = "_adr_ID")]
+        public EntitySet<Address> Address
+        {
+            get { return this._Address; }
+            set { this._Address.Assign(value); }
         }
 
 
