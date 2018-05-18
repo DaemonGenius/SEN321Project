@@ -28,6 +28,18 @@ namespace UI.View.EmployeeSide
         {
             LOGIC.ApplicationLogic.ClientProcessesApp cpa = new LOGIC.ApplicationLogic.ClientProcessesApp();
             People people = await cpa.ClientSearch(txtbxSCUSername.Text);
+            if (people.Gender == "Male")
+            {
+                radbtnMale.Checked = true;
+            }
+            else if (people.Gender == "Female")
+            {
+                radbtnFemale.Checked = true;
+            }
+            else if (people.Gender == "Other")
+            {
+                radbtnOther.Checked = true;
+            }
             txtbxCFName.Text = people.FirstName;
             txtbxCLName.Text = people.LastName;
             txtbxcEmail.Text = people.EmailAddress;
@@ -41,18 +53,6 @@ namespace UI.View.EmployeeSide
             txtbxEProvince.Text = people.Address.Province;
             txtbxECity.Text = people.Address.City;
             txtbxECountry.Text = people.Address.Country;
-            if (people.Gender == "Male")
-            {
-                radbtnMale.Checked = true;
-            }
-            else if (people.Gender == "Female")
-            {
-                radbtnFemale.Checked = true;
-            }
-            else if (people.Gender == "Other")
-            {
-                radbtnOther.Checked = true;
-            }
 
 
         }

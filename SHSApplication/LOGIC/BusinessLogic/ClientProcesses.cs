@@ -18,6 +18,9 @@ namespace LOGIC.BusinessLogic
             {
                 
                 People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
+                Billinginfoe billinginfoe = dbe.BillingInfo.FirstOrDefault(x => x.ID == person.ID);
+
+
                 return new People()
                 {
                     FirstName = person.FirstName,
@@ -36,9 +39,30 @@ namespace LOGIC.BusinessLogic
                         City = person.Address.City,
                         Country = person.Address.Country,
                         Province = person.Address.Province
+                    },
+                    Billinginfoes = new EntitySet<Billinginfoe>() {
+                      
+                        
+                      
+                
                     }
+                    
+
                    
-                };
+                    //Billinginfoes = person.Billinginfoes.Select(y => new Billinginfoe()
+                    //{
+                    //    CardName = y.CardName,
+                    //    CardNum = y.CardNum,
+                    //    CardCVV = y.CardCVV,
+                    //    CardExpireDate = y.CardExpireDate,
+                    //    CardType = y.CardType,
+                        
+
+                    //}).ToArray()
+                    
+                };                   
+                   
+                
             }
 
         }
