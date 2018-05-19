@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -101,6 +102,9 @@
     <EmbeddedResource Include="View\ClientSide\ClientPortalView.resx">
       <DependentUpon>ClientPortalView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeeSide\App_ManagementProtalView.resx">
+      <DependentUpon>App_ManagementProtalView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SharedViews\App_RegisterUser.resx">
       <DependentUpon>App_RegisterUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +126,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DATALAYER\DATALAYER.csproj">
+      <Project>{4ebf55d7-e1da-4f6a-8cd5-c260676b05ad}</Project>
+      <Name>DATALAYER</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LOGIC\LOGIC.csproj">
       <Project>{c7b8fb5e-82a1-4d8f-a8ba-169f2983e047}</Project>
       <Name>LOGIC</Name>

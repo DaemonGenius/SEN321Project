@@ -16,5 +16,17 @@ namespace UI.View.Admin
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            View.ClientSide.ClientPortalView clientPortal = new ClientSide.ClientPortalView();
+            clientPortal.Show();
+        }
+
+        private void btnUEmpPortal_Click(object sender, EventArgs e)
+        {
+            View.EmployeeSide.App_ManagementProtalView managementProtalView = new EmployeeSide.App_ManagementProtalView();
+            managementProtalView.Show();
+        }
     }
 }

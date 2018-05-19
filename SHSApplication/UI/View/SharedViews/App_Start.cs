@@ -39,7 +39,8 @@ namespace UI.View.SharedViews
                 }
                 else if (registerValidation.DepartmentType() == "Admin")
                 {
-                    
+                    View.Admin.App_AdminPage adminPage = new Admin.App_AdminPage();
+                    adminPage.Show();
                 }
                 else if (registerValidation.DepartmentType() == "Employee")
                 {

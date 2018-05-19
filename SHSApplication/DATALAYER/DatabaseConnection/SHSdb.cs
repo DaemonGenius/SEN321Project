@@ -12,10 +12,13 @@ namespace DATALAYER.DatabaseConnection
     {
         public Table<People> peoples;
         public Table<Address> Address;
-        public Table<BillingInfo> BillingInfo;
-        public Table<Client> Client;
+        public Table<Billinginfoe> BillingInfo;
+        
         public SHSdb(string connection) : base(connection) { }
 
-        
+        public SHSdb() : base("Data Source=.;Initial Catalog=SHSdb4;Integrated Security=True;")
+        {
+            
+        }
     }
 }
