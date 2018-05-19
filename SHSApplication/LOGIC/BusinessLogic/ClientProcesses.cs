@@ -9,18 +9,14 @@ using System.Threading.Tasks;
 
 namespace LOGIC.BusinessLogic
 {
-    public class ClientProcesses
+    public static class ClientProcesses
     {
         #region ClientSearch
         public static async Task<People> ClientSearch(string Username)
         {
             using (var dbe = new SHSdb())
-            {
-                
-                People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
-                Billinginfoe billinginfoe = dbe.BillingInfo.FirstOrDefault(x => x.ID == person.ID);
-
-
+            {  People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
+                //Billinginfoe billinginfoe = dbe.BillingInfo.FirstOrDefault(x => x.ID == person.ID);
                 return new People()
                 {
                     FirstName = person.FirstName,
@@ -40,32 +36,47 @@ namespace LOGIC.BusinessLogic
                         Country = person.Address.Country,
                         Province = person.Address.Province
                     },
-                    Billinginfoes = new EntitySet<Billinginfoe>() {
-                      
-                        
-                      
-                
-                    }
-                    
+                    Billinginfoes = (from Bilinfo in person.Billinginfoes
+                                     select new Billinginfoe
+                                     {
+                                         CardName = Bilinfo.CardName,
+                                         CardNum = Bilinfo.CardNum,
+                                         CardCVV = Bilinfo.CardCVV,
+                                         CardExpireDate = Bilinfo.CardExpireDate,
+                                         CardType = Bilinfo.CardType,
+                                         Person_ID = Bilinfo.Person_ID
+                                     }).ToEntitySet()
+                //Billinginfoes = new EntitySet<Billinginfoe>()
+                //{
 
-                   
-                    //Billinginfoes = person.Billinginfoes.Select(y => new Billinginfoe()
-                    //{
-                    //    CardName = y.CardName,
-                    //    CardNum = y.CardNum,
-                    //    CardCVV = y.CardCVV,
-                    //    CardExpireDate = y.CardExpireDate,
-                    //    CardType = y.CardType,
-                        
+                //}
 
-                    //}).ToArray()
-                    
-                };                   
-                   
-                
+                //Billinginfoes = person.Billinginfoes.Select(y => new Billinginfoe()
+                //{
+                //    CardName = y.CardName,
+                //    CardNum = y.CardNum,
+                //    CardCVV = y.CardCVV,
+                //    CardExpireDate = y.CardExpireDate,
+                //    CardType = y.CardType,
+
+
+                //}).ToEntitySet()
+
+            };
             }
-
         }
-        #endregion
+
+        public static EntitySet<T> ToEntitySet<T>(this IEnumerable<T> source) where T : class
+        {
+            var es = new EntitySet<T>();
+            es.AddRange(source);
+            return es;
+        }
+
     }
-}
+
+    #endregion
+
+ }
+    
+

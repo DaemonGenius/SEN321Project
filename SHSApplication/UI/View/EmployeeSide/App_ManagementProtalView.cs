@@ -28,6 +28,7 @@ namespace UI.View.EmployeeSide
         {
             LOGIC.ApplicationLogic.ClientProcessesApp cpa = new LOGIC.ApplicationLogic.ClientProcessesApp();
             People people = await cpa.ClientSearch(txtbxSCUSername.Text);
+            
             if (people.Gender == "Male")
             {
                 radbtnMale.Checked = true;
@@ -53,6 +54,9 @@ namespace UI.View.EmployeeSide
             txtbxEProvince.Text = people.Address.Province;
             txtbxECity.Text = people.Address.City;
             txtbxECountry.Text = people.Address.Country;
+            
+
+
 
 
         }
