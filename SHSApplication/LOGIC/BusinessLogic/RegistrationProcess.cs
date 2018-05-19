@@ -18,9 +18,14 @@ namespace LOGIC.BusinessLogic
         Table<People> People =  db.GetTable<People>();
         #region RegisterUser
 
-        public void RegisterUser(string fname, string lname, string email, string cell, string pass, string DOB, string ssid)
+        public void RegisterUser(string fname, string lname, string email, string cell, string pass, string DOB, string ssid, 
+                                  int StreetNum, string StreetName, string Zipcode, string City, string Province, string Country,
+                                  string cardNum, string cardName, string cardCVC, string cardType, string cardExpiryDate)
         {
-            People persons = new People
+
+            People people = new People();
+
+            people = new People
             {
                 FirstName = fname,
                 LastName = lname,
@@ -28,15 +33,36 @@ namespace LOGIC.BusinessLogic
                 CellNumber = cell,
                 Password = pass,
                 DOB = DOB,
-                SSID = ssid
+                SSID = ssid,
+                Address = new Address()
+                {
+                    StreetNum = StreetNum,
+                    Street = StreetName,
+                    City = City,
+                    Country = Country,
+                    Province = Province,
+                    Zipcode = Zipcode,
+                },
+                Billinginfoes = (from Bilinfo in people.Billinginfoes
+                                 select new Billinginfoe
+                                 {
+                                     CardName = cardName,
+                                     CardNum = cardNum,
+                                     CardCVV = cardCVC,
+                                     CardExpireDate = cardExpiryDate,
+                                     CardType = cardType,
+                                 }).ToEntitySet()
+
             };
-                People.InsertOnSubmit(persons);
+                People.InsertOnSubmit(people);
                 db.SubmitChanges();            
             
         }
-        
 
-        
+       
+
+
+
         #endregion
 
     }

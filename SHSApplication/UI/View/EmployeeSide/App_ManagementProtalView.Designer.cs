@@ -106,7 +106,7 @@
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(860, 432);
             this.panel1.TabIndex = 0;
@@ -115,9 +115,9 @@
             // 
             this.groupBox2.Controls.Add(this.tabControl1);
             this.groupBox2.Location = new System.Drawing.Point(293, 2);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(566, 429);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -131,7 +131,7 @@
             this.tabControl1.Controls.Add(this.tbpContracts);
             this.tabControl1.Controls.Add(this.tbpMaintenanceSche);
             this.tabControl1.Location = new System.Drawing.Point(3, 15);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(562, 415);
@@ -141,9 +141,9 @@
             // 
             this.tbpClients.Controls.Add(this.panel2);
             this.tbpClients.Location = new System.Drawing.Point(4, 22);
-            this.tbpClients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpClients.Margin = new System.Windows.Forms.Padding(2);
             this.tbpClients.Name = "tbpClients";
-            this.tbpClients.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpClients.Padding = new System.Windows.Forms.Padding(2);
             this.tbpClients.Size = new System.Drawing.Size(554, 389);
             this.tbpClients.TabIndex = 0;
             this.tbpClients.Text = "Clients";
@@ -157,7 +157,7 @@
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.ForeColor = System.Drawing.Color.Coral;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(559, 395);
             this.panel2.TabIndex = 0;
@@ -177,9 +177,9 @@
             this.groupBox5.Controls.Add(this.btnAddressPrev);
             this.groupBox5.Controls.Add(this.btnNextAddress);
             this.groupBox5.Location = new System.Drawing.Point(279, 206);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(281, 182);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
@@ -188,7 +188,7 @@
             // txtbxEExpDate
             // 
             this.txtbxEExpDate.Location = new System.Drawing.Point(113, 107);
-            this.txtbxEExpDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEExpDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEExpDate.Name = "txtbxEExpDate";
             this.txtbxEExpDate.Size = new System.Drawing.Size(124, 20);
             this.txtbxEExpDate.TabIndex = 42;
@@ -196,7 +196,7 @@
             // txtbxECardType
             // 
             this.txtbxECardType.Location = new System.Drawing.Point(113, 83);
-            this.txtbxECardType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECardType.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECardType.Name = "txtbxECardType";
             this.txtbxECardType.Size = new System.Drawing.Size(124, 20);
             this.txtbxECardType.TabIndex = 41;
@@ -204,7 +204,7 @@
             // txtbxECVC
             // 
             this.txtbxECVC.Location = new System.Drawing.Point(113, 59);
-            this.txtbxECVC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECVC.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECVC.Name = "txtbxECVC";
             this.txtbxECVC.Size = new System.Drawing.Size(124, 20);
             this.txtbxECVC.TabIndex = 40;
@@ -212,7 +212,7 @@
             // txtbxECardNum
             // 
             this.txtbxECardNum.Location = new System.Drawing.Point(113, 35);
-            this.txtbxECardNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECardNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECardNum.Name = "txtbxECardNum";
             this.txtbxECardNum.Size = new System.Drawing.Size(124, 20);
             this.txtbxECardNum.TabIndex = 39;
@@ -220,7 +220,7 @@
             // txtbxECardName
             // 
             this.txtbxECardName.Location = new System.Drawing.Point(113, 11);
-            this.txtbxECardName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECardName.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECardName.Name = "txtbxECardName";
             this.txtbxECardName.Size = new System.Drawing.Size(124, 20);
             this.txtbxECardName.TabIndex = 38;
@@ -284,7 +284,7 @@
             // 
             this.btnAddressPrev.ForeColor = System.Drawing.Color.Black;
             this.btnAddressPrev.Location = new System.Drawing.Point(211, 149);
-            this.btnAddressPrev.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddressPrev.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddressPrev.Name = "btnAddressPrev";
             this.btnAddressPrev.Size = new System.Drawing.Size(26, 26);
             this.btnAddressPrev.TabIndex = 1;
@@ -295,7 +295,7 @@
             // 
             this.btnNextAddress.ForeColor = System.Drawing.Color.Black;
             this.btnNextAddress.Location = new System.Drawing.Point(241, 149);
-            this.btnNextAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNextAddress.Margin = new System.Windows.Forms.Padding(2);
             this.btnNextAddress.Name = "btnNextAddress";
             this.btnNextAddress.Size = new System.Drawing.Size(26, 26);
             this.btnNextAddress.TabIndex = 0;
@@ -317,9 +317,9 @@
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Location = new System.Drawing.Point(279, 5);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(275, 197);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
@@ -328,7 +328,7 @@
             // txtbxECountry
             // 
             this.txtbxECountry.Location = new System.Drawing.Point(113, 139);
-            this.txtbxECountry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECountry.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECountry.Name = "txtbxECountry";
             this.txtbxECountry.Size = new System.Drawing.Size(124, 20);
             this.txtbxECountry.TabIndex = 34;
@@ -347,7 +347,7 @@
             // txtbxEProvince
             // 
             this.txtbxEProvince.Location = new System.Drawing.Point(113, 116);
-            this.txtbxEProvince.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEProvince.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEProvince.Name = "txtbxEProvince";
             this.txtbxEProvince.Size = new System.Drawing.Size(124, 20);
             this.txtbxEProvince.TabIndex = 32;
@@ -355,7 +355,7 @@
             // txtbxECity
             // 
             this.txtbxECity.Location = new System.Drawing.Point(113, 92);
-            this.txtbxECity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECity.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECity.Name = "txtbxECity";
             this.txtbxECity.Size = new System.Drawing.Size(124, 20);
             this.txtbxECity.TabIndex = 31;
@@ -363,7 +363,7 @@
             // txtbxEZipCode
             // 
             this.txtbxEZipCode.Location = new System.Drawing.Point(113, 68);
-            this.txtbxEZipCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEZipCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEZipCode.Name = "txtbxEZipCode";
             this.txtbxEZipCode.Size = new System.Drawing.Size(124, 20);
             this.txtbxEZipCode.TabIndex = 30;
@@ -371,7 +371,7 @@
             // txtbxEStreetName
             // 
             this.txtbxEStreetName.Location = new System.Drawing.Point(113, 44);
-            this.txtbxEStreetName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEStreetName.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEStreetName.Name = "txtbxEStreetName";
             this.txtbxEStreetName.Size = new System.Drawing.Size(124, 20);
             this.txtbxEStreetName.TabIndex = 29;
@@ -379,7 +379,7 @@
             // txtbxEStreetNum
             // 
             this.txtbxEStreetNum.Location = new System.Drawing.Point(113, 20);
-            this.txtbxEStreetNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEStreetNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEStreetNum.Name = "txtbxEStreetNum";
             this.txtbxEStreetNum.Size = new System.Drawing.Size(124, 20);
             this.txtbxEStreetNum.TabIndex = 28;
@@ -457,9 +457,9 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Location = new System.Drawing.Point(4, 5);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(270, 384);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
@@ -527,7 +527,7 @@
             // txtbxCcellNumber
             // 
             this.txtbxCcellNumber.Location = new System.Drawing.Point(101, 162);
-            this.txtbxCcellNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCcellNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCcellNumber.Name = "txtbxCcellNumber";
             this.txtbxCcellNumber.Size = new System.Drawing.Size(124, 20);
             this.txtbxCcellNumber.TabIndex = 12;
@@ -535,7 +535,7 @@
             // txtbxCSSID
             // 
             this.txtbxCSSID.Location = new System.Drawing.Point(101, 139);
-            this.txtbxCSSID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCSSID.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCSSID.Name = "txtbxCSSID";
             this.txtbxCSSID.Size = new System.Drawing.Size(124, 20);
             this.txtbxCSSID.TabIndex = 11;
@@ -543,7 +543,7 @@
             // txtbxCDOB
             // 
             this.txtbxCDOB.Location = new System.Drawing.Point(101, 115);
-            this.txtbxCDOB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCDOB.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCDOB.Name = "txtbxCDOB";
             this.txtbxCDOB.Size = new System.Drawing.Size(124, 20);
             this.txtbxCDOB.TabIndex = 10;
@@ -551,7 +551,7 @@
             // txtbxCPassword
             // 
             this.txtbxCPassword.Location = new System.Drawing.Point(101, 93);
-            this.txtbxCPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCPassword.Name = "txtbxCPassword";
             this.txtbxCPassword.Size = new System.Drawing.Size(124, 20);
             this.txtbxCPassword.TabIndex = 9;
@@ -559,7 +559,7 @@
             // txtbxcEmail
             // 
             this.txtbxcEmail.Location = new System.Drawing.Point(101, 69);
-            this.txtbxcEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxcEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxcEmail.Name = "txtbxcEmail";
             this.txtbxcEmail.Size = new System.Drawing.Size(124, 20);
             this.txtbxcEmail.TabIndex = 8;
@@ -567,7 +567,7 @@
             // txtbxCLName
             // 
             this.txtbxCLName.Location = new System.Drawing.Point(101, 45);
-            this.txtbxCLName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCLName.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCLName.Name = "txtbxCLName";
             this.txtbxCLName.Size = new System.Drawing.Size(124, 20);
             this.txtbxCLName.TabIndex = 7;
@@ -575,7 +575,7 @@
             // txtbxCFName
             // 
             this.txtbxCFName.Location = new System.Drawing.Point(101, 21);
-            this.txtbxCFName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCFName.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCFName.Name = "txtbxCFName";
             this.txtbxCFName.Size = new System.Drawing.Size(124, 20);
             this.txtbxCFName.TabIndex = 6;
@@ -650,9 +650,9 @@
             // tbpProducts
             // 
             this.tbpProducts.Location = new System.Drawing.Point(4, 22);
-            this.tbpProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpProducts.Margin = new System.Windows.Forms.Padding(2);
             this.tbpProducts.Name = "tbpProducts";
-            this.tbpProducts.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpProducts.Padding = new System.Windows.Forms.Padding(2);
             this.tbpProducts.Size = new System.Drawing.Size(554, 389);
             this.tbpProducts.TabIndex = 1;
             this.tbpProducts.Text = "Products";
@@ -661,7 +661,7 @@
             // tbpMess
             // 
             this.tbpMess.Location = new System.Drawing.Point(4, 22);
-            this.tbpMess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpMess.Margin = new System.Windows.Forms.Padding(2);
             this.tbpMess.Name = "tbpMess";
             this.tbpMess.Size = new System.Drawing.Size(554, 389);
             this.tbpMess.TabIndex = 2;
@@ -671,7 +671,7 @@
             // tbpContracts
             // 
             this.tbpContracts.Location = new System.Drawing.Point(4, 22);
-            this.tbpContracts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpContracts.Margin = new System.Windows.Forms.Padding(2);
             this.tbpContracts.Name = "tbpContracts";
             this.tbpContracts.Size = new System.Drawing.Size(554, 389);
             this.tbpContracts.TabIndex = 3;
@@ -681,7 +681,7 @@
             // tbpMaintenanceSche
             // 
             this.tbpMaintenanceSche.Location = new System.Drawing.Point(4, 22);
-            this.tbpMaintenanceSche.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpMaintenanceSche.Margin = new System.Windows.Forms.Padding(2);
             this.tbpMaintenanceSche.Name = "tbpMaintenanceSche";
             this.tbpMaintenanceSche.Size = new System.Drawing.Size(554, 389);
             this.tbpMaintenanceSche.TabIndex = 4;
@@ -696,9 +696,9 @@
             this.groupBox1.Controls.Add(this.btnAddnew);
             this.groupBox1.Controls.Add(this.btnSearchCli);
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(284, 429);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -707,7 +707,7 @@
             // txtbxSCUSername
             // 
             this.txtbxSCUSername.Location = new System.Drawing.Point(67, 82);
-            this.txtbxSCUSername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxSCUSername.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxSCUSername.Name = "txtbxSCUSername";
             this.txtbxSCUSername.Size = new System.Drawing.Size(111, 20);
             this.txtbxSCUSername.TabIndex = 5;
@@ -725,7 +725,7 @@
             // btnUpdateClient
             // 
             this.btnUpdateClient.Location = new System.Drawing.Point(181, 145);
-            this.btnUpdateClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateClient.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(84, 39);
             this.btnUpdateClient.TabIndex = 2;
@@ -735,17 +735,18 @@
             // btnAddnew
             // 
             this.btnAddnew.Location = new System.Drawing.Point(93, 145);
-            this.btnAddnew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddnew.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddnew.Name = "btnAddnew";
             this.btnAddnew.Size = new System.Drawing.Size(84, 39);
             this.btnAddnew.TabIndex = 1;
             this.btnAddnew.Text = "New Client";
             this.btnAddnew.UseVisualStyleBackColor = true;
+            this.btnAddnew.Click += new System.EventHandler(this.btnAddnew_Click);
             // 
             // btnSearchCli
             // 
             this.btnSearchCli.Location = new System.Drawing.Point(4, 145);
-            this.btnSearchCli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchCli.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchCli.Name = "btnSearchCli";
             this.btnSearchCli.Size = new System.Drawing.Size(84, 39);
             this.btnSearchCli.TabIndex = 0;
@@ -759,7 +760,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 434);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "App_ManagementProtalView";
             this.Text = "App_ManagementPortal";
             this.panel1.ResumeLayout(false);

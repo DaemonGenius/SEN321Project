@@ -66,5 +66,11 @@ namespace UI.View.EmployeeSide
                 }
             }
         }
+
+        private void btnAddnew_Click(object sender, EventArgs e)
+        {
+            View.SharedViews.App_RegisterUser registerUser = new SharedViews.App_RegisterUser();
+            registerUser.Show();
+        }
     }
 }

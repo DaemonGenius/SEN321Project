@@ -45,21 +45,6 @@ namespace LOGIC.BusinessLogic
                                          CardExpireDate = Bilinfo.CardExpireDate,
                                          CardType = Bilinfo.CardType,
                                      }).ToEntitySet()
-                //Billinginfoes = new EntitySet<Billinginfoe>()
-                //{
-
-                //}
-
-                //Billinginfoes = person.Billinginfoes.Select(y => new Billinginfoe()
-                //{
-                //    CardName = y.CardName,
-                //    CardNum = y.CardNum,
-                //    CardCVV = y.CardCVV,
-                //    CardExpireDate = y.CardExpireDate,
-                //    CardType = y.CardType,
-
-
-                //}).ToEntitySet()
 
             };
             }

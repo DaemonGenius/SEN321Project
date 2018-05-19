@@ -28,7 +28,7 @@ namespace UI.View.SharedViews
             string ssid = txtbxSSID.Text;
 
             LOGIC.BusinessLogic.RegistrationProcess registerProcess = new LOGIC.BusinessLogic.RegistrationProcess();
-            registerProcess.RegisterUser(fname, lname, email, pass, DOB, cell, ssid);
+            //registerProcess.RegisterUser(fname, lname, email, pass, DOB, cell, ssid);
         }
 
         private void button1_Click(object sender, EventArgs e)
