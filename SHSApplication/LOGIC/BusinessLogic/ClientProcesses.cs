@@ -44,7 +44,6 @@ namespace LOGIC.BusinessLogic
                                          CardCVV = Bilinfo.CardCVV,
                                          CardExpireDate = Bilinfo.CardExpireDate,
                                          CardType = Bilinfo.CardType,
-                                         Person_ID = Bilinfo.Person_ID
                                      }).ToEntitySet()
                 //Billinginfoes = new EntitySet<Billinginfoe>()
                 //{

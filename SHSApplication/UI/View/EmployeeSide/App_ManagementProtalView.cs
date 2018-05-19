@@ -54,11 +54,17 @@ namespace UI.View.EmployeeSide
             txtbxEProvince.Text = people.Address.Province;
             txtbxECity.Text = people.Address.City;
             txtbxECountry.Text = people.Address.Country;
-            
-
-
-
-
+            foreach (var item in people.Billinginfoes)
+            {
+                if (people.FirstName == item.People.FirstName)
+                {
+                    txtbxECardName.Text = item.CardName;
+                    txtbxECardNum.Text = item.CardNum;
+                    txtbxECardType.Text = item.CardType;
+                    txtbxECVC.Text = item.CardCVV;
+                    txtbxEExpDate.Text = item.CardExpireDate;
+                }
+            }
         }
     }
 }
