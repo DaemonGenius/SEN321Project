@@ -1,6 +1,6 @@
-﻿namespace UI.View.ClientSide
+﻿namespace UI.View.SharedViews
 {
-    partial class ClientPortal
+    partial class App_RegisterUser
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tbpPerInfo = new System.Windows.Forms.TabPage();
-            this.tbpAddress = new System.Windows.Forms.TabPage();
-            this.tbpBilInfo = new System.Windows.Forms.TabPage();
-            this.tbpCurSys = new System.Windows.Forms.TabPage();
-            this.tbpPurHist = new System.Windows.Forms.TabPage();
-            this.tbpChat = new System.Windows.Forms.TabPage();
+            this.tbpPerInfoClient = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -55,13 +49,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbxCell = new System.Windows.Forms.TextBox();
+            this.txtbxSSID = new System.Windows.Forms.TextBox();
+            this.txtbxDateofB = new System.Windows.Forms.TextBox();
+            this.txtbxPass = new System.Windows.Forms.TextBox();
+            this.txtbxEmail = new System.Windows.Forms.TextBox();
+            this.txtbxLname = new System.Windows.Forms.TextBox();
+            this.txtbxFName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,6 +63,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbpPhysicalAdd = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -83,6 +78,7 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
+            this.tbpBilling = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -102,166 +98,77 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.txtbxSysNameCl = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.etxtbxEnergyProc = new System.Windows.Forms.RichTextBox();
-            this.rtxtbxSafProc = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnBLogin = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tbpPerInfo.SuspendLayout();
-            this.tbpAddress.SuspendLayout();
-            this.tbpBilInfo.SuspendLayout();
-            this.tbpCurSys.SuspendLayout();
-            this.tbpPurHist.SuspendLayout();
-            this.tbpChat.SuspendLayout();
+            this.tbpPerInfoClient.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tbpPhysicalAdd.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.tbpBilling.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.btnBLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.btnBLogin);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1150, 536);
+            this.panel1.Size = new System.Drawing.Size(1151, 533);
             this.panel1.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(5, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 520);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Options";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tabControl1);
-            this.groupBox2.Location = new System.Drawing.Point(413, 4);
+            this.groupBox2.Location = new System.Drawing.Point(414, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(725, 519);
+            this.groupBox2.Size = new System.Drawing.Size(736, 515);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Information";
+            this.groupBox2.Text = "Profile Details";
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tbpPerInfo);
-            this.tabControl1.Controls.Add(this.tbpAddress);
-            this.tabControl1.Controls.Add(this.tbpBilInfo);
-            this.tabControl1.Controls.Add(this.tbpCurSys);
-            this.tabControl1.Controls.Add(this.tbpPurHist);
-            this.tabControl1.Controls.Add(this.tbpChat);
-            this.tabControl1.Location = new System.Drawing.Point(3, 18);
+            this.tabControl1.Controls.Add(this.tbpPerInfoClient);
+            this.tabControl1.Controls.Add(this.tbpPhysicalAdd);
+            this.tabControl1.Controls.Add(this.tbpBilling);
+            this.tabControl1.Location = new System.Drawing.Point(10, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(721, 502);
+            this.tabControl1.Size = new System.Drawing.Size(713, 484);
             this.tabControl1.TabIndex = 0;
             // 
-            // tbpPerInfo
+            // tbpPerInfoClient
             // 
-            this.tbpPerInfo.Controls.Add(this.panel2);
-            this.tbpPerInfo.Location = new System.Drawing.Point(4, 25);
-            this.tbpPerInfo.Name = "tbpPerInfo";
-            this.tbpPerInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpPerInfo.Size = new System.Drawing.Size(713, 473);
-            this.tbpPerInfo.TabIndex = 0;
-            this.tbpPerInfo.Text = "Personal Information";
-            this.tbpPerInfo.UseVisualStyleBackColor = true;
-            // 
-            // tbpAddress
-            // 
-            this.tbpAddress.Controls.Add(this.panel3);
-            this.tbpAddress.Location = new System.Drawing.Point(4, 25);
-            this.tbpAddress.Name = "tbpAddress";
-            this.tbpAddress.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpAddress.Size = new System.Drawing.Size(713, 473);
-            this.tbpAddress.TabIndex = 1;
-            this.tbpAddress.Text = "Physical Address";
-            this.tbpAddress.UseVisualStyleBackColor = true;
-            // 
-            // tbpBilInfo
-            // 
-            this.tbpBilInfo.Controls.Add(this.panel4);
-            this.tbpBilInfo.Location = new System.Drawing.Point(4, 25);
-            this.tbpBilInfo.Name = "tbpBilInfo";
-            this.tbpBilInfo.Size = new System.Drawing.Size(713, 473);
-            this.tbpBilInfo.TabIndex = 2;
-            this.tbpBilInfo.Text = "Billing Information";
-            this.tbpBilInfo.UseVisualStyleBackColor = true;
-            // 
-            // tbpCurSys
-            // 
-            this.tbpCurSys.Controls.Add(this.panel5);
-            this.tbpCurSys.Location = new System.Drawing.Point(4, 25);
-            this.tbpCurSys.Name = "tbpCurSys";
-            this.tbpCurSys.Size = new System.Drawing.Size(713, 473);
-            this.tbpCurSys.TabIndex = 3;
-            this.tbpCurSys.Text = "Current System";
-            this.tbpCurSys.UseVisualStyleBackColor = true;
-            // 
-            // tbpPurHist
-            // 
-            this.tbpPurHist.Controls.Add(this.panel6);
-            this.tbpPurHist.Location = new System.Drawing.Point(4, 25);
-            this.tbpPurHist.Name = "tbpPurHist";
-            this.tbpPurHist.Size = new System.Drawing.Size(713, 473);
-            this.tbpPurHist.TabIndex = 4;
-            this.tbpPurHist.Text = "Purchase History";
-            this.tbpPurHist.UseVisualStyleBackColor = true;
-            // 
-            // tbpChat
-            // 
-            this.tbpChat.Controls.Add(this.panel7);
-            this.tbpChat.Location = new System.Drawing.Point(4, 25);
-            this.tbpChat.Name = "tbpChat";
-            this.tbpChat.Size = new System.Drawing.Size(713, 473);
-            this.tbpChat.TabIndex = 5;
-            this.tbpChat.Text = "Chat";
-            this.tbpChat.UseVisualStyleBackColor = true;
+            this.tbpPerInfoClient.Controls.Add(this.panel2);
+            this.tbpPerInfoClient.Location = new System.Drawing.Point(4, 25);
+            this.tbpPerInfoClient.Name = "tbpPerInfoClient";
+            this.tbpPerInfoClient.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpPerInfoClient.Size = new System.Drawing.Size(705, 455);
+            this.tbpPerInfoClient.TabIndex = 0;
+            this.tbpPerInfoClient.Text = "Personal Information";
+            this.tbpPerInfoClient.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.groupBox3);
-            this.panel2.Controls.Add(this.textBox7);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtbxCell);
+            this.panel2.Controls.Add(this.txtbxSSID);
+            this.panel2.Controls.Add(this.txtbxDateofB);
+            this.panel2.Controls.Add(this.txtbxPass);
+            this.panel2.Controls.Add(this.txtbxEmail);
+            this.panel2.Controls.Add(this.txtbxLname);
+            this.panel2.Controls.Add(this.txtbxFName);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
@@ -270,10 +177,10 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(7, 10);
+            this.panel2.Location = new System.Drawing.Point(5, 1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(699, 453);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 0;
             // 
             // label23
             // 
@@ -281,9 +188,9 @@
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(196, 28);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(248, 30);
+            this.label23.Size = new System.Drawing.Size(316, 30);
             this.label23.TabIndex = 15;
-            this.label23.Text = "Personal Information";
+            this.label23.Text = "Enter Personal Information";
             // 
             // groupBox3
             // 
@@ -448,54 +355,54 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "First Name";
             // 
-            // textBox7
+            // txtbxCell
             // 
-            this.textBox7.Location = new System.Drawing.Point(481, 157);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(159, 22);
-            this.textBox7.TabIndex = 13;
+            this.txtbxCell.Location = new System.Drawing.Point(481, 157);
+            this.txtbxCell.Name = "txtbxCell";
+            this.txtbxCell.Size = new System.Drawing.Size(159, 22);
+            this.txtbxCell.TabIndex = 13;
             // 
-            // textBox6
+            // txtbxSSID
             // 
-            this.textBox6.Location = new System.Drawing.Point(481, 124);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(159, 22);
-            this.textBox6.TabIndex = 12;
+            this.txtbxSSID.Location = new System.Drawing.Point(481, 124);
+            this.txtbxSSID.Name = "txtbxSSID";
+            this.txtbxSSID.Size = new System.Drawing.Size(159, 22);
+            this.txtbxSSID.TabIndex = 12;
             // 
-            // textBox5
+            // txtbxDateofB
             // 
-            this.textBox5.Location = new System.Drawing.Point(481, 92);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(159, 22);
-            this.textBox5.TabIndex = 11;
+            this.txtbxDateofB.Location = new System.Drawing.Point(481, 92);
+            this.txtbxDateofB.Name = "txtbxDateofB";
+            this.txtbxDateofB.Size = new System.Drawing.Size(159, 22);
+            this.txtbxDateofB.TabIndex = 11;
             // 
-            // textBox4
+            // txtbxPass
             // 
-            this.textBox4.Location = new System.Drawing.Point(161, 196);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(159, 22);
-            this.textBox4.TabIndex = 10;
+            this.txtbxPass.Location = new System.Drawing.Point(161, 196);
+            this.txtbxPass.Name = "txtbxPass";
+            this.txtbxPass.Size = new System.Drawing.Size(159, 22);
+            this.txtbxPass.TabIndex = 10;
             // 
-            // textBox3
+            // txtbxEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(161, 161);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(159, 22);
-            this.textBox3.TabIndex = 9;
+            this.txtbxEmail.Location = new System.Drawing.Point(161, 161);
+            this.txtbxEmail.Name = "txtbxEmail";
+            this.txtbxEmail.Size = new System.Drawing.Size(159, 22);
+            this.txtbxEmail.TabIndex = 9;
             // 
-            // textBox2
+            // txtbxLname
             // 
-            this.textBox2.Location = new System.Drawing.Point(161, 126);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 22);
-            this.textBox2.TabIndex = 8;
+            this.txtbxLname.Location = new System.Drawing.Point(161, 126);
+            this.txtbxLname.Name = "txtbxLname";
+            this.txtbxLname.Size = new System.Drawing.Size(159, 22);
+            this.txtbxLname.TabIndex = 8;
             // 
-            // textBox1
+            // txtbxFName
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 22);
-            this.textBox1.TabIndex = 7;
+            this.txtbxFName.Location = new System.Drawing.Point(161, 90);
+            this.txtbxFName.Name = "txtbxFName";
+            this.txtbxFName.Size = new System.Drawing.Size(159, 22);
+            this.txtbxFName.TabIndex = 7;
             // 
             // label7
             // 
@@ -567,6 +474,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name:";
             // 
+            // tbpPhysicalAdd
+            // 
+            this.tbpPhysicalAdd.Controls.Add(this.panel3);
+            this.tbpPhysicalAdd.Location = new System.Drawing.Point(4, 25);
+            this.tbpPhysicalAdd.Name = "tbpPhysicalAdd";
+            this.tbpPhysicalAdd.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpPhysicalAdd.Size = new System.Drawing.Size(705, 455);
+            this.tbpPhysicalAdd.TabIndex = 1;
+            this.tbpPhysicalAdd.Text = "Physical Address";
+            this.tbpPhysicalAdd.UseVisualStyleBackColor = true;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -584,20 +502,20 @@
             this.panel3.Controls.Add(this.label41);
             this.panel3.Controls.Add(this.label42);
             this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(7, 10);
+            this.panel3.Location = new System.Drawing.Point(3, 1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(699, 453);
-            this.panel3.TabIndex = 2;
+            this.panel3.TabIndex = 1;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(233, 47);
+            this.label22.Location = new System.Drawing.Point(199, 47);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(210, 30);
+            this.label22.Size = new System.Drawing.Size(278, 30);
             this.label22.TabIndex = 13;
-            this.label22.Text = "Physical Address";
+            this.label22.Text = "Enter Physical Address";
             // 
             // textBox9
             // 
@@ -701,6 +619,16 @@
             this.label42.TabIndex = 0;
             this.label42.Text = "Street Name:";
             // 
+            // tbpBilling
+            // 
+            this.tbpBilling.Controls.Add(this.panel4);
+            this.tbpBilling.Location = new System.Drawing.Point(4, 25);
+            this.tbpBilling.Name = "tbpBilling";
+            this.tbpBilling.Size = new System.Drawing.Size(705, 455);
+            this.tbpBilling.TabIndex = 2;
+            this.tbpBilling.Text = "Billing Information";
+            this.tbpBilling.UseVisualStyleBackColor = true;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -717,20 +645,20 @@
             this.panel4.Controls.Add(this.label47);
             this.panel4.Controls.Add(this.label48);
             this.panel4.ForeColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(7, 3);
+            this.panel4.Location = new System.Drawing.Point(3, 1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(699, 460);
-            this.panel4.TabIndex = 2;
+            this.panel4.Size = new System.Drawing.Size(699, 453);
+            this.panel4.TabIndex = 1;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(235, 22);
+            this.label24.Location = new System.Drawing.Point(195, 27);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(216, 30);
+            this.label24.Size = new System.Drawing.Size(284, 30);
             this.label24.TabIndex = 15;
-            this.label24.Text = "Billing Information";
+            this.label24.Text = "Enter Billing Information";
             // 
             // groupBox4
             // 
@@ -892,281 +820,62 @@
             this.label48.TabIndex = 0;
             this.label48.Text = "Card Name:";
             // 
-            // panel5
+            // btnBLogin
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel5.Controls.Add(this.label43);
-            this.panel5.Controls.Add(this.textBox21);
-            this.panel5.Controls.Add(this.label31);
-            this.panel5.Controls.Add(this.textBox15);
-            this.panel5.Controls.Add(this.richTextBox1);
-            this.panel5.Controls.Add(this.label50);
-            this.panel5.Controls.Add(this.rtxtbxSafProc);
-            this.panel5.Controls.Add(this.etxtbxEnergyProc);
-            this.panel5.Controls.Add(this.label25);
-            this.panel5.Controls.Add(this.textBox8);
-            this.panel5.Controls.Add(this.txtbxSysNameCl);
-            this.panel5.Controls.Add(this.label49);
-            this.panel5.Controls.Add(this.label51);
-            this.panel5.Controls.Add(this.label52);
-            this.panel5.Controls.Add(this.label53);
-            this.panel5.ForeColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(7, 6);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(699, 460);
-            this.panel5.TabIndex = 3;
+            this.btnBLogin.Controls.Add(this.button1);
+            this.btnBLogin.Controls.Add(this.btnRegister);
+            this.btnBLogin.Location = new System.Drawing.Point(4, 6);
+            this.btnBLogin.Name = "btnBLogin";
+            this.btnBLogin.Size = new System.Drawing.Size(395, 516);
+            this.btnBLogin.TabIndex = 0;
+            this.btnBLogin.TabStop = false;
+            this.btnBLogin.Text = "Options";
             // 
-            // label25
+            // button1
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(235, 22);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(233, 30);
-            this.label25.TabIndex = 15;
-            this.label25.Text = "System Information";
+            this.button1.Location = new System.Drawing.Point(227, 387);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 66);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Back to Login";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox8
+            // btnRegister
             // 
-            this.textBox8.Location = new System.Drawing.Point(523, 89);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(159, 22);
-            this.textBox8.TabIndex = 11;
+            this.btnRegister.Location = new System.Drawing.Point(21, 387);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(145, 66);
+            this.btnRegister.TabIndex = 0;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // txtbxSysNameCl
-            // 
-            this.txtbxSysNameCl.Location = new System.Drawing.Point(197, 89);
-            this.txtbxSysNameCl.Name = "txtbxSysNameCl";
-            this.txtbxSysNameCl.Size = new System.Drawing.Size(159, 22);
-            this.txtbxSysNameCl.TabIndex = 7;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(382, 91);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(135, 20);
-            this.label49.TabIndex = 4;
-            this.label49.Text = "Technician Name:";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(472, 164);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(126, 20);
-            this.label51.TabIndex = 2;
-            this.label51.Text = "Safety Products:";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(58, 165);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(130, 20);
-            this.label52.TabIndex = 1;
-            this.label52.Text = "Energy Products:";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(37, 89);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(112, 20);
-            this.label53.TabIndex = 0;
-            this.label53.Text = "System Name:";
-            // 
-            // etxtbxEnergyProc
-            // 
-            this.etxtbxEnergyProc.Location = new System.Drawing.Point(62, 188);
-            this.etxtbxEnergyProc.Name = "etxtbxEnergyProc";
-            this.etxtbxEnergyProc.Size = new System.Drawing.Size(159, 139);
-            this.etxtbxEnergyProc.TabIndex = 16;
-            this.etxtbxEnergyProc.Text = "";
-            // 
-            // rtxtbxSafProc
-            // 
-            this.rtxtbxSafProc.Location = new System.Drawing.Point(476, 188);
-            this.rtxtbxSafProc.Name = "rtxtbxSafProc";
-            this.rtxtbxSafProc.Size = new System.Drawing.Size(159, 139);
-            this.rtxtbxSafProc.TabIndex = 17;
-            this.rtxtbxSafProc.Text = "";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(272, 189);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(159, 139);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(273, 165);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(154, 20);
-            this.label50.TabIndex = 18;
-            this.label50.Text = "Convience Products:";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel6.Controls.Add(this.richTextBox2);
-            this.panel6.Controls.Add(this.label29);
-            this.panel6.Controls.Add(this.richTextBox3);
-            this.panel6.Controls.Add(this.richTextBox4);
-            this.panel6.Controls.Add(this.label30);
-            this.panel6.Controls.Add(this.label32);
-            this.panel6.Controls.Add(this.label36);
-            this.panel6.ForeColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(7, 6);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(699, 460);
-            this.panel6.TabIndex = 4;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(457, 95);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(197, 292);
-            this.richTextBox2.TabIndex = 19;
-            this.richTextBox2.Text = "";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(453, 72);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(154, 20);
-            this.label29.TabIndex = 18;
-            this.label29.Text = "Convience Products:";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(240, 95);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(185, 292);
-            this.richTextBox3.TabIndex = 17;
-            this.richTextBox3.Text = "";
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.Location = new System.Drawing.Point(16, 95);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(192, 292);
-            this.richTextBox4.TabIndex = 16;
-            this.richTextBox4.Text = "";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(235, 22);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(209, 30);
-            this.label30.TabIndex = 15;
-            this.label30.Text = "Purchase History";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(236, 71);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(126, 20);
-            this.label32.TabIndex = 2;
-            this.label32.Text = "Safety Products:";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(12, 72);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(130, 20);
-            this.label36.TabIndex = 1;
-            this.label36.Text = "Energy Products:";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(197, 117);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(159, 22);
-            this.textBox15.TabIndex = 20;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(37, 119);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(139, 20);
-            this.label31.TabIndex = 21;
-            this.label31.Text = "Maintenance Due:";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(378, 118);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(128, 20);
-            this.label43.TabIndex = 23;
-            this.label43.Text = "Contract Length:";
-            // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(523, 116);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(159, 22);
-            this.textBox21.TabIndex = 22;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.DarkGray;
-            this.panel7.Location = new System.Drawing.Point(2, 2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(710, 473);
-            this.panel7.TabIndex = 0;
-            // 
-            // ClientPortal
+            // App_RegisterUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 531);
+            this.ClientSize = new System.Drawing.Size(1144, 532);
             this.Controls.Add(this.panel1);
-            this.Name = "ClientPortal";
-            this.Text = "ClientPortal";
+            this.Name = "App_RegisterUser";
+            this.Text = "App_RegisterClient";
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tbpPerInfo.ResumeLayout(false);
-            this.tbpAddress.ResumeLayout(false);
-            this.tbpBilInfo.ResumeLayout(false);
-            this.tbpCurSys.ResumeLayout(false);
-            this.tbpPurHist.ResumeLayout(false);
-            this.tbpChat.ResumeLayout(false);
+            this.tbpPerInfoClient.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tbpPhysicalAdd.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tbpBilling.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.btnBLogin.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1176,13 +885,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tbpPerInfo;
-        private System.Windows.Forms.TabPage tbpAddress;
-        private System.Windows.Forms.TabPage tbpBilInfo;
-        private System.Windows.Forms.TabPage tbpCurSys;
-        private System.Windows.Forms.TabPage tbpPurHist;
-        private System.Windows.Forms.TabPage tbpChat;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TabPage tbpPerInfoClient;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -1200,13 +903,13 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbxCell;
+        private System.Windows.Forms.TextBox txtbxSSID;
+        private System.Windows.Forms.TextBox txtbxDateofB;
+        private System.Windows.Forms.TextBox txtbxPass;
+        private System.Windows.Forms.TextBox txtbxEmail;
+        private System.Windows.Forms.TextBox txtbxLname;
+        private System.Windows.Forms.TextBox txtbxFName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -1214,6 +917,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage tbpPhysicalAdd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBox9;
@@ -1228,6 +932,7 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TabPage tbpBilling;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -1247,30 +952,8 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.RichTextBox rtxtbxSafProc;
-        private System.Windows.Forms.RichTextBox etxtbxEnergyProc;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox txtbxSysNameCl;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.GroupBox btnBLogin;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRegister;
     }
 }

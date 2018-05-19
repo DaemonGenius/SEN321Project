@@ -27,50 +27,50 @@ namespace TestingPurposes
             #region Select Christian
             DataContext db = new DataContext("Data Source=.;Initial Catalog=SHSdb3;Integrated Security=True;");
            
-            Table<Persons> People = db.GetTable<Persons>();
+            Table<People> People = db.GetTable<People>();
 
             
 
 
-            IQueryable<Persons> perQuery =
+            IQueryable<People> perQuery =
                 from p in People
-                where p.p_FirstName == "Christian"
+                where p.FirstName == "Christian"
                 select p;
 
 
-            foreach (Persons item in perQuery)
+            foreach (People item in perQuery)
             {
-                Console.WriteLine("Customer Name: {0}", item.p_FirstName);
+                Console.WriteLine("Customer Name: {0}", item.FirstName);
             }
 
             #endregion
-
+            Console.ReadKey();
             #region Insert Someone
-            Persons persons = new Persons
-            {
-                ID = 3,
-                p_FirstName = fname,
-                p_LastName = lname,
-                p_EmailAddress = lname,
-                p_CellNumber = cell,
-                p_Password = pass,
-                p_DOB = DOB,
-                p_SSID = ssid
-            };
+            //People persons = new People
+            //{
 
-            People.InsertOnSubmit(persons);
-            db.SubmitChanges();
+            //    p_FirstName = fname,
+            //    p_LastName = lname,
+            //    p_EmailAddress = email,
+            //    p_CellNumber = cell,
+            //    p_Password = pass,
+            //    p_DOB = DOB,
+            //    p_SSID = ssid
+            //};
+
+            //People.InsertOnSubmit(persons);
+            //db.SubmitChanges();
             #endregion
-
+            Console.ReadKey();
             #region Update
             var query =
                 from p in People
                 where p.ID == 2
                 select p;
             
-            foreach (Persons item in query)
+            foreach (People item in query)
             {
-                item.p_FirstName = "Christian Martin";
+                item.FirstName = "Christian Martin";
                 
             }
             try
@@ -83,7 +83,7 @@ namespace TestingPurposes
                 
             }
             #endregion
-
+            Console.ReadKey();
             #region Delete
             var deleteUser =
                 from p in People

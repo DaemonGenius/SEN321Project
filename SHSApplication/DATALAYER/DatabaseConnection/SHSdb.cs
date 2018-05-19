@@ -10,7 +10,15 @@ namespace DATALAYER.DatabaseConnection
 {
     public partial class SHSdb : DataContext
     {
-        public Table<Persons> peoples;
+        public Table<People> peoples;
+        public Table<Address> Address;
+        public Table<Billinginfoe> BillingInfo;
+        
         public SHSdb(string connection) : base(connection) { }
+
+        public SHSdb() : base("Data Source=.;Initial Catalog=SHSdb4;Integrated Security=True;")
+        {
+            
+        }
     }
 }

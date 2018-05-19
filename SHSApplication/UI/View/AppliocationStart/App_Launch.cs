@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI.View.ClientSide
+
+namespace UI.View.AppliocationStart
 {
-    public partial class ClientPortal : Form
+    public partial class App_Launch : Form
     {
-        public ClientPortal()
+        public App_Launch()
         {
             InitializeComponent();
+        }
+
+        private void App_Launch_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

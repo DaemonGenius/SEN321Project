@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI.View.SharedViews
+namespace UI.View.ClientSide
 {
-    public partial class App_RegisterClient : Form
+    public partial class ClientPortalView : Form
     {
-        public App_RegisterClient()
+        public ClientPortalView()
         {
             InitializeComponent();
         }

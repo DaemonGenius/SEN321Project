@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SHSdb4" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SHSdb4;Integrated Security=True" SettingsObjectName="DATALAYER.Properties.Settings" SettingsPropertyName="SHSdb4ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.People" Member="Peoples">
+    <Type Name="People">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SSID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CellNumber" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="People_Billinginfoe" Member="Billinginfoes" ThisKey="ID" OtherKey="Person_ID" Type="Billinginfoe" />
+      <Association Name="Address_People" Member="Address" ThisKey="Address_ID" OtherKey="ID" Type="Address" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Addresses" Member="Addresses">
+    <Type Name="Address">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Street" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="StreetNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Zipcode" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Address_People" Member="Peoples" ThisKey="ID" OtherKey="Address_ID" Type="People" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Billinginfoes" Member="Billinginfoes">
+    <Type Name="Billinginfoe">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CardName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CardNum" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CardCVV" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CardExpireDate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CardType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="People_Billinginfoe" Member="People" ThisKey="Person_ID" OtherKey="ID" Type="People" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
