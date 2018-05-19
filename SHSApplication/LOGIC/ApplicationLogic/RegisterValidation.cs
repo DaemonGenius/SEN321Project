@@ -15,6 +15,12 @@ namespace LOGIC.ApplicationLogic
         BusinessLogic.RegistrationProcess RegistrationProcess = new BusinessLogic.RegistrationProcess();
         #endregion
 
+        #region Public Lists
+        public List<DATALAYER.Controllers.People> peoplelst = new List<DATALAYER.Controllers.People>();
+        public string fname, lname, email, cell, pass, DOB, ssid, StreetName, Zipcode, City, Province, Country, cardNum, cardName, cardCVC, cardType, cardExpiryDate;
+        public int StreetNum;
+        #endregion
+
         // Name        @"^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$"@
         // ID          @^\d{13}$
         // DOB         @"^\d{1,2}\/\d{1,2}\/\d{4}$"
@@ -81,7 +87,8 @@ namespace LOGIC.ApplicationLogic
             Regex r = new Regex(@"^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$");
             if (r.IsMatch(Fname) && r.IsMatch(Lname))
             {
-                RegisterUser();
+                fname = Fname;
+                lname = Lname;
                 return true;
             }
             else
@@ -170,10 +177,10 @@ namespace LOGIC.ApplicationLogic
         #endregion
 
         #region Register User
-        public bool RegisterUser()
+        public bool RegisterUser(string fName, string lName)
         {
-            string fname, lname, email, cell, pass, DOB, ssid, StreetName, Zipcode, City, Province, Country, cardNum, cardName, cardCVC, cardType, cardExpiryDate;
-                int StreetNum;
+            fName = fname;
+            lName = lname;
                                   
             
 
