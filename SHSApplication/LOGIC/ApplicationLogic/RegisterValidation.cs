@@ -74,7 +74,8 @@ namespace LOGIC.ApplicationLogic
              @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$");
             if (r.IsMatch(Email))
             {
-                LoginProcess.Login(Email, pass);
+                //RegisterUser(email, pass);
+               
                 DepartmentType();
                 return true;
             }
@@ -177,13 +178,67 @@ namespace LOGIC.ApplicationLogic
         #endregion
 
         #region Register User
-        public bool RegisterUser(string fName, string lName)
+        public bool RegisterUser(string fname,string lname,string email,string cell,string pass,string DOB,string ssid,string StreetName,string Zipcode,
+            string City,string Province,string Country,string cardNum, string cardName,string cardCVC, string cardType, string cardExpiryDate, int StreetNum, string department)
         {
-            fName = fname;
-            lName = lname;
-                                  
-            
-
+            Regex rEmail = new Regex(@"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+             @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$");
+            Regex rFLname = new Regex(@"^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$");
+            Regex rDOB = new Regex(@"^\d{1,2}\/\d{1,2}\/\d{4}$");
+            Regex rID = new Regex(@"^\d{ 13 }$");
+            Regex rCell = new Regex(@"0((60[3-9]|64[0-5])\d{6}|(7[1-4689]|6[1-3]|8[1-4])\d{7})");
+            Regex rZip = new Regex(@"\d{4}");
+            Regex rStreetNu = new Regex(@"\d{4}");
+            Regex rCardName = new Regex(@"^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$");
+            Regex rCardNum = new Regex(@"\d{4}-?\d{4}-?\d{4}-?\d{4}");
+            if (rEmail.IsMatch(email))
+            {
+                if (rFLname.IsMatch(fname) && rFLname.IsMatch(lname))
+                {                    
+                    if (rDOB.IsMatch(DOB))
+                    {
+                        if (rID.IsMatch(ssid))
+                        {
+                            if (rCell.IsMatch(cell))
+                            {
+                                if (rZip.IsMatch(Zipcode))
+                                {
+                                    if (rStreetNu.IsMatch(StreetNum.ToString()))
+                                    {
+                                        if (rCardName.IsMatch(cardName))
+                                        {
+                                            if (rCardNum.IsMatch(cardNum))
+                                            {
+                                                RegistrationProcess.RegisterUser(fname, lname, email, cell, pass, DOB, ssid, StreetNum, StreetName,
+                                                    Zipcode, City, Province, Country, cardNum, cardName, cardCVC, cardType, cardExpiryDate, department);
+                                                return true;
+                                            }
+                                            else
+                                                return false;                                           
+                                        }
+                                        else
+                                            return false;                                      
+                                    }
+                                    else
+                                        return false;                                   
+                                }
+                                else
+                                    return false;                               
+                            }
+                            else
+                                return false;                            
+                        }
+                        else
+                            return false;                        
+                    }
+                    else
+                        return false;                    
+                }
+                else
+                    return false;                
+            }
+            else
+                return false;
         }
         #endregion
 

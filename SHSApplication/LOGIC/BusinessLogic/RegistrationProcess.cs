@@ -16,13 +16,14 @@ namespace LOGIC.BusinessLogic
         //DATALAYER.DatabaseConnection.SHSdb db1 = new DATALAYER.DatabaseConnection.SHSdb();
         static DataContext db = new DataContext("Data Source=.;Initial Catalog=SHSdb4;Integrated Security=True;");
         Table<People> People =  db.GetTable<People>();
+        Table<Billinginfoe> Billinginfoe = db.GetTable<Billinginfoe>();
         #region RegisterUser
-
+       
         public void RegisterUser(string fname, string lname, string email, string cell, string pass, string DOB, string ssid, 
                                   int StreetNum, string StreetName, string Zipcode, string City, string Province, string Country,
-                                  string cardNum, string cardName, string cardCVC, string cardType, string cardExpiryDate)
+                                  string cardNum, string cardName, string cardCVC, string cardType, string cardExpiryDate, string department)
         {
-
+            int ID;
             People people = new People();
 
             people = new People
@@ -42,28 +43,35 @@ namespace LOGIC.BusinessLogic
                     Country = Country,
                     Province = Province,
                     Zipcode = Zipcode,
-                },
-                Billinginfoes = (from Bilinfo in people.Billinginfoes
-                                 select new Billinginfoe
-                                 {
-                                     CardName = cardName,
-                                     CardNum = cardNum,
-                                     CardCVV = cardCVC,
-                                     CardExpireDate = cardExpiryDate,
-                                     CardType = cardType,
-                                 }).ToEntitySet()
+                },                
+                Department = department
 
             };
-                People.InsertOnSubmit(people);
-                db.SubmitChanges();            
             
-        }
-
-       
-
-
-
+            People.InsertOnSubmit(people);
+            db.SubmitChanges();
+            ID = people.ID;
+            registerbiliing(ID, cardNum, cardName, cardCVC, cardType, cardExpiryDate);
+        } 
         #endregion
 
+
+        public void registerbiliing(int ID,string cardNum, string cardName, string cardCVC, string cardType, string cardExpiryDate)
+        {
+            Billinginfoe billinginfoe = new Billinginfoe();
+           
+            billinginfoe = new Billinginfoe()
+            {
+                CardName = cardName,
+                CardNum = cardNum,
+                CardCVV = cardCVC,
+                CardExpireDate = cardExpiryDate,
+                CardType = cardType,
+                Person_ID = ID
+                
+            };
+            Billinginfoe.InsertOnSubmit(billinginfoe);
+            db.SubmitChanges();
+        }
     }
 }
