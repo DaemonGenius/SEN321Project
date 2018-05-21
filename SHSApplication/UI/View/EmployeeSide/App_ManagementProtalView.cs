@@ -72,5 +72,76 @@ namespace UI.View.EmployeeSide
             View.SharedViews.App_RegisterUser registerUser = new SharedViews.App_RegisterUser();
             registerUser.Show();
         }
+
+        private void btnClientProducts_Click(object sender, EventArgs e)
+        {
+            tbpClients.Hide();
+            tbpScheduleMain.Hide();
+            tbpProductManagement.Hide();
+            tbpCallCentre.Hide();
+            tbpProducts.Show();
+        }
+
+        private void btnViewClient_Click(object sender, EventArgs e)
+        {
+            tbpProducts.Hide();
+            tbpScheduleMain.Hide();
+            tbpProductManagement.Hide();
+            tbpCallCentre.Hide();
+            tbpClients.Show();
+        }
+
+        private void label31_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewLogs_Click(object sender, EventArgs e)
+        {
+            tblCCClient.Hide();
+            tbpCCAdmin.Hide();
+            tblCCLogs.Show();
+        }
+
+        private void btnMsgA_Click(object sender, EventArgs e)
+        {
+            tbpCCAdmin.Show();
+            tblCCClient.Hide();
+            tblCCLogs.Hide();
+        }
+
+        private void btnMsgClient_Click(object sender, EventArgs e)
+        {
+            tblCCClient.Show();
+            tbpCCAdmin.Hide();
+            tblCCLogs.Hide();
+        }
+
+        private void btnProductManage_Click(object sender, EventArgs e)
+        {
+            tbpProductManagement.Show();
+            tbpClients.Hide();
+            tbpProducts.Hide();
+            tbpScheduleMain.Hide();
+            tbpCallCentre.Hide();
+        }
+
+        private void btnScheManagement_Click(object sender, EventArgs e)
+        {
+            tbpScheduleMain.Show();
+            tbpClients.Hide();
+            tbpProducts.Hide();
+            tbpProductManagement.Hide();
+            tbpCallCentre.Hide();
+        }
+
+        private void btnCallCentre_Click(object sender, EventArgs e)
+        {
+            tbpScheduleMain.Hide();
+            tbpClients.Hide();
+            tbpProducts.Hide();
+            tbpProductManagement.Hide();
+            tbpCallCentre.Show();
+        }
     }
 }
