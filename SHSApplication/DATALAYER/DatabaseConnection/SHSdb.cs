@@ -13,6 +13,10 @@ namespace DATALAYER.DatabaseConnection
         public Table<People> peoples;
         public Table<Address> Address;
         public Table<Billinginfoe> BillingInfo;
+        public Table<Client> Clients;
+        public Table<Admin> admins;
+
+        
         
         public SHSdb(string connection) : base(connection) { }
 

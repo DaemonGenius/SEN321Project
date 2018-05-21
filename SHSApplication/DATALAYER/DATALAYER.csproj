@@ -44,9 +44,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Address.cs" />
+    <Compile Include="Controllers\Admin.cs" />
     <Compile Include="Controllers\BillingInfo.cs" />
+    <Compile Include="Controllers\Carts.cs" />
     <Compile Include="Controllers\Client.cs" />
+    <Compile Include="Controllers\Contract.cs" />
+    <Compile Include="Controllers\ConvienceProduct.cs" />
+    <Compile Include="Controllers\EnergyProducts.cs" />
+    <Compile Include="Controllers\Maintenance.cs" />
+    <Compile Include="Controllers\Messaging.cs" />
     <Compile Include="Controllers\People.cs" />
+    <Compile Include="Controllers\ProductSystem.cs" />
+    <Compile Include="Controllers\SafetyProduct.cs" />
+    <Compile Include="Controllers\Sale_Emp.cs" />
+    <Compile Include="Controllers\Schedule.cs" />
+    <Compile Include="Controllers\Systems.cs" />
+    <Compile Include="Controllers\TechnicianEmp.cs" />
+    <Compile Include="Controllers\Transaction.cs" />
+    <Compile Include="Controllers\Warrenty.cs" />
     <Compile Include="DataAccess\DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

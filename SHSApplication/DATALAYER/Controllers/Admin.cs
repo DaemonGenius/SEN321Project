@@ -9,19 +9,17 @@ using System.Threading.Tasks;
 
 namespace DATALAYER.Controllers
 {
-    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.Clients")]
-    public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
+    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.Admins")]
+    public partial class Admin : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 
         private int _ID;
 
-        private System.Nullable<int> _Person_ID;
-
         private System.Nullable<int> _Messaging_ID;
 
-        private EntitySet<Transaction> _Transactions;
+        private System.Nullable<int> _person_ID;
 
         private EntityRef<People> _People;
 
@@ -33,15 +31,14 @@ namespace DATALAYER.Controllers
         partial void OnCreated();
         partial void OnIDChanging(int value);
         partial void OnIDChanged();
-        partial void OnPerson_IDChanging(System.Nullable<int> value);
-        partial void OnPerson_IDChanged();
         partial void OnMessaging_IDChanging(System.Nullable<int> value);
         partial void OnMessaging_IDChanged();
+        partial void Onperson_IDChanging(System.Nullable<int> value);
+        partial void Onperson_IDChanged();
         #endregion
 
-        public Client()
+        public Admin()
         {
-            this._Transactions = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions), new Action<Transaction>(this.detach_Transactions));
             this._People = default(EntityRef<People>);
             this._Messaging = default(EntityRef<Messaging>);
             OnCreated();
@@ -63,30 +60,6 @@ namespace DATALAYER.Controllers
                     this._ID = value;
                     this.SendPropertyChanged("ID");
                     this.OnIDChanged();
-                }
-            }
-        }
-
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Person_ID", DbType = "Int")]
-        public System.Nullable<int> Person_ID
-        {
-            get
-            {
-                return this._Person_ID;
-            }
-            set
-            {
-                if ((this._Person_ID != value))
-                {
-                    if (this._People.HasLoadedOrAssignedValue)
-                    {
-                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-                    }
-                    this.OnPerson_IDChanging(value);
-                    this.SendPropertyChanging();
-                    this._Person_ID = value;
-                    this.SendPropertyChanged("Person_ID");
-                    this.OnPerson_IDChanged();
                 }
             }
         }
@@ -115,20 +88,31 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Client_Transaction", Storage = "_Transactions", ThisKey = "ID", OtherKey = "Client_ID")]
-        public EntitySet<Transaction> Transactions
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_person_ID", DbType = "Int")]
+        public System.Nullable<int> person_ID
         {
             get
             {
-                return this._Transactions;
+                return this._person_ID;
             }
             set
             {
-                this._Transactions.Assign(value);
+                if ((this._person_ID != value))
+                {
+                    if (this._People.HasLoadedOrAssignedValue)
+                    {
+                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+                    }
+                    this.Onperson_IDChanging(value);
+                    this.SendPropertyChanging();
+                    this._person_ID = value;
+                    this.SendPropertyChanged("person_ID");
+                    this.Onperson_IDChanged();
+                }
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_Client", Storage = "_People", ThisKey = "Person_ID", OtherKey = "ID", IsForeignKey = true)]
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_Admin", Storage = "_People", ThisKey = "person_ID", OtherKey = "ID", IsForeignKey = true)]
         public People People
         {
             get
@@ -145,24 +129,24 @@ namespace DATALAYER.Controllers
                     if ((previousValue != null))
                     {
                         this._People.Entity = null;
-                        previousValue.Clients.Remove(this);
+                        previousValue.Admins.Remove(this);
                     }
                     this._People.Entity = value;
                     if ((value != null))
                     {
-                        value.Clients.Add(this);
-                        this._Person_ID = value.ID;
+                        value.Admins.Add(this);
+                        this._person_ID = value.ID;
                     }
                     else
                     {
-                        this._Person_ID = default(Nullable<int>);
+                        this._person_ID = default(Nullable<int>);
                     }
                     this.SendPropertyChanged("People");
                 }
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Messaging_Client", Storage = "_Messaging", ThisKey = "Messaging_ID", OtherKey = "ID", IsForeignKey = true)]
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Messaging_Admin", Storage = "_Messaging", ThisKey = "Messaging_ID", OtherKey = "ID", IsForeignKey = true)]
         public Messaging Messaging
         {
             get
@@ -179,12 +163,12 @@ namespace DATALAYER.Controllers
                     if ((previousValue != null))
                     {
                         this._Messaging.Entity = null;
-                        previousValue.Clients.Remove(this);
+                        previousValue.Admins.Remove(this);
                     }
                     this._Messaging.Entity = value;
                     if ((value != null))
                     {
-                        value.Clients.Add(this);
+                        value.Admins.Add(this);
                         this._Messaging_ID = value.ID;
                     }
                     else
@@ -215,19 +199,5 @@ namespace DATALAYER.Controllers
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
-        private void attach_Transactions(Transaction entity)
-        {
-            this.SendPropertyChanging();
-            entity.Client = this;
-        }
-
-        private void detach_Transactions(Transaction entity)
-        {
-            this.SendPropertyChanging();
-            entity.Client = null;
-        }
     }
-
-
 }

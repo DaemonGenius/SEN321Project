@@ -14,6 +14,10 @@
       <Column Name="Department" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Gender" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="People_Billinginfoe" Member="Billinginfoes" ThisKey="ID" OtherKey="Person_ID" Type="Billinginfoe" />
+      <Association Name="People_Admin" Member="Admins" ThisKey="ID" OtherKey="person_ID" Type="Admin" />
+      <Association Name="People_Client" Member="Clients" ThisKey="ID" OtherKey="Person_ID" Type="Client" />
+      <Association Name="People_TechnicianEmp" Member="TechnicianEmps" ThisKey="ID" OtherKey="Person_ID" Type="TechnicianEmp" />
+      <Association Name="People_Sale_Emp" Member="Sale_Emps" ThisKey="ID" OtherKey="Person_ID" Type="Sale_Emp" />
       <Association Name="Address_People" Member="Address" ThisKey="Address_ID" OtherKey="ID" Type="Address" IsForeignKey="true" />
     </Type>
   </Table>
@@ -39,6 +43,172 @@
       <Column Name="CardType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="People_Billinginfoe" Member="People" ThisKey="Person_ID" OtherKey="ID" Type="People" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admins" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Messaging_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="People_Admin" Member="People" ThisKey="person_ID" OtherKey="ID" Type="People" IsForeignKey="true" />
+      <Association Name="Messaging_Admin" Member="Messaging" ThisKey="Messaging_ID" OtherKey="ID" Type="Messaging" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Clients" Member="Clients">
+    <Type Name="Client">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Messaging_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Client_Transaction" Member="Transactions" ThisKey="ID" OtherKey="Client_ID" Type="Transaction" />
+      <Association Name="People_Client" Member="People" ThisKey="Person_ID" OtherKey="ID" Type="People" IsForeignKey="true" />
+      <Association Name="Messaging_Client" Member="Messaging" ThisKey="Messaging_ID" OtherKey="ID" Type="Messaging" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TechnicianEmps" Member="TechnicianEmps">
+    <Type Name="TechnicianEmp">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Messaging_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TechnicianEmp_Schedule" Member="Schedules" ThisKey="ID" OtherKey="TechnicianEmp_ID" Type="Schedule" />
+      <Association Name="TechnicianEmp_Transaction" Member="Transactions" ThisKey="ID" OtherKey="TechnicianEmp_ID" Type="Transaction" />
+      <Association Name="People_TechnicianEmp" Member="People" ThisKey="Person_ID" OtherKey="ID" Type="People" IsForeignKey="true" />
+      <Association Name="Messaging_TechnicianEmp" Member="Messaging" ThisKey="Messaging_ID" OtherKey="ID" Type="Messaging" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sale_Emp" Member="Sale_Emps">
+    <Type Name="Sale_Emp">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Messaging_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Sale_Emp_Transaction" Member="Transactions" ThisKey="ID" OtherKey="SaleEmp_ID" Type="Transaction" />
+      <Association Name="People_Sale_Emp" Member="People" ThisKey="Person_ID" OtherKey="ID" Type="People" IsForeignKey="true" />
+      <Association Name="Messaging_Sale_Emp" Member="Messaging" ThisKey="Messaging_ID" OtherKey="ID" Type="Messaging" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Schedules" Member="Schedules">
+    <Type Name="Schedule">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InsDateStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MainDateStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TechnicianEmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TechnicianEmp_Schedule" Member="TechnicianEmp" ThisKey="TechnicianEmp_ID" OtherKey="ID" Type="TechnicianEmp" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contracts" Member="Contracts">
+    <Type Name="Contract">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContractName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Discription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DateExpire" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Contract_Maintenance" Member="Maintenances" ThisKey="ID" OtherKey="Contract_ID" Type="Maintenance" />
+      <Association Name="Contract_Transaction" Member="Transactions" ThisKey="ID" OtherKey="Contract_ID" Type="Transaction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Maintenances" Member="Maintenances">
+    <Type Name="Maintenance">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DateStart" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Contract_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Contract_Maintenance" Member="Contract" ThisKey="Contract_ID" OtherKey="ID" Type="Contract" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Messagings" Member="Messagings">
+    <Type Name="Messaging">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="subject" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Sender" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Receiver" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Msg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Log]" Member="Log" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Messaging_Admin" Member="Admins" ThisKey="ID" OtherKey="Messaging_ID" Type="Admin" />
+      <Association Name="Messaging_Client" Member="Clients" ThisKey="ID" OtherKey="Messaging_ID" Type="Client" />
+      <Association Name="Messaging_TechnicianEmp" Member="TechnicianEmps" ThisKey="ID" OtherKey="Messaging_ID" Type="TechnicianEmp" />
+      <Association Name="Messaging_Sale_Emp" Member="Sale_Emps" ThisKey="ID" OtherKey="Messaging_ID" Type="Sale_Emp" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transactions" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cart_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Client_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Contract_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaleEmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TechnicianEmp_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Client_Transaction" Member="Client" ThisKey="Client_ID" OtherKey="ID" Type="Client" IsForeignKey="true" />
+      <Association Name="Contract_Transaction" Member="Contract" ThisKey="Contract_ID" OtherKey="ID" Type="Contract" IsForeignKey="true" />
+      <Association Name="Sale_Emp_Transaction" Member="Sale_Emp" ThisKey="SaleEmp_ID" OtherKey="ID" Type="Sale_Emp" IsForeignKey="true" />
+      <Association Name="TechnicianEmp_Transaction" Member="TechnicianEmp" ThisKey="TechnicianEmp_ID" OtherKey="ID" Type="TechnicianEmp" IsForeignKey="true" />
+      <Association Name="Cart_Transaction" Member="Cart" ThisKey="Cart_ID" OtherKey="ID" Type="Cart" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Carts" Member="Carts">
+    <Type Name="Cart">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Cart_Transaction" Member="Transactions" ThisKey="ID" OtherKey="Cart_ID" Type="Transaction" />
+      <Association Name="Cart_ProductSystem" Member="ProductSystems" ThisKey="ID" OtherKey="Cart_ID" Type="ProductSystem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductSystems" Member="ProductSystems">
+    <Type Name="ProductSystem">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Cart_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ProductSystem_SafetyProduct" Member="SafetyProducts" ThisKey="ID" OtherKey="ProductSystems_ID" Type="SafetyProduct" />
+      <Association Name="ProductSystem_ConvienceProduct" Member="ConvienceProducts" ThisKey="ID" OtherKey="ProductSystems_ID" Type="ConvienceProduct" />
+      <Association Name="ProductSystem_EnergyProduct" Member="EnergyProducts" ThisKey="ID" OtherKey="ProductSystems_ID" Type="EnergyProduct" />
+      <Association Name="Cart_ProductSystem" Member="Cart" ThisKey="Cart_ID" OtherKey="ID" Type="Cart" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SafetyProducts" Member="SafetyProducts">
+    <Type Name="SafetyProduct">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Discription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Warrenty_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductSystems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ProductSystem_SafetyProduct" Member="ProductSystem" ThisKey="ProductSystems_ID" OtherKey="ID" Type="ProductSystem" IsForeignKey="true" />
+      <Association Name="Warrenty_SafetyProduct" Member="Warrenty" ThisKey="Warrenty_ID" OtherKey="ID" Type="Warrenty" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ConvienceProducts" Member="ConvienceProducts">
+    <Type Name="ConvienceProduct">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Discription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Warrenty_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductSystems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ProductSystem_ConvienceProduct" Member="ProductSystem" ThisKey="ProductSystems_ID" OtherKey="ID" Type="ProductSystem" IsForeignKey="true" />
+      <Association Name="Warrenty_ConvienceProduct" Member="Warrenty" ThisKey="Warrenty_ID" OtherKey="ID" Type="Warrenty" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnergyProducts" Member="EnergyProducts">
+    <Type Name="EnergyProduct">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Discription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Warrenty_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductSystems_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ProductSystem_EnergyProduct" Member="ProductSystem" ThisKey="ProductSystems_ID" OtherKey="ID" Type="ProductSystem" IsForeignKey="true" />
+      <Association Name="Warrenty_EnergyProduct" Member="Warrenty" ThisKey="Warrenty_ID" OtherKey="ID" Type="Warrenty" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Warrenties" Member="Warrenties">
+    <Type Name="Warrenty">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Duration" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Discription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Warrenty_SafetyProduct" Member="SafetyProducts" ThisKey="ID" OtherKey="Warrenty_ID" Type="SafetyProduct" />
+      <Association Name="Warrenty_ConvienceProduct" Member="ConvienceProducts" ThisKey="ID" OtherKey="Warrenty_ID" Type="ConvienceProduct" />
+      <Association Name="Warrenty_EnergyProduct" Member="EnergyProducts" ThisKey="ID" OtherKey="Warrenty_ID" Type="EnergyProduct" />
     </Type>
   </Table>
 </Database>

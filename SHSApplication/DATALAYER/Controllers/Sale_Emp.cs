@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace DATALAYER.Controllers
 {
-    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.Clients")]
-    public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
+    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.Sale_Emp")]
+    public partial class Sale_Emp : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -39,7 +39,7 @@ namespace DATALAYER.Controllers
         partial void OnMessaging_IDChanged();
         #endregion
 
-        public Client()
+        public Sale_Emp()
         {
             this._Transactions = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions), new Action<Transaction>(this.detach_Transactions));
             this._People = default(EntityRef<People>);
@@ -115,7 +115,7 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Client_Transaction", Storage = "_Transactions", ThisKey = "ID", OtherKey = "Client_ID")]
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Sale_Emp_Transaction", Storage = "_Transactions", ThisKey = "ID", OtherKey = "SaleEmp_ID")]
         public EntitySet<Transaction> Transactions
         {
             get
@@ -128,7 +128,7 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_Client", Storage = "_People", ThisKey = "Person_ID", OtherKey = "ID", IsForeignKey = true)]
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_Sale_Emp", Storage = "_People", ThisKey = "Person_ID", OtherKey = "ID", IsForeignKey = true)]
         public People People
         {
             get
@@ -145,12 +145,12 @@ namespace DATALAYER.Controllers
                     if ((previousValue != null))
                     {
                         this._People.Entity = null;
-                        previousValue.Clients.Remove(this);
+                        previousValue.Sale_Emps.Remove(this);
                     }
                     this._People.Entity = value;
                     if ((value != null))
                     {
-                        value.Clients.Add(this);
+                        value.Sale_Emps.Add(this);
                         this._Person_ID = value.ID;
                     }
                     else
@@ -162,7 +162,7 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Messaging_Client", Storage = "_Messaging", ThisKey = "Messaging_ID", OtherKey = "ID", IsForeignKey = true)]
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Messaging_Sale_Emp", Storage = "_Messaging", ThisKey = "Messaging_ID", OtherKey = "ID", IsForeignKey = true)]
         public Messaging Messaging
         {
             get
@@ -179,12 +179,12 @@ namespace DATALAYER.Controllers
                     if ((previousValue != null))
                     {
                         this._Messaging.Entity = null;
-                        previousValue.Clients.Remove(this);
+                        previousValue.Sale_Emps.Remove(this);
                     }
                     this._Messaging.Entity = value;
                     if ((value != null))
                     {
-                        value.Clients.Add(this);
+                        value.Sale_Emps.Add(this);
                         this._Messaging_ID = value.ID;
                     }
                     else
@@ -219,15 +219,13 @@ namespace DATALAYER.Controllers
         private void attach_Transactions(Transaction entity)
         {
             this.SendPropertyChanging();
-            entity.Client = this;
+            entity.Sale_Emp = this;
         }
 
         private void detach_Transactions(Transaction entity)
         {
             this.SendPropertyChanging();
-            entity.Client = null;
+            entity.Sale_Emp = null;
         }
     }
-
-
 }
