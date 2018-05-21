@@ -58,6 +58,10 @@ namespace LOGIC.BusinessLogic
             return es;
         }
         #endregion
+
+        #region ClientProductSearch
+
+        #endregion
     }
 
 
