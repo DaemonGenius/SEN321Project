@@ -13,7 +13,24 @@ namespace DATALAYER.DatabaseConnection
         public Table<People> peoples;
         public Table<Address> Address;
         public Table<Billinginfoe> BillingInfo;
-        
+        public Table<Client> Clients;
+        public Table<Admin> admins;
+        public Table<TechnicianEmp> technicianEmps;
+        public Table<Sale_Emp> sale_Emps;
+        public Table<Messaging> messagings;
+        public Table<Transaction> transactions;
+        public Table<Contract> contracts;
+        public Table<Maintenance> maintenances;
+        public Table<Schedule> schedules;
+        public Table<Cart> carts;
+        public Table<ProductSystem> productSystems;
+        public Table<EnergyProduct> energyProducts;
+        public Table<ConvienceProduct> convienceProducts;
+        public Table<SafetyProduct> safetyProducts;
+        public Table<Warrenty> warrenties;     
+
+
+
         public SHSdb(string connection) : base(connection) { }
 
         public SHSdb() : base("Data Source=.;Initial Catalog=SHSdb4;Integrated Security=True;")

@@ -39,6 +39,14 @@ namespace DATALAYER.Controllers
 
         private EntitySet<Billinginfoe> _Billinginfoes;
 
+        private EntitySet<Admin> _Admins;
+
+        private EntitySet<Client> _Clients;
+
+        private EntitySet<TechnicianEmp> _TechnicianEmps;
+
+        private EntitySet<Sale_Emp> _Sale_Emps;
+
         private EntityRef<Address> _Address;
 
         #region Extensibility Method Definitions
@@ -72,6 +80,10 @@ namespace DATALAYER.Controllers
         public People()
         {
             this._Billinginfoes = new EntitySet<Billinginfoe>(new Action<Billinginfoe>(this.attach_Billinginfoes), new Action<Billinginfoe>(this.detach_Billinginfoes));
+            this._Admins = new EntitySet<Admin>(new Action<Admin>(this.attach_Admins), new Action<Admin>(this.detach_Admins));
+            this._Clients = new EntitySet<Client>(new Action<Client>(this.attach_Clients), new Action<Client>(this.detach_Clients));
+            this._TechnicianEmps = new EntitySet<TechnicianEmp>(new Action<TechnicianEmp>(this.attach_TechnicianEmps), new Action<TechnicianEmp>(this.detach_TechnicianEmps));
+            this._Sale_Emps = new EntitySet<Sale_Emp>(new Action<Sale_Emp>(this.attach_Sale_Emps), new Action<Sale_Emp>(this.detach_Sale_Emps));
             this._Address = default(EntityRef<Address>);
             OnCreated();
         }
@@ -313,6 +325,58 @@ namespace DATALAYER.Controllers
             }
         }
 
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_Admin", Storage = "_Admins", ThisKey = "ID", OtherKey = "person_ID")]
+        public EntitySet<Admin> Admins
+        {
+            get
+            {
+                return this._Admins;
+            }
+            set
+            {
+                this._Admins.Assign(value);
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_Client", Storage = "_Clients", ThisKey = "ID", OtherKey = "Person_ID")]
+        public EntitySet<Client> Clients
+        {
+            get
+            {
+                return this._Clients;
+            }
+            set
+            {
+                this._Clients.Assign(value);
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_TechnicianEmp", Storage = "_TechnicianEmps", ThisKey = "ID", OtherKey = "Person_ID")]
+        public EntitySet<TechnicianEmp> TechnicianEmps
+        {
+            get
+            {
+                return this._TechnicianEmps;
+            }
+            set
+            {
+                this._TechnicianEmps.Assign(value);
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_Sale_Emp", Storage = "_Sale_Emps", ThisKey = "ID", OtherKey = "Person_ID")]
+        public EntitySet<Sale_Emp> Sale_Emps
+        {
+            get
+            {
+                return this._Sale_Emps;
+            }
+            set
+            {
+                this._Sale_Emps.Assign(value);
+            }
+        }
+
         [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Address_People", Storage = "_Address", ThisKey = "Address_ID", OtherKey = "ID", IsForeignKey = true)]
         public Address Address
         {
@@ -374,6 +438,54 @@ namespace DATALAYER.Controllers
         }
 
         private void detach_Billinginfoes(Billinginfoe entity)
+        {
+            this.SendPropertyChanging();
+            entity.People = null;
+        }
+
+        private void attach_Admins(Admin entity)
+        {
+            this.SendPropertyChanging();
+            entity.People = this;
+        }
+
+        private void detach_Admins(Admin entity)
+        {
+            this.SendPropertyChanging();
+            entity.People = null;
+        }
+
+        private void attach_Clients(Client entity)
+        {
+            this.SendPropertyChanging();
+            entity.People = this;
+        }
+
+        private void detach_Clients(Client entity)
+        {
+            this.SendPropertyChanging();
+            entity.People = null;
+        }
+
+        private void attach_TechnicianEmps(TechnicianEmp entity)
+        {
+            this.SendPropertyChanging();
+            entity.People = this;
+        }
+
+        private void detach_TechnicianEmps(TechnicianEmp entity)
+        {
+            this.SendPropertyChanging();
+            entity.People = null;
+        }
+
+        private void attach_Sale_Emps(Sale_Emp entity)
+        {
+            this.SendPropertyChanging();
+            entity.People = this;
+        }
+
+        private void detach_Sale_Emps(Sale_Emp entity)
         {
             this.SendPropertyChanging();
             entity.People = null;

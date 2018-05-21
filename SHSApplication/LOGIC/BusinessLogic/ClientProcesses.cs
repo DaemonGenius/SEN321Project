@@ -15,7 +15,8 @@ namespace LOGIC.BusinessLogic
         public static async Task<People> ClientSearch(string Username)
         {
             using (var dbe = new SHSdb())
-            {  People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
+            {
+                People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
                 //Billinginfoe billinginfoe = dbe.BillingInfo.FirstOrDefault(x => x.ID == person.ID);
                 return new People()
                 {
@@ -45,21 +46,6 @@ namespace LOGIC.BusinessLogic
                                          CardExpireDate = Bilinfo.CardExpireDate,
                                          CardType = Bilinfo.CardType,
                                      }).ToEntitySet()
-                //Billinginfoes = new EntitySet<Billinginfoe>()
-                //{
-
-                //}
-
-                //Billinginfoes = person.Billinginfoes.Select(y => new Billinginfoe()
-                //{
-                //    CardName = y.CardName,
-                //    CardNum = y.CardNum,
-                //    CardCVV = y.CardCVV,
-                //    CardExpireDate = y.CardExpireDate,
-                //    CardType = y.CardType,
-
-
-                //}).ToEntitySet()
 
             };
             }
@@ -71,11 +57,15 @@ namespace LOGIC.BusinessLogic
             es.AddRange(source);
             return es;
         }
+        #endregion
 
+        #region ClientProductSearch
+
+        #endregion
     }
 
-    #endregion
 
- }
+
+}
     
 

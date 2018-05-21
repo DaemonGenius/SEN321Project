@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace DATALAYER.Controllers
 {
-    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.Clients")]
-    public partial class Client : INotifyPropertyChanging, INotifyPropertyChanged
+    [global::System.Data.Linq.Mapping.TableAttribute(Name = "dbo.TechnicianEmps")]
+    public partial class TechnicianEmp : INotifyPropertyChanging, INotifyPropertyChanged
     {
 
         private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -20,6 +20,8 @@ namespace DATALAYER.Controllers
         private System.Nullable<int> _Person_ID;
 
         private System.Nullable<int> _Messaging_ID;
+
+        private EntitySet<Schedule> _Schedules;
 
         private EntitySet<Transaction> _Transactions;
 
@@ -39,8 +41,9 @@ namespace DATALAYER.Controllers
         partial void OnMessaging_IDChanged();
         #endregion
 
-        public Client()
+        public TechnicianEmp()
         {
+            this._Schedules = new EntitySet<Schedule>(new Action<Schedule>(this.attach_Schedules), new Action<Schedule>(this.detach_Schedules));
             this._Transactions = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions), new Action<Transaction>(this.detach_Transactions));
             this._People = default(EntityRef<People>);
             this._Messaging = default(EntityRef<Messaging>);
@@ -115,7 +118,20 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Client_Transaction", Storage = "_Transactions", ThisKey = "ID", OtherKey = "Client_ID")]
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "TechnicianEmp_Schedule", Storage = "_Schedules", ThisKey = "ID", OtherKey = "TechnicianEmp_ID")]
+        public EntitySet<Schedule> Schedules
+        {
+            get
+            {
+                return this._Schedules;
+            }
+            set
+            {
+                this._Schedules.Assign(value);
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "TechnicianEmp_Transaction", Storage = "_Transactions", ThisKey = "ID", OtherKey = "TechnicianEmp_ID")]
         public EntitySet<Transaction> Transactions
         {
             get
@@ -128,7 +144,7 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_Client", Storage = "_People", ThisKey = "Person_ID", OtherKey = "ID", IsForeignKey = true)]
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_TechnicianEmp", Storage = "_People", ThisKey = "Person_ID", OtherKey = "ID", IsForeignKey = true)]
         public People People
         {
             get
@@ -145,12 +161,12 @@ namespace DATALAYER.Controllers
                     if ((previousValue != null))
                     {
                         this._People.Entity = null;
-                        previousValue.Clients.Remove(this);
+                        previousValue.TechnicianEmps.Remove(this);
                     }
                     this._People.Entity = value;
                     if ((value != null))
                     {
-                        value.Clients.Add(this);
+                        value.TechnicianEmps.Add(this);
                         this._Person_ID = value.ID;
                     }
                     else
@@ -162,7 +178,7 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Messaging_Client", Storage = "_Messaging", ThisKey = "Messaging_ID", OtherKey = "ID", IsForeignKey = true)]
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Messaging_TechnicianEmp", Storage = "_Messaging", ThisKey = "Messaging_ID", OtherKey = "ID", IsForeignKey = true)]
         public Messaging Messaging
         {
             get
@@ -179,12 +195,12 @@ namespace DATALAYER.Controllers
                     if ((previousValue != null))
                     {
                         this._Messaging.Entity = null;
-                        previousValue.Clients.Remove(this);
+                        previousValue.TechnicianEmps.Remove(this);
                     }
                     this._Messaging.Entity = value;
                     if ((value != null))
                     {
-                        value.Clients.Add(this);
+                        value.TechnicianEmps.Add(this);
                         this._Messaging_ID = value.ID;
                     }
                     else
@@ -216,18 +232,28 @@ namespace DATALAYER.Controllers
             }
         }
 
+        private void attach_Schedules(Schedule entity)
+        {
+            this.SendPropertyChanging();
+            entity.TechnicianEmp = this;
+        }
+
+        private void detach_Schedules(Schedule entity)
+        {
+            this.SendPropertyChanging();
+            entity.TechnicianEmp = null;
+        }
+
         private void attach_Transactions(Transaction entity)
         {
             this.SendPropertyChanging();
-            entity.Client = this;
+            entity.TechnicianEmp = this;
         }
 
         private void detach_Transactions(Transaction entity)
         {
             this.SendPropertyChanging();
-            entity.Client = null;
+            entity.TechnicianEmp = null;
         }
     }
-
-
 }
