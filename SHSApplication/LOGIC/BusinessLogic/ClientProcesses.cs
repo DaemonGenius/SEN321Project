@@ -15,7 +15,8 @@ namespace LOGIC.BusinessLogic
         public static async Task<People> ClientSearch(string Username)
         {
             using (var dbe = new SHSdb())
-            {  People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
+            {
+                People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
                 //Billinginfoe billinginfoe = dbe.BillingInfo.FirstOrDefault(x => x.ID == person.ID);
                 return new People()
                 {
