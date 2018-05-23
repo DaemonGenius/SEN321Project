@@ -97,6 +97,7 @@ namespace LOGIC.BusinessLogic
             }
         }
         #endregion
+        
 
         public static EntitySet<T> ToEntitySet<T>(this IEnumerable<T> source) where T : class
         {
