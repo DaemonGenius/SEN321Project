@@ -26,9 +26,10 @@ namespace UI.View.EmployeeSide
 
         private async void btnSearchCli_Click(object sender, EventArgs e)
         {
+            #region Search Client
             LOGIC.ApplicationLogic.ClientProcessesApp cpa = new LOGIC.ApplicationLogic.ClientProcessesApp();
             People people = await cpa.ClientSearch(txtbxSCUSername.Text);
-            
+
             if (people.Gender == "Male")
             {
                 radbtnMale.Checked = true;
@@ -65,6 +66,28 @@ namespace UI.View.EmployeeSide
                     txtbxEExpDate.Text = item.CardExpireDate;
                 }
             }
+            #endregion
+
+            #region ProductLoad
+
+            LOGIC.ApplicationLogic.ClientProcessesApp clientProcessesApp = new LOGIC.ApplicationLogic.ClientProcessesApp();
+            ProductSystem productSystem = await clientProcessesApp.ProductLoad();
+            
+
+            foreach (var item in productSystem.ConvienceProducts)
+            {
+               rtxtbxHome.AppendText(item.Name);
+            }
+            foreach (var item1 in productSystem.EnergyProducts)
+            {
+                rtxtbxEnergy.AppendText(item1.Name);
+            }
+            foreach (var item2 in productSystem.SafetyProducts)
+            {
+                rtxtbxSafetyProducts.AppendText(item2.Name);
+            }
+            #endregion
+
         }
 
         private void btnAddnew_Click(object sender, EventArgs e)

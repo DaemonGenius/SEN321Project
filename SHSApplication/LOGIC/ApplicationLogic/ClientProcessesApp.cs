@@ -13,5 +13,10 @@ namespace LOGIC.ApplicationLogic
         {
             return await BusinessLogic.ClientProcesses.ClientSearch(username);
         }
+
+        public async Task<ProductSystem> ProductLoad()
+        {
+            return await BusinessLogic.ClientProcesses.ClientProductLoad();
+        }
     }
 }
