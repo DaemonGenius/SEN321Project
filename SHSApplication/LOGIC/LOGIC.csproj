@@ -47,6 +47,7 @@
     <Compile Include="BusinessLogic\AdminProcesses.cs" />
     <Compile Include="BusinessLogic\ClientProcesses.cs" />
     <Compile Include="BusinessLogic\LoginProcess.cs" />
+    <Compile Include="BusinessLogic\ProductInfoProcess.cs" />
     <Compile Include="BusinessLogic\RegistrationProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
