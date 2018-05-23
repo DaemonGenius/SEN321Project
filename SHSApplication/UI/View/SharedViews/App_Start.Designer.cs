@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblErrorpass = new System.Windows.Forms.Label();
             this.lblErrorEmail = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.lblErrorpass);
             this.panel1.Controls.Add(this.lblErrorEmail);
             this.panel1.Controls.Add(this.btnRegister);
             this.panel1.Controls.Add(this.btnLogin);
@@ -59,18 +59,18 @@
             this.panel1.Size = new System.Drawing.Size(625, 437);
             this.panel1.TabIndex = 0;
             // 
-            // label5
+            // lblErrorpass
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(420, 201);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Invalid Password";
-            this.label5.Visible = false;
+            this.lblErrorpass.AutoSize = true;
+            this.lblErrorpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorpass.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorpass.Location = new System.Drawing.Point(420, 201);
+            this.lblErrorpass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorpass.Name = "lblErrorpass";
+            this.lblErrorpass.Size = new System.Drawing.Size(110, 16);
+            this.lblErrorpass.TabIndex = 8;
+            this.lblErrorpass.Text = "Invalid Password";
+            this.lblErrorpass.Visible = false;
             // 
             // lblErrorEmail
             // 
@@ -175,7 +175,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblErrorpass;
         private System.Windows.Forms.Label lblErrorEmail;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnLogin;

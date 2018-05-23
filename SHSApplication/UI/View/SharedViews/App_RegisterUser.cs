@@ -201,5 +201,10 @@ namespace UI.View.SharedViews
                 lblCardName.ForeColor = System.Drawing.Color.Red;
             }
         }
+
+        private void App_RegisterUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -54,6 +54,8 @@ namespace UI.View.SharedViews
             {
                 lblErrorEmail.Visible = true;
                 txtbxEmail.Clear();
+                lblErrorpass.Visible = true;
+                txtbxPass.Clear();
             }
             
         }
