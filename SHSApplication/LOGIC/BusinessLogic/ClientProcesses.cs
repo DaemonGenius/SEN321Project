@@ -59,38 +59,19 @@ namespace LOGIC.BusinessLogic
 
         
         #endregion
-
         #region ClientProductSearch
         public static async Task<ProductSystem> ClientProductLoad()
         {
             using (var dbe = new SHSdb())
             {
-                //People person = dbe.peoples.FirstOrDefault((x => x.ID == ID));
                 Client client = dbe.Clients.FirstOrDefault((x => x.Person_ID == ID));
-
                 Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == client.ID));
                 ProductSystem productSystems = dbe.productSystems.FirstOrDefault((x => x.Cart_ID == transaction.Cart_ID));
                 ConvienceProduct convienceProduct = dbe.convienceProducts.FirstOrDefault((x => x.ProductSystems_ID == productSystems.ID));
-                
-                return new ProductSystem()
-                {                    
-                    Cart = new Cart()
-                    {
-                        TotalPrice = transaction.Cart.TotalPrice,
-                        ProductSystems = (from Transaction in transaction.Cart.ProductSystems
-                                          select new ProductSystem
-                                          {
-                                              Cart_ID = client.ID,
-                                              ConvienceProducts = (from ConvPro in productSystems.ConvienceProducts
-                                                                   select new ConvienceProduct
-                                                                   {
-                                                                       Name = ConvPro.Name,
-                                                                       Discription = ConvPro.Discription,
-                                                                       Price = ConvPro.Price,
-                                                                   }).ToEntitySet()
-                                          }).ToEntitySet(),
 
-                    },
+                return new ProductSystem()
+                {
+                    Name = productSystems.Name,                   
                     ConvienceProducts = (from ConvPro in productSystems.ConvienceProducts
                                          select new ConvienceProduct
                                          {

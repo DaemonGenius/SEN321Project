@@ -72,19 +72,19 @@ namespace UI.View.EmployeeSide
 
             LOGIC.ApplicationLogic.ClientProcessesApp clientProcessesApp = new LOGIC.ApplicationLogic.ClientProcessesApp();
             ProductSystem productSystem = await clientProcessesApp.ProductLoad();
-            
 
+            txtbxSystem.Text = productSystem.Name;
             foreach (var item in productSystem.ConvienceProducts)
             {
-               rtxtbxHome.AppendText(item.Name);
+                lstbxConvPro.Items.Add(item.Name);
             }
             foreach (var item1 in productSystem.EnergyProducts)
             {
-                rtxtbxEnergy.AppendText(item1.Name);
+                lstbxEnergPro.Items.Add(item1.Name);
             }
             foreach (var item2 in productSystem.SafetyProducts)
             {
-                rtxtbxSafetyProducts.AppendText(item2.Name);
+                lstbxSaftPro.Items.Add(item2.Name);
             }
             #endregion
 
