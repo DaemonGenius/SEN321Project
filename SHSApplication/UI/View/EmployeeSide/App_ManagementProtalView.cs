@@ -166,5 +166,44 @@ namespace UI.View.EmployeeSide
             tbpProductManagement.Hide();
             tbpCallCentre.Show();
         }
+
+        private async void lstbxSaftPro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = lstbxSaftPro.SelectedItem.ToString();
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+           
+            SafetyProduct safetyProduct = await productInfoApp.SafProductLoad(name);
+
+            txtbxProductName.Text = safetyProduct.Name;
+            rtxtbxDisc.Text = safetyProduct.Discription;
+            txtbxPrice.Text = safetyProduct.Price.ToString();
+
+
+
+        }
+
+        private async void lstbxConvPro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = lstbxConvPro.SelectedItem.ToString();
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+
+            ConvienceProduct convienceProduct = await productInfoApp.ConProductLoad(name);
+
+            txtbxProductName.Text = convienceProduct.Name;
+            rtxtbxDisc.Text = convienceProduct.Discription;
+            txtbxPrice.Text = convienceProduct.Price.ToString();
+        }
+
+        private async void lstbxEnergPro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = lstbxEnergPro.SelectedItem.ToString();
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+
+            EnergyProduct energyProduct = await productInfoApp.ENProductLoad(name);
+
+            txtbxProductName.Text = energyProduct.Name;
+            rtxtbxDisc.Text = energyProduct.Discription;
+            txtbxPrice.Text = energyProduct.Price.ToString();
+        }
     }
 }

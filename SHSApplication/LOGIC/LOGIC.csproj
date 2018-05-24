@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ApplicationLogic\AdminProcessing.cs" />
     <Compile Include="ApplicationLogic\ClientProcessesApp.cs" />
+    <Compile Include="ApplicationLogic\ProductInfoApp.cs" />
     <Compile Include="ApplicationLogic\RegisterValidation.cs" />
     <Compile Include="BusinessLogic\AdminProcesses.cs" />
     <Compile Include="BusinessLogic\ClientProcesses.cs" />

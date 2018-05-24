@@ -81,6 +81,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbpProducts = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lstbxEnergPro = new System.Windows.Forms.ListBox();
+            this.lstbxConvPro = new System.Windows.Forms.ListBox();
+            this.lstbxSaftPro = new System.Windows.Forms.ListBox();
             this.label40 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -195,9 +198,6 @@
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.btnSearchCli = new System.Windows.Forms.Button();
             this.btnAddnew = new System.Windows.Forms.Button();
-            this.lstbxSaftPro = new System.Windows.Forms.ListBox();
-            this.lstbxConvPro = new System.Windows.Forms.ListBox();
-            this.lstbxEnergPro = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -267,7 +267,7 @@
             this.tabControl1.Controls.Add(this.tbpScheduleMain);
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.tabControl1.ItemSize = new System.Drawing.Size(10, 10);
-            this.tabControl1.Location = new System.Drawing.Point(4, 18);
+            this.tabControl1.Location = new System.Drawing.Point(4, 19);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -612,9 +612,9 @@
             this.groupBox10.Controls.Add(this.radbtnFemale);
             this.groupBox10.Controls.Add(this.radbtnMale);
             this.groupBox10.Location = new System.Drawing.Point(19, 242);
-            this.groupBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox10.Size = new System.Drawing.Size(281, 70);
             this.groupBox10.TabIndex = 17;
             this.groupBox10.TabStop = false;
@@ -625,7 +625,7 @@
             this.radbtnOther.AutoSize = true;
             this.radbtnOther.ForeColor = System.Drawing.Color.Black;
             this.radbtnOther.Location = new System.Drawing.Point(187, 28);
-            this.radbtnOther.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radbtnOther.Margin = new System.Windows.Forms.Padding(4);
             this.radbtnOther.Name = "radbtnOther";
             this.radbtnOther.Size = new System.Drawing.Size(69, 21);
             this.radbtnOther.TabIndex = 3;
@@ -638,7 +638,7 @@
             this.radbtnFemale.AutoSize = true;
             this.radbtnFemale.ForeColor = System.Drawing.Color.Black;
             this.radbtnFemale.Location = new System.Drawing.Point(84, 28);
-            this.radbtnFemale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radbtnFemale.Margin = new System.Windows.Forms.Padding(4);
             this.radbtnFemale.Name = "radbtnFemale";
             this.radbtnFemale.Size = new System.Drawing.Size(79, 21);
             this.radbtnFemale.TabIndex = 2;
@@ -651,7 +651,7 @@
             this.radbtnMale.AutoSize = true;
             this.radbtnMale.ForeColor = System.Drawing.Color.Black;
             this.radbtnMale.Location = new System.Drawing.Point(8, 28);
-            this.radbtnMale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radbtnMale.Margin = new System.Windows.Forms.Padding(4);
             this.radbtnMale.Name = "radbtnMale";
             this.radbtnMale.Size = new System.Drawing.Size(63, 21);
             this.radbtnMale.TabIndex = 1;
@@ -812,10 +812,40 @@
             this.panel3.Controls.Add(this.txtbxSystem);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(732, 490);
             this.panel3.TabIndex = 0;
+            // 
+            // lstbxEnergPro
+            // 
+            this.lstbxEnergPro.FormattingEnabled = true;
+            this.lstbxEnergPro.ItemHeight = 16;
+            this.lstbxEnergPro.Location = new System.Drawing.Point(136, 356);
+            this.lstbxEnergPro.Name = "lstbxEnergPro";
+            this.lstbxEnergPro.Size = new System.Drawing.Size(169, 116);
+            this.lstbxEnergPro.TabIndex = 12;
+            this.lstbxEnergPro.SelectedIndexChanged += new System.EventHandler(this.lstbxEnergPro_SelectedIndexChanged);
+            // 
+            // lstbxConvPro
+            // 
+            this.lstbxConvPro.FormattingEnabled = true;
+            this.lstbxConvPro.ItemHeight = 16;
+            this.lstbxConvPro.Location = new System.Drawing.Point(136, 218);
+            this.lstbxConvPro.Name = "lstbxConvPro";
+            this.lstbxConvPro.Size = new System.Drawing.Size(169, 116);
+            this.lstbxConvPro.TabIndex = 11;
+            this.lstbxConvPro.SelectedIndexChanged += new System.EventHandler(this.lstbxConvPro_SelectedIndexChanged);
+            // 
+            // lstbxSaftPro
+            // 
+            this.lstbxSaftPro.FormattingEnabled = true;
+            this.lstbxSaftPro.ItemHeight = 16;
+            this.lstbxSaftPro.Location = new System.Drawing.Point(136, 87);
+            this.lstbxSaftPro.Name = "lstbxSaftPro";
+            this.lstbxSaftPro.Size = new System.Drawing.Size(169, 116);
+            this.lstbxSaftPro.TabIndex = 10;
+            this.lstbxSaftPro.SelectedIndexChanged += new System.EventHandler(this.lstbxSaftPro_SelectedIndexChanged);
             // 
             // label40
             // 
@@ -844,9 +874,9 @@
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.label24);
             this.groupBox6.Location = new System.Drawing.Point(348, 38);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox6.Size = new System.Drawing.Size(379, 444);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
@@ -856,9 +886,9 @@
             // 
             this.groupBox7.Controls.Add(this.richTextBox1);
             this.groupBox7.Location = new System.Drawing.Point(21, 306);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox7.Size = new System.Drawing.Size(331, 117);
             this.groupBox7.TabIndex = 12;
             this.groupBox7.TabStop = false;
@@ -867,7 +897,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(8, 23);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(313, 85);
             this.richTextBox1.TabIndex = 0;
@@ -876,7 +906,7 @@
             // rtxtbxDisc
             // 
             this.rtxtbxDisc.Location = new System.Drawing.Point(137, 63);
-            this.rtxtbxDisc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtbxDisc.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtbxDisc.Name = "rtxtbxDisc";
             this.rtxtbxDisc.Size = new System.Drawing.Size(175, 85);
             this.rtxtbxDisc.TabIndex = 11;
@@ -885,7 +915,7 @@
             // txtbxTechnicianN
             // 
             this.txtbxTechnicianN.Location = new System.Drawing.Point(137, 274);
-            this.txtbxTechnicianN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxTechnicianN.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxTechnicianN.Name = "txtbxTechnicianN";
             this.txtbxTechnicianN.Size = new System.Drawing.Size(175, 22);
             this.txtbxTechnicianN.TabIndex = 10;
@@ -893,7 +923,7 @@
             // txtbxContract
             // 
             this.txtbxContract.Location = new System.Drawing.Point(137, 234);
-            this.txtbxContract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxContract.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxContract.Name = "txtbxContract";
             this.txtbxContract.Size = new System.Drawing.Size(175, 22);
             this.txtbxContract.TabIndex = 9;
@@ -901,7 +931,7 @@
             // txtbxWarr
             // 
             this.txtbxWarr.Location = new System.Drawing.Point(137, 197);
-            this.txtbxWarr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxWarr.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxWarr.Name = "txtbxWarr";
             this.txtbxWarr.Size = new System.Drawing.Size(175, 22);
             this.txtbxWarr.TabIndex = 8;
@@ -909,7 +939,7 @@
             // txtbxPrice
             // 
             this.txtbxPrice.Location = new System.Drawing.Point(137, 156);
-            this.txtbxPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxPrice.Name = "txtbxPrice";
             this.txtbxPrice.Size = new System.Drawing.Size(175, 22);
             this.txtbxPrice.TabIndex = 7;
@@ -917,7 +947,7 @@
             // txtbxProductName
             // 
             this.txtbxProductName.Location = new System.Drawing.Point(137, 33);
-            this.txtbxProductName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxProductName.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxProductName.Name = "txtbxProductName";
             this.txtbxProductName.Size = new System.Drawing.Size(175, 22);
             this.txtbxProductName.TabIndex = 6;
@@ -1015,7 +1045,7 @@
             // txtbxSystem
             // 
             this.txtbxSystem.Location = new System.Drawing.Point(136, 52);
-            this.txtbxSystem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxSystem.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxSystem.Name = "txtbxSystem";
             this.txtbxSystem.Size = new System.Drawing.Size(169, 22);
             this.txtbxSystem.TabIndex = 1;
@@ -1034,7 +1064,7 @@
             // 
             this.tbpCallCentre.Controls.Add(this.panel4);
             this.tbpCallCentre.Location = new System.Drawing.Point(4, 14);
-            this.tbpCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpCallCentre.Margin = new System.Windows.Forms.Padding(4);
             this.tbpCallCentre.Name = "tbpCallCentre";
             this.tbpCallCentre.Size = new System.Drawing.Size(741, 493);
             this.tbpCallCentre.TabIndex = 2;
@@ -1048,7 +1078,7 @@
             this.panel4.Controls.Add(this.groupBox12);
             this.panel4.Controls.Add(this.groupBox11);
             this.panel4.Location = new System.Drawing.Point(-5, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(743, 491);
             this.panel4.TabIndex = 0;
@@ -1068,9 +1098,9 @@
             // 
             this.groupBox12.Controls.Add(this.tabControl2);
             this.groupBox12.Location = new System.Drawing.Point(299, 50);
-            this.groupBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox12.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox12.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox12.Size = new System.Drawing.Size(433, 430);
             this.groupBox12.TabIndex = 2;
             this.groupBox12.TabStop = false;
@@ -1083,7 +1113,7 @@
             this.tabControl2.Controls.Add(this.tblCCLogs);
             this.tabControl2.ItemSize = new System.Drawing.Size(50, 20);
             this.tabControl2.Location = new System.Drawing.Point(8, 23);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(409, 399);
@@ -1094,9 +1124,9 @@
             // 
             this.tbpCCAdmin.Controls.Add(this.panel5);
             this.tbpCCAdmin.Location = new System.Drawing.Point(4, 24);
-            this.tbpCCAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpCCAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.tbpCCAdmin.Name = "tbpCCAdmin";
-            this.tbpCCAdmin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpCCAdmin.Padding = new System.Windows.Forms.Padding(4);
             this.tbpCCAdmin.Size = new System.Drawing.Size(401, 371);
             this.tbpCCAdmin.TabIndex = 0;
             this.tbpCCAdmin.Text = "Admin";
@@ -1112,7 +1142,7 @@
             this.panel5.Controls.Add(this.rtxtbxMsgBlock);
             this.panel5.Controls.Add(this.txtbxAdminEmail);
             this.panel5.Location = new System.Drawing.Point(3, 2);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(395, 417);
             this.panel5.TabIndex = 0;
@@ -1120,7 +1150,7 @@
             // btnAmsgCancel
             // 
             this.btnAmsgCancel.Location = new System.Drawing.Point(231, 212);
-            this.btnAmsgCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAmsgCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnAmsgCancel.Name = "btnAmsgCancel";
             this.btnAmsgCancel.Size = new System.Drawing.Size(100, 28);
             this.btnAmsgCancel.TabIndex = 5;
@@ -1130,7 +1160,7 @@
             // btnAmsgSend
             // 
             this.btnAmsgSend.Location = new System.Drawing.Point(123, 212);
-            this.btnAmsgSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAmsgSend.Margin = new System.Windows.Forms.Padding(4);
             this.btnAmsgSend.Name = "btnAmsgSend";
             this.btnAmsgSend.Size = new System.Drawing.Size(100, 28);
             this.btnAmsgSend.TabIndex = 4;
@@ -1160,7 +1190,7 @@
             // rtxtbxMsgBlock
             // 
             this.rtxtbxMsgBlock.Location = new System.Drawing.Point(124, 59);
-            this.rtxtbxMsgBlock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtbxMsgBlock.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtbxMsgBlock.Multiline = false;
             this.rtxtbxMsgBlock.Name = "rtxtbxMsgBlock";
             this.rtxtbxMsgBlock.Size = new System.Drawing.Size(205, 117);
@@ -1170,7 +1200,7 @@
             // txtbxAdminEmail
             // 
             this.txtbxAdminEmail.Location = new System.Drawing.Point(124, 27);
-            this.txtbxAdminEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxAdminEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxAdminEmail.Name = "txtbxAdminEmail";
             this.txtbxAdminEmail.Size = new System.Drawing.Size(205, 22);
             this.txtbxAdminEmail.TabIndex = 0;
@@ -1179,9 +1209,9 @@
             // 
             this.tblCCClient.Controls.Add(this.panel6);
             this.tblCCClient.Location = new System.Drawing.Point(4, 24);
-            this.tblCCClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tblCCClient.Margin = new System.Windows.Forms.Padding(4);
             this.tblCCClient.Name = "tblCCClient";
-            this.tblCCClient.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tblCCClient.Padding = new System.Windows.Forms.Padding(4);
             this.tblCCClient.Size = new System.Drawing.Size(401, 371);
             this.tblCCClient.TabIndex = 1;
             this.tblCCClient.Text = "Client";
@@ -1197,7 +1227,7 @@
             this.panel6.Controls.Add(this.rtxtbxCmsg);
             this.panel6.Controls.Add(this.txtbxCCcEmail);
             this.panel6.Location = new System.Drawing.Point(1, 2);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(395, 401);
             this.panel6.TabIndex = 1;
@@ -1205,7 +1235,7 @@
             // btnClientCancel
             // 
             this.btnClientCancel.Location = new System.Drawing.Point(232, 212);
-            this.btnClientCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClientCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnClientCancel.Name = "btnClientCancel";
             this.btnClientCancel.Size = new System.Drawing.Size(100, 28);
             this.btnClientCancel.TabIndex = 11;
@@ -1215,7 +1245,7 @@
             // btnCsend
             // 
             this.btnCsend.Location = new System.Drawing.Point(124, 212);
-            this.btnCsend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCsend.Margin = new System.Windows.Forms.Padding(4);
             this.btnCsend.Name = "btnCsend";
             this.btnCsend.Size = new System.Drawing.Size(100, 28);
             this.btnCsend.TabIndex = 10;
@@ -1245,7 +1275,7 @@
             // rtxtbxCmsg
             // 
             this.rtxtbxCmsg.Location = new System.Drawing.Point(125, 59);
-            this.rtxtbxCmsg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtbxCmsg.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtbxCmsg.Multiline = false;
             this.rtxtbxCmsg.Name = "rtxtbxCmsg";
             this.rtxtbxCmsg.Size = new System.Drawing.Size(205, 117);
@@ -1255,7 +1285,7 @@
             // txtbxCCcEmail
             // 
             this.txtbxCCcEmail.Location = new System.Drawing.Point(125, 27);
-            this.txtbxCCcEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxCCcEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxCCcEmail.Name = "txtbxCCcEmail";
             this.txtbxCCcEmail.Size = new System.Drawing.Size(205, 22);
             this.txtbxCCcEmail.TabIndex = 6;
@@ -1264,7 +1294,7 @@
             // 
             this.tblCCLogs.Controls.Add(this.panel7);
             this.tblCCLogs.Location = new System.Drawing.Point(4, 24);
-            this.tblCCLogs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tblCCLogs.Margin = new System.Windows.Forms.Padding(4);
             this.tblCCLogs.Name = "tblCCLogs";
             this.tblCCLogs.Size = new System.Drawing.Size(401, 371);
             this.tblCCLogs.TabIndex = 2;
@@ -1283,7 +1313,7 @@
             this.panel7.Controls.Add(this.rtxtbxLogs);
             this.panel7.Controls.Add(this.label31);
             this.panel7.Location = new System.Drawing.Point(1, -25);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(395, 417);
             this.panel7.TabIndex = 1;
@@ -1291,7 +1321,7 @@
             // rtxtbxLogDiscr
             // 
             this.rtxtbxLogDiscr.Location = new System.Drawing.Point(125, 270);
-            this.rtxtbxLogDiscr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtbxLogDiscr.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtbxLogDiscr.Name = "rtxtbxLogDiscr";
             this.rtxtbxLogDiscr.Size = new System.Drawing.Size(249, 69);
             this.rtxtbxLogDiscr.TabIndex = 7;
@@ -1300,7 +1330,7 @@
             // txtbxLogTime
             // 
             this.txtbxLogTime.Location = new System.Drawing.Point(125, 225);
-            this.txtbxLogTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxLogTime.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxLogTime.Name = "txtbxLogTime";
             this.txtbxLogTime.Size = new System.Drawing.Size(249, 22);
             this.txtbxLogTime.TabIndex = 6;
@@ -1308,7 +1338,7 @@
             // txtbxSenderName
             // 
             this.txtbxSenderName.Location = new System.Drawing.Point(125, 192);
-            this.txtbxSenderName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxSenderName.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxSenderName.Name = "txtbxSenderName";
             this.txtbxSenderName.Size = new System.Drawing.Size(249, 22);
             this.txtbxSenderName.TabIndex = 5;
@@ -1346,7 +1376,7 @@
             // rtxtbxLogs
             // 
             this.rtxtbxLogs.Location = new System.Drawing.Point(125, 48);
-            this.rtxtbxLogs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtbxLogs.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtbxLogs.Name = "rtxtbxLogs";
             this.rtxtbxLogs.Size = new System.Drawing.Size(249, 121);
             this.rtxtbxLogs.TabIndex = 1;
@@ -1370,9 +1400,9 @@
             this.groupBox11.Controls.Add(this.btnViewLogs);
             this.groupBox11.Controls.Add(this.btnCallAdmin);
             this.groupBox11.Location = new System.Drawing.Point(16, 50);
-            this.groupBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox11.Size = new System.Drawing.Size(265, 431);
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
@@ -1381,7 +1411,7 @@
             // btnMsgClient
             // 
             this.btnMsgClient.Location = new System.Drawing.Point(8, 108);
-            this.btnMsgClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMsgClient.Margin = new System.Windows.Forms.Padding(4);
             this.btnMsgClient.Name = "btnMsgClient";
             this.btnMsgClient.Size = new System.Drawing.Size(144, 28);
             this.btnMsgClient.TabIndex = 3;
@@ -1392,7 +1422,7 @@
             // btnMsgA
             // 
             this.btnMsgA.Location = new System.Drawing.Point(8, 71);
-            this.btnMsgA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMsgA.Margin = new System.Windows.Forms.Padding(4);
             this.btnMsgA.Name = "btnMsgA";
             this.btnMsgA.Size = new System.Drawing.Size(144, 28);
             this.btnMsgA.TabIndex = 2;
@@ -1403,7 +1433,7 @@
             // btnViewLogs
             // 
             this.btnViewLogs.Location = new System.Drawing.Point(8, 36);
-            this.btnViewLogs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewLogs.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewLogs.Name = "btnViewLogs";
             this.btnViewLogs.Size = new System.Drawing.Size(100, 28);
             this.btnViewLogs.TabIndex = 1;
@@ -1414,7 +1444,7 @@
             // btnCallAdmin
             // 
             this.btnCallAdmin.Location = new System.Drawing.Point(8, 358);
-            this.btnCallAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCallAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnCallAdmin.Name = "btnCallAdmin";
             this.btnCallAdmin.Size = new System.Drawing.Size(129, 65);
             this.btnCallAdmin.TabIndex = 0;
@@ -1425,7 +1455,7 @@
             // 
             this.tbpProductManagement.Controls.Add(this.panel8);
             this.tbpProductManagement.Location = new System.Drawing.Point(4, 14);
-            this.tbpProductManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpProductManagement.Margin = new System.Windows.Forms.Padding(4);
             this.tbpProductManagement.Name = "tbpProductManagement";
             this.tbpProductManagement.Size = new System.Drawing.Size(741, 493);
             this.tbpProductManagement.TabIndex = 3;
@@ -1439,7 +1469,7 @@
             this.panel8.Controls.Add(this.groupBox13);
             this.panel8.Controls.Add(this.label39);
             this.panel8.Location = new System.Drawing.Point(3, 1);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(756, 503);
             this.panel8.TabIndex = 0;
@@ -1453,9 +1483,9 @@
             this.groupBox14.Controls.Add(this.txtbxProductSeacch);
             this.groupBox14.Controls.Add(this.label48);
             this.groupBox14.Location = new System.Drawing.Point(23, 41);
-            this.groupBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox14.Size = new System.Drawing.Size(335, 345);
             this.groupBox14.TabIndex = 2;
             this.groupBox14.TabStop = false;
@@ -1464,7 +1494,7 @@
             // btnArchiveProduct
             // 
             this.btnArchiveProduct.Location = new System.Drawing.Point(116, 130);
-            this.btnArchiveProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnArchiveProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnArchiveProduct.Name = "btnArchiveProduct";
             this.btnArchiveProduct.Size = new System.Drawing.Size(100, 48);
             this.btnArchiveProduct.TabIndex = 28;
@@ -1474,7 +1504,7 @@
             // btnProductUpdate
             // 
             this.btnProductUpdate.Location = new System.Drawing.Point(224, 75);
-            this.btnProductUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProductUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductUpdate.Name = "btnProductUpdate";
             this.btnProductUpdate.Size = new System.Drawing.Size(100, 48);
             this.btnProductUpdate.TabIndex = 27;
@@ -1484,7 +1514,7 @@
             // btnNewProduct
             // 
             this.btnNewProduct.Location = new System.Drawing.Point(116, 75);
-            this.btnNewProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(100, 48);
             this.btnNewProduct.TabIndex = 26;
@@ -1494,7 +1524,7 @@
             // btnSearchProduct
             // 
             this.btnSearchProduct.Location = new System.Drawing.Point(8, 75);
-            this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchProduct.Name = "btnSearchProduct";
             this.btnSearchProduct.Size = new System.Drawing.Size(100, 48);
             this.btnSearchProduct.TabIndex = 25;
@@ -1504,7 +1534,7 @@
             // txtbxProductSeacch
             // 
             this.txtbxProductSeacch.Location = new System.Drawing.Point(151, 27);
-            this.txtbxProductSeacch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxProductSeacch.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxProductSeacch.Name = "txtbxProductSeacch";
             this.txtbxProductSeacch.Size = new System.Drawing.Size(175, 22);
             this.txtbxProductSeacch.TabIndex = 24;
@@ -1534,9 +1564,9 @@
             this.groupBox13.Controls.Add(this.label44);
             this.groupBox13.Controls.Add(this.label43);
             this.groupBox13.Location = new System.Drawing.Point(365, 41);
-            this.groupBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox13.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox13.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox13.Size = new System.Drawing.Size(359, 441);
             this.groupBox13.TabIndex = 1;
             this.groupBox13.TabStop = false;
@@ -1550,7 +1580,7 @@
             "Enegry Department",
             "Safety Department"});
             this.cbxProducDepartment.Location = new System.Drawing.Point(147, 294);
-            this.cbxProducDepartment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxProducDepartment.Margin = new System.Windows.Forms.Padding(4);
             this.cbxProducDepartment.Name = "cbxProducDepartment";
             this.cbxProducDepartment.Size = new System.Drawing.Size(175, 24);
             this.cbxProducDepartment.TabIndex = 24;
@@ -1558,7 +1588,7 @@
             // rtxtbxProductDiscr
             // 
             this.rtxtbxProductDiscr.Location = new System.Drawing.Point(147, 84);
-            this.rtxtbxProductDiscr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtbxProductDiscr.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtbxProductDiscr.Name = "rtxtbxProductDiscr";
             this.rtxtbxProductDiscr.Size = new System.Drawing.Size(175, 85);
             this.rtxtbxProductDiscr.TabIndex = 21;
@@ -1567,7 +1597,7 @@
             // txtbxProdctName
             // 
             this.txtbxProdctName.Location = new System.Drawing.Point(147, 23);
-            this.txtbxProdctName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxProdctName.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxProdctName.Name = "txtbxProdctName";
             this.txtbxProdctName.Size = new System.Drawing.Size(175, 22);
             this.txtbxProdctName.TabIndex = 22;
@@ -1586,7 +1616,7 @@
             // 
             this.cbxProductContractSign.FormattingEnabled = true;
             this.cbxProductContractSign.Location = new System.Drawing.Point(147, 255);
-            this.cbxProductContractSign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxProductContractSign.Margin = new System.Windows.Forms.Padding(4);
             this.cbxProductContractSign.Name = "cbxProductContractSign";
             this.cbxProductContractSign.Size = new System.Drawing.Size(175, 24);
             this.cbxProductContractSign.TabIndex = 23;
@@ -1614,7 +1644,7 @@
             // txtbxProductWarr
             // 
             this.txtbxProductWarr.Location = new System.Drawing.Point(147, 218);
-            this.txtbxProductWarr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxProductWarr.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxProductWarr.Name = "txtbxProductWarr";
             this.txtbxProductWarr.Size = new System.Drawing.Size(175, 22);
             this.txtbxProductWarr.TabIndex = 18;
@@ -1632,7 +1662,7 @@
             // txtProductPrice
             // 
             this.txtProductPrice.Location = new System.Drawing.Point(147, 177);
-            this.txtProductPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtProductPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(175, 22);
             this.txtProductPrice.TabIndex = 17;
@@ -1672,7 +1702,7 @@
             // 
             this.tbpScheduleMain.Controls.Add(this.panel9);
             this.tbpScheduleMain.Location = new System.Drawing.Point(4, 14);
-            this.tbpScheduleMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbpScheduleMain.Margin = new System.Windows.Forms.Padding(4);
             this.tbpScheduleMain.Name = "tbpScheduleMain";
             this.tbpScheduleMain.Size = new System.Drawing.Size(741, 493);
             this.tbpScheduleMain.TabIndex = 4;
@@ -1708,9 +1738,9 @@
             this.groupBox16.Controls.Add(this.label51);
             this.groupBox16.Controls.Add(this.label50);
             this.groupBox16.Location = new System.Drawing.Point(349, 65);
-            this.groupBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox16.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox16.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox16.Size = new System.Drawing.Size(364, 377);
             this.groupBox16.TabIndex = 5;
             this.groupBox16.TabStop = false;
@@ -1720,7 +1750,7 @@
             // 
             this.btnScheCancel.ForeColor = System.Drawing.Color.Black;
             this.btnScheCancel.Location = new System.Drawing.Point(113, 235);
-            this.btnScheCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnScheCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnScheCancel.Name = "btnScheCancel";
             this.btnScheCancel.Size = new System.Drawing.Size(100, 28);
             this.btnScheCancel.TabIndex = 12;
@@ -1731,7 +1761,7 @@
             // 
             this.cbxClientSys.FormattingEnabled = true;
             this.cbxClientSys.Location = new System.Drawing.Point(177, 190);
-            this.cbxClientSys.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxClientSys.Margin = new System.Windows.Forms.Padding(4);
             this.cbxClientSys.Name = "cbxClientSys";
             this.cbxClientSys.Size = new System.Drawing.Size(156, 24);
             this.cbxClientSys.TabIndex = 11;
@@ -1739,7 +1769,7 @@
             // txtbxScheClientName
             // 
             this.txtbxScheClientName.Location = new System.Drawing.Point(177, 161);
-            this.txtbxScheClientName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxScheClientName.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxScheClientName.Name = "txtbxScheClientName";
             this.txtbxScheClientName.Size = new System.Drawing.Size(156, 22);
             this.txtbxScheClientName.TabIndex = 10;
@@ -1747,7 +1777,7 @@
             // txtbxScheTechName
             // 
             this.txtbxScheTechName.Location = new System.Drawing.Point(177, 133);
-            this.txtbxScheTechName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxScheTechName.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxScheTechName.Name = "txtbxScheTechName";
             this.txtbxScheTechName.Size = new System.Drawing.Size(156, 22);
             this.txtbxScheTechName.TabIndex = 9;
@@ -1755,7 +1785,7 @@
             // txtbxScheTimeE
             // 
             this.txtbxScheTimeE.Location = new System.Drawing.Point(177, 105);
-            this.txtbxScheTimeE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxScheTimeE.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxScheTimeE.Name = "txtbxScheTimeE";
             this.txtbxScheTimeE.Size = new System.Drawing.Size(156, 22);
             this.txtbxScheTimeE.TabIndex = 8;
@@ -1763,7 +1793,7 @@
             // txtbxScheTimeS
             // 
             this.txtbxScheTimeS.Location = new System.Drawing.Point(177, 75);
-            this.txtbxScheTimeS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxScheTimeS.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxScheTimeS.Name = "txtbxScheTimeS";
             this.txtbxScheTimeS.Size = new System.Drawing.Size(156, 22);
             this.txtbxScheTimeS.TabIndex = 7;
@@ -1771,7 +1801,7 @@
             // txtbxScheName
             // 
             this.txtbxScheName.Location = new System.Drawing.Point(177, 43);
-            this.txtbxScheName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbxScheName.Margin = new System.Windows.Forms.Padding(4);
             this.txtbxScheName.Name = "txtbxScheName";
             this.txtbxScheName.Size = new System.Drawing.Size(156, 22);
             this.txtbxScheName.TabIndex = 6;
@@ -1848,9 +1878,9 @@
             this.groupBox15.Controls.Add(this.btnUpdateSchedule);
             this.groupBox15.Controls.Add(this.btnNewSchedule);
             this.groupBox15.Location = new System.Drawing.Point(31, 64);
-            this.groupBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox15.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox15.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox15.Size = new System.Drawing.Size(293, 379);
             this.groupBox15.TabIndex = 4;
             this.groupBox15.TabStop = false;
@@ -1860,7 +1890,7 @@
             // 
             this.btnArchiveSchedule.ForeColor = System.Drawing.Color.Black;
             this.btnArchiveSchedule.Location = new System.Drawing.Point(8, 101);
-            this.btnArchiveSchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnArchiveSchedule.Margin = new System.Windows.Forms.Padding(4);
             this.btnArchiveSchedule.Name = "btnArchiveSchedule";
             this.btnArchiveSchedule.Size = new System.Drawing.Size(133, 47);
             this.btnArchiveSchedule.TabIndex = 2;
@@ -1871,7 +1901,7 @@
             // 
             this.btnUpdateSchedule.ForeColor = System.Drawing.Color.Black;
             this.btnUpdateSchedule.Location = new System.Drawing.Point(149, 47);
-            this.btnUpdateSchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdateSchedule.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateSchedule.Name = "btnUpdateSchedule";
             this.btnUpdateSchedule.Size = new System.Drawing.Size(136, 47);
             this.btnUpdateSchedule.TabIndex = 1;
@@ -1882,7 +1912,7 @@
             // 
             this.btnNewSchedule.ForeColor = System.Drawing.Color.Black;
             this.btnNewSchedule.Location = new System.Drawing.Point(8, 47);
-            this.btnNewSchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewSchedule.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewSchedule.Name = "btnNewSchedule";
             this.btnNewSchedule.Size = new System.Drawing.Size(133, 47);
             this.btnNewSchedule.TabIndex = 0;
@@ -1920,9 +1950,9 @@
             this.groupBox9.Controls.Add(this.btnProductManage);
             this.groupBox9.Controls.Add(this.btnCallCentre);
             this.groupBox9.Location = new System.Drawing.Point(7, 256);
-            this.groupBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox9.Size = new System.Drawing.Size(365, 266);
             this.groupBox9.TabIndex = 7;
             this.groupBox9.TabStop = false;
@@ -1931,7 +1961,7 @@
             // btnScheManagement
             // 
             this.btnScheManagement.Location = new System.Drawing.Point(11, 150);
-            this.btnScheManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnScheManagement.Margin = new System.Windows.Forms.Padding(4);
             this.btnScheManagement.Name = "btnScheManagement";
             this.btnScheManagement.Size = new System.Drawing.Size(112, 48);
             this.btnScheManagement.TabIndex = 2;
@@ -1942,7 +1972,7 @@
             // btnProductManage
             // 
             this.btnProductManage.Location = new System.Drawing.Point(11, 95);
-            this.btnProductManage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProductManage.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductManage.Name = "btnProductManage";
             this.btnProductManage.Size = new System.Drawing.Size(112, 48);
             this.btnProductManage.TabIndex = 1;
@@ -1953,7 +1983,7 @@
             // btnCallCentre
             // 
             this.btnCallCentre.Location = new System.Drawing.Point(11, 39);
-            this.btnCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCallCentre.Margin = new System.Windows.Forms.Padding(4);
             this.btnCallCentre.Name = "btnCallCentre";
             this.btnCallCentre.Size = new System.Drawing.Size(112, 48);
             this.btnCallCentre.TabIndex = 0;
@@ -1971,9 +2001,9 @@
             this.groupBox8.Controls.Add(this.btnSearchCli);
             this.groupBox8.Controls.Add(this.btnAddnew);
             this.groupBox8.Location = new System.Drawing.Point(7, 26);
-            this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox8.Size = new System.Drawing.Size(365, 222);
             this.groupBox8.TabIndex = 6;
             this.groupBox8.TabStop = false;
@@ -2049,33 +2079,6 @@
             this.btnAddnew.Text = "New Client";
             this.btnAddnew.UseVisualStyleBackColor = true;
             this.btnAddnew.Click += new System.EventHandler(this.btnAddnew_Click);
-            // 
-            // lstbxSaftPro
-            // 
-            this.lstbxSaftPro.FormattingEnabled = true;
-            this.lstbxSaftPro.ItemHeight = 16;
-            this.lstbxSaftPro.Location = new System.Drawing.Point(136, 87);
-            this.lstbxSaftPro.Name = "lstbxSaftPro";
-            this.lstbxSaftPro.Size = new System.Drawing.Size(169, 116);
-            this.lstbxSaftPro.TabIndex = 10;
-            // 
-            // lstbxConvPro
-            // 
-            this.lstbxConvPro.FormattingEnabled = true;
-            this.lstbxConvPro.ItemHeight = 16;
-            this.lstbxConvPro.Location = new System.Drawing.Point(136, 218);
-            this.lstbxConvPro.Name = "lstbxConvPro";
-            this.lstbxConvPro.Size = new System.Drawing.Size(169, 116);
-            this.lstbxConvPro.TabIndex = 11;
-            // 
-            // lstbxEnergPro
-            // 
-            this.lstbxEnergPro.FormattingEnabled = true;
-            this.lstbxEnergPro.ItemHeight = 16;
-            this.lstbxEnergPro.Location = new System.Drawing.Point(136, 356);
-            this.lstbxEnergPro.Name = "lstbxEnergPro";
-            this.lstbxEnergPro.Size = new System.Drawing.Size(169, 116);
-            this.lstbxEnergPro.TabIndex = 12;
             // 
             // App_ManagementProtalView
             // 
