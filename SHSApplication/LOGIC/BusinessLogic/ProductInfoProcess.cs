@@ -82,9 +82,24 @@ namespace LOGIC.BusinessLogic
         #endregion
 
         #region LoadTechnician
-        public static async Task<Transaction> GetTransactionTech()
+        public static async Task<TechnicianEmp> GetTransactionTech()
         {
+            using (var dbe = new SHSdb())
+            {
+                People person = dbe.peoples.FirstOrDefault((x => x.ID == ClientProcesses.ID));
+                
+                Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == person.ID));
+                TechnicianEmp technicianEmp = dbe.technicianEmps.FirstOrDefault(x => x.ID == transaction.TechnicianEmp_ID);
 
+                return new TechnicianEmp()
+                {
+                    Person_ID = technicianEmp.Person_ID,
+                    People = new People()
+                    {
+                        FirstName = person.FirstName
+                    }
+                };
+            }
         }
         #endregion
 

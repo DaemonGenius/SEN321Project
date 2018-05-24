@@ -267,7 +267,7 @@
             this.tabControl1.Controls.Add(this.tbpScheduleMain);
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.tabControl1.ItemSize = new System.Drawing.Size(10, 10);
-            this.tabControl1.Location = new System.Drawing.Point(4, 19);
+            this.tabControl1.Location = new System.Drawing.Point(6, 13);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";

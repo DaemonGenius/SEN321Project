@@ -173,11 +173,14 @@ namespace UI.View.EmployeeSide
             LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
            
             SafetyProduct safetyProduct = await productInfoApp.SafProductLoad(name);
-
+            
             txtbxProductName.Text = safetyProduct.Name;
             rtxtbxDisc.Text = safetyProduct.Discription;
             txtbxPrice.Text = safetyProduct.Price.ToString();
 
+            TechnicianEmp technicianEmp = await productInfoApp.techProductLoad();
+
+            txtbxTechnicianN.Text = technicianEmp.People.FirstName;
 
 
         }
