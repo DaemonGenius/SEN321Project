@@ -80,38 +80,68 @@ namespace LOGIC.BusinessLogic
             }
         }
         #endregion
-
         #region LoadTechnician
         public static async Task<TechnicianEmp> GetTransactionTech()
         {
             using (var dbe = new SHSdb())
             {
                 People person = dbe.peoples.FirstOrDefault((x => x.ID == ClientProcesses.ID));
-                
-                Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == person.ID));
-                TechnicianEmp technicianEmp = dbe.technicianEmps.FirstOrDefault(x => x.ID == transaction.TechnicianEmp_ID);
+                Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == x.ID ));              
 
                 return new TechnicianEmp()
                 {
-                    Person_ID = technicianEmp.Person_ID,
                     People = new People()
                     {
-                        FirstName = person.FirstName
+                        FirstName = transaction.TechnicianEmp.People.FirstName,
+                        LastName = transaction.TechnicianEmp.People.LastName                        
                     }
                 };
             }
         }
         #endregion
-
         #region LoadContract
+        public static async Task<Contract> GetContract()
+        {
+            using (var dbe = new SHSdb())
+            {
+                People person = dbe.peoples.FirstOrDefault((x => x.ID == ClientProcesses.ID));
+                Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == x.ID));
 
+                return new Contract()
+                {
+                   ContractName = transaction.Contract.ContractName,
+                   Maintenances = (from Maindate in transaction.Contract.Maintenances
+                                   select new Maintenance
+                                   {
+                                       DateStart = Maindate.DateStart,
+                                       DateEnd = Maindate.DateEnd
+                                   }).ToEntitySet(),
+
+                };
+            }
+        }
         #endregion
-
         #region LoadSchedules
+        public static async Task<TechnicianEmp> GetSchedule()
+        {
+            using (var dbe = new SHSdb())
+            {
+                People person = dbe.peoples.FirstOrDefault((x => x.ID == ClientProcesses.ID));
+                TechnicianEmp technicianEmp = dbe.technicianEmps.FirstOrDefault(x => x.ID == person.ID);
+                Transaction transaction = dbe.transactions.FirstOrDefault((x => x.TechnicianEmp_ID == technicianEmp.ID));
 
+                return new TechnicianEmp()
+                {
+                    Schedules = (from Schedate in technicianEmp.Schedules
+                                 select new Schedule
+                                 {
+                                     InsDateStart = Schedate.InsDateStart,
+                                     MainDateStart = Schedate.MainDateStart
+                                 }).ToEntitySet(),
+
+                };
+            }
+        }
         #endregion
-
-
-
     }
 }

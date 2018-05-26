@@ -180,7 +180,7 @@ namespace UI.View.EmployeeSide
 
             TechnicianEmp technicianEmp = await productInfoApp.techProductLoad();
 
-            txtbxTechnicianN.Text = technicianEmp.People.FirstName;
+            txtbxTechnicianN.Text = technicianEmp.People.FirstName + " " + technicianEmp.People.LastName ;
 
 
         }

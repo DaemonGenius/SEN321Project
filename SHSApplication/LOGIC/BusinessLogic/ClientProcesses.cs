@@ -93,6 +93,7 @@ namespace LOGIC.BusinessLogic
                                           Discription = SafPro.Discription,
                                           Price = SafPro.Price,
                                       }).ToEntitySet(),
+                    
                 };
             }
         }
