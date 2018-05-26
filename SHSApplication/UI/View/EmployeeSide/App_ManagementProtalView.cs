@@ -69,7 +69,7 @@ namespace UI.View.EmployeeSide
             #endregion
 
             #region ProductLoad
-
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
             LOGIC.ApplicationLogic.ClientProcessesApp clientProcessesApp = new LOGIC.ApplicationLogic.ClientProcessesApp();
             ProductSystem productSystem = await clientProcessesApp.ProductLoad();
 
@@ -86,6 +86,21 @@ namespace UI.View.EmployeeSide
             {
                 lstbxSaftPro.Items.Add(item2.Name);
             }
+
+            TechnicianEmp technicianEmp = await productInfoApp.techProductLoad();
+            txtbxTechnicianN.Text = technicianEmp.People.FirstName + " " + technicianEmp.People.LastName;
+
+            Contract contract = await productInfoApp.ContractLoad();
+            txtbxContract.Text = contract.ContractName;
+
+            foreach (var item in contract.Maintenances)
+            {
+                string Date = "Start: " + item.DateStart + " End : " + item.DateEnd;
+                
+                rtxtbxMainSche.AppendText(Date);
+            }
+           
+
             #endregion
 
         }
@@ -177,11 +192,9 @@ namespace UI.View.EmployeeSide
             txtbxProductName.Text = safetyProduct.Name;
             rtxtbxDisc.Text = safetyProduct.Discription;
             txtbxPrice.Text = safetyProduct.Price.ToString();
+            txtbxWarr.Text = safetyProduct.Warrenty.Duration;
 
-            TechnicianEmp technicianEmp = await productInfoApp.techProductLoad();
-
-            txtbxTechnicianN.Text = technicianEmp.People.FirstName + " " + technicianEmp.People.LastName ;
-
+            
 
         }
 
@@ -195,6 +208,7 @@ namespace UI.View.EmployeeSide
             txtbxProductName.Text = convienceProduct.Name;
             rtxtbxDisc.Text = convienceProduct.Discription;
             txtbxPrice.Text = convienceProduct.Price.ToString();
+            txtbxWarr.Text = convienceProduct.Warrenty.Duration;
         }
 
         private async void lstbxEnergPro_SelectedIndexChanged(object sender, EventArgs e)
@@ -207,6 +221,7 @@ namespace UI.View.EmployeeSide
             txtbxProductName.Text = energyProduct.Name;
             rtxtbxDisc.Text = energyProduct.Discription;
             txtbxPrice.Text = energyProduct.Price.ToString();
+            txtbxWarr.Text = energyProduct.Warrenty.Duration;
         }
     }
 }

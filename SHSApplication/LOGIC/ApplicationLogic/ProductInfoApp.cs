@@ -25,5 +25,14 @@ namespace LOGIC.ApplicationLogic
         {
             return await BusinessLogic.ProductInfoProcess.GetTransactionTech();
         }
+        public async Task<TechnicianEmp> techScheduleLoad()
+        {
+            return await BusinessLogic.ProductInfoProcess.GetSchedule();
+        }
+        public async Task<Contract> ContractLoad()
+        {
+            return await BusinessLogic.ProductInfoProcess.GetContract();
+        }
+       
     }
 }
