@@ -155,13 +155,26 @@ namespace UI.View.EmployeeSide
             tblCCLogs.Hide();
         }
 
-        private void btnProductManage_Click(object sender, EventArgs e)
+        private async void btnProductManage_Click(object sender, EventArgs e)
         {
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
             tbpProductManagement.Show();
             tbpClients.Hide();
             tbpProducts.Hide();
             tbpScheduleMain.Hide();
             tbpCallCentre.Hide();
+
+
+
+           // ConvienceProduct convienceProduct = await productInfoApp.ConProduct();
+            Array arraySaf = LOGIC.ApplicationLogic.ProductInfoApp.SafProduct();
+            Array arrayEn = LOGIC.ApplicationLogic.ProductInfoApp.EnProduct();
+
+            //foreach (var item in convienceProduct)
+            //{
+            //    lstbxProducts.Text = item.ToString();
+            //}
+
         }
 
         private void btnScheManagement_Click(object sender, EventArgs e)
@@ -181,20 +194,20 @@ namespace UI.View.EmployeeSide
             tbpProductManagement.Hide();
             tbpCallCentre.Show();
         }
-
+        #region ClientSystem
         private async void lstbxSaftPro_SelectedIndexChanged(object sender, EventArgs e)
         {
             string name = lstbxSaftPro.SelectedItem.ToString();
             LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
-           
+
             SafetyProduct safetyProduct = await productInfoApp.SafProductLoad(name);
-            
+
             txtbxProductName.Text = safetyProduct.Name;
             rtxtbxDisc.Text = safetyProduct.Discription;
             txtbxPrice.Text = safetyProduct.Price.ToString();
             txtbxWarr.Text = safetyProduct.Warrenty.Duration;
 
-            
+
 
         }
 
@@ -222,6 +235,14 @@ namespace UI.View.EmployeeSide
             rtxtbxDisc.Text = energyProduct.Discription;
             txtbxPrice.Text = energyProduct.Price.ToString();
             txtbxWarr.Text = energyProduct.Warrenty.Duration;
+        }
+        #endregion
+
+
+        private void btnSearchProduct_Click(object sender, EventArgs e)
+        {
+           // txtbxProductSeacch.Text;
+
         }
     }
 }

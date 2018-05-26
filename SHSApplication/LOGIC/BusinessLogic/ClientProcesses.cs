@@ -100,12 +100,12 @@ namespace LOGIC.BusinessLogic
         #endregion
         
 
-        public static EntitySet<T> ToEntitySet<T>(this IEnumerable<T> source) where T : class
-        {
-            var es = new EntitySet<T>();
-            es.AddRange(source);
-            return es;
-        }
+        //public static EntitySet<T> ToEntitySet<T>(this IEnumerable<T> source) where T : class
+        //{
+        //    var es = new EntitySet<T>();
+        //    es.AddRange(source);
+        //    return es;
+        //}
     }
 
 

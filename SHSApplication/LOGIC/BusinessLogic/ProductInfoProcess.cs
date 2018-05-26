@@ -2,13 +2,14 @@
 using DATALAYER.DatabaseConnection;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LOGIC.BusinessLogic
 {
-    public class ProductInfoProcess
+    public static class ProductInfoProcess
     {
 
         #region ConProduct
@@ -143,5 +144,53 @@ namespace LOGIC.BusinessLogic
             }
         }
         #endregion
+        #region ProductSearch
+        //public static async  Task<ConvienceProduct> ConProductSearch()
+        //{
+            
+        //    using (var dbe = new SHSdb())
+        //    {
+        //        ConvienceProduct convienceProduct;
+
+
+        //        return dbe.convienceProducts.Select(x => new ConvienceProduct()
+        //        {
+        //            Name = x.Name,
+
+        //        }).ToEntitySet();
+
+        //    }
+        //}
+
+        public static EnergyProduct[] EnProductSearch()
+        {
+            using (var dbe = new SHSdb())
+            {
+                return dbe.energyProducts.Select(x => new EnergyProduct()
+                {
+                    Name = x.Name,                   
+
+                }).ToArray();
+            }
+        }
+        public static SafetyProduct[] SafProductSearch()
+        {
+            using (var dbe = new SHSdb())
+            {
+                return dbe.safetyProducts.Select(x => new SafetyProduct()
+                {
+                    Name = x.Name,                  
+
+                }).ToArray();
+            }
+        }
+        #endregion
+        public static EntitySet<T> ToEntitySet<T>(this IEnumerable<T> source) where T : class
+        {
+            var es = new EntitySet<T>();
+            es.AddRange(source);
+            return es;
+        }
+
     }
 }

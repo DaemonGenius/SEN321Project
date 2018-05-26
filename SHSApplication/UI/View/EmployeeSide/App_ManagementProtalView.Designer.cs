@@ -147,21 +147,17 @@
             this.btnArchiveProduct = new System.Windows.Forms.Button();
             this.btnProductUpdate = new System.Windows.Forms.Button();
             this.btnNewProduct = new System.Windows.Forms.Button();
-            this.btnSearchProduct = new System.Windows.Forms.Button();
-            this.txtbxProductSeacch = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.cbxProducDepartment = new System.Windows.Forms.ComboBox();
             this.rtxtbxProductDiscr = new System.Windows.Forms.RichTextBox();
             this.txtbxProdctName = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.cbxProductContractSign = new System.Windows.Forms.ComboBox();
             this.label47 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.txtbxProductWarr = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.tbpScheduleMain = new System.Windows.Forms.TabPage();
@@ -198,6 +194,7 @@
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.btnSearchCli = new System.Windows.Forms.Button();
             this.btnAddnew = new System.Windows.Forms.Button();
+            this.lstbxProducts = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1424,11 +1421,10 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.lstbxProducts);
             this.groupBox14.Controls.Add(this.btnArchiveProduct);
             this.groupBox14.Controls.Add(this.btnProductUpdate);
             this.groupBox14.Controls.Add(this.btnNewProduct);
-            this.groupBox14.Controls.Add(this.btnSearchProduct);
-            this.groupBox14.Controls.Add(this.txtbxProductSeacch);
             this.groupBox14.Controls.Add(this.label48);
             this.groupBox14.Location = new System.Drawing.Point(17, 33);
             this.groupBox14.Name = "groupBox14";
@@ -1439,7 +1435,7 @@
             // 
             // btnArchiveProduct
             // 
-            this.btnArchiveProduct.Location = new System.Drawing.Point(87, 106);
+            this.btnArchiveProduct.Location = new System.Drawing.Point(4, 181);
             this.btnArchiveProduct.Name = "btnArchiveProduct";
             this.btnArchiveProduct.Size = new System.Drawing.Size(75, 39);
             this.btnArchiveProduct.TabIndex = 28;
@@ -1448,37 +1444,21 @@
             // 
             // btnProductUpdate
             // 
-            this.btnProductUpdate.Location = new System.Drawing.Point(168, 61);
+            this.btnProductUpdate.Location = new System.Drawing.Point(166, 181);
             this.btnProductUpdate.Name = "btnProductUpdate";
             this.btnProductUpdate.Size = new System.Drawing.Size(75, 39);
             this.btnProductUpdate.TabIndex = 27;
-            this.btnProductUpdate.Text = "button3";
+            this.btnProductUpdate.Text = "Update";
             this.btnProductUpdate.UseVisualStyleBackColor = true;
             // 
             // btnNewProduct
             // 
-            this.btnNewProduct.Location = new System.Drawing.Point(87, 61);
+            this.btnNewProduct.Location = new System.Drawing.Point(85, 181);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(75, 39);
             this.btnNewProduct.TabIndex = 26;
             this.btnNewProduct.Text = "New";
             this.btnNewProduct.UseVisualStyleBackColor = true;
-            // 
-            // btnSearchProduct
-            // 
-            this.btnSearchProduct.Location = new System.Drawing.Point(6, 61);
-            this.btnSearchProduct.Name = "btnSearchProduct";
-            this.btnSearchProduct.Size = new System.Drawing.Size(75, 39);
-            this.btnSearchProduct.TabIndex = 25;
-            this.btnSearchProduct.Text = "Search";
-            this.btnSearchProduct.UseVisualStyleBackColor = true;
-            // 
-            // txtbxProductSeacch
-            // 
-            this.txtbxProductSeacch.Location = new System.Drawing.Point(113, 22);
-            this.txtbxProductSeacch.Name = "txtbxProductSeacch";
-            this.txtbxProductSeacch.Size = new System.Drawing.Size(132, 20);
-            this.txtbxProductSeacch.TabIndex = 24;
             // 
             // label48
             // 
@@ -1495,13 +1475,11 @@
             this.groupBox13.Controls.Add(this.rtxtbxProductDiscr);
             this.groupBox13.Controls.Add(this.txtbxProdctName);
             this.groupBox13.Controls.Add(this.label42);
-            this.groupBox13.Controls.Add(this.cbxProductContractSign);
             this.groupBox13.Controls.Add(this.label47);
             this.groupBox13.Controls.Add(this.label46);
             this.groupBox13.Controls.Add(this.txtbxProductWarr);
             this.groupBox13.Controls.Add(this.label45);
             this.groupBox13.Controls.Add(this.txtProductPrice);
-            this.groupBox13.Controls.Add(this.label44);
             this.groupBox13.Controls.Add(this.label43);
             this.groupBox13.Location = new System.Drawing.Point(274, 33);
             this.groupBox13.Name = "groupBox13";
@@ -1517,7 +1495,7 @@
             "Home Department",
             "Enegry Department",
             "Safety Department"});
-            this.cbxProducDepartment.Location = new System.Drawing.Point(110, 239);
+            this.cbxProducDepartment.Location = new System.Drawing.Point(110, 203);
             this.cbxProducDepartment.Name = "cbxProducDepartment";
             this.cbxProducDepartment.Size = new System.Drawing.Size(132, 21);
             this.cbxProducDepartment.TabIndex = 24;
@@ -1545,14 +1523,6 @@
             this.label42.Size = new System.Drawing.Size(78, 13);
             this.label42.TabIndex = 0;
             this.label42.Text = "Product Name:";
-            // 
-            // cbxProductContractSign
-            // 
-            this.cbxProductContractSign.FormattingEnabled = true;
-            this.cbxProductContractSign.Location = new System.Drawing.Point(110, 207);
-            this.cbxProductContractSign.Name = "cbxProductContractSign";
-            this.cbxProductContractSign.Size = new System.Drawing.Size(132, 21);
-            this.cbxProductContractSign.TabIndex = 23;
             // 
             // label47
             // 
@@ -1595,19 +1565,10 @@
             this.txtProductPrice.Size = new System.Drawing.Size(132, 20);
             this.txtProductPrice.TabIndex = 17;
             // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(13, 210);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(86, 13);
-            this.label44.TabIndex = 15;
-            this.label44.Text = "Contract Signed:";
-            // 
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(13, 243);
+            this.label43.Location = new System.Drawing.Point(13, 207);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(65, 13);
             this.label43.TabIndex = 16;
@@ -1977,6 +1938,15 @@
             this.btnAddnew.UseVisualStyleBackColor = true;
             this.btnAddnew.Click += new System.EventHandler(this.btnAddnew_Click);
             // 
+            // lstbxProducts
+            // 
+            this.lstbxProducts.FormattingEnabled = true;
+            this.lstbxProducts.Location = new System.Drawing.Point(99, 25);
+            this.lstbxProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.lstbxProducts.Name = "lstbxProducts";
+            this.lstbxProducts.Size = new System.Drawing.Size(142, 147);
+            this.lstbxProducts.TabIndex = 29;
+            // 
             // App_ManagementProtalView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2172,21 +2142,17 @@
         private System.Windows.Forms.Button btnArchiveProduct;
         private System.Windows.Forms.Button btnProductUpdate;
         private System.Windows.Forms.Button btnNewProduct;
-        private System.Windows.Forms.Button btnSearchProduct;
-        private System.Windows.Forms.TextBox txtbxProductSeacch;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.ComboBox cbxProducDepartment;
         private System.Windows.Forms.RichTextBox rtxtbxProductDiscr;
         private System.Windows.Forms.TextBox txtbxProdctName;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.ComboBox cbxProductContractSign;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox txtbxProductWarr;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txtProductPrice;
-        private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TabPage tbpScheduleMain;
@@ -2214,5 +2180,6 @@
         private System.Windows.Forms.ListBox lstbxSaftPro;
         private System.Windows.Forms.ListBox lstbxEnergPro;
         private System.Windows.Forms.ListBox lstbxConvPro;
+        private System.Windows.Forms.ListBox lstbxProducts;
     }
 }
