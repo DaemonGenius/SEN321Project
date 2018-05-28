@@ -145,9 +145,9 @@ namespace LOGIC.BusinessLogic
         }
         #endregion
         #region ProductSearch
-        //public static async  Task<ConvienceProduct> ConProductSearch()
+        //public static async Task<ConvienceProduct> ConProductSearch()
         //{
-            
+
         //    using (var dbe = new SHSdb())
         //    {
         //        ConvienceProduct convienceProduct;

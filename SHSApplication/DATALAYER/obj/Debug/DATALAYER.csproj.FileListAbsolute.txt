@@ -8,7 +8,7 @@ C:\Users\FX502\Documents\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\D
 E:\_GIT\sen321project\SHSApplication\DATALAYER\bin\Debug\DATALAYER.dll.config
 E:\_GIT\sen321project\SHSApplication\DATALAYER\bin\Debug\DATALAYER.dll
 E:\_GIT\sen321project\SHSApplication\DATALAYER\bin\Debug\DATALAYER.pdb
-E:\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.csprojResolveAssemblyReference.cache
 E:\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.csproj.CoreCompileInputs.cache
 E:\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.dll
 E:\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.pdb
+E:\_GIT\sen321project\SHSApplication\DATALAYER\obj\Debug\DATALAYER.csprojResolveAssemblyReference.cache

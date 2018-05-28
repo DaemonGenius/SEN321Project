@@ -21,13 +21,11 @@ namespace DATALAYER.Controllers
 
         private string _Discription;
 
-        private System.Nullable<double> _Price;
+        private double _Price;
 
         private System.Nullable<int> _Warrenty_ID;
 
-        private System.Nullable<int> _ProductSystems_ID;
-
-        private EntityRef<ProductSystem> _ProductSystem;
+        private EntitySet<SysSafProduct> _SysSafProducts;
 
         private EntityRef<Warrenty> _Warrenty;
 
@@ -41,17 +39,15 @@ namespace DATALAYER.Controllers
         partial void OnNameChanged();
         partial void OnDiscriptionChanging(string value);
         partial void OnDiscriptionChanged();
-        partial void OnPriceChanging(System.Nullable<double> value);
+        partial void OnPriceChanging(double value);
         partial void OnPriceChanged();
         partial void OnWarrenty_IDChanging(System.Nullable<int> value);
         partial void OnWarrenty_IDChanged();
-        partial void OnProductSystems_IDChanging(System.Nullable<int> value);
-        partial void OnProductSystems_IDChanged();
         #endregion
 
         public SafetyProduct()
         {
-            this._ProductSystem = default(EntityRef<ProductSystem>);
+            this._SysSafProducts = new EntitySet<SysSafProduct>(new Action<SysSafProduct>(this.attach_SysSafProducts), new Action<SysSafProduct>(this.detach_SysSafProducts));
             this._Warrenty = default(EntityRef<Warrenty>);
             OnCreated();
         }
@@ -116,8 +112,8 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Price", DbType = "Float")]
-        public System.Nullable<double> Price
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Price", DbType = "Float NOT NULL")]
+        public double Price
         {
             get
             {
@@ -160,61 +156,16 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ProductSystems_ID", DbType = "Int")]
-        public System.Nullable<int> ProductSystems_ID
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "SafetyProduct_SysSafProduct", Storage = "_SysSafProducts", ThisKey = "ID", OtherKey = "SafetyProducts_ID")]
+        public EntitySet<SysSafProduct> SysSafProducts
         {
             get
             {
-                return this._ProductSystems_ID;
+                return this._SysSafProducts;
             }
             set
             {
-                if ((this._ProductSystems_ID != value))
-                {
-                    if (this._ProductSystem.HasLoadedOrAssignedValue)
-                    {
-                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-                    }
-                    this.OnProductSystems_IDChanging(value);
-                    this.SendPropertyChanging();
-                    this._ProductSystems_ID = value;
-                    this.SendPropertyChanged("ProductSystems_ID");
-                    this.OnProductSystems_IDChanged();
-                }
-            }
-        }
-
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ProductSystem_SafetyProduct", Storage = "_ProductSystem", ThisKey = "ProductSystems_ID", OtherKey = "ID", IsForeignKey = true)]
-        public ProductSystem ProductSystem
-        {
-            get
-            {
-                return this._ProductSystem.Entity;
-            }
-            set
-            {
-                ProductSystem previousValue = this._ProductSystem.Entity;
-                if (((previousValue != value)
-                            || (this._ProductSystem.HasLoadedOrAssignedValue == false)))
-                {
-                    this.SendPropertyChanging();
-                    if ((previousValue != null))
-                    {
-                        this._ProductSystem.Entity = null;
-                        previousValue.SafetyProducts.Remove(this);
-                    }
-                    this._ProductSystem.Entity = value;
-                    if ((value != null))
-                    {
-                        value.SafetyProducts.Add(this);
-                        this._ProductSystems_ID = value.ID;
-                    }
-                    else
-                    {
-                        this._ProductSystems_ID = default(Nullable<int>);
-                    }
-                    this.SendPropertyChanged("ProductSystem");
-                }
+                this._SysSafProducts.Assign(value);
             }
         }
 
@@ -270,6 +221,18 @@ namespace DATALAYER.Controllers
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        private void attach_SysSafProducts(SysSafProduct entity)
+        {
+            this.SendPropertyChanging();
+            entity.SafetyProduct = this;
+        }
+
+        private void detach_SysSafProducts(SysSafProduct entity)
+        {
+            this.SendPropertyChanging();
+            entity.SafetyProduct = null;
         }
     }
 }

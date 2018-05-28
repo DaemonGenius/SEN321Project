@@ -60,6 +60,26 @@ namespace LOGIC.BusinessLogic
         
         #endregion
         #region ClientProductSearch
+        public static async Task<SysConProduct> asClientProductLoad()
+        {
+            using (var dbe = new SHSdb())
+            {
+                Client client = dbe.Clients.FirstOrDefault((x => x.Person_ID == ID));
+                Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == client.ID));
+                ProductSystem productSystems = dbe.productSystems.FirstOrDefault((x => x.Cart_ID == transaction.Cart_ID));
+                SysConProduct sysConProduct = dbe.sysConProducts.FirstOrDefault(x => x.ProductSystem.ID == x.ConvienceProduct.ID);
+
+                return new SysConProduct() {                    
+                    ConvienceProduct = new ConvienceProduct() {                        
+                        Name = sysConProduct.ConvienceProduct.Name,
+                        Discription = sysConProduct.ConvienceProduct.Discription,
+                        Price = sysConProduct.ConvienceProduct.Price,                        
+                    }
+
+                };
+            }
+        }
+
         public static async Task<ProductSystem> ClientProductLoad()
         {
             using (var dbe = new SHSdb())
@@ -67,38 +87,50 @@ namespace LOGIC.BusinessLogic
                 Client client = dbe.Clients.FirstOrDefault((x => x.Person_ID == ID));
                 Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == client.ID));
                 ProductSystem productSystems = dbe.productSystems.FirstOrDefault((x => x.Cart_ID == transaction.Cart_ID));
-                ConvienceProduct convienceProduct = dbe.convienceProducts.FirstOrDefault((x => x.ProductSystems_ID == productSystems.ID));
+                SysConProduct sysConProduct = dbe.sysConProducts.FirstOrDefault(x => x.ProductSystem.ID == x.ConvienceProduct.ID);
 
                 return new ProductSystem()
                 {
-                    Name = productSystems.Name,                   
-                    ConvienceProducts = (from ConvPro in productSystems.ConvienceProducts
-                                         select new ConvienceProduct
-                                         {
-                                             Name = ConvPro.Name,
-                                             Discription = ConvPro.Discription,
-                                             Price = ConvPro.Price,
-                                         }).ToEntitySet(),
-                    EnergyProducts = (from EnerPro in productSystems.EnergyProducts
-                                      select new EnergyProduct
+                    Name = productSystems.Name,
+                    Price = productSystems.Price,
+                    SysConProducts = (from con in productSystems.SysConProducts
+                                      select new SysConProduct
                                       {
-                                          Name = EnerPro.Name,
-                                          Discription = EnerPro.Discription,
-                                          Price = EnerPro.Price,
+                                          ConvienceProduct = new ConvienceProduct() {
+                                              Name = con.ConvienceProduct.Name,
+                                              Discription = con.ConvienceProduct.Discription,
+                                              Price = con.ConvienceProduct.Price                                              
+                                          }                                          
                                       }).ToEntitySet(),
-                    SafetyProducts = (from SafPro in productSystems.SafetyProducts
-                                      select new SafetyProduct
+                    SysEneProducts = (from Ene in productSystems.SysEneProducts
+                                      select new SysEneProduct
                                       {
-                                          Name = SafPro.Name,
-                                          Discription = SafPro.Discription,
-                                          Price = SafPro.Price,
+                                          EnergyProduct = new EnergyProduct()
+                                          {
+                                              Name = Ene.EnergyProduct.Name,
+                                              Discription = Ene.EnergyProduct.Discription,
+                                              Price = Ene.EnergyProduct.Price
+                                          }
                                       }).ToEntitySet(),
-                    
+
+                    SysSafProducts = (from Saf in productSystems.SysSafProducts
+                                      select new SysSafProduct
+                                      {
+                                          SafetyProduct = new SafetyProduct()
+                                          {
+                                              Name = Saf.SafetyProduct.Name,
+                                              Discription = Saf.SafetyProduct.Discription,
+                                              Price = Saf.SafetyProduct.Price
+                                          }
+                                      }).ToEntitySet()
                 };
             }
         }
+
+
+
         #endregion
-        
+
 
         //public static EntitySet<T> ToEntitySet<T>(this IEnumerable<T> source) where T : class
         //{

@@ -74,17 +74,17 @@ namespace UI.View.EmployeeSide
             ProductSystem productSystem = await clientProcessesApp.ProductLoad();
 
             txtbxSystem.Text = productSystem.Name;
-            foreach (var item in productSystem.ConvienceProducts)
+            foreach (var item in productSystem.SysConProducts)
             {
-                lstbxConvPro.Items.Add(item.Name);
+                lstbxConvPro.Items.Add(item.ConvienceProduct.Name);
             }
-            foreach (var item1 in productSystem.EnergyProducts)
+            foreach (var item1 in productSystem.SysEneProducts)
             {
-                lstbxEnergPro.Items.Add(item1.Name);
+                lstbxEnergPro.Items.Add(item1.EnergyProduct.Name);
             }
-            foreach (var item2 in productSystem.SafetyProducts)
+            foreach (var item2 in productSystem.SysSafProducts)
             {
-                lstbxSaftPro.Items.Add(item2.Name);
+                lstbxSaftPro.Items.Add(item2.SafetyProduct.Name);
             }
 
             TechnicianEmp technicianEmp = await productInfoApp.techProductLoad();
