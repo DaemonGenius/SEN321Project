@@ -164,16 +164,21 @@ namespace UI.View.EmployeeSide
             tbpScheduleMain.Hide();
             tbpCallCentre.Hide();
 
-
-
-           // ConvienceProduct convienceProduct = await productInfoApp.ConProduct();
-            Array arraySaf = LOGIC.ApplicationLogic.ProductInfoApp.SafProduct();
-            Array arrayEn = LOGIC.ApplicationLogic.ProductInfoApp.EnProduct();
-
-            //foreach (var item in convienceProduct)
-            //{
-            //    lstbxProducts.Text = item.ToString();
-            //}
+            List<string> ListEn = LOGIC.ApplicationLogic.ProductInfoApp.EnProduct();
+            foreach (var item in ListEn)
+            {
+                lstbxProducts.Items.Add(item.ToString());
+            }
+            List<string> ListSaf = LOGIC.ApplicationLogic.ProductInfoApp.SafProduct();
+            foreach (var item in ListSaf)
+            {
+                lstbxProducts.Items.Add(item.ToString());
+            }
+            List<string> ListCon = LOGIC.ApplicationLogic.ProductInfoApp.ConProduct();
+            foreach (var item in ListCon)
+            {
+                lstbxProducts.Items.Add(item.ToString());
+            }
 
         }
 

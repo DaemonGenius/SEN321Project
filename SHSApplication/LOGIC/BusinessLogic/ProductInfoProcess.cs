@@ -145,43 +145,29 @@ namespace LOGIC.BusinessLogic
         }
         #endregion
         #region ProductSearch
-        //public static async Task<ConvienceProduct> ConProductSearch()
-        //{
-
-        //    using (var dbe = new SHSdb())
-        //    {
-        //        ConvienceProduct convienceProduct;
-
-
-        //        return dbe.convienceProducts.Select(x => new ConvienceProduct()
-        //        {
-        //            Name = x.Name,
-
-        //        }).ToEntitySet();
-
-        //    }
-        //}
-
-        public static EnergyProduct[] EnProductSearch()
+        public static List<string> ConProductSearch()
         {
             using (var dbe = new SHSdb())
             {
-                return dbe.energyProducts.Select(x => new EnergyProduct()
-                {
-                    Name = x.Name,                   
-
-                }).ToArray();
+                return dbe.convienceProducts.Select(x => x.Name).ToList();
             }
         }
-        public static SafetyProduct[] SafProductSearch()
+        
+
+        public static List<string> EnProductSearch()
         {
             using (var dbe = new SHSdb())
             {
-                return dbe.safetyProducts.Select(x => new SafetyProduct()
-                {
-                    Name = x.Name,                  
-
-                }).ToArray();
+                
+               return dbe.energyProducts.Select(x => x.Name).ToList();
+                
+            } 
+        }
+        public static List<string> SafProductSearch()
+        {
+            using (var dbe = new SHSdb())
+            {
+                return dbe.safetyProducts.Select(x => x.Name).ToList();
             }
         }
         #endregion

@@ -34,15 +34,15 @@ namespace LOGIC.ApplicationLogic
             return await BusinessLogic.ProductInfoProcess.GetContract();
         }
 
-        //public async Task<ConvienceProduct> ConProduct()
-        //{
-        //    return await BusinessLogic.ProductInfoProcess.ConProductSearch();
-        //}
-        public static EnergyProduct[] EnProduct()
+        public static List<string> ConProduct()
+        {
+            return  BusinessLogic.ProductInfoProcess.ConProductSearch();
+        }
+        public static List<string> EnProduct()
         {
             return BusinessLogic.ProductInfoProcess.EnProductSearch();
         }
-        public static SafetyProduct[] SafProduct()
+        public static List<string> SafProduct()
         {
             return BusinessLogic.ProductInfoProcess.SafProductSearch();
         }
