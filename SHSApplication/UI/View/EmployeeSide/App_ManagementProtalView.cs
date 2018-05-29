@@ -14,7 +14,7 @@ namespace UI.View.EmployeeSide
 {
     public partial class App_ManagementProtalView : Form
     {
-        SharedViews.App_Start App_Start = new SharedViews.App_Start();
+        
         
         public string LoggedUser;
         public App_ManagementProtalView()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DATALAYER.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace LOGIC.ApplicationLogic
         // ID          @^\d{13}$
         // DOB         @"^\d{1,2}\/\d{1,2}\/\d{4}$"
 
-        // cell         @"0((60[3-9]|64[0-5])\d{6}|(7[1-4689]|6[1-3]|8[1-4])\d{7})
+        // cell         @"^\d{ 13 }$"
         // ZipCode      @"\d{4}"
         // StreetNum    @"\d{4}"
         // CardName     @"^[a-zA-Z]+(([\'\,\.\- ][a-zA-Z ])?[a-zA-Z]*)*$"
@@ -239,6 +240,47 @@ namespace LOGIC.ApplicationLogic
             }
             else
                 return false;
+        }
+        #endregion
+
+        #region Register User
+        public bool RegisterUser1(string fname, string lname, string email, string cell, string pass, string DOB,string gender, string ssid, string StreetName, string Zipcode,
+            string City, string Province, string Country, string cardNum, string cardName, string cardCVC, string cardType, string cardExpiryDate, int StreetNum, string department)
+        {
+           
+            Billinginfoe billinginfoe = new Billinginfoe
+            {
+                People = new People
+                {
+                    FirstName = fname,
+                    LastName = lname,
+                    EmailAddress = email,
+                    Password = pass,
+                    CellNumber = cell,
+                    Department = department,
+                    SSID = ssid,
+                    DOB = DOB,
+                    Gender = gender,
+                    Address = new Address
+                    {
+                        Street = StreetName,
+                        StreetNum = StreetNum,
+                        Zipcode = Zipcode,
+                        Province = Province,
+                        Country = Country
+                    },
+                },
+                CardName = cardName,
+                CardNum = cardNum,
+                CardCVV = cardCVC,
+                CardExpireDate = cardExpiryDate,
+                CardType = cardType
+            };
+            
+            
+
+            RegistrationProcess.RegisterUser(billinginfoe);
+            return true;
         }
         #endregion
 

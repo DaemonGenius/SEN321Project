@@ -100,15 +100,14 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblCardName = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
             this.btnBLogin = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -122,6 +121,7 @@
             this.panel4.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.btnBLogin.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -617,6 +617,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.txtbxECountry);
             this.panel3.Controls.Add(this.label29);
             this.panel3.Controls.Add(this.txtbxEProvince);
@@ -695,6 +696,7 @@
             this.txtbxEStreetNum.Name = "txtbxEStreetNum";
             this.txtbxEStreetNum.Size = new System.Drawing.Size(124, 20);
             this.txtbxEStreetNum.TabIndex = 40;
+            this.txtbxEStreetNum.TextChanged += new System.EventHandler(this.txtbxEStreetNum_TextChanged);
             // 
             // label30
             // 
@@ -906,17 +908,13 @@
             // 
             this.groupBox4.Controls.Add(this.lblCardName);
             this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.label26);
             this.groupBox4.Controls.Add(this.label27);
-            this.groupBox4.Controls.Add(this.label28);
-            this.groupBox4.Controls.Add(this.label33);
             this.groupBox4.Controls.Add(this.label34);
-            this.groupBox4.Controls.Add(this.label35);
             this.groupBox4.Location = new System.Drawing.Point(271, 76);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(236, 166);
+            this.groupBox4.Size = new System.Drawing.Size(236, 68);
             this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Validation Box";
@@ -942,23 +940,11 @@
             this.label15.TabIndex = 10;
             this.label15.Text = "Card Name:";
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(106, 91);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(81, 13);
-            this.label26.TabIndex = 9;
-            this.label26.Text = "Error - with CVC";
-            this.label26.Visible = false;
-            // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Location = new System.Drawing.Point(106, 67);
+            this.label27.Location = new System.Drawing.Point(106, 48);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(122, 13);
@@ -966,47 +952,15 @@
             this.label27.Text = "Error - with Card Number";
             this.label27.Visible = false;
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.Color.Red;
-            this.label28.Location = new System.Drawing.Point(106, 46);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(109, 13);
-            this.label28.TabIndex = 7;
-            this.label28.Text = "Error - with Card Type";
-            this.label28.Visible = false;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(17, 91);
-            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(28, 13);
-            this.label33.TabIndex = 2;
-            this.label33.Text = "CVC";
-            // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(17, 67);
+            this.label34.Location = new System.Drawing.Point(17, 48);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(69, 13);
             this.label34.TabIndex = 1;
             this.label34.Text = "Card Number";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(17, 46);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(56, 13);
-            this.label35.TabIndex = 0;
-            this.label35.Text = "Card Type";
             // 
             // btnBLogin
             // 
@@ -1043,6 +997,40 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Location = new System.Drawing.Point(285, 262);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(236, 68);
+            this.groupBox1.TabIndex = 47;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Validation Box";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(106, 24);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(91, 13);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Error - With Street";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(17, 24);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(78, 13);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Street Number:";
+            // 
             // App_RegisterUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1072,6 +1060,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.btnBLogin.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1120,12 +1110,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
         private System.Windows.Forms.GroupBox btnBLogin;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRegister;
@@ -1159,5 +1145,8 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label lblCardName;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }

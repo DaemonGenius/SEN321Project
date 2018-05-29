@@ -13,6 +13,7 @@ namespace UI.View.SharedViews
 {
     public partial class App_RegisterUser : Form
     {
+        public string gender;
         #region Public Regex
         public Regex rEmail = new Regex(@"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
              @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$");
@@ -46,17 +47,41 @@ namespace UI.View.SharedViews
             string Country = txtbxECountry.Text;
             string cardNum = txtbxECardNum.Text;
             string cardName = txtbxECardName.Text;
+            
             string cardCVC = txtbxECVC.Text;
             string cardType = txtbxECardType.Text;
             string cardExpiryDate = txtbxDateofB.Text;
             string StreetNum = txtbxEStreetNum.Text;
-            string department = "Admin";
-            
+            string department = cbxDepartType.SelectedItem.ToString();
 
-            LOGIC.BusinessLogic.RegistrationProcess registerProcess = new LOGIC.BusinessLogic.RegistrationProcess();
+            if (radbtnFemale.Checked == true)
+            {
+                gender = "Female";
+            }
+            else
+            if (radbtnMale.Checked == true)
+            {
+                gender = "Male";
+            }
+            else
+            if (radbtnOther.Checked == true)
+            {
+                gender = "Other";
+            }
+
             LOGIC.ApplicationLogic.RegisterValidation registerValidation = new LOGIC.ApplicationLogic.RegisterValidation();
-            registerValidation.RegisterUser(fname,lname,email,cell,pass,DOB,ssid,StreetName,Zipcode,City,Province,Country,cardNum,cardName,cardCVC,cardType,cardExpiryDate,Convert.ToInt32(StreetNum),department);
+            if (registerValidation.RegisterUser1(fname, lname, email, cell, pass, DOB, gender, ssid, StreetName, Zipcode, City, Province, Country, cardNum, cardName, cardCVC, cardType, cardExpiryDate, Convert.ToInt32(StreetNum), department) == true)
+            {
+                MessageBox.Show("Client successfully added");
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+           
             
+            //registerValidation.RegisterUser(fname,lname,email,cell,pass,DOB,ssid,StreetName,Zipcode,City,Province,Country,cardNum,cardName,cardCVC,cardType,cardExpiryDate,Convert.ToInt32(StreetNum),department);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -117,19 +142,19 @@ namespace UI.View.SharedViews
         }
         private void txtbxPass_TextChanged(object sender, EventArgs e)
         {
-            if (rEmail.IsMatch(txtbxPass.Text))
-            {
-                lblPass.Visible = true;
-                lblPass.Text = "Passed";
-                lblPass.ForeColor = System.Drawing.Color.Green;
+            //if (rEmail.IsMatch(txtbxPass.Text))
+            //{
+            //    lblPass.Visible = true;
+            //    lblPass.Text = "Passed";
+            //    lblPass.ForeColor = System.Drawing.Color.Green;
 
-            }
-            else
-            {
-                lblPass.Visible = true;
-                lblPass.Text = "Error with password";
-                lblPass.ForeColor = System.Drawing.Color.Red;
-            }
+            //}
+            //else
+            //{
+            //    lblPass.Visible = true;
+            //    lblPass.Text = "Error with password";
+            //    lblPass.ForeColor = System.Drawing.Color.Red;
+            //}
         }
 
         private void txtbxDateofB_TextChanged(object sender, EventArgs e)
@@ -205,6 +230,23 @@ namespace UI.View.SharedViews
         private void App_RegisterUser_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtbxEStreetNum_TextChanged(object sender, EventArgs e)
+        {
+            if (rStreetNu.IsMatch(txtbxEStreetNum.Text))
+            {
+                lblCardName.Visible = true;
+                lblCardName.Text = "Passed";
+                lblCardName.ForeColor = System.Drawing.Color.Green;
+
+            }
+            else
+            {
+                lblCardName.Visible = true;
+                lblCardName.Text = "Error with Street Number";
+                lblCardName.ForeColor = System.Drawing.Color.Red;
+            }
         }
     }
 }
