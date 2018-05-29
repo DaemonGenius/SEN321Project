@@ -17,7 +17,7 @@ namespace LOGIC.ApplicationLogic
 
         #region Public Lists
         public List<DATALAYER.Controllers.People> peoplelst = new List<DATALAYER.Controllers.People>();
-        public string fname, lname, email, cell, pass, DOB, ssid, StreetName, Zipcode, City, Province, Country, cardNum, cardName, cardCVC, cardType, cardExpiryDate;
+        public string Loggedin, fname, lname, email, cell, pass, DOB, ssid, StreetName, Zipcode, City, Province, Country, cardNum, cardName, cardCVC, cardType, cardExpiryDate;
         public int StreetNum;
         #endregion
 
@@ -39,6 +39,7 @@ namespace LOGIC.ApplicationLogic
             if (r.IsMatch(Email))
             {
                 LoginProcess.Login(Email,pass);
+                Loggedin = LoginProcess.fname;
                 DepartmentType();
                 return true;
             }

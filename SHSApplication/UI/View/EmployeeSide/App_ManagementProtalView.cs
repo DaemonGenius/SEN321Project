@@ -14,6 +14,9 @@ namespace UI.View.EmployeeSide
 {
     public partial class App_ManagementProtalView : Form
     {
+        SharedViews.App_Start App_Start = new SharedViews.App_Start();
+        
+        public string LoggedUser;
         public App_ManagementProtalView()
         {
             InitializeComponent();
@@ -321,6 +324,59 @@ namespace UI.View.EmployeeSide
             txtbxScheTimeS.Text = maintenance.DateStart.ToShortDateString();
             txtbxScheTimeE.Text = maintenance.DateEnd.ToShortDateString();
             txtbxClientSys.Text = maintenance.ProductSystem.Name;
+
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private async void App_ManagementProtalView_Load(object sender, EventArgs e)
+        {
+            LOGIC.ApplicationLogic.EmployeeApp employeeApp = new LOGIC.ApplicationLogic.EmployeeApp();
+           
+            List<string> Technicians =  employeeApp.LoadEmp();
+            List<string> Sales = employeeApp.LoadSaleEmp();
+            List<string> Admins = employeeApp.LoadAdminEmp();
+
+            foreach (var item in Technicians)
+            {
+                if (item != LoggedUser )
+                {
+                    cbxEmployee.Items.Add(item);
+                }
+                else
+                {
+                    cbxEmployee.Items.Remove(LoggedUser);
+                    
+                }
+               
+            }
+
+            foreach (var item in Sales)
+            {
+                if (item == LoggedUser)
+                {
+                    cbxEmployee.Items.Remove(LoggedUser);
+                }
+                else
+                {
+                    cbxEmployee.Items.Add(item);
+                }
+            }
+
+            foreach (var item in Admins)
+            {
+                if (item == LoggedUser)
+                {
+                    cbxEmployee.Items.Remove(LoggedUser);
+                }
+                else
+                {
+                    cbxEmployee.Items.Add(item);
+                }
+            }
 
         }
     }

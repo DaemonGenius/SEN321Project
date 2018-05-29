@@ -13,6 +13,7 @@ namespace LOGIC.BusinessLogic
     {
         public string Email;
         public string Pass;
+        public string fname;
        // DataContext db = new DataContext("Data Source=.;Initial Catalog=SHSdb4;Integrated Security=True;");
        // Table<People> People = db.GetTable<People>();
         #region Login
@@ -35,6 +36,9 @@ namespace LOGIC.BusinessLogic
                     {                       
                         Email = item.EmailAddress;
                         Pass = item.Password;
+                        fname = item.FirstName;
+                        
+                        
                         return value = true;
                     }
                 }
@@ -47,7 +51,7 @@ namespace LOGIC.BusinessLogic
         #region PortalType
         public string PortalType()
         {
-            using (var dbe = new DataContext("Data Source=.;Initial Catalog=SHSdb4;Integrated Security=True;"))
+            using (var dbe = new SHSdb())
             {
                 
                 string value = null;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -198,6 +199,15 @@
             this.label43 = new System.Windows.Forms.Label();
             this.lstbxMaintenanceDue = new System.Windows.Forms.ListBox();
             this.txtbxClientSys = new System.Windows.Forms.TextBox();
+            this.tblCaller = new System.Windows.Forms.TabPage();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.cbxEmployee = new System.Windows.Forms.ComboBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label57 = new System.Windows.Forms.Label();
+            this.lblCallDuration = new System.Windows.Forms.Label();
+            this.btnCall = new System.Windows.Forms.Button();
+            this.btnEndCall = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -233,6 +243,8 @@
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.tblCaller.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -1091,6 +1103,7 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Controls.Add(this.tblCaller);
             this.tabControl2.Controls.Add(this.tbpCCAdmin);
             this.tabControl2.Controls.Add(this.tblCCClient);
             this.tabControl2.Controls.Add(this.tblCCLogs);
@@ -1989,6 +2002,84 @@
             this.txtbxClientSys.Size = new System.Drawing.Size(118, 20);
             this.txtbxClientSys.TabIndex = 15;
             // 
+            // tblCaller
+            // 
+            this.tblCaller.Controls.Add(this.panel10);
+            this.tblCaller.Location = new System.Drawing.Point(4, 24);
+            this.tblCaller.Name = "tblCaller";
+            this.tblCaller.Padding = new System.Windows.Forms.Padding(3);
+            this.tblCaller.Size = new System.Drawing.Size(299, 296);
+            this.tblCaller.TabIndex = 3;
+            this.tblCaller.Text = "Calling";
+            this.tblCaller.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Gray;
+            this.panel10.Controls.Add(this.btnEndCall);
+            this.panel10.Controls.Add(this.btnCall);
+            this.panel10.Controls.Add(this.lblCallDuration);
+            this.panel10.Controls.Add(this.label57);
+            this.panel10.Controls.Add(this.label50);
+            this.panel10.Controls.Add(this.cbxEmployee);
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(309, 310);
+            this.panel10.TabIndex = 1;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            // 
+            // cbxEmployee
+            // 
+            this.cbxEmployee.FormattingEnabled = true;
+            this.cbxEmployee.Location = new System.Drawing.Point(97, 22);
+            this.cbxEmployee.Name = "cbxEmployee";
+            this.cbxEmployee.Size = new System.Drawing.Size(149, 21);
+            this.cbxEmployee.TabIndex = 0;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(20, 25);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(56, 13);
+            this.label50.TabIndex = 1;
+            this.label50.Text = "Employee:";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(20, 79);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(70, 13);
+            this.label57.TabIndex = 2;
+            this.label57.Text = "Call Duration:";
+            // 
+            // lblCallDuration
+            // 
+            this.lblCallDuration.AutoSize = true;
+            this.lblCallDuration.Location = new System.Drawing.Point(96, 79);
+            this.lblCallDuration.Name = "lblCallDuration";
+            this.lblCallDuration.Size = new System.Drawing.Size(0, 13);
+            this.lblCallDuration.TabIndex = 3;
+            // 
+            // btnCall
+            // 
+            this.btnCall.Location = new System.Drawing.Point(61, 116);
+            this.btnCall.Name = "btnCall";
+            this.btnCall.Size = new System.Drawing.Size(67, 74);
+            this.btnCall.TabIndex = 4;
+            this.btnCall.Text = "Call";
+            this.btnCall.UseVisualStyleBackColor = true;
+            // 
+            // btnEndCall
+            // 
+            this.btnEndCall.Location = new System.Drawing.Point(143, 116);
+            this.btnEndCall.Name = "btnEndCall";
+            this.btnEndCall.Size = new System.Drawing.Size(67, 74);
+            this.btnEndCall.TabIndex = 5;
+            this.btnEndCall.Text = "End";
+            this.btnEndCall.UseVisualStyleBackColor = true;
+            // 
             // App_ManagementProtalView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1998,6 +2089,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "App_ManagementProtalView";
             this.Text = "App_ManagementPortal";
+            this.Load += new System.EventHandler(this.App_ManagementProtalView_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -2051,6 +2143,9 @@
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.tblCaller.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2227,5 +2322,14 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.ListBox lstbxMaintenanceDue;
         private System.Windows.Forms.TextBox txtbxClientSys;
+        private System.Windows.Forms.TabPage tblCaller;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button btnEndCall;
+        private System.Windows.Forms.Button btnCall;
+        private System.Windows.Forms.Label lblCallDuration;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.ComboBox cbxEmployee;
+        private System.Windows.Forms.Timer timer1;
     }
 }
