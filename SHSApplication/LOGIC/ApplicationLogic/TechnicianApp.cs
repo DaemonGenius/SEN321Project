@@ -11,7 +11,12 @@ namespace LOGIC.ApplicationLogic
     {
         public async Task<Maintenance> Maintenance(string name)
         {
-            return await BusinessLogic.TechnicianProcesses.GetTechSche(name);
+            return await BusinessLogic.TechnicianProcesses.LoadTechSche(name);
+        }
+
+        public async Task<TechnicianEmp> Maintenances(string name)
+        {
+            return await BusinessLogic.TechnicianProcesses.GetTechMain(name);
         }
     }
 }

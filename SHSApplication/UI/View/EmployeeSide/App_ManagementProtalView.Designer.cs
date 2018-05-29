@@ -167,20 +167,20 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.btnScheCancel = new System.Windows.Forms.Button();
-            this.cbxClientSys = new System.Windows.Forms.ComboBox();
             this.txtbxScheClientName = new System.Windows.Forms.TextBox();
-            this.txtbxScheTechName = new System.Windows.Forms.TextBox();
             this.txtbxScheTimeE = new System.Windows.Forms.TextBox();
             this.txtbxScheTimeS = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.btnSchSearch = new System.Windows.Forms.Button();
             this.btnArchiveSchedule = new System.Windows.Forms.Button();
             this.btnUpdateSchedule = new System.Windows.Forms.Button();
             this.btnNewSchedule = new System.Windows.Forms.Button();
+            this.txtbxScheTechName = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -195,8 +195,9 @@
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.btnSearchCli = new System.Windows.Forms.Button();
             this.btnAddnew = new System.Windows.Forms.Button();
-            this.scheduleCalan = new System.Windows.Forms.MonthCalendar();
-            this.btnSchSearch = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.lstbxMaintenanceDue = new System.Windows.Forms.ListBox();
+            this.txtbxClientSys = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1645,19 +1646,19 @@
             // 
             // groupBox16
             // 
-            this.groupBox16.Controls.Add(this.scheduleCalan);
-            this.groupBox16.Controls.Add(this.btnScheCancel);
-            this.groupBox16.Controls.Add(this.cbxClientSys);
-            this.groupBox16.Controls.Add(this.txtbxScheClientName);
+            this.groupBox16.Controls.Add(this.txtbxClientSys);
+            this.groupBox16.Controls.Add(this.lstbxMaintenanceDue);
+            this.groupBox16.Controls.Add(this.label43);
             this.groupBox16.Controls.Add(this.txtbxScheTimeE);
-            this.groupBox16.Controls.Add(this.txtbxScheTimeS);
-            this.groupBox16.Controls.Add(this.label55);
-            this.groupBox16.Controls.Add(this.label54);
             this.groupBox16.Controls.Add(this.label52);
+            this.groupBox16.Controls.Add(this.label54);
             this.groupBox16.Controls.Add(this.label51);
-            this.groupBox16.Location = new System.Drawing.Point(249, 40);
+            this.groupBox16.Controls.Add(this.txtbxScheClientName);
+            this.groupBox16.Controls.Add(this.label55);
+            this.groupBox16.Controls.Add(this.txtbxScheTimeS);
+            this.groupBox16.Location = new System.Drawing.Point(214, 40);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(304, 344);
+            this.groupBox16.Size = new System.Drawing.Size(339, 344);
             this.groupBox16.TabIndex = 5;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Schedule Information";
@@ -1665,45 +1666,30 @@
             // btnScheCancel
             // 
             this.btnScheCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnScheCancel.Location = new System.Drawing.Point(107, 310);
+            this.btnScheCancel.Location = new System.Drawing.Point(65, 306);
             this.btnScheCancel.Name = "btnScheCancel";
             this.btnScheCancel.Size = new System.Drawing.Size(75, 23);
             this.btnScheCancel.TabIndex = 12;
             this.btnScheCancel.Text = "Cancel";
             this.btnScheCancel.UseVisualStyleBackColor = true;
             // 
-            // cbxClientSys
-            // 
-            this.cbxClientSys.FormattingEnabled = true;
-            this.cbxClientSys.Location = new System.Drawing.Point(155, 264);
-            this.cbxClientSys.Name = "cbxClientSys";
-            this.cbxClientSys.Size = new System.Drawing.Size(118, 21);
-            this.cbxClientSys.TabIndex = 11;
-            // 
             // txtbxScheClientName
             // 
-            this.txtbxScheClientName.Location = new System.Drawing.Point(155, 241);
+            this.txtbxScheClientName.Location = new System.Drawing.Point(111, 176);
             this.txtbxScheClientName.Name = "txtbxScheClientName";
             this.txtbxScheClientName.Size = new System.Drawing.Size(118, 20);
             this.txtbxScheClientName.TabIndex = 10;
             // 
-            // txtbxScheTechName
-            // 
-            this.txtbxScheTechName.Location = new System.Drawing.Point(112, 32);
-            this.txtbxScheTechName.Name = "txtbxScheTechName";
-            this.txtbxScheTechName.Size = new System.Drawing.Size(91, 20);
-            this.txtbxScheTechName.TabIndex = 9;
-            // 
             // txtbxScheTimeE
             // 
-            this.txtbxScheTimeE.Location = new System.Drawing.Point(155, 215);
+            this.txtbxScheTimeE.Location = new System.Drawing.Point(111, 150);
             this.txtbxScheTimeE.Name = "txtbxScheTimeE";
             this.txtbxScheTimeE.Size = new System.Drawing.Size(118, 20);
             this.txtbxScheTimeE.TabIndex = 8;
             // 
             // txtbxScheTimeS
             // 
-            this.txtbxScheTimeS.Location = new System.Drawing.Point(155, 191);
+            this.txtbxScheTimeS.Location = new System.Drawing.Point(111, 124);
             this.txtbxScheTimeS.Name = "txtbxScheTimeS";
             this.txtbxScheTimeS.Size = new System.Drawing.Size(118, 20);
             this.txtbxScheTimeS.TabIndex = 7;
@@ -1712,11 +1698,106 @@
             // 
             this.label55.AutoSize = true;
             this.label55.ForeColor = System.Drawing.Color.Black;
-            this.label55.Location = new System.Drawing.Point(45, 267);
+            this.label55.Location = new System.Drawing.Point(8, 210);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(73, 13);
             this.label55.TabIndex = 5;
             this.label55.Text = "Client System:";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.ForeColor = System.Drawing.Color.Black;
+            this.label54.Location = new System.Drawing.Point(8, 183);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(67, 13);
+            this.label54.TabIndex = 3;
+            this.label54.Text = "Client Name:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.ForeColor = System.Drawing.Color.Black;
+            this.label52.Location = new System.Drawing.Point(8, 131);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(58, 13);
+            this.label52.TabIndex = 2;
+            this.label52.Text = "Start Time:";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.ForeColor = System.Drawing.Color.Black;
+            this.label51.Location = new System.Drawing.Point(6, 157);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(55, 13);
+            this.label51.TabIndex = 1;
+            this.label51.Text = "End Time:";
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.btnSchSearch);
+            this.groupBox15.Controls.Add(this.btnArchiveSchedule);
+            this.groupBox15.Controls.Add(this.btnScheCancel);
+            this.groupBox15.Controls.Add(this.btnUpdateSchedule);
+            this.groupBox15.Controls.Add(this.btnNewSchedule);
+            this.groupBox15.Controls.Add(this.txtbxScheTechName);
+            this.groupBox15.Controls.Add(this.label53);
+            this.groupBox15.Location = new System.Drawing.Point(5, 38);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(203, 346);
+            this.groupBox15.TabIndex = 4;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Schedule Tools";
+            this.groupBox15.Enter += new System.EventHandler(this.groupBox15_Enter);
+            // 
+            // btnSchSearch
+            // 
+            this.btnSchSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnSchSearch.Location = new System.Drawing.Point(102, 71);
+            this.btnSchSearch.Name = "btnSchSearch";
+            this.btnSchSearch.Size = new System.Drawing.Size(73, 38);
+            this.btnSchSearch.TabIndex = 10;
+            this.btnSchSearch.Text = "Search";
+            this.btnSchSearch.UseVisualStyleBackColor = true;
+            this.btnSchSearch.Click += new System.EventHandler(this.btnSchSearch_Click);
+            // 
+            // btnArchiveSchedule
+            // 
+            this.btnArchiveSchedule.ForeColor = System.Drawing.Color.Black;
+            this.btnArchiveSchedule.Location = new System.Drawing.Point(102, 115);
+            this.btnArchiveSchedule.Name = "btnArchiveSchedule";
+            this.btnArchiveSchedule.Size = new System.Drawing.Size(73, 38);
+            this.btnArchiveSchedule.TabIndex = 2;
+            this.btnArchiveSchedule.Text = "Archive";
+            this.btnArchiveSchedule.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateSchedule
+            // 
+            this.btnUpdateSchedule.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdateSchedule.Location = new System.Drawing.Point(8, 71);
+            this.btnUpdateSchedule.Name = "btnUpdateSchedule";
+            this.btnUpdateSchedule.Size = new System.Drawing.Size(73, 38);
+            this.btnUpdateSchedule.TabIndex = 1;
+            this.btnUpdateSchedule.Text = "Update";
+            this.btnUpdateSchedule.UseVisualStyleBackColor = true;
+            // 
+            // btnNewSchedule
+            // 
+            this.btnNewSchedule.ForeColor = System.Drawing.Color.Black;
+            this.btnNewSchedule.Location = new System.Drawing.Point(8, 115);
+            this.btnNewSchedule.Name = "btnNewSchedule";
+            this.btnNewSchedule.Size = new System.Drawing.Size(73, 38);
+            this.btnNewSchedule.TabIndex = 0;
+            this.btnNewSchedule.Text = "New";
+            this.btnNewSchedule.UseVisualStyleBackColor = true;
+            // 
+            // txtbxScheTechName
+            // 
+            this.txtbxScheTechName.Location = new System.Drawing.Point(102, 32);
+            this.txtbxScheTechName.Name = "txtbxScheTechName";
+            this.txtbxScheTechName.Size = new System.Drawing.Size(91, 20);
+            this.txtbxScheTechName.TabIndex = 9;
             // 
             // label53
             // 
@@ -1727,81 +1808,6 @@
             this.label53.Size = new System.Drawing.Size(94, 13);
             this.label53.TabIndex = 4;
             this.label53.Text = "Technician Name:";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.ForeColor = System.Drawing.Color.Black;
-            this.label54.Location = new System.Drawing.Point(45, 244);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(67, 13);
-            this.label54.TabIndex = 3;
-            this.label54.Text = "Client Name:";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.ForeColor = System.Drawing.Color.Black;
-            this.label52.Location = new System.Drawing.Point(45, 194);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(106, 13);
-            this.label52.TabIndex = 2;
-            this.label52.Text = "Schedule Start Time:";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.ForeColor = System.Drawing.Color.Black;
-            this.label51.Location = new System.Drawing.Point(45, 218);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(103, 13);
-            this.label51.TabIndex = 1;
-            this.label51.Text = "Schedule End Time:";
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.btnSchSearch);
-            this.groupBox15.Controls.Add(this.btnArchiveSchedule);
-            this.groupBox15.Controls.Add(this.btnUpdateSchedule);
-            this.groupBox15.Controls.Add(this.btnNewSchedule);
-            this.groupBox15.Controls.Add(this.txtbxScheTechName);
-            this.groupBox15.Controls.Add(this.label53);
-            this.groupBox15.Location = new System.Drawing.Point(23, 38);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(220, 346);
-            this.groupBox15.TabIndex = 4;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Schedule Tools";
-            // 
-            // btnArchiveSchedule
-            // 
-            this.btnArchiveSchedule.ForeColor = System.Drawing.Color.Black;
-            this.btnArchiveSchedule.Location = new System.Drawing.Point(114, 115);
-            this.btnArchiveSchedule.Name = "btnArchiveSchedule";
-            this.btnArchiveSchedule.Size = new System.Drawing.Size(100, 38);
-            this.btnArchiveSchedule.TabIndex = 2;
-            this.btnArchiveSchedule.Text = "Archive";
-            this.btnArchiveSchedule.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateSchedule
-            // 
-            this.btnUpdateSchedule.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateSchedule.Location = new System.Drawing.Point(6, 115);
-            this.btnUpdateSchedule.Name = "btnUpdateSchedule";
-            this.btnUpdateSchedule.Size = new System.Drawing.Size(102, 38);
-            this.btnUpdateSchedule.TabIndex = 1;
-            this.btnUpdateSchedule.Text = "Update";
-            this.btnUpdateSchedule.UseVisualStyleBackColor = true;
-            // 
-            // btnNewSchedule
-            // 
-            this.btnNewSchedule.ForeColor = System.Drawing.Color.Black;
-            this.btnNewSchedule.Location = new System.Drawing.Point(114, 71);
-            this.btnNewSchedule.Name = "btnNewSchedule";
-            this.btnNewSchedule.Size = new System.Drawing.Size(100, 38);
-            this.btnNewSchedule.TabIndex = 0;
-            this.btnNewSchedule.Text = "New";
-            this.btnNewSchedule.UseVisualStyleBackColor = true;
             // 
             // label49
             // 
@@ -1957,25 +1963,31 @@
             this.btnAddnew.UseVisualStyleBackColor = true;
             this.btnAddnew.Click += new System.EventHandler(this.btnAddnew_Click);
             // 
-            // scheduleCalan
+            // label43
             // 
-            this.scheduleCalan.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.scheduleCalan.Location = new System.Drawing.Point(37, 17);
-            this.scheduleCalan.Name = "scheduleCalan";
-            this.scheduleCalan.ShowWeekNumbers = true;
-            this.scheduleCalan.TabIndex = 13;
-            this.scheduleCalan.TitleBackColor = System.Drawing.Color.Maroon;
+            this.label43.AutoSize = true;
+            this.label43.ForeColor = System.Drawing.Color.Black;
+            this.label43.Location = new System.Drawing.Point(5, 30);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(100, 13);
+            this.label43.TabIndex = 13;
+            this.label43.Text = "Maintenances Due:";
             // 
-            // btnSchSearch
+            // lstbxMaintenanceDue
             // 
-            this.btnSchSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSchSearch.Location = new System.Drawing.Point(6, 71);
-            this.btnSchSearch.Name = "btnSchSearch";
-            this.btnSchSearch.Size = new System.Drawing.Size(102, 38);
-            this.btnSchSearch.TabIndex = 10;
-            this.btnSchSearch.Text = "Search";
-            this.btnSchSearch.UseVisualStyleBackColor = true;
-            this.btnSchSearch.Click += new System.EventHandler(this.btnSchSearch_Click);
+            this.lstbxMaintenanceDue.FormattingEnabled = true;
+            this.lstbxMaintenanceDue.Location = new System.Drawing.Point(111, 30);
+            this.lstbxMaintenanceDue.Name = "lstbxMaintenanceDue";
+            this.lstbxMaintenanceDue.Size = new System.Drawing.Size(162, 82);
+            this.lstbxMaintenanceDue.TabIndex = 14;
+            this.lstbxMaintenanceDue.SelectedIndexChanged += new System.EventHandler(this.lstbxMaintenanceDue_SelectedIndexChanged);
+            // 
+            // txtbxClientSys
+            // 
+            this.txtbxClientSys.Location = new System.Drawing.Point(111, 203);
+            this.txtbxClientSys.Name = "txtbxClientSys";
+            this.txtbxClientSys.Size = new System.Drawing.Size(118, 20);
+            this.txtbxClientSys.TabIndex = 15;
             // 
             // App_ManagementProtalView
             // 
@@ -2187,7 +2199,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.Button btnScheCancel;
-        private System.Windows.Forms.ComboBox cbxClientSys;
         private System.Windows.Forms.TextBox txtbxScheClientName;
         private System.Windows.Forms.TextBox txtbxScheTechName;
         private System.Windows.Forms.TextBox txtbxScheTimeE;
@@ -2212,7 +2223,9 @@
         private System.Windows.Forms.ListBox lstbxEneProducts;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.ComboBox cbxProductWarr;
-        private System.Windows.Forms.MonthCalendar scheduleCalan;
         private System.Windows.Forms.Button btnSchSearch;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.ListBox lstbxMaintenanceDue;
+        private System.Windows.Forms.TextBox txtbxClientSys;
     }
 }

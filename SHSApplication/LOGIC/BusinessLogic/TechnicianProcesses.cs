@@ -10,15 +10,15 @@ namespace LOGIC.BusinessLogic
 {
     public class TechnicianProcesses
     {
-        public static async Task<Maintenance> GetTechSche(string name)
+        public static async Task<Maintenance> LoadTechSche(string name)
         {
             using (var dbe = new SHSdb())
             {
-                People person = dbe.peoples.FirstOrDefault((x => x.FirstName == name));
-                Maintenance maintenance = dbe.maintenances.FirstOrDefault(x => x.TechnicianEmp.Person_ID == person.ID);
+                Maintenance maintenance = dbe.maintenances.FirstOrDefault((x => x.Name == name));
 
                 return new Maintenance()
                 {
+                    Name = maintenance.Name,
                     DateStart = maintenance.DateStart,
                     DateEnd = maintenance.DateEnd,
                     TechnicianEmp = new TechnicianEmp
@@ -46,5 +46,25 @@ namespace LOGIC.BusinessLogic
                 };
             }
         }
+
+        public static async Task<TechnicianEmp> GetTechMain(string name)
+        {
+            using (var dbe = new SHSdb())
+            {
+                People person = dbe.peoples.FirstOrDefault((x => x.FirstName == name));
+                TechnicianEmp technicianEmp = dbe.technicianEmps.FirstOrDefault(x => x.People.FirstName == person.FirstName);
+
+                return new TechnicianEmp
+                {
+                    Maintenances = (from Mein in technicianEmp.Maintenances
+                                    select new Maintenance
+                                    {
+                                        Name = Mein.Name
+                                    }).ToEntitySet()
+                };
+
+            }
+        }
+
     }
 }

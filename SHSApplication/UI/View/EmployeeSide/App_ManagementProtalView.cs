@@ -68,6 +68,18 @@ namespace UI.View.EmployeeSide
             }
             #endregion
 
+            
+
+        }
+
+        private void btnAddnew_Click(object sender, EventArgs e)
+        {
+            View.SharedViews.App_RegisterUser registerUser = new SharedViews.App_RegisterUser();
+            registerUser.Show();
+        }
+
+        private async void btnClientProducts_Click(object sender, EventArgs e)
+        {
             #region ProductLoad
             LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
             LOGIC.ApplicationLogic.ClientProcessesApp clientProcessesApp = new LOGIC.ApplicationLogic.ClientProcessesApp();
@@ -96,23 +108,12 @@ namespace UI.View.EmployeeSide
             foreach (var item in contract.Maintenances)
             {
                 string Date = "Start: " + item.DateStart + " End : " + item.DateEnd;
-                
+
                 rtxtbxMainSche.AppendText(Date);
             }
-           
+
 
             #endregion
-
-        }
-
-        private void btnAddnew_Click(object sender, EventArgs e)
-        {
-            View.SharedViews.App_RegisterUser registerUser = new SharedViews.App_RegisterUser();
-            registerUser.Show();
-        }
-
-        private void btnClientProducts_Click(object sender, EventArgs e)
-        {
             tbpClients.Hide();
             tbpScheduleMain.Hide();
             tbpProductManagement.Hide();
@@ -294,11 +295,33 @@ namespace UI.View.EmployeeSide
 
             string name = txtbxScheTechName.Text;
             LOGIC.ApplicationLogic.TechnicianApp technicianApp = new LOGIC.ApplicationLogic.TechnicianApp();
+            TechnicianEmp technician = await technicianApp.Maintenances(name);
+
+            foreach (var item in technician.Maintenances)
+            {
+                lstbxMaintenanceDue.Items.Add(item.Name);
+            }
+            
+        }
+
+        private void groupBox15_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void lstbxMaintenanceDue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LOGIC.ApplicationLogic.TechnicianApp technicianApp = new LOGIC.ApplicationLogic.TechnicianApp();
+            string name = lstbxMaintenanceDue.SelectedItem.ToString();
+
             Maintenance maintenance = await technicianApp.Maintenance(name);
 
-            txtbxScheTimeS.Text = maintenance.DateStart.ToString();
-            txtbxScheTimeE.Text = maintenance.DateEnd.ToString();
+            txtbxScheClientName.Text = maintenance.Client.People.FirstName + " " + maintenance.Client.People.LastName;
             txtbxScheTechName.Text = maintenance.TechnicianEmp.People.FirstName + " " + maintenance.TechnicianEmp.People.LastName;
+            txtbxScheTimeS.Text = maintenance.DateStart.ToShortDateString();
+            txtbxScheTimeE.Text = maintenance.DateEnd.ToShortDateString();
+            txtbxClientSys.Text = maintenance.ProductSystem.Name;
+
         }
     }
 }
