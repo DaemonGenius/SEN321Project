@@ -27,7 +27,7 @@ namespace LOGIC.ApplicationLogic
         }
         public async Task<TechnicianEmp> techScheduleLoad()
         {
-            return await BusinessLogic.ProductInfoProcess.GetSchedule();
+            return await BusinessLogic.ProductInfoProcess.GetMainSchedule();
         }
         public async Task<Contract> ContractLoad()
         {

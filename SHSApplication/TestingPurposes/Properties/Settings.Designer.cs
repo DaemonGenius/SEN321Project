@@ -32,5 +32,15 @@ namespace TestingPurposes.Properties {
                 return ((string)(this["SHSdb6ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=SHSdbFinal;Integrated Security=True")]
+        public string SHSdbFinalConnectionString {
+            get {
+                return ((string)(this["SHSdbFinalConnectionString"]));
+            }
+        }
     }
 }

@@ -21,7 +21,6 @@ namespace DATALAYER.DatabaseConnection
         public Table<Transaction> transactions;
         public Table<Contract> contracts;
         public Table<Maintenance> maintenances;
-        public Table<Schedule> schedules;
         public Table<Cart> carts;
         public Table<ProductSystem> productSystems;
         public Table<EnergyProduct> energyProducts;
@@ -36,7 +35,7 @@ namespace DATALAYER.DatabaseConnection
 
         public SHSdb(string connection) : base(connection) { }
 
-        public SHSdb() : base("Data Source=.;Initial Catalog=SHSdb6;Integrated Security=True;")
+        public SHSdb() : base("Data Source=.;Initial Catalog=SHSdbFinal;Integrated Security=True;")
         {
             
         }

@@ -10,24 +10,39 @@ namespace LOGIC.BusinessLogic
 {
     public class TechnicianProcesses
     {
-        public static async Task<Schedule> GetTechSche(string name)
+        public static async Task<Maintenance> GetTechSche(string name)
         {
             using (var dbe = new SHSdb())
             {
                 People person = dbe.peoples.FirstOrDefault((x => x.FirstName == name));
-                Schedule schedule = dbe.schedules.FirstOrDefault(x => x.TechnicianEmp.Person_ID == person.ID);
+                Maintenance maintenance = dbe.maintenances.FirstOrDefault(x => x.TechnicianEmp.Person_ID == person.ID);
 
-                return new Schedule()
+                return new Maintenance()
                 {
-                   InsDateStart = schedule.InsDateStart,
-                   MainDateStart = schedule.MainDateStart,
-                   TechnicianEmp = new TechnicianEmp
-                   {
-                       People = new People {
-                           FirstName = schedule.TechnicianEmp.People.FirstName,
-                           LastName = schedule.TechnicianEmp.People.LastName
-                       }
-                   }
+                    DateStart = maintenance.DateStart,
+                    DateEnd = maintenance.DateEnd,
+                    TechnicianEmp = new TechnicianEmp
+                    {
+                        People = new People
+                        {
+                            FirstName = maintenance.TechnicianEmp.People.FirstName,
+                            LastName = maintenance.TechnicianEmp.People.LastName,
+                            
+                        },                        
+                        
+                    },
+                    Client = new Client
+                    {
+                        People = new People
+                        {
+                            FirstName = maintenance.Client.People.FirstName,
+                            LastName = maintenance.Client.People.LastName
+                        }
+                    },
+                    ProductSystem = new ProductSystem
+                    {
+                        Name = maintenance.ProductSystem.Name
+                    }
                 };
             }
         }

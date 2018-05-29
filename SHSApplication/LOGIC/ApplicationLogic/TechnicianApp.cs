@@ -9,7 +9,7 @@ namespace LOGIC.ApplicationLogic
 {
     public class TechnicianApp
     {
-        public async Task<Schedule> Schedule(string name)
+        public async Task<Maintenance> Maintenance(string name)
         {
             return await BusinessLogic.TechnicianProcesses.GetTechSche(name);
         }

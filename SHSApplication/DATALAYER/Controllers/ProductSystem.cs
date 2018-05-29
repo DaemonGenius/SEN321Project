@@ -23,6 +23,8 @@ namespace DATALAYER.Controllers
 
         private System.Nullable<int> _Cart_ID;
 
+        private EntitySet<Maintenance> _Maintenances;
+
         private EntitySet<SysConProduct> _SysConProducts;
 
         private EntitySet<SysEneProduct> _SysEneProducts;
@@ -47,6 +49,7 @@ namespace DATALAYER.Controllers
 
         public ProductSystem()
         {
+            this._Maintenances = new EntitySet<Maintenance>(new Action<Maintenance>(this.attach_Maintenances), new Action<Maintenance>(this.detach_Maintenances));
             this._SysConProducts = new EntitySet<SysConProduct>(new Action<SysConProduct>(this.attach_SysConProducts), new Action<SysConProduct>(this.detach_SysConProducts));
             this._SysEneProducts = new EntitySet<SysEneProduct>(new Action<SysEneProduct>(this.attach_SysEneProducts), new Action<SysEneProduct>(this.detach_SysEneProducts));
             this._SysSafProducts = new EntitySet<SysSafProduct>(new Action<SysSafProduct>(this.attach_SysSafProducts), new Action<SysSafProduct>(this.detach_SysSafProducts));
@@ -135,6 +138,19 @@ namespace DATALAYER.Controllers
                     this.SendPropertyChanged("Cart_ID");
                     this.OnCart_IDChanged();
                 }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ProductSystem_Maintenance", Storage = "_Maintenances", ThisKey = "ID", OtherKey = "ProductSystems_ID")]
+        public EntitySet<Maintenance> Maintenances
+        {
+            get
+            {
+                return this._Maintenances;
+            }
+            set
+            {
+                this._Maintenances.Assign(value);
             }
         }
 
@@ -229,6 +245,18 @@ namespace DATALAYER.Controllers
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        private void attach_Maintenances(Maintenance entity)
+        {
+            this.SendPropertyChanging();
+            entity.ProductSystem = this;
+        }
+
+        private void detach_Maintenances(Maintenance entity)
+        {
+            this.SendPropertyChanging();
+            entity.ProductSystem = null;
         }
 
         private void attach_SysConProducts(SysConProduct entity)

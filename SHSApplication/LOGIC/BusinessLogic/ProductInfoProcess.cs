@@ -123,7 +123,7 @@ namespace LOGIC.BusinessLogic
         }
         #endregion
         #region LoadSchedules
-        public static async Task<TechnicianEmp> GetSchedule()
+        public static async Task<TechnicianEmp> GetMainSchedule()
         {
             using (var dbe = new SHSdb())
             {
@@ -133,11 +133,11 @@ namespace LOGIC.BusinessLogic
 
                 return new TechnicianEmp()
                 {
-                    Schedules = (from Schedate in technicianEmp.Schedules
-                                 select new Schedule
+                   Maintenances = (from Schedate in technicianEmp.Maintenances
+                                 select new Maintenance
                                  {
-                                     InsDateStart = Schedate.InsDateStart,
-                                     MainDateStart = Schedate.MainDateStart
+                                     
+                                     
                                  }).ToEntitySet(),
 
                 };

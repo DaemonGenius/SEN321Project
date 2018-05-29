@@ -294,11 +294,11 @@ namespace UI.View.EmployeeSide
 
             string name = txtbxScheTechName.Text;
             LOGIC.ApplicationLogic.TechnicianApp technicianApp = new LOGIC.ApplicationLogic.TechnicianApp();
-            Schedule schedule = await technicianApp.Schedule(name);
+            Maintenance maintenance = await technicianApp.Maintenance(name);
 
-            txtbxScheTimeS.Text = schedule.InsDateStart.ToString();
-            txtbxScheTimeE.Text = schedule.MainDateStart.ToString();
-            txtbxScheTechName.Text = schedule.TechnicianEmp.People.FirstName + " " + schedule.TechnicianEmp.People.LastName;
+            txtbxScheTimeS.Text = maintenance.DateStart.ToString();
+            txtbxScheTimeE.Text = maintenance.DateEnd.ToString();
+            txtbxScheTechName.Text = maintenance.TechnicianEmp.People.FirstName + " " + maintenance.TechnicianEmp.People.LastName;
         }
     }
 }
