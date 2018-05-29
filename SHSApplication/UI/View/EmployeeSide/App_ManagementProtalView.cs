@@ -167,17 +167,17 @@ namespace UI.View.EmployeeSide
             List<string> ListEn = LOGIC.ApplicationLogic.ProductInfoApp.EnProduct();
             foreach (var item in ListEn)
             {
-                lstbxProducts.Items.Add(item.ToString());
+                lstbxEneProducts.Items.Add(item.ToString());
             }
             List<string> ListSaf = LOGIC.ApplicationLogic.ProductInfoApp.SafProduct();
             foreach (var item in ListSaf)
             {
-                lstbxProducts.Items.Add(item.ToString());
+                lstbxsafProducts.Items.Add(item.ToString());
             }
             List<string> ListCon = LOGIC.ApplicationLogic.ProductInfoApp.ConProduct();
             foreach (var item in ListCon)
             {
-                lstbxProducts.Items.Add(item.ToString());
+                lstbxConProducts.Items.Add(item.ToString());
             }
 
         }
@@ -248,6 +248,45 @@ namespace UI.View.EmployeeSide
         {
            // txtbxProductSeacch.Text;
 
+        }
+
+        private async void lstbxsafProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = lstbxsafProducts.SelectedItem.ToString();
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+
+            SafetyProduct safProduct = await productInfoApp.SafProductLoad(name);
+
+            txtbxProdctName.Text = safProduct.Name;
+            rtxtbxProductDiscr.Text = safProduct.Discription;
+            txtProductPrice.Text = safProduct.Price.ToString();
+            cbxProductWarr.Text = safProduct.Warrenty.Duration;
+        }
+
+        private async void lstbxEneProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = lstbxEneProducts.SelectedItem.ToString();
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+
+            EnergyProduct energyProduct = await productInfoApp.ENProductLoad(name);
+
+            txtbxProdctName.Text = energyProduct.Name;
+            rtxtbxProductDiscr.Text = energyProduct.Discription;
+            txtProductPrice.Text = energyProduct.Price.ToString();
+            cbxProductWarr.Text = energyProduct.Warrenty.Duration;
+        }
+
+        private async void lstbxConProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = lstbxConProducts.SelectedItem.ToString();
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+
+            ConvienceProduct convienceProduct = await productInfoApp.ConProductLoad(name);
+
+            txtbxProdctName.Text = convienceProduct.Name;
+            rtxtbxProductDiscr.Text = convienceProduct.Discription;
+            txtProductPrice.Text = convienceProduct.Price.ToString();
+            cbxProductWarr.Text = convienceProduct.Warrenty.Duration;
         }
     }
 }

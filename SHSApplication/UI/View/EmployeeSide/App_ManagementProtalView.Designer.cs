@@ -144,6 +144,7 @@
             this.tbpProductManagement = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.lstbxsafProducts = new System.Windows.Forms.ListBox();
             this.btnArchiveProduct = new System.Windows.Forms.Button();
             this.btnProductUpdate = new System.Windows.Forms.Button();
             this.btnNewProduct = new System.Windows.Forms.Button();
@@ -155,7 +156,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
-            this.txtbxProductWarr = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
@@ -194,7 +194,11 @@
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.btnSearchCli = new System.Windows.Forms.Button();
             this.btnAddnew = new System.Windows.Forms.Button();
-            this.lstbxProducts = new System.Windows.Forms.ListBox();
+            this.lstbxEneProducts = new System.Windows.Forms.ListBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.lstbxConProducts = new System.Windows.Forms.ListBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.cbxProductWarr = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -238,7 +242,7 @@
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(860, 432);
             this.panel1.TabIndex = 0;
@@ -247,9 +251,9 @@
             // 
             this.groupBox2.Controls.Add(this.tabControl1);
             this.groupBox2.Location = new System.Drawing.Point(293, 2);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(566, 429);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -265,7 +269,7 @@
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.tabControl1.ItemSize = new System.Drawing.Size(10, 10);
             this.tabControl1.Location = new System.Drawing.Point(4, 11);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -277,9 +281,9 @@
             // 
             this.tbpClients.Controls.Add(this.panel2);
             this.tbpClients.Location = new System.Drawing.Point(4, 14);
-            this.tbpClients.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpClients.Margin = new System.Windows.Forms.Padding(2);
             this.tbpClients.Name = "tbpClients";
-            this.tbpClients.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpClients.Padding = new System.Windows.Forms.Padding(2);
             this.tbpClients.Size = new System.Drawing.Size(554, 397);
             this.tbpClients.TabIndex = 0;
             this.tbpClients.Text = "Clients";
@@ -294,7 +298,7 @@
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.ForeColor = System.Drawing.Color.Coral;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(559, 406);
             this.panel2.TabIndex = 0;
@@ -325,9 +329,9 @@
             this.groupBox5.Controls.Add(this.btnAddressPrev);
             this.groupBox5.Controls.Add(this.btnNextAddress);
             this.groupBox5.Location = new System.Drawing.Point(279, 226);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(281, 182);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
@@ -336,7 +340,7 @@
             // txtbxEExpDate
             // 
             this.txtbxEExpDate.Location = new System.Drawing.Point(113, 107);
-            this.txtbxEExpDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEExpDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEExpDate.Name = "txtbxEExpDate";
             this.txtbxEExpDate.Size = new System.Drawing.Size(124, 20);
             this.txtbxEExpDate.TabIndex = 42;
@@ -344,7 +348,7 @@
             // txtbxECardType
             // 
             this.txtbxECardType.Location = new System.Drawing.Point(113, 83);
-            this.txtbxECardType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECardType.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECardType.Name = "txtbxECardType";
             this.txtbxECardType.Size = new System.Drawing.Size(124, 20);
             this.txtbxECardType.TabIndex = 41;
@@ -352,7 +356,7 @@
             // txtbxECVC
             // 
             this.txtbxECVC.Location = new System.Drawing.Point(113, 59);
-            this.txtbxECVC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECVC.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECVC.Name = "txtbxECVC";
             this.txtbxECVC.Size = new System.Drawing.Size(124, 20);
             this.txtbxECVC.TabIndex = 40;
@@ -360,7 +364,7 @@
             // txtbxECardNum
             // 
             this.txtbxECardNum.Location = new System.Drawing.Point(113, 35);
-            this.txtbxECardNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECardNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECardNum.Name = "txtbxECardNum";
             this.txtbxECardNum.Size = new System.Drawing.Size(124, 20);
             this.txtbxECardNum.TabIndex = 39;
@@ -368,7 +372,7 @@
             // txtbxECardName
             // 
             this.txtbxECardName.Location = new System.Drawing.Point(113, 11);
-            this.txtbxECardName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECardName.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECardName.Name = "txtbxECardName";
             this.txtbxECardName.Size = new System.Drawing.Size(124, 20);
             this.txtbxECardName.TabIndex = 38;
@@ -432,7 +436,7 @@
             // 
             this.btnAddressPrev.ForeColor = System.Drawing.Color.Black;
             this.btnAddressPrev.Location = new System.Drawing.Point(199, 141);
-            this.btnAddressPrev.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddressPrev.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddressPrev.Name = "btnAddressPrev";
             this.btnAddressPrev.Size = new System.Drawing.Size(26, 26);
             this.btnAddressPrev.TabIndex = 1;
@@ -443,7 +447,7 @@
             // 
             this.btnNextAddress.ForeColor = System.Drawing.Color.Black;
             this.btnNextAddress.Location = new System.Drawing.Point(229, 141);
-            this.btnNextAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNextAddress.Margin = new System.Windows.Forms.Padding(2);
             this.btnNextAddress.Name = "btnNextAddress";
             this.btnNextAddress.Size = new System.Drawing.Size(26, 26);
             this.btnNextAddress.TabIndex = 0;
@@ -465,9 +469,9 @@
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Location = new System.Drawing.Point(279, 51);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(275, 171);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
@@ -476,7 +480,7 @@
             // txtbxECountry
             // 
             this.txtbxECountry.Location = new System.Drawing.Point(113, 139);
-            this.txtbxECountry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECountry.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECountry.Name = "txtbxECountry";
             this.txtbxECountry.Size = new System.Drawing.Size(124, 20);
             this.txtbxECountry.TabIndex = 34;
@@ -495,7 +499,7 @@
             // txtbxEProvince
             // 
             this.txtbxEProvince.Location = new System.Drawing.Point(113, 116);
-            this.txtbxEProvince.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEProvince.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEProvince.Name = "txtbxEProvince";
             this.txtbxEProvince.Size = new System.Drawing.Size(124, 20);
             this.txtbxEProvince.TabIndex = 32;
@@ -503,7 +507,7 @@
             // txtbxECity
             // 
             this.txtbxECity.Location = new System.Drawing.Point(113, 92);
-            this.txtbxECity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxECity.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxECity.Name = "txtbxECity";
             this.txtbxECity.Size = new System.Drawing.Size(124, 20);
             this.txtbxECity.TabIndex = 31;
@@ -511,7 +515,7 @@
             // txtbxEZipCode
             // 
             this.txtbxEZipCode.Location = new System.Drawing.Point(113, 68);
-            this.txtbxEZipCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEZipCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEZipCode.Name = "txtbxEZipCode";
             this.txtbxEZipCode.Size = new System.Drawing.Size(124, 20);
             this.txtbxEZipCode.TabIndex = 30;
@@ -519,7 +523,7 @@
             // txtbxEStreetName
             // 
             this.txtbxEStreetName.Location = new System.Drawing.Point(113, 44);
-            this.txtbxEStreetName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEStreetName.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEStreetName.Name = "txtbxEStreetName";
             this.txtbxEStreetName.Size = new System.Drawing.Size(124, 20);
             this.txtbxEStreetName.TabIndex = 29;
@@ -527,7 +531,7 @@
             // txtbxEStreetNum
             // 
             this.txtbxEStreetNum.Location = new System.Drawing.Point(113, 20);
-            this.txtbxEStreetNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxEStreetNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxEStreetNum.Name = "txtbxEStreetNum";
             this.txtbxEStreetNum.Size = new System.Drawing.Size(124, 20);
             this.txtbxEStreetNum.TabIndex = 28;
@@ -605,9 +609,9 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Location = new System.Drawing.Point(4, 51);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(270, 299);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
@@ -675,7 +679,7 @@
             // txtbxCcellNumber
             // 
             this.txtbxCcellNumber.Location = new System.Drawing.Point(101, 162);
-            this.txtbxCcellNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCcellNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCcellNumber.Name = "txtbxCcellNumber";
             this.txtbxCcellNumber.Size = new System.Drawing.Size(124, 20);
             this.txtbxCcellNumber.TabIndex = 12;
@@ -683,7 +687,7 @@
             // txtbxCSSID
             // 
             this.txtbxCSSID.Location = new System.Drawing.Point(101, 139);
-            this.txtbxCSSID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCSSID.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCSSID.Name = "txtbxCSSID";
             this.txtbxCSSID.Size = new System.Drawing.Size(124, 20);
             this.txtbxCSSID.TabIndex = 11;
@@ -691,7 +695,7 @@
             // txtbxCDOB
             // 
             this.txtbxCDOB.Location = new System.Drawing.Point(101, 115);
-            this.txtbxCDOB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCDOB.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCDOB.Name = "txtbxCDOB";
             this.txtbxCDOB.Size = new System.Drawing.Size(124, 20);
             this.txtbxCDOB.TabIndex = 10;
@@ -699,7 +703,7 @@
             // txtbxCPassword
             // 
             this.txtbxCPassword.Location = new System.Drawing.Point(101, 93);
-            this.txtbxCPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCPassword.Name = "txtbxCPassword";
             this.txtbxCPassword.Size = new System.Drawing.Size(124, 20);
             this.txtbxCPassword.TabIndex = 9;
@@ -707,7 +711,7 @@
             // txtbxcEmail
             // 
             this.txtbxcEmail.Location = new System.Drawing.Point(101, 69);
-            this.txtbxcEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxcEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxcEmail.Name = "txtbxcEmail";
             this.txtbxcEmail.Size = new System.Drawing.Size(124, 20);
             this.txtbxcEmail.TabIndex = 8;
@@ -715,7 +719,7 @@
             // txtbxCLName
             // 
             this.txtbxCLName.Location = new System.Drawing.Point(101, 45);
-            this.txtbxCLName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCLName.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCLName.Name = "txtbxCLName";
             this.txtbxCLName.Size = new System.Drawing.Size(124, 20);
             this.txtbxCLName.TabIndex = 7;
@@ -723,7 +727,7 @@
             // txtbxCFName
             // 
             this.txtbxCFName.Location = new System.Drawing.Point(101, 21);
-            this.txtbxCFName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxCFName.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxCFName.Name = "txtbxCFName";
             this.txtbxCFName.Size = new System.Drawing.Size(124, 20);
             this.txtbxCFName.TabIndex = 6;
@@ -799,9 +803,9 @@
             // 
             this.tbpProducts.Controls.Add(this.panel3);
             this.tbpProducts.Location = new System.Drawing.Point(4, 14);
-            this.tbpProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpProducts.Margin = new System.Windows.Forms.Padding(2);
             this.tbpProducts.Name = "tbpProducts";
-            this.tbpProducts.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbpProducts.Padding = new System.Windows.Forms.Padding(2);
             this.tbpProducts.Size = new System.Drawing.Size(554, 397);
             this.tbpProducts.TabIndex = 1;
             this.tbpProducts.Text = "Products";
@@ -829,7 +833,7 @@
             // 
             this.lstbxEnergPro.FormattingEnabled = true;
             this.lstbxEnergPro.Location = new System.Drawing.Point(102, 289);
-            this.lstbxEnergPro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstbxEnergPro.Margin = new System.Windows.Forms.Padding(2);
             this.lstbxEnergPro.Name = "lstbxEnergPro";
             this.lstbxEnergPro.Size = new System.Drawing.Size(128, 95);
             this.lstbxEnergPro.TabIndex = 12;
@@ -839,7 +843,7 @@
             // 
             this.lstbxConvPro.FormattingEnabled = true;
             this.lstbxConvPro.Location = new System.Drawing.Point(102, 177);
-            this.lstbxConvPro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstbxConvPro.Margin = new System.Windows.Forms.Padding(2);
             this.lstbxConvPro.Name = "lstbxConvPro";
             this.lstbxConvPro.Size = new System.Drawing.Size(128, 95);
             this.lstbxConvPro.TabIndex = 11;
@@ -849,7 +853,7 @@
             // 
             this.lstbxSaftPro.FormattingEnabled = true;
             this.lstbxSaftPro.Location = new System.Drawing.Point(102, 71);
-            this.lstbxSaftPro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstbxSaftPro.Margin = new System.Windows.Forms.Padding(2);
             this.lstbxSaftPro.Name = "lstbxSaftPro";
             this.lstbxSaftPro.Size = new System.Drawing.Size(128, 95);
             this.lstbxSaftPro.TabIndex = 10;
@@ -1104,7 +1108,7 @@
             this.tbpCCAdmin.Controls.Add(this.panel5);
             this.tbpCCAdmin.Location = new System.Drawing.Point(4, 24);
             this.tbpCCAdmin.Name = "tbpCCAdmin";
-            this.tbpCCAdmin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbpCCAdmin.Padding = new System.Windows.Forms.Padding(3);
             this.tbpCCAdmin.Size = new System.Drawing.Size(299, 296);
             this.tbpCCAdmin.TabIndex = 0;
             this.tbpCCAdmin.Text = "Admin";
@@ -1181,7 +1185,7 @@
             this.tblCCClient.Controls.Add(this.panel6);
             this.tblCCClient.Location = new System.Drawing.Point(4, 24);
             this.tblCCClient.Name = "tblCCClient";
-            this.tblCCClient.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tblCCClient.Padding = new System.Windows.Forms.Padding(3);
             this.tblCCClient.Size = new System.Drawing.Size(299, 296);
             this.tblCCClient.TabIndex = 1;
             this.tblCCClient.Text = "Client";
@@ -1421,21 +1425,35 @@
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.lstbxProducts);
+            this.groupBox14.Controls.Add(this.lstbxConProducts);
+            this.groupBox14.Controls.Add(this.label56);
+            this.groupBox14.Controls.Add(this.lstbxEneProducts);
+            this.groupBox14.Controls.Add(this.label44);
+            this.groupBox14.Controls.Add(this.lstbxsafProducts);
             this.groupBox14.Controls.Add(this.btnArchiveProduct);
             this.groupBox14.Controls.Add(this.btnProductUpdate);
             this.groupBox14.Controls.Add(this.btnNewProduct);
             this.groupBox14.Controls.Add(this.label48);
-            this.groupBox14.Location = new System.Drawing.Point(17, 33);
+            this.groupBox14.Location = new System.Drawing.Point(17, 25);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(251, 280);
+            this.groupBox14.Size = new System.Drawing.Size(251, 366);
             this.groupBox14.TabIndex = 2;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Search Product";
             // 
+            // lstbxsafProducts
+            // 
+            this.lstbxsafProducts.FormattingEnabled = true;
+            this.lstbxsafProducts.Location = new System.Drawing.Point(99, 18);
+            this.lstbxsafProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.lstbxsafProducts.Name = "lstbxsafProducts";
+            this.lstbxsafProducts.Size = new System.Drawing.Size(142, 95);
+            this.lstbxsafProducts.TabIndex = 29;
+            this.lstbxsafProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxsafProducts_SelectedIndexChanged);
+            // 
             // btnArchiveProduct
             // 
-            this.btnArchiveProduct.Location = new System.Drawing.Point(4, 181);
+            this.btnArchiveProduct.Location = new System.Drawing.Point(6, 321);
             this.btnArchiveProduct.Name = "btnArchiveProduct";
             this.btnArchiveProduct.Size = new System.Drawing.Size(75, 39);
             this.btnArchiveProduct.TabIndex = 28;
@@ -1444,7 +1462,7 @@
             // 
             // btnProductUpdate
             // 
-            this.btnProductUpdate.Location = new System.Drawing.Point(166, 181);
+            this.btnProductUpdate.Location = new System.Drawing.Point(166, 319);
             this.btnProductUpdate.Name = "btnProductUpdate";
             this.btnProductUpdate.Size = new System.Drawing.Size(75, 39);
             this.btnProductUpdate.TabIndex = 27;
@@ -1453,7 +1471,7 @@
             // 
             // btnNewProduct
             // 
-            this.btnNewProduct.Location = new System.Drawing.Point(85, 181);
+            this.btnNewProduct.Location = new System.Drawing.Point(87, 319);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(75, 39);
             this.btnNewProduct.TabIndex = 26;
@@ -1463,27 +1481,27 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(16, 25);
+            this.label48.Location = new System.Drawing.Point(16, 18);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(78, 13);
+            this.label48.Size = new System.Drawing.Size(80, 13);
             this.label48.TabIndex = 23;
-            this.label48.Text = "Product Name:";
+            this.label48.Text = "Safety Product:";
             // 
             // groupBox13
             // 
+            this.groupBox13.Controls.Add(this.cbxProductWarr);
             this.groupBox13.Controls.Add(this.cbxProducDepartment);
             this.groupBox13.Controls.Add(this.rtxtbxProductDiscr);
             this.groupBox13.Controls.Add(this.txtbxProdctName);
             this.groupBox13.Controls.Add(this.label42);
             this.groupBox13.Controls.Add(this.label47);
             this.groupBox13.Controls.Add(this.label46);
-            this.groupBox13.Controls.Add(this.txtbxProductWarr);
             this.groupBox13.Controls.Add(this.label45);
             this.groupBox13.Controls.Add(this.txtProductPrice);
             this.groupBox13.Controls.Add(this.label43);
-            this.groupBox13.Location = new System.Drawing.Point(274, 33);
+            this.groupBox13.Location = new System.Drawing.Point(274, 25);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(269, 358);
+            this.groupBox13.Size = new System.Drawing.Size(269, 366);
             this.groupBox13.TabIndex = 1;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Product Information";
@@ -1542,13 +1560,6 @@
             this.label46.TabIndex = 13;
             this.label46.Text = "Price:";
             // 
-            // txtbxProductWarr
-            // 
-            this.txtbxProductWarr.Location = new System.Drawing.Point(110, 177);
-            this.txtbxProductWarr.Name = "txtbxProductWarr";
-            this.txtbxProductWarr.Size = new System.Drawing.Size(132, 20);
-            this.txtbxProductWarr.TabIndex = 18;
-            // 
             // label45
             // 
             this.label45.AutoSize = true;
@@ -1602,7 +1613,7 @@
             this.panel9.Controls.Add(this.label49);
             this.panel9.ForeColor = System.Drawing.Color.Coral;
             this.panel9.Location = new System.Drawing.Point(-2, -5);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(559, 406);
             this.panel9.TabIndex = 1;
@@ -1800,9 +1811,9 @@
             this.groupBox1.Controls.Add(this.groupBox9);
             this.groupBox1.Controls.Add(this.groupBox8);
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(284, 429);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -1869,7 +1880,7 @@
             // btnViewClient
             // 
             this.btnViewClient.Location = new System.Drawing.Point(93, 124);
-            this.btnViewClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewClient.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewClient.Name = "btnViewClient";
             this.btnViewClient.Size = new System.Drawing.Size(84, 39);
             this.btnViewClient.TabIndex = 7;
@@ -1880,7 +1891,7 @@
             // btnClientProducts
             // 
             this.btnClientProducts.Location = new System.Drawing.Point(5, 124);
-            this.btnClientProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClientProducts.Margin = new System.Windows.Forms.Padding(2);
             this.btnClientProducts.Name = "btnClientProducts";
             this.btnClientProducts.Size = new System.Drawing.Size(84, 39);
             this.btnClientProducts.TabIndex = 6;
@@ -1891,7 +1902,7 @@
             // txtbxSCUSername
             // 
             this.txtbxSCUSername.Location = new System.Drawing.Point(67, 39);
-            this.txtbxSCUSername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbxSCUSername.Margin = new System.Windows.Forms.Padding(2);
             this.txtbxSCUSername.Name = "txtbxSCUSername";
             this.txtbxSCUSername.Size = new System.Drawing.Size(179, 20);
             this.txtbxSCUSername.TabIndex = 5;
@@ -1909,7 +1920,7 @@
             // btnUpdateClient
             // 
             this.btnUpdateClient.Location = new System.Drawing.Point(185, 81);
-            this.btnUpdateClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateClient.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(84, 39);
             this.btnUpdateClient.TabIndex = 2;
@@ -1919,7 +1930,7 @@
             // btnSearchCli
             // 
             this.btnSearchCli.Location = new System.Drawing.Point(5, 81);
-            this.btnSearchCli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchCli.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchCli.Name = "btnSearchCli";
             this.btnSearchCli.Size = new System.Drawing.Size(84, 39);
             this.btnSearchCli.TabIndex = 0;
@@ -1930,7 +1941,7 @@
             // btnAddnew
             // 
             this.btnAddnew.Location = new System.Drawing.Point(93, 81);
-            this.btnAddnew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddnew.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddnew.Name = "btnAddnew";
             this.btnAddnew.Size = new System.Drawing.Size(84, 39);
             this.btnAddnew.TabIndex = 1;
@@ -1938,14 +1949,55 @@
             this.btnAddnew.UseVisualStyleBackColor = true;
             this.btnAddnew.Click += new System.EventHandler(this.btnAddnew_Click);
             // 
-            // lstbxProducts
+            // lstbxEneProducts
             // 
-            this.lstbxProducts.FormattingEnabled = true;
-            this.lstbxProducts.Location = new System.Drawing.Point(99, 25);
-            this.lstbxProducts.Margin = new System.Windows.Forms.Padding(2);
-            this.lstbxProducts.Name = "lstbxProducts";
-            this.lstbxProducts.Size = new System.Drawing.Size(142, 147);
-            this.lstbxProducts.TabIndex = 29;
+            this.lstbxEneProducts.FormattingEnabled = true;
+            this.lstbxEneProducts.Location = new System.Drawing.Point(99, 117);
+            this.lstbxEneProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.lstbxEneProducts.Name = "lstbxEneProducts";
+            this.lstbxEneProducts.Size = new System.Drawing.Size(142, 95);
+            this.lstbxEneProducts.TabIndex = 31;
+            this.lstbxEneProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxEneProducts_SelectedIndexChanged);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(16, 117);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(83, 13);
+            this.label44.TabIndex = 30;
+            this.label44.Text = "Energy Product:";
+            // 
+            // lstbxConProducts
+            // 
+            this.lstbxConProducts.FormattingEnabled = true;
+            this.lstbxConProducts.Location = new System.Drawing.Point(99, 219);
+            this.lstbxConProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.lstbxConProducts.Name = "lstbxConProducts";
+            this.lstbxConProducts.Size = new System.Drawing.Size(142, 95);
+            this.lstbxConProducts.TabIndex = 33;
+            this.lstbxConProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxConProducts_SelectedIndexChanged);
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(16, 219);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(78, 13);
+            this.label56.TabIndex = 32;
+            this.label56.Text = "Home Product:";
+            // 
+            // cbxProductWarr
+            // 
+            this.cbxProductWarr.FormattingEnabled = true;
+            this.cbxProductWarr.Items.AddRange(new object[] {
+            "Home Department",
+            "Enegry Department",
+            "Safety Department"});
+            this.cbxProductWarr.Location = new System.Drawing.Point(110, 177);
+            this.cbxProductWarr.Name = "cbxProductWarr";
+            this.cbxProductWarr.Size = new System.Drawing.Size(132, 21);
+            this.cbxProductWarr.TabIndex = 25;
             // 
             // App_ManagementProtalView
             // 
@@ -1953,7 +2005,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 434);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "App_ManagementProtalView";
             this.Text = "App_ManagementPortal";
             this.panel1.ResumeLayout(false);
@@ -2150,7 +2202,6 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.TextBox txtbxProductWarr;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txtProductPrice;
         private System.Windows.Forms.Label label43;
@@ -2180,6 +2231,11 @@
         private System.Windows.Forms.ListBox lstbxSaftPro;
         private System.Windows.Forms.ListBox lstbxEnergPro;
         private System.Windows.Forms.ListBox lstbxConvPro;
-        private System.Windows.Forms.ListBox lstbxProducts;
+        private System.Windows.Forms.ListBox lstbxsafProducts;
+        private System.Windows.Forms.ListBox lstbxConProducts;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.ListBox lstbxEneProducts;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.ComboBox cbxProductWarr;
     }
 }
