@@ -288,5 +288,17 @@ namespace UI.View.EmployeeSide
             txtProductPrice.Text = convienceProduct.Price.ToString();
             cbxProductWarr.Text = convienceProduct.Warrenty.Duration;
         }
+
+        private async void btnSchSearch_Click(object sender, EventArgs e)
+        {
+
+            string name = txtbxScheTechName.Text;
+            LOGIC.ApplicationLogic.TechnicianApp technicianApp = new LOGIC.ApplicationLogic.TechnicianApp();
+            Schedule schedule = await technicianApp.Schedule(name);
+
+            txtbxScheTimeS.Text = schedule.InsDateStart.ToString();
+            txtbxScheTimeE.Text = schedule.MainDateStart.ToString();
+            txtbxScheTechName.Text = schedule.TechnicianEmp.People.FirstName + " " + schedule.TechnicianEmp.People.LastName;
+        }
     }
 }
