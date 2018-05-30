@@ -33,6 +33,8 @@ namespace LOGIC.BusinessLogic
                     CellNumber = person.CellNumber,
                     SSID = person.SSID,
                     DOB = person.DOB,
+                    Gender = person.Gender,
+                    
                     Address = new Address()
                     {
                         ID = person.ID,

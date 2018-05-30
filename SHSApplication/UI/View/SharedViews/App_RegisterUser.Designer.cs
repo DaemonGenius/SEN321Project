@@ -217,7 +217,8 @@
             this.cbxDepartType.Items.AddRange(new object[] {
             "Admin",
             "Client",
-            "Employee"});
+            "Technician",
+            "Sales"});
             this.cbxDepartType.Location = new System.Drawing.Point(128, 256);
             this.cbxDepartType.Margin = new System.Windows.Forms.Padding(2);
             this.cbxDepartType.Name = "cbxDepartType";

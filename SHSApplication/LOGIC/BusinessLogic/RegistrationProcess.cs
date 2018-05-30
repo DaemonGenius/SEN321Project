@@ -15,73 +15,54 @@ namespace LOGIC.BusinessLogic
     {
         public RegistrationProcess() { }
      
-        #region RegisterUser
        
-        public void RegisterUser(string fname, string lname, string email, string cell, string pass, string DOB, string ssid, 
-                                  int StreetNum, string StreetName, string Zipcode, string city, string Province, string Country,
-                                  string cardNum, string cardName, string cardCVC, string cardType, string cardExpiryDate, string department)
-        {
-            int ID;
-            //People people = new People();
-
-            //people = new People
-            //{
-            //    FirstName = fname,
-            //    LastName = lname,
-            //    EmailAddress = email,
-            //    CellNumber = cell,
-            //    Password = pass,
-            //    DOB = DOB,
-            //    SSID = ssid,
-            //    Address = new Address()
-            //    {
-            //        StreetNum = StreetNum,
-            //        Street = StreetName,
-            //        City = city,
-            //        Country = Country,
-            //        Province = Province,
-            //        Zipcode = Zipcode,
-            //    },                
-            //    Department = department
-
-            //};
-            
-            //People.InsertOnSubmit(people);
-            //db.SubmitChanges();
-            //ID = people.ID;
-            //registerbiliing(ID, cardNum, cardName, cardCVC, cardType, cardExpiryDate);
-        } 
-        #endregion
-
-
-        public void registerbiliing(int ID,string cardNum, string cardName, string cardCVC, string cardType, string cardExpiryDate)
-        {
-            //Billinginfoe billinginfoe = new Billinginfoe();
-           
-            //billinginfoe = new Billinginfoe()
-            //{
-            //    CardName = cardName,
-            //    CardNum = cardNum,
-            //    CardCVV = cardCVC,
-            //    CardExpireDate = cardExpiryDate,
-            //    CardType = cardType,
-            //    Person_ID = ID
-                
-            //};
-            //Billinginfoe.InsertOnSubmit(billinginfoe);
-            //db.SubmitChanges();
-        }
-
-
         public Billinginfoe RegisterUser(Billinginfoe billinginfoe)
         {
             using (var dbe = new SHSdb())
             {
-                dbe.BillingInfo.InsertOnSubmit(billinginfoe);
+                dbe.BillingInfo.InsertOnSubmit(billinginfoe);                
                 dbe.SubmitChanges();
-                return billinginfoe;
-                
+                return billinginfoe;                
             }
         }
+
+        public Client RegisterClient(Client client)
+        {
+            using (var dbe = new SHSdb())
+            {
+                dbe.Clients.InsertOnSubmit(client);
+                dbe.SubmitChanges();
+                return client;
+            }
+        }
+        public Admin RegisterAdmin(Admin admin)
+        {
+            using (var dbe = new SHSdb())
+            {
+                dbe.admins.InsertOnSubmit(admin);
+                dbe.SubmitChanges();
+                return admin;
+            }
+        }
+        public TechnicianEmp RegisterTech(TechnicianEmp technicianEmp)
+        {
+            using (var dbe = new SHSdb())
+            {
+                dbe.technicianEmps.InsertOnSubmit(technicianEmp);
+                dbe.SubmitChanges();
+                return technicianEmp;
+            }
+        }
+        public Sale_Emp RegisterSales(Sale_Emp sale_Emp)
+        {
+            using (var dbe = new SHSdb())
+            {
+                dbe.sale_Emps.InsertOnSubmit(sale_Emp);
+                dbe.SubmitChanges();
+                return sale_Emp;
+            }
+        }
+
+
     }
 }

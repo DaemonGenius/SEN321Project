@@ -70,17 +70,16 @@ namespace UI.View.SharedViews
             }
 
             LOGIC.ApplicationLogic.RegisterValidation registerValidation = new LOGIC.ApplicationLogic.RegisterValidation();
-            if (registerValidation.RegisterUser1(fname, lname, email, cell, pass, DOB, gender, ssid, StreetName, Zipcode, City, Province, Country, cardNum, cardName, cardCVC, cardType, cardExpiryDate, Convert.ToInt32(StreetNum), department) == true)
+            if (registerValidation.ValidateUser(fname, lname, email, cell, pass, DOB, gender, ssid, StreetName, Zipcode, City, Province, Country, cardNum, cardName, cardCVC, cardType, cardExpiryDate, Convert.ToInt32(StreetNum), department) == true)
             {
-                MessageBox.Show("Client successfully added");
+                MessageBox.Show("{0} successfully added", department);
             }
             else
             {
                 MessageBox.Show("Error");
-            }
-           
+            }         
             
-            //registerValidation.RegisterUser(fname,lname,email,cell,pass,DOB,ssid,StreetName,Zipcode,City,Province,Country,cardNum,cardName,cardCVC,cardType,cardExpiryDate,Convert.ToInt32(StreetNum),department);
+            
 
         }
 

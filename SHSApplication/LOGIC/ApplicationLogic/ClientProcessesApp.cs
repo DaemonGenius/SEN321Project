@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LOGIC.ApplicationLogic
 {
@@ -16,7 +17,16 @@ namespace LOGIC.ApplicationLogic
 
         public async Task<ProductSystem> ProductLoad()
         {
-            return await BusinessLogic.ClientProcesses.ClientProductLoad();
+            try
+            {
+                return await BusinessLogic.ClientProcesses.ClientProductLoad();
+            }
+            catch (NullReferenceException e)
+            {
+                MessageBox.Show("Error");
+                throw;
+            }
+            
         }
     }
 }

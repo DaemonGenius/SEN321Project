@@ -35,15 +35,15 @@ namespace UI.View.EmployeeSide
 
             if (people.Gender == "Male")
             {
-                radbtnMale.Checked = true;
+                radbtnMale.Checked =! false;
             }
             else if (people.Gender == "Female")
             {
-                radbtnFemale.Checked = true;
+                radbtnFemale.Checked = !false;
             }
             else if (people.Gender == "Other")
             {
-                radbtnOther.Checked = true;
+                radbtnOther.Checked = !false;
             }
             txtbxCFName.Text = people.FirstName;
             txtbxCLName.Text = people.LastName;
@@ -86,21 +86,31 @@ namespace UI.View.EmployeeSide
             #region ProductLoad
             LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
             LOGIC.ApplicationLogic.ClientProcessesApp clientProcessesApp = new LOGIC.ApplicationLogic.ClientProcessesApp();
-            ProductSystem productSystem = await clientProcessesApp.ProductLoad();
+            try
+            {
+                ProductSystem productSystem = await clientProcessesApp.ProductLoad();
+                txtbxSystem.Text = productSystem.Name;
+                foreach (var item in productSystem.SysConProducts)
+                {
+                    lstbxConvPro.Items.Add(item.ConvienceProduct.Name);
+                }
+                foreach (var item1 in productSystem.SysEneProducts)
+                {
+                    lstbxEnergPro.Items.Add(item1.EnergyProduct.Name);
+                }
+                foreach (var item2 in productSystem.SysSafProducts)
+                {
+                    lstbxSaftPro.Items.Add(item2.SafetyProduct.Name);
+                }
+            }
+            catch (NullReferenceException )
+            {
+                MessageBox.Show("Error");
+                
+            }
+            
 
-            txtbxSystem.Text = productSystem.Name;
-            foreach (var item in productSystem.SysConProducts)
-            {
-                lstbxConvPro.Items.Add(item.ConvienceProduct.Name);
-            }
-            foreach (var item1 in productSystem.SysEneProducts)
-            {
-                lstbxEnergPro.Items.Add(item1.EnergyProduct.Name);
-            }
-            foreach (var item2 in productSystem.SysSafProducts)
-            {
-                lstbxSaftPro.Items.Add(item2.SafetyProduct.Name);
-            }
+           
 
             TechnicianEmp technicianEmp = await productInfoApp.techProductLoad();
             txtbxTechnicianN.Text = technicianEmp.People.FirstName + " " + technicianEmp.People.LastName;
