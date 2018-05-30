@@ -87,8 +87,6 @@
             this.lstbxSaftPro = new System.Windows.Forms.ListBox();
             this.label40 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.rtxtbxMainSche = new System.Windows.Forms.RichTextBox();
             this.rtxtbxDisc = new System.Windows.Forms.RichTextBox();
             this.txtbxTechnicianN = new System.Windows.Forms.TextBox();
             this.txtbxContract = new System.Windows.Forms.TextBox();
@@ -111,6 +109,14 @@
             this.label30 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tblCaller = new System.Windows.Forms.TabPage();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btnEndCall = new System.Windows.Forms.Button();
+            this.btnCall = new System.Windows.Forms.Button();
+            this.lblCallDuration = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.cbxEmployee = new System.Windows.Forms.ComboBox();
             this.tbpCCAdmin = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAmsgCancel = new System.Windows.Forms.Button();
@@ -167,17 +173,20 @@
             this.tbpScheduleMain = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.btnScheCancel = new System.Windows.Forms.Button();
-            this.txtbxScheClientName = new System.Windows.Forms.TextBox();
+            this.txtbxClientSys = new System.Windows.Forms.TextBox();
+            this.lstbxMaintenanceDue = new System.Windows.Forms.ListBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.txtbxScheTimeE = new System.Windows.Forms.TextBox();
-            this.txtbxScheTimeS = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
+            this.txtbxScheClientName = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.txtbxScheTimeS = new System.Windows.Forms.TextBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.btnSchSearch = new System.Windows.Forms.Button();
             this.btnArchiveSchedule = new System.Windows.Forms.Button();
+            this.btnScheCancel = new System.Windows.Forms.Button();
             this.btnUpdateSchedule = new System.Windows.Forms.Button();
             this.btnNewSchedule = new System.Windows.Forms.Button();
             this.txtbxScheTechName = new System.Windows.Forms.TextBox();
@@ -196,18 +205,10 @@
             this.btnUpdateClient = new System.Windows.Forms.Button();
             this.btnSearchCli = new System.Windows.Forms.Button();
             this.btnAddnew = new System.Windows.Forms.Button();
-            this.label43 = new System.Windows.Forms.Label();
-            this.lstbxMaintenanceDue = new System.Windows.Forms.ListBox();
-            this.txtbxClientSys = new System.Windows.Forms.TextBox();
-            this.tblCaller = new System.Windows.Forms.TabPage();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.cbxEmployee = new System.Windows.Forms.ComboBox();
-            this.label50 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label57 = new System.Windows.Forms.Label();
-            this.lblCallDuration = new System.Windows.Forms.Label();
-            this.btnCall = new System.Windows.Forms.Button();
-            this.btnEndCall = new System.Windows.Forms.Button();
+            this.btnOrder = new System.Windows.Forms.Button();
+            this.rtxtbxMainSche = new System.Windows.Forms.RichTextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -220,11 +221,12 @@
             this.tbpProducts.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.tbpCallCentre.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tblCaller.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.tbpCCAdmin.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tblCCClient.SuspendLayout();
@@ -243,8 +245,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            this.tblCaller.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -279,7 +280,7 @@
             this.tabControl1.Controls.Add(this.tbpScheduleMain);
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.tabControl1.ItemSize = new System.Drawing.Size(10, 10);
-            this.tabControl1.Location = new System.Drawing.Point(4, 11);
+            this.tabControl1.Location = new System.Drawing.Point(4, 10);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -902,24 +903,6 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Information";
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.rtxtbxMainSche);
-            this.groupBox7.Location = new System.Drawing.Point(16, 249);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(248, 95);
-            this.groupBox7.TabIndex = 12;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Maintenance Schedules";
-            // 
-            // rtxtbxMainSche
-            // 
-            this.rtxtbxMainSche.Location = new System.Drawing.Point(6, 19);
-            this.rtxtbxMainSche.Name = "rtxtbxMainSche";
-            this.rtxtbxMainSche.Size = new System.Drawing.Size(236, 70);
-            this.rtxtbxMainSche.TabIndex = 0;
-            this.rtxtbxMainSche.Text = "";
-            // 
             // rtxtbxDisc
             // 
             this.rtxtbxDisc.Location = new System.Drawing.Point(103, 51);
@@ -1114,6 +1097,84 @@
             this.tabControl2.Size = new System.Drawing.Size(307, 324);
             this.tabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl2.TabIndex = 0;
+            // 
+            // tblCaller
+            // 
+            this.tblCaller.Controls.Add(this.panel10);
+            this.tblCaller.Location = new System.Drawing.Point(4, 24);
+            this.tblCaller.Name = "tblCaller";
+            this.tblCaller.Padding = new System.Windows.Forms.Padding(3);
+            this.tblCaller.Size = new System.Drawing.Size(299, 296);
+            this.tblCaller.TabIndex = 3;
+            this.tblCaller.Text = "Calling";
+            this.tblCaller.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Gray;
+            this.panel10.Controls.Add(this.btnEndCall);
+            this.panel10.Controls.Add(this.btnCall);
+            this.panel10.Controls.Add(this.lblCallDuration);
+            this.panel10.Controls.Add(this.label57);
+            this.panel10.Controls.Add(this.label50);
+            this.panel10.Controls.Add(this.cbxEmployee);
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(309, 310);
+            this.panel10.TabIndex = 1;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            // 
+            // btnEndCall
+            // 
+            this.btnEndCall.Location = new System.Drawing.Point(143, 116);
+            this.btnEndCall.Name = "btnEndCall";
+            this.btnEndCall.Size = new System.Drawing.Size(67, 74);
+            this.btnEndCall.TabIndex = 5;
+            this.btnEndCall.Text = "End";
+            this.btnEndCall.UseVisualStyleBackColor = true;
+            // 
+            // btnCall
+            // 
+            this.btnCall.Location = new System.Drawing.Point(61, 116);
+            this.btnCall.Name = "btnCall";
+            this.btnCall.Size = new System.Drawing.Size(67, 74);
+            this.btnCall.TabIndex = 4;
+            this.btnCall.Text = "Call";
+            this.btnCall.UseVisualStyleBackColor = true;
+            // 
+            // lblCallDuration
+            // 
+            this.lblCallDuration.AutoSize = true;
+            this.lblCallDuration.Location = new System.Drawing.Point(96, 79);
+            this.lblCallDuration.Name = "lblCallDuration";
+            this.lblCallDuration.Size = new System.Drawing.Size(0, 13);
+            this.lblCallDuration.TabIndex = 3;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(20, 79);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(70, 13);
+            this.label57.TabIndex = 2;
+            this.label57.Text = "Call Duration:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(20, 25);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(56, 13);
+            this.label50.TabIndex = 1;
+            this.label50.Text = "Employee:";
+            // 
+            // cbxEmployee
+            // 
+            this.cbxEmployee.FormattingEnabled = true;
+            this.cbxEmployee.Location = new System.Drawing.Point(97, 22);
+            this.cbxEmployee.Name = "cbxEmployee";
+            this.cbxEmployee.Size = new System.Drawing.Size(149, 21);
+            this.cbxEmployee.TabIndex = 0;
             // 
             // tbpCCAdmin
             // 
@@ -1676,22 +1737,31 @@
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Schedule Information";
             // 
-            // btnScheCancel
+            // txtbxClientSys
             // 
-            this.btnScheCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnScheCancel.Location = new System.Drawing.Point(65, 306);
-            this.btnScheCancel.Name = "btnScheCancel";
-            this.btnScheCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnScheCancel.TabIndex = 12;
-            this.btnScheCancel.Text = "Cancel";
-            this.btnScheCancel.UseVisualStyleBackColor = true;
+            this.txtbxClientSys.Location = new System.Drawing.Point(111, 203);
+            this.txtbxClientSys.Name = "txtbxClientSys";
+            this.txtbxClientSys.Size = new System.Drawing.Size(118, 20);
+            this.txtbxClientSys.TabIndex = 15;
             // 
-            // txtbxScheClientName
+            // lstbxMaintenanceDue
             // 
-            this.txtbxScheClientName.Location = new System.Drawing.Point(111, 176);
-            this.txtbxScheClientName.Name = "txtbxScheClientName";
-            this.txtbxScheClientName.Size = new System.Drawing.Size(118, 20);
-            this.txtbxScheClientName.TabIndex = 10;
+            this.lstbxMaintenanceDue.FormattingEnabled = true;
+            this.lstbxMaintenanceDue.Location = new System.Drawing.Point(111, 30);
+            this.lstbxMaintenanceDue.Name = "lstbxMaintenanceDue";
+            this.lstbxMaintenanceDue.Size = new System.Drawing.Size(162, 82);
+            this.lstbxMaintenanceDue.TabIndex = 14;
+            this.lstbxMaintenanceDue.SelectedIndexChanged += new System.EventHandler(this.lstbxMaintenanceDue_SelectedIndexChanged);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.ForeColor = System.Drawing.Color.Black;
+            this.label43.Location = new System.Drawing.Point(5, 30);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(100, 13);
+            this.label43.TabIndex = 13;
+            this.label43.Text = "Maintenances Due:";
             // 
             // txtbxScheTimeE
             // 
@@ -1699,33 +1769,6 @@
             this.txtbxScheTimeE.Name = "txtbxScheTimeE";
             this.txtbxScheTimeE.Size = new System.Drawing.Size(118, 20);
             this.txtbxScheTimeE.TabIndex = 8;
-            // 
-            // txtbxScheTimeS
-            // 
-            this.txtbxScheTimeS.Location = new System.Drawing.Point(111, 124);
-            this.txtbxScheTimeS.Name = "txtbxScheTimeS";
-            this.txtbxScheTimeS.Size = new System.Drawing.Size(118, 20);
-            this.txtbxScheTimeS.TabIndex = 7;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.ForeColor = System.Drawing.Color.Black;
-            this.label55.Location = new System.Drawing.Point(8, 210);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(73, 13);
-            this.label55.TabIndex = 5;
-            this.label55.Text = "Client System:";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.ForeColor = System.Drawing.Color.Black;
-            this.label54.Location = new System.Drawing.Point(8, 183);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(67, 13);
-            this.label54.TabIndex = 3;
-            this.label54.Text = "Client Name:";
             // 
             // label52
             // 
@@ -1737,6 +1780,16 @@
             this.label52.TabIndex = 2;
             this.label52.Text = "Start Time:";
             // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.ForeColor = System.Drawing.Color.Black;
+            this.label54.Location = new System.Drawing.Point(8, 183);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(67, 13);
+            this.label54.TabIndex = 3;
+            this.label54.Text = "Client Name:";
+            // 
             // label51
             // 
             this.label51.AutoSize = true;
@@ -1746,6 +1799,30 @@
             this.label51.Size = new System.Drawing.Size(55, 13);
             this.label51.TabIndex = 1;
             this.label51.Text = "End Time:";
+            // 
+            // txtbxScheClientName
+            // 
+            this.txtbxScheClientName.Location = new System.Drawing.Point(111, 176);
+            this.txtbxScheClientName.Name = "txtbxScheClientName";
+            this.txtbxScheClientName.Size = new System.Drawing.Size(118, 20);
+            this.txtbxScheClientName.TabIndex = 10;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.ForeColor = System.Drawing.Color.Black;
+            this.label55.Location = new System.Drawing.Point(8, 210);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(73, 13);
+            this.label55.TabIndex = 5;
+            this.label55.Text = "Client System:";
+            // 
+            // txtbxScheTimeS
+            // 
+            this.txtbxScheTimeS.Location = new System.Drawing.Point(111, 124);
+            this.txtbxScheTimeS.Name = "txtbxScheTimeS";
+            this.txtbxScheTimeS.Size = new System.Drawing.Size(118, 20);
+            this.txtbxScheTimeS.TabIndex = 7;
             // 
             // groupBox15
             // 
@@ -1784,6 +1861,16 @@
             this.btnArchiveSchedule.TabIndex = 2;
             this.btnArchiveSchedule.Text = "Archive";
             this.btnArchiveSchedule.UseVisualStyleBackColor = true;
+            // 
+            // btnScheCancel
+            // 
+            this.btnScheCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnScheCancel.Location = new System.Drawing.Point(65, 306);
+            this.btnScheCancel.Name = "btnScheCancel";
+            this.btnScheCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnScheCancel.TabIndex = 12;
+            this.btnScheCancel.Text = "Cancel";
+            this.btnScheCancel.UseVisualStyleBackColor = true;
             // 
             // btnUpdateSchedule
             // 
@@ -1848,6 +1935,7 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.btnOrder);
             this.groupBox9.Controls.Add(this.btnScheManagement);
             this.groupBox9.Controls.Add(this.btnProductManage);
             this.groupBox9.Controls.Add(this.btnCallCentre);
@@ -1976,109 +2064,32 @@
             this.btnAddnew.UseVisualStyleBackColor = true;
             this.btnAddnew.Click += new System.EventHandler(this.btnAddnew_Click);
             // 
-            // label43
+            // btnOrder
             // 
-            this.label43.AutoSize = true;
-            this.label43.ForeColor = System.Drawing.Color.Black;
-            this.label43.Location = new System.Drawing.Point(5, 30);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(100, 13);
-            this.label43.TabIndex = 13;
-            this.label43.Text = "Maintenances Due:";
+            this.btnOrder.Location = new System.Drawing.Point(98, 32);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(84, 39);
+            this.btnOrder.TabIndex = 3;
+            this.btnOrder.Text = "Purchase Order";
+            this.btnOrder.UseVisualStyleBackColor = true;
             // 
-            // lstbxMaintenanceDue
+            // rtxtbxMainSche
             // 
-            this.lstbxMaintenanceDue.FormattingEnabled = true;
-            this.lstbxMaintenanceDue.Location = new System.Drawing.Point(111, 30);
-            this.lstbxMaintenanceDue.Name = "lstbxMaintenanceDue";
-            this.lstbxMaintenanceDue.Size = new System.Drawing.Size(162, 82);
-            this.lstbxMaintenanceDue.TabIndex = 14;
-            this.lstbxMaintenanceDue.SelectedIndexChanged += new System.EventHandler(this.lstbxMaintenanceDue_SelectedIndexChanged);
+            this.rtxtbxMainSche.Location = new System.Drawing.Point(6, 19);
+            this.rtxtbxMainSche.Name = "rtxtbxMainSche";
+            this.rtxtbxMainSche.Size = new System.Drawing.Size(236, 70);
+            this.rtxtbxMainSche.TabIndex = 0;
+            this.rtxtbxMainSche.Text = "";
             // 
-            // txtbxClientSys
+            // groupBox7
             // 
-            this.txtbxClientSys.Location = new System.Drawing.Point(111, 203);
-            this.txtbxClientSys.Name = "txtbxClientSys";
-            this.txtbxClientSys.Size = new System.Drawing.Size(118, 20);
-            this.txtbxClientSys.TabIndex = 15;
-            // 
-            // tblCaller
-            // 
-            this.tblCaller.Controls.Add(this.panel10);
-            this.tblCaller.Location = new System.Drawing.Point(4, 24);
-            this.tblCaller.Name = "tblCaller";
-            this.tblCaller.Padding = new System.Windows.Forms.Padding(3);
-            this.tblCaller.Size = new System.Drawing.Size(299, 296);
-            this.tblCaller.TabIndex = 3;
-            this.tblCaller.Text = "Calling";
-            this.tblCaller.UseVisualStyleBackColor = true;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Gray;
-            this.panel10.Controls.Add(this.btnEndCall);
-            this.panel10.Controls.Add(this.btnCall);
-            this.panel10.Controls.Add(this.lblCallDuration);
-            this.panel10.Controls.Add(this.label57);
-            this.panel10.Controls.Add(this.label50);
-            this.panel10.Controls.Add(this.cbxEmployee);
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(309, 310);
-            this.panel10.TabIndex = 1;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
-            // 
-            // cbxEmployee
-            // 
-            this.cbxEmployee.FormattingEnabled = true;
-            this.cbxEmployee.Location = new System.Drawing.Point(97, 22);
-            this.cbxEmployee.Name = "cbxEmployee";
-            this.cbxEmployee.Size = new System.Drawing.Size(149, 21);
-            this.cbxEmployee.TabIndex = 0;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(20, 25);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(56, 13);
-            this.label50.TabIndex = 1;
-            this.label50.Text = "Employee:";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(20, 79);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(70, 13);
-            this.label57.TabIndex = 2;
-            this.label57.Text = "Call Duration:";
-            // 
-            // lblCallDuration
-            // 
-            this.lblCallDuration.AutoSize = true;
-            this.lblCallDuration.Location = new System.Drawing.Point(96, 79);
-            this.lblCallDuration.Name = "lblCallDuration";
-            this.lblCallDuration.Size = new System.Drawing.Size(0, 13);
-            this.lblCallDuration.TabIndex = 3;
-            // 
-            // btnCall
-            // 
-            this.btnCall.Location = new System.Drawing.Point(61, 116);
-            this.btnCall.Name = "btnCall";
-            this.btnCall.Size = new System.Drawing.Size(67, 74);
-            this.btnCall.TabIndex = 4;
-            this.btnCall.Text = "Call";
-            this.btnCall.UseVisualStyleBackColor = true;
-            // 
-            // btnEndCall
-            // 
-            this.btnEndCall.Location = new System.Drawing.Point(143, 116);
-            this.btnEndCall.Name = "btnEndCall";
-            this.btnEndCall.Size = new System.Drawing.Size(67, 74);
-            this.btnEndCall.TabIndex = 5;
-            this.btnEndCall.Text = "End";
-            this.btnEndCall.UseVisualStyleBackColor = true;
+            this.groupBox7.Controls.Add(this.rtxtbxMainSche);
+            this.groupBox7.Location = new System.Drawing.Point(16, 249);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(248, 95);
+            this.groupBox7.TabIndex = 12;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Maintenance Schedules";
             // 
             // App_ManagementProtalView
             // 
@@ -2109,12 +2120,14 @@
             this.panel3.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
             this.tbpCallCentre.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tblCaller.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.tbpCCAdmin.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -2143,9 +2156,7 @@
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            this.tblCaller.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2211,8 +2222,6 @@
         private System.Windows.Forms.RadioButton radbtnMale;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.RichTextBox rtxtbxMainSche;
         private System.Windows.Forms.RichTextBox rtxtbxDisc;
         private System.Windows.Forms.TextBox txtbxTechnicianN;
         private System.Windows.Forms.TextBox txtbxContract;
@@ -2331,5 +2340,8 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.ComboBox cbxEmployee;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnOrder;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.RichTextBox rtxtbxMainSche;
     }
 }
