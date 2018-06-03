@@ -21,7 +21,7 @@ namespace UI.View.EmployeeSide
         public int Client;
         public int Contract;
         public int TechnicianName;
-        public int SysName, MainID;
+        public int SysName, MainID, TechID;
         public int ScheduleState;
         public App_ManagementProtalView()
         {
@@ -483,6 +483,7 @@ namespace UI.View.EmployeeSide
                 maintenance.DateEnd = DateTime.Parse(txtbxET.Text);
                 maintenance.Name = txtbxMainName.Text;
                 maintenance.Contract_ID = 1;
+                maintenance.TechnicianEmp_ID = TechID;
                 maintenance.ID = MainID;
                 LOGIC.ApplicationLogic.MaintenanceInsertApp maintenanceInsertApp = new MaintenanceInsertApp();
                 await maintenanceInsertApp.UpdateMaintenance(maintenance);
@@ -516,6 +517,8 @@ namespace UI.View.EmployeeSide
             LOGIC.ApplicationLogic.TechnicianApp technicianApp = new LOGIC.ApplicationLogic.TechnicianApp();
             TechnicianEmp technician = await technicianApp.TechnicianEmp(cbcScheTechname.Text);
             TechnicianName = (int)technician.ID;
+            TechID = technician.ID;
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

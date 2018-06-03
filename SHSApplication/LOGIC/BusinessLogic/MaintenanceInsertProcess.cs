@@ -32,6 +32,7 @@ namespace LOGIC.BusinessLogic
                 Maintenance existing = db.maintenances.FirstOrDefault(x => x.ID == maintenance.ID);
                 if (existing == null) { throw new KeyNotFoundException(); }                
                 existing.Contract_ID = maintenance.Contract_ID;
+                existing.TechnicianEmp_ID = maintenance.TechnicianEmp_ID;
                 existing.DateStart = maintenance.DateStart;
                 existing.DateEnd = maintenance.DateEnd;
                 existing.Name = maintenance.Name;
