@@ -203,6 +203,8 @@ namespace UI.View.EmployeeSide
             tbpProducts.Hide();
             tbpProductManagement.Hide();
             tbpCallCentre.Hide();
+            txtbxMainName.Hide();
+            label58.Hide();
         }
 
         private void btnCallCentre_Click(object sender, EventArgs e)
@@ -305,7 +307,7 @@ namespace UI.View.EmployeeSide
 
         private async void btnSchSearch_Click(object sender, EventArgs e)
         {
-
+            
             string name = txtbxScheTechName.Text;
             LOGIC.ApplicationLogic.TechnicianApp technicianApp = new LOGIC.ApplicationLogic.TechnicianApp();
             TechnicianEmp technician = await technicianApp.Maintenances(name);
@@ -329,11 +331,11 @@ namespace UI.View.EmployeeSide
 
             Maintenance maintenance = await technicianApp.Maintenance(name);
 
-            txtbxScheClientName.Text = maintenance.Client.People.FirstName + " " + maintenance.Client.People.LastName;
+            cbxClientName.Text = maintenance.Client.People.FirstName + " " + maintenance.Client.People.LastName;
             txtbxScheTechName.Text = maintenance.TechnicianEmp.People.FirstName + " " + maintenance.TechnicianEmp.People.LastName;
             txtbxScheTimeS.Text = maintenance.DateStart.ToShortDateString();
             txtbxScheTimeE.Text = maintenance.DateEnd.ToShortDateString();
-            txtbxClientSys.Text = maintenance.ProductSystem.Name;
+            cbxClientSys.Text = maintenance.ProductSystem.Name;
 
         }
 
@@ -387,6 +389,73 @@ namespace UI.View.EmployeeSide
                     cbxEmployee.Items.Add(item);
                 }
             }
+
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            View.EmployeeSide.App_PurchaseOrder app_PurchaseOrder = new App_PurchaseOrder();
+            app_PurchaseOrder.Show();
+            this.Visible = false;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnLoginOut_Click(object sender, EventArgs e)
+        {
+            View.SharedViews.App_Start app_Start = new SharedViews.App_Start();
+            app_Start.Show();
+            this.Visible = false;
+        }
+
+        private void btnNewSchedule_Click(object sender, EventArgs e)
+        {
+            tbpMainSche.Hide();
+            tbpNewSche.Show();            
+            List<string> ClientLoad = LOGIC.ApplicationLogic.ClientProcessesApp.ClientFNLoadApp();
+            foreach (var item in ClientLoad)
+            {
+                cbxScheClintName.Items.Add(item);
+            }
+            List<string> TechNLoad = LOGIC.ApplicationLogic.TechnicianApp.TechNLoadApp();
+            foreach (var item in TechNLoad)
+            {
+                cbcScheTechname.Items.Add(item);
+            }
+            
+
+        }
+
+        private void btnSearchSche_Click(object sender, EventArgs e)
+        {
+            tbpMainSche.Show();
+            tbpNewSche.Hide();
+        }
+
+        private async void cbxScheClintName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            #region ProductLoad
+            LOGIC.ApplicationLogic.ClientProcessesApp cpa = new LOGIC.ApplicationLogic.ClientProcessesApp();
+            People people = await cpa.ClientPSys(cbxScheClintName.Text);
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+            LOGIC.ApplicationLogic.ClientProcessesApp clientProcessesApp = new LOGIC.ApplicationLogic.ClientProcessesApp();
+            ProductSystem productSystem = await clientProcessesApp.ProductLoad();
+            cbxScheSysName.Text = productSystem.Name;
+            #endregion
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            string CFN = cbxScheClintName.Text;
+            string CsysF = cbxScheSysName.Text;
+            string StartT = txtbxST.Text;
+            string EndT = txtbxET.Text;
+            string MainName = txtbxMainName.Text;
+            string TechName = cbcScheTechname.Text;
+
 
         }
     }

@@ -18,5 +18,10 @@ namespace LOGIC.ApplicationLogic
         {
             return await BusinessLogic.TechnicianProcesses.GetTechMain(name);
         }
+
+        public static List<string> TechNLoadApp()
+        {
+            return BusinessLogic.TechnicianProcesses.TechNameLoad();
+        }
     }
 }

@@ -14,6 +14,10 @@ namespace LOGIC.ApplicationLogic
         {
             return await BusinessLogic.ClientProcesses.ClientSearch(username);
         }
+        public async Task<People> ClientPSys(string fname)
+        {
+            return await BusinessLogic.ClientProcesses.ClientProductLoad(fname);
+        }
 
         public async Task<ProductSystem> ProductLoad()
         {
@@ -27,6 +31,11 @@ namespace LOGIC.ApplicationLogic
                 throw;
             }
             
+        }
+
+        public static List<string> ClientFNLoadApp()
+        {
+            return BusinessLogic.ClientProcesses.ClientFNLoad();
         }
     }
 }

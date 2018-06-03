@@ -66,5 +66,17 @@ namespace LOGIC.BusinessLogic
             }
         }
 
+        #region TechLoad
+        public static List<string> TechNameLoad()
+        {
+            using (var dbe = new SHSdb())
+            {
+
+                return dbe.technicianEmps.Select(x => x.People.FirstName).ToList();
+
+            }
+        }
+        #endregion
+
     }
 }

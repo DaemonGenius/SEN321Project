@@ -16,5 +16,13 @@ namespace UI.View.EmployeeSide
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            
+            View.EmployeeSide.App_ManagementProtalView app_ManagementProtalView = new App_ManagementProtalView();
+            app_ManagementProtalView.Show();
+            this.Visible = false;
+        }
     }
 }

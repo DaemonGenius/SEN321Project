@@ -54,6 +54,7 @@ namespace UI.View.SharedViews
                     View.EmployeeSide.App_ManagementProtalView managementProtalView = new EmployeeSide.App_ManagementProtalView();
                     managementProtalView.Show();                    
                     lblErrorEmail.Visible = false;
+                    this.Visible = false;
                 }
 
             }

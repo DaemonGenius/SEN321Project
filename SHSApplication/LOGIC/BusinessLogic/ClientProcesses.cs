@@ -15,6 +15,8 @@ namespace LOGIC.BusinessLogic
         public static int ID;
         public static int cartID;
         public static int clientID;
+        public static string FName;
+
         #endregion
         #region ClientSearch
         public static async Task<People> ClientSearch(string Username)
@@ -23,6 +25,7 @@ namespace LOGIC.BusinessLogic
             {
                 People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
                 ID = person.ID;
+               
                 //Billinginfoe billinginfoe = dbe.BillingInfo.FirstOrDefault(x => x.ID == person.ID);
                 return new People()
                 {
@@ -34,7 +37,7 @@ namespace LOGIC.BusinessLogic
                     SSID = person.SSID,
                     DOB = person.DOB,
                     Gender = person.Gender,
-                    
+
                     Address = new Address()
                     {
                         ID = person.ID,
@@ -59,7 +62,7 @@ namespace LOGIC.BusinessLogic
             }
         }
 
-        
+
         #endregion
         #region ClientProductSearch
         public static async Task<SysConProduct> asClientProductLoad()
@@ -71,11 +74,13 @@ namespace LOGIC.BusinessLogic
                 ProductSystem productSystems = dbe.productSystems.FirstOrDefault((x => x.Cart_ID == transaction.Cart_ID));
                 SysConProduct sysConProduct = dbe.sysConProducts.FirstOrDefault(x => x.ProductSystem.ID == x.ConvienceProduct.ID);
 
-                return new SysConProduct() {                    
-                    ConvienceProduct = new ConvienceProduct() {                        
+                return new SysConProduct()
+                {
+                    ConvienceProduct = new ConvienceProduct()
+                    {
                         Name = sysConProduct.ConvienceProduct.Name,
                         Discription = sysConProduct.ConvienceProduct.Discription,
-                        Price = sysConProduct.ConvienceProduct.Price,                        
+                        Price = sysConProduct.ConvienceProduct.Price,
                     }
 
                 };
@@ -98,11 +103,12 @@ namespace LOGIC.BusinessLogic
                     SysConProducts = (from con in productSystems.SysConProducts
                                       select new SysConProduct
                                       {
-                                          ConvienceProduct = new ConvienceProduct() {
+                                          ConvienceProduct = new ConvienceProduct()
+                                          {
                                               Name = con.ConvienceProduct.Name,
                                               Discription = con.ConvienceProduct.Discription,
-                                              Price = con.ConvienceProduct.Price                                              
-                                          }                                          
+                                              Price = con.ConvienceProduct.Price
+                                          }
                                       }).ToEntitySet(),
                     SysEneProducts = (from Ene in productSystems.SysEneProducts
                                       select new SysEneProduct
@@ -132,18 +138,36 @@ namespace LOGIC.BusinessLogic
 
 
         #endregion
+        #region ClientLoad
+        public static List<string> ClientFNLoad()
+        {
+            using (var dbe = new SHSdb())
+            {
+
+                return dbe.Clients.Select(x => x.People.FirstName).ToList();
+
+            }
+        }
+        #endregion
+        #region ClientProductLoad
+        public static async Task<People> ClientProductLoad(string FName)
+        {
+            using (var dbe = new SHSdb())
+            {
+                People person = dbe.peoples.FirstOrDefault((x => x.FirstName == FName));
+                ID = person.ID;
+                return new People()
+                {
+                    FirstName = person.FirstName,
+                    LastName = person.LastName,
+                };
+            }
+        }
+
+        #endregion      
 
 
-        //public static EntitySet<T> ToEntitySet<T>(this IEnumerable<T> source) where T : class
-        //{
-        //    var es = new EntitySet<T>();
-        //    es.AddRange(source);
-        //    return es;
-        //}
     }
-
-
-
 }
     
 
