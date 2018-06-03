@@ -19,6 +19,11 @@ namespace LOGIC.ApplicationLogic
             return await BusinessLogic.ClientProcesses.ClientProductLoad(fname);
         }
 
+        public async Task<Client> GetClientID()
+        {
+            return await BusinessLogic.ClientProcesses.GetClientID();
+        }
+
         public async Task<ProductSystem> ProductLoad()
         {
             try

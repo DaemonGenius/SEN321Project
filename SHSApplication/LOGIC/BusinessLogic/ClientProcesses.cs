@@ -12,9 +12,9 @@ namespace LOGIC.BusinessLogic
     public static class ClientProcesses
     {
         #region Public Variables
-        public static int ID;
+        public static int cID;
+        public static int ClientID;
         public static int cartID;
-        public static int clientID;
         public static string FName;
 
         #endregion
@@ -24,11 +24,12 @@ namespace LOGIC.BusinessLogic
             using (var dbe = new SHSdb())
             {
                 People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
-                ID = person.ID;
-               
-                //Billinginfoe billinginfoe = dbe.BillingInfo.FirstOrDefault(x => x.ID == person.ID);
+                cID = person.ID;
+                
+                
                 return new People()
                 {
+                    ID = person.ID,
                     FirstName = person.FirstName,
                     LastName = person.LastName,
                     EmailAddress = person.EmailAddress,
@@ -37,6 +38,7 @@ namespace LOGIC.BusinessLogic
                     SSID = person.SSID,
                     DOB = person.DOB,
                     Gender = person.Gender,
+
 
                     Address = new Address()
                     {
@@ -65,39 +67,18 @@ namespace LOGIC.BusinessLogic
 
         #endregion
         #region ClientProductSearch
-        public static async Task<SysConProduct> asClientProductLoad()
-        {
-            using (var dbe = new SHSdb())
-            {
-                Client client = dbe.Clients.FirstOrDefault((x => x.Person_ID == ID));
-                Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == client.ID));
-                ProductSystem productSystems = dbe.productSystems.FirstOrDefault((x => x.Cart_ID == transaction.Cart_ID));
-                SysConProduct sysConProduct = dbe.sysConProducts.FirstOrDefault(x => x.ProductSystem.ID == x.ConvienceProduct.ID);
-
-                return new SysConProduct()
-                {
-                    ConvienceProduct = new ConvienceProduct()
-                    {
-                        Name = sysConProduct.ConvienceProduct.Name,
-                        Discription = sysConProduct.ConvienceProduct.Discription,
-                        Price = sysConProduct.ConvienceProduct.Price,
-                    }
-
-                };
-            }
-        }
-
         public static async Task<ProductSystem> ClientProductLoad()
         {
             using (var dbe = new SHSdb())
             {
-                Client client = dbe.Clients.FirstOrDefault((x => x.Person_ID == ID));
+                Client client = dbe.Clients.FirstOrDefault((x => x.Person_ID == cID));
                 Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == client.ID));
                 ProductSystem productSystems = dbe.productSystems.FirstOrDefault((x => x.Cart_ID == transaction.Cart_ID));
                 SysConProduct sysConProduct = dbe.sysConProducts.FirstOrDefault(x => x.ProductSystem.ID == x.ConvienceProduct.ID);
 
                 return new ProductSystem()
                 {
+                    ID = productSystems.ID,
                     Name = productSystems.Name,
                     Price = productSystems.Price,
                     SysConProducts = (from con in productSystems.SysConProducts
@@ -155,18 +136,37 @@ namespace LOGIC.BusinessLogic
             using (var dbe = new SHSdb())
             {
                 People person = dbe.peoples.FirstOrDefault((x => x.FirstName == FName));
-                ID = person.ID;
+                cID = person.ID;
+                Client client = dbe.Clients.FirstOrDefault(x => x.Person_ID == person.ID);
+                ClientID = (int)client.ID;
                 return new People()
                 {
+                    ID = person.ID,
                     FirstName = person.FirstName,
                     LastName = person.LastName,
                 };
             }
         }
 
-        #endregion      
+        #endregion
 
 
+        #region GetClientID
+        public static async Task<Client> GetClientID()
+        {
+            using (var dbe = new SHSdb())
+            {
+                Client client = dbe.Clients.FirstOrDefault((x => x.ID == ClientID));
+                           
+                return new Client()
+                {
+                    ID = client.ID,
+                    Person_ID = client.Person_ID,
+
+                };
+            }
+        }
+        #endregion
     }
 }
     

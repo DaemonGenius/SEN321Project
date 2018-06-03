@@ -1,4 +1,5 @@
 ﻿using DATALAYER.Controllers;
+using LOGIC.ApplicationLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,10 @@ namespace UI.View.EmployeeSide
         
         
         public string LoggedUser;
+        public int Client;
+        public int Contract;
+        public int TechnicianName;
+        public int SysName;
         public App_ManagementProtalView()
         {
             InitializeComponent();
@@ -45,6 +50,7 @@ namespace UI.View.EmployeeSide
             {
                 radbtnOther.Checked = !false;
             }
+            
             txtbxCFName.Text = people.FirstName;
             txtbxCLName.Text = people.LastName;
             txtbxcEmail.Text = people.EmailAddress;
@@ -203,8 +209,7 @@ namespace UI.View.EmployeeSide
             tbpProducts.Hide();
             tbpProductManagement.Hide();
             tbpCallCentre.Hide();
-            txtbxMainName.Hide();
-            label58.Hide();
+
         }
 
         private void btnCallCentre_Click(object sender, EventArgs e)
@@ -336,6 +341,7 @@ namespace UI.View.EmployeeSide
             txtbxScheTimeS.Text = maintenance.DateStart.ToShortDateString();
             txtbxScheTimeE.Text = maintenance.DateEnd.ToShortDateString();
             cbxClientSys.Text = maintenance.ProductSystem.Name;
+            
 
         }
 
@@ -439,24 +445,37 @@ namespace UI.View.EmployeeSide
         {
             #region ProductLoad
             LOGIC.ApplicationLogic.ClientProcessesApp cpa = new LOGIC.ApplicationLogic.ClientProcessesApp();
+            
             People people = await cpa.ClientPSys(cbxScheClintName.Text);
             LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
             LOGIC.ApplicationLogic.ClientProcessesApp clientProcessesApp = new LOGIC.ApplicationLogic.ClientProcessesApp();
             ProductSystem productSystem = await clientProcessesApp.ProductLoad();
             cbxScheSysName.Text = productSystem.Name;
+            
+            SysName = productSystem.ID;
+            Client client = await cpa.GetClientID();
+            Client = (int)client.ID;
             #endregion
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
+        private async void btnInsert_Click(object sender, EventArgs e)
         {
-            string CFN = cbxScheClintName.Text;
-            string CsysF = cbxScheSysName.Text;
-            string StartT = txtbxST.Text;
-            string EndT = txtbxET.Text;
+           
+            DateTime StartT = DateTime.Parse(txtbxST.Text);
+            DateTime EndT = DateTime.Parse(txtbxET.Text);
             string MainName = txtbxMainName.Text;
-            string TechName = cbcScheTechname.Text;
+            Contract = 1;
+            LOGIC.ApplicationLogic.MaintenanceInsertApp maintenanceInsert = new MaintenanceInsertApp();
+            maintenanceInsert.InsertNewMain(Client, Contract, TechnicianName, SysName, StartT, EndT, MainName);
 
 
+        }
+
+        private async void cbcScheTechname_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LOGIC.ApplicationLogic.TechnicianApp technicianApp = new LOGIC.ApplicationLogic.TechnicianApp();
+            TechnicianEmp technician = await technicianApp.TechnicianEmp(cbcScheTechname.Text);
+            TechnicianName = (int)technician.ID;
         }
     }
 }

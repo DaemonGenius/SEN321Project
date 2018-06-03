@@ -56,6 +56,7 @@ namespace LOGIC.BusinessLogic
 
                 return new TechnicianEmp
                 {
+                    ID = technicianEmp.ID,
                     Maintenances = (from Mein in technicianEmp.Maintenances
                                     select new Maintenance
                                     {

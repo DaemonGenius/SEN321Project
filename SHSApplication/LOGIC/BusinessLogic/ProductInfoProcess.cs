@@ -86,7 +86,7 @@ namespace LOGIC.BusinessLogic
         {
             using (var dbe = new SHSdb())
             {
-                People person = dbe.peoples.FirstOrDefault((x => x.ID == ClientProcesses.ID));
+                People person = dbe.peoples.FirstOrDefault((x => x.ID == ClientProcesses.cID));
                 Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == x.ID ));              
 
                 return new TechnicianEmp()
@@ -105,7 +105,7 @@ namespace LOGIC.BusinessLogic
         {
             using (var dbe = new SHSdb())
             {
-                People person = dbe.peoples.FirstOrDefault((x => x.ID == ClientProcesses.ID));
+                People person = dbe.peoples.FirstOrDefault((x => x.ID == ClientProcesses.cID));
                 Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == x.ID));
 
                 return new Contract()
@@ -127,7 +127,7 @@ namespace LOGIC.BusinessLogic
         {
             using (var dbe = new SHSdb())
             {
-                People person = dbe.peoples.FirstOrDefault((x => x.ID == ClientProcesses.ID));
+                People person = dbe.peoples.FirstOrDefault((x => x.ID == ClientProcesses.cID));
                 TechnicianEmp technicianEmp = dbe.technicianEmps.FirstOrDefault(x => x.ID == person.ID);
                 Transaction transaction = dbe.transactions.FirstOrDefault((x => x.TechnicianEmp_ID == technicianEmp.ID));
 
