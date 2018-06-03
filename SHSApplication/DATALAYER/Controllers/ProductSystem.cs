@@ -21,13 +21,15 @@ namespace DATALAYER.Controllers
 
         private double _Price;
 
-        private int _Cart_ID;
+        private System.Nullable<int> _Cart_ID;
 
-        private EntitySet<SafetyProduct> _SafetyProducts;
+        private EntitySet<Maintenance> _Maintenances;
 
-        private EntitySet<ConvienceProduct> _ConvienceProducts;
+        private EntitySet<SysConProduct> _SysConProducts;
 
-        private EntitySet<EnergyProduct> _EnergyProducts;
+        private EntitySet<SysEneProduct> _SysEneProducts;
+
+        private EntitySet<SysSafProduct> _SysSafProducts;
 
         private EntityRef<Cart> _Cart;
 
@@ -41,15 +43,16 @@ namespace DATALAYER.Controllers
         partial void OnNameChanged();
         partial void OnPriceChanging(double value);
         partial void OnPriceChanged();
-        partial void OnCart_IDChanging(int value);
+        partial void OnCart_IDChanging(System.Nullable<int> value);
         partial void OnCart_IDChanged();
         #endregion
 
         public ProductSystem()
         {
-            this._SafetyProducts = new EntitySet<SafetyProduct>(new Action<SafetyProduct>(this.attach_SafetyProducts), new Action<SafetyProduct>(this.detach_SafetyProducts));
-            this._ConvienceProducts = new EntitySet<ConvienceProduct>(new Action<ConvienceProduct>(this.attach_ConvienceProducts), new Action<ConvienceProduct>(this.detach_ConvienceProducts));
-            this._EnergyProducts = new EntitySet<EnergyProduct>(new Action<EnergyProduct>(this.attach_EnergyProducts), new Action<EnergyProduct>(this.detach_EnergyProducts));
+            this._Maintenances = new EntitySet<Maintenance>(new Action<Maintenance>(this.attach_Maintenances), new Action<Maintenance>(this.detach_Maintenances));
+            this._SysConProducts = new EntitySet<SysConProduct>(new Action<SysConProduct>(this.attach_SysConProducts), new Action<SysConProduct>(this.detach_SysConProducts));
+            this._SysEneProducts = new EntitySet<SysEneProduct>(new Action<SysEneProduct>(this.attach_SysEneProducts), new Action<SysEneProduct>(this.detach_SysEneProducts));
+            this._SysSafProducts = new EntitySet<SysSafProduct>(new Action<SysSafProduct>(this.attach_SysSafProducts), new Action<SysSafProduct>(this.detach_SysSafProducts));
             this._Cart = default(EntityRef<Cart>);
             OnCreated();
         }
@@ -74,7 +77,7 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Name", DbType = "NVarChar(MAX) NOT NULL", CanBeNull = false)]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Name", DbType = "NVarChar(MAX)")]
         public string Name
         {
             get
@@ -114,8 +117,8 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Cart_ID", DbType = "Int NOT NULL")]
-        public int Cart_ID
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Cart_ID", DbType = "Int")]
+        public System.Nullable<int> Cart_ID
         {
             get
             {
@@ -138,42 +141,55 @@ namespace DATALAYER.Controllers
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ProductSystem_SafetyProduct", Storage = "_SafetyProducts", ThisKey = "ID", OtherKey = "ProductSystems_ID")]
-        public EntitySet<SafetyProduct> SafetyProducts
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ProductSystem_Maintenance", Storage = "_Maintenances", ThisKey = "ID", OtherKey = "ProductSystems_ID")]
+        public EntitySet<Maintenance> Maintenances
         {
             get
             {
-                return this._SafetyProducts;
+                return this._Maintenances;
             }
             set
             {
-                this._SafetyProducts.Assign(value);
+                this._Maintenances.Assign(value);
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ProductSystem_ConvienceProduct", Storage = "_ConvienceProducts", ThisKey = "ID", OtherKey = "ProductSystems_ID")]
-        public EntitySet<ConvienceProduct> ConvienceProducts
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ProductSystem_SysConProduct", Storage = "_SysConProducts", ThisKey = "ID", OtherKey = "ProductSystems_ID")]
+        public EntitySet<SysConProduct> SysConProducts
         {
             get
             {
-                return this._ConvienceProducts;
+                return this._SysConProducts;
             }
             set
             {
-                this._ConvienceProducts.Assign(value);
+                this._SysConProducts.Assign(value);
             }
         }
 
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ProductSystem_EnergyProduct", Storage = "_EnergyProducts", ThisKey = "ID", OtherKey = "ProductSystems_ID")]
-        public EntitySet<EnergyProduct> EnergyProducts
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ProductSystem_SysEneProduct", Storage = "_SysEneProducts", ThisKey = "ID", OtherKey = "ProductSystems_ID")]
+        public EntitySet<SysEneProduct> SysEneProducts
         {
             get
             {
-                return this._EnergyProducts;
+                return this._SysEneProducts;
             }
             set
             {
-                this._EnergyProducts.Assign(value);
+                this._SysEneProducts.Assign(value);
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "ProductSystem_SysSafProduct", Storage = "_SysSafProducts", ThisKey = "ID", OtherKey = "ProductSystems_ID")]
+        public EntitySet<SysSafProduct> SysSafProducts
+        {
+            get
+            {
+                return this._SysSafProducts;
+            }
+            set
+            {
+                this._SysSafProducts.Assign(value);
             }
         }
 
@@ -204,7 +220,7 @@ namespace DATALAYER.Controllers
                     }
                     else
                     {
-                        this._Cart_ID = default(int);
+                        this._Cart_ID = default(Nullable<int>);
                     }
                     this.SendPropertyChanged("Cart");
                 }
@@ -231,37 +247,49 @@ namespace DATALAYER.Controllers
             }
         }
 
-        private void attach_SafetyProducts(SafetyProduct entity)
+        private void attach_Maintenances(Maintenance entity)
         {
             this.SendPropertyChanging();
             entity.ProductSystem = this;
         }
 
-        private void detach_SafetyProducts(SafetyProduct entity)
+        private void detach_Maintenances(Maintenance entity)
         {
             this.SendPropertyChanging();
             entity.ProductSystem = null;
         }
 
-        private void attach_ConvienceProducts(ConvienceProduct entity)
+        private void attach_SysConProducts(SysConProduct entity)
         {
             this.SendPropertyChanging();
             entity.ProductSystem = this;
         }
 
-        private void detach_ConvienceProducts(ConvienceProduct entity)
+        private void detach_SysConProducts(SysConProduct entity)
         {
             this.SendPropertyChanging();
             entity.ProductSystem = null;
         }
 
-        private void attach_EnergyProducts(EnergyProduct entity)
+        private void attach_SysEneProducts(SysEneProduct entity)
         {
             this.SendPropertyChanging();
             entity.ProductSystem = this;
         }
 
-        private void detach_EnergyProducts(EnergyProduct entity)
+        private void detach_SysEneProducts(SysEneProduct entity)
+        {
+            this.SendPropertyChanging();
+            entity.ProductSystem = null;
+        }
+
+        private void attach_SysSafProducts(SysSafProduct entity)
+        {
+            this.SendPropertyChanging();
+            entity.ProductSystem = this;
+        }
+
+        private void detach_SysSafProducts(SysSafProduct entity)
         {
             this.SendPropertyChanging();
             entity.ProductSystem = null;

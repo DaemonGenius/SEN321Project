@@ -57,7 +57,9 @@
     <Compile Include="Controllers\ProductSystem.cs" />
     <Compile Include="Controllers\SafetyProduct.cs" />
     <Compile Include="Controllers\Sale_Emp.cs" />
-    <Compile Include="Controllers\Schedule.cs" />
+    <Compile Include="Controllers\SysConProduct.cs" />
+    <Compile Include="Controllers\SysEneProduct.cs" />
+    <Compile Include="Controllers\SysSafProduct.cs" />
     <Compile Include="Controllers\Systems.cs" />
     <Compile Include="Controllers\TechnicianEmp.cs" />
     <Compile Include="Controllers\Transaction.cs" />

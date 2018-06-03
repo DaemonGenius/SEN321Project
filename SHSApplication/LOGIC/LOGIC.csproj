@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,11 +44,19 @@
   <ItemGroup>
     <Compile Include="ApplicationLogic\AdminProcessing.cs" />
     <Compile Include="ApplicationLogic\ClientProcessesApp.cs" />
+    <Compile Include="ApplicationLogic\EmployeeApp.cs" />
+    <Compile Include="ApplicationLogic\MaintenanceInsertApp.cs" />
+    <Compile Include="ApplicationLogic\ProductInfoApp.cs" />
     <Compile Include="ApplicationLogic\RegisterValidation.cs" />
+    <Compile Include="ApplicationLogic\TechnicianApp.cs" />
     <Compile Include="BusinessLogic\AdminProcesses.cs" />
     <Compile Include="BusinessLogic\ClientProcesses.cs" />
+    <Compile Include="BusinessLogic\EmployeeProcess.cs" />
     <Compile Include="BusinessLogic\LoginProcess.cs" />
+    <Compile Include="BusinessLogic\MaintenanceInsertProcess.cs" />
+    <Compile Include="BusinessLogic\ProductInfoProcess.cs" />
     <Compile Include="BusinessLogic\RegistrationProcess.cs" />
+    <Compile Include="BusinessLogic\TechnicianProcesses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

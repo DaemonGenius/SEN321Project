@@ -13,6 +13,7 @@ namespace UI.View.SharedViews
 {
     public partial class App_Start : Form
     {
+        
         public App_Start()
         {
             Thread thread = new Thread(new ThreadStart(StartForm));
@@ -28,9 +29,13 @@ namespace UI.View.SharedViews
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+             string LoggedUser;
+            EmployeeSide.App_ManagementProtalView app_ManagementProtalView = new EmployeeSide.App_ManagementProtalView();
             LOGIC.ApplicationLogic.RegisterValidation registerValidation = new LOGIC.ApplicationLogic.RegisterValidation();
             if (registerValidation.EmailValidation(txtbxEmail.Text, txtbxPass.Text) == true)
             {
+
+                
                 if (registerValidation.DepartmentType() == "Client")
                 {
                     View.ClientSide.ClientPortalView clientPortal = new ClientSide.ClientPortalView();
@@ -39,14 +44,17 @@ namespace UI.View.SharedViews
                 }
                 else if (registerValidation.DepartmentType() == "Admin")
                 {
+                    
                     View.Admin.App_AdminPage adminPage = new Admin.App_AdminPage();
                     adminPage.Show();
                 }
                 else if (registerValidation.DepartmentType() == "Employee")
                 {
+                    LoggedUser = registerValidation.Loggedin;
                     View.EmployeeSide.App_ManagementProtalView managementProtalView = new EmployeeSide.App_ManagementProtalView();
-                    managementProtalView.Show();
+                    managementProtalView.Show();                    
                     lblErrorEmail.Visible = false;
+                    this.Visible = false;
                 }
 
             }

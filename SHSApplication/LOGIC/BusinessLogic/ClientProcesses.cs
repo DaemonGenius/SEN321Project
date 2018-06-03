@@ -12,9 +12,11 @@ namespace LOGIC.BusinessLogic
     public static class ClientProcesses
     {
         #region Public Variables
-        public static int ID;
+        public static int cID;
+        public static int ClientID;
         public static int cartID;
-        public static int clientID;
+        public static string FName;
+
         #endregion
         #region ClientSearch
         public static async Task<People> ClientSearch(string Username)
@@ -22,10 +24,12 @@ namespace LOGIC.BusinessLogic
             using (var dbe = new SHSdb())
             {
                 People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
-                ID = person.ID;
-                //Billinginfoe billinginfoe = dbe.BillingInfo.FirstOrDefault(x => x.ID == person.ID);
+                cID = person.ID;
+                
+                
                 return new People()
                 {
+                    ID = person.ID,
                     FirstName = person.FirstName,
                     LastName = person.LastName,
                     EmailAddress = person.EmailAddress,
@@ -33,6 +37,9 @@ namespace LOGIC.BusinessLogic
                     CellNumber = person.CellNumber,
                     SSID = person.SSID,
                     DOB = person.DOB,
+                    Gender = person.Gender,
+
+
                     Address = new Address()
                     {
                         ID = person.ID,
@@ -57,57 +64,110 @@ namespace LOGIC.BusinessLogic
             }
         }
 
-        
+
         #endregion
         #region ClientProductSearch
         public static async Task<ProductSystem> ClientProductLoad()
         {
             using (var dbe = new SHSdb())
             {
-                Client client = dbe.Clients.FirstOrDefault((x => x.Person_ID == ID));
+                Client client = dbe.Clients.FirstOrDefault((x => x.Person_ID == cID));
                 Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == client.ID));
                 ProductSystem productSystems = dbe.productSystems.FirstOrDefault((x => x.Cart_ID == transaction.Cart_ID));
-                ConvienceProduct convienceProduct = dbe.convienceProducts.FirstOrDefault((x => x.ProductSystems_ID == productSystems.ID));
+                SysConProduct sysConProduct = dbe.sysConProducts.FirstOrDefault(x => x.ProductSystem.ID == x.ConvienceProduct.ID);
 
                 return new ProductSystem()
                 {
-                    Name = productSystems.Name,                   
-                    ConvienceProducts = (from ConvPro in productSystems.ConvienceProducts
-                                         select new ConvienceProduct
-                                         {
-                                             Name = ConvPro.Name,
-                                             Discription = ConvPro.Discription,
-                                             Price = ConvPro.Price,
-                                         }).ToEntitySet(),
-                    EnergyProducts = (from EnerPro in productSystems.EnergyProducts
-                                      select new EnergyProduct
+                    ID = productSystems.ID,
+                    Name = productSystems.Name,
+                    Price = productSystems.Price,
+                    SysConProducts = (from con in productSystems.SysConProducts
+                                      select new SysConProduct
                                       {
-                                          Name = EnerPro.Name,
-                                          Discription = EnerPro.Discription,
-                                          Price = EnerPro.Price,
+                                          ConvienceProduct = new ConvienceProduct()
+                                          {
+                                              Name = con.ConvienceProduct.Name,
+                                              Discription = con.ConvienceProduct.Discription,
+                                              Price = con.ConvienceProduct.Price
+                                          }
                                       }).ToEntitySet(),
-                    SafetyProducts = (from SafPro in productSystems.SafetyProducts
-                                      select new SafetyProduct
+                    SysEneProducts = (from Ene in productSystems.SysEneProducts
+                                      select new SysEneProduct
                                       {
-                                          Name = SafPro.Name,
-                                          Discription = SafPro.Discription,
-                                          Price = SafPro.Price,
+                                          EnergyProduct = new EnergyProduct()
+                                          {
+                                              Name = Ene.EnergyProduct.Name,
+                                              Discription = Ene.EnergyProduct.Discription,
+                                              Price = Ene.EnergyProduct.Price
+                                          }
                                       }).ToEntitySet(),
+
+                    SysSafProducts = (from Saf in productSystems.SysSafProducts
+                                      select new SysSafProduct
+                                      {
+                                          SafetyProduct = new SafetyProduct()
+                                          {
+                                              Name = Saf.SafetyProduct.Name,
+                                              Discription = Saf.SafetyProduct.Discription,
+                                              Price = Saf.SafetyProduct.Price
+                                          }
+                                      }).ToEntitySet()
+                };
+            }
+        }
+
+
+
+        #endregion
+        #region ClientLoad
+        public static List<string> ClientFNLoad()
+        {
+            using (var dbe = new SHSdb())
+            {
+
+                return dbe.Clients.Select(x => x.People.FirstName).ToList();
+
+            }
+        }
+        #endregion
+        #region ClientProductLoad
+        public static async Task<People> ClientProductLoad(string FName)
+        {
+            using (var dbe = new SHSdb())
+            {
+                People person = dbe.peoples.FirstOrDefault((x => x.FirstName == FName));
+                cID = person.ID;
+                Client client = dbe.Clients.FirstOrDefault(x => x.Person_ID == person.ID);
+                ClientID = (int)client.ID;
+                return new People()
+                {
+                    ID = person.ID,
+                    FirstName = person.FirstName,
+                    LastName = person.LastName,
+                };
+            }
+        }
+
+        #endregion
+
+
+        #region GetClientID
+        public static async Task<Client> GetClientID()
+        {
+            using (var dbe = new SHSdb())
+            {
+                Client client = dbe.Clients.FirstOrDefault((x => x.ID == ClientID));
+                           
+                return new Client()
+                {
+                    ID = client.ID,
+                    Person_ID = client.Person_ID,
+
                 };
             }
         }
         #endregion
-
-        public static EntitySet<T> ToEntitySet<T>(this IEnumerable<T> source) where T : class
-        {
-            var es = new EntitySet<T>();
-            es.AddRange(source);
-            return es;
-        }
     }
-
-
-
 }
     
 

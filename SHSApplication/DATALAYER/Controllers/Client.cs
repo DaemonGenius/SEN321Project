@@ -17,15 +17,17 @@ namespace DATALAYER.Controllers
 
         private int _ID;
 
+        private System.Nullable<int> _Messaging_ID;
+
         private System.Nullable<int> _Person_ID;
 
-        private System.Nullable<int> _Messaging_ID;
+        private EntitySet<Maintenance> _Maintenances;
 
         private EntitySet<Transaction> _Transactions;
 
-        private EntityRef<People> _People;
-
         private EntityRef<Messaging> _Messaging;
+
+        private EntityRef<People> _People;
 
         #region Extensibility Method Definitions
         partial void OnLoaded();
@@ -33,17 +35,18 @@ namespace DATALAYER.Controllers
         partial void OnCreated();
         partial void OnIDChanging(int value);
         partial void OnIDChanged();
-        partial void OnPerson_IDChanging(System.Nullable<int> value);
-        partial void OnPerson_IDChanged();
         partial void OnMessaging_IDChanging(System.Nullable<int> value);
         partial void OnMessaging_IDChanged();
+        partial void OnPerson_IDChanging(System.Nullable<int> value);
+        partial void OnPerson_IDChanged();
         #endregion
 
         public Client()
         {
+            this._Maintenances = new EntitySet<Maintenance>(new Action<Maintenance>(this.attach_Maintenances), new Action<Maintenance>(this.detach_Maintenances));
             this._Transactions = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions), new Action<Transaction>(this.detach_Transactions));
-            this._People = default(EntityRef<People>);
             this._Messaging = default(EntityRef<Messaging>);
+            this._People = default(EntityRef<People>);
             OnCreated();
         }
 
@@ -63,30 +66,6 @@ namespace DATALAYER.Controllers
                     this._ID = value;
                     this.SendPropertyChanged("ID");
                     this.OnIDChanged();
-                }
-            }
-        }
-
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Person_ID", DbType = "Int")]
-        public System.Nullable<int> Person_ID
-        {
-            get
-            {
-                return this._Person_ID;
-            }
-            set
-            {
-                if ((this._Person_ID != value))
-                {
-                    if (this._People.HasLoadedOrAssignedValue)
-                    {
-                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-                    }
-                    this.OnPerson_IDChanging(value);
-                    this.SendPropertyChanging();
-                    this._Person_ID = value;
-                    this.SendPropertyChanged("Person_ID");
-                    this.OnPerson_IDChanged();
                 }
             }
         }
@@ -115,6 +94,43 @@ namespace DATALAYER.Controllers
             }
         }
 
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Person_ID", DbType = "Int")]
+        public System.Nullable<int> Person_ID
+        {
+            get
+            {
+                return this._Person_ID;
+            }
+            set
+            {
+                if ((this._Person_ID != value))
+                {
+                    if (this._People.HasLoadedOrAssignedValue)
+                    {
+                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+                    }
+                    this.OnPerson_IDChanging(value);
+                    this.SendPropertyChanging();
+                    this._Person_ID = value;
+                    this.SendPropertyChanged("Person_ID");
+                    this.OnPerson_IDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Client_Maintenance", Storage = "_Maintenances", ThisKey = "ID", OtherKey = "Client_ID")]
+        public EntitySet<Maintenance> Maintenances
+        {
+            get
+            {
+                return this._Maintenances;
+            }
+            set
+            {
+                this._Maintenances.Assign(value);
+            }
+        }
+
         [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "Client_Transaction", Storage = "_Transactions", ThisKey = "ID", OtherKey = "Client_ID")]
         public EntitySet<Transaction> Transactions
         {
@@ -125,40 +141,6 @@ namespace DATALAYER.Controllers
             set
             {
                 this._Transactions.Assign(value);
-            }
-        }
-
-        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_Client", Storage = "_People", ThisKey = "Person_ID", OtherKey = "ID", IsForeignKey = true)]
-        public People People
-        {
-            get
-            {
-                return this._People.Entity;
-            }
-            set
-            {
-                People previousValue = this._People.Entity;
-                if (((previousValue != value)
-                            || (this._People.HasLoadedOrAssignedValue == false)))
-                {
-                    this.SendPropertyChanging();
-                    if ((previousValue != null))
-                    {
-                        this._People.Entity = null;
-                        previousValue.Clients.Remove(this);
-                    }
-                    this._People.Entity = value;
-                    if ((value != null))
-                    {
-                        value.Clients.Add(this);
-                        this._Person_ID = value.ID;
-                    }
-                    else
-                    {
-                        this._Person_ID = default(Nullable<int>);
-                    }
-                    this.SendPropertyChanged("People");
-                }
             }
         }
 
@@ -196,6 +178,40 @@ namespace DATALAYER.Controllers
             }
         }
 
+        [global::System.Data.Linq.Mapping.AssociationAttribute(Name = "People_Client", Storage = "_People", ThisKey = "Person_ID", OtherKey = "ID", IsForeignKey = true)]
+        public People People
+        {
+            get
+            {
+                return this._People.Entity;
+            }
+            set
+            {
+                People previousValue = this._People.Entity;
+                if (((previousValue != value)
+                            || (this._People.HasLoadedOrAssignedValue == false)))
+                {
+                    this.SendPropertyChanging();
+                    if ((previousValue != null))
+                    {
+                        this._People.Entity = null;
+                        previousValue.Clients.Remove(this);
+                    }
+                    this._People.Entity = value;
+                    if ((value != null))
+                    {
+                        value.Clients.Add(this);
+                        this._Person_ID = value.ID;
+                    }
+                    else
+                    {
+                        this._Person_ID = default(Nullable<int>);
+                    }
+                    this.SendPropertyChanged("People");
+                }
+            }
+        }
+
         public event PropertyChangingEventHandler PropertyChanging;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -214,6 +230,18 @@ namespace DATALAYER.Controllers
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        private void attach_Maintenances(Maintenance entity)
+        {
+            this.SendPropertyChanging();
+            entity.Client = this;
+        }
+
+        private void detach_Maintenances(Maintenance entity)
+        {
+            this.SendPropertyChanging();
+            entity.Client = null;
         }
 
         private void attach_Transactions(Transaction entity)

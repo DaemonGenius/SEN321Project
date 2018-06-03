@@ -39,3 +39,4 @@ E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.CoreCompileInputs.ca
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.csproj.CopyComplete
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.exe
 E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.pdb
+E:\_GIT\sen321project\SHSApplication\UI\obj\Debug\UI.View.EmployeeSide.App_PurchaseOrder.resources
