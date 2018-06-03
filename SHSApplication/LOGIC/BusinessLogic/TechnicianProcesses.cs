@@ -18,6 +18,7 @@ namespace LOGIC.BusinessLogic
 
                 return new Maintenance()
                 {
+                    ID = maintenance.ID,
                     Name = maintenance.Name,
                     DateStart = maintenance.DateStart,
                     DateEnd = maintenance.DateEnd,

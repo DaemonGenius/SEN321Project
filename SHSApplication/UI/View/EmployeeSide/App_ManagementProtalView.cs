@@ -21,7 +21,8 @@ namespace UI.View.EmployeeSide
         public int Client;
         public int Contract;
         public int TechnicianName;
-        public int SysName;
+        public int SysName, MainID;
+        public int ScheduleState;
         public App_ManagementProtalView()
         {
             InitializeComponent();
@@ -341,7 +342,10 @@ namespace UI.View.EmployeeSide
             txtbxScheTimeS.Text = maintenance.DateStart.ToShortDateString();
             txtbxScheTimeE.Text = maintenance.DateEnd.ToShortDateString();
             cbxClientSys.Text = maintenance.ProductSystem.Name;
+            MainID = maintenance.ID;
             
+
+
 
         }
 
@@ -419,6 +423,12 @@ namespace UI.View.EmployeeSide
 
         private void btnNewSchedule_Click(object sender, EventArgs e)
         {
+            cbxClientName.Items.Clear();
+            txtbxScheTechName.Clear();
+            txtbxScheTimeS.Clear();
+            txtbxScheTimeE.Clear();
+            cbxClientSys.Items.Clear();
+            ScheduleState = 0;
             tbpMainSche.Hide();
             tbpNewSche.Show();            
             List<string> ClientLoad = LOGIC.ApplicationLogic.ClientProcessesApp.ClientFNLoadApp();
@@ -437,6 +447,11 @@ namespace UI.View.EmployeeSide
 
         private void btnSearchSche_Click(object sender, EventArgs e)
         {
+            cbxClientName.Items.Clear();
+            txtbxScheTechName.Clear();
+            txtbxScheTimeS.Clear();
+            txtbxScheTimeE.Clear();
+            cbxClientSys.Items.Clear();
             tbpMainSche.Show();
             tbpNewSche.Hide();
         }
@@ -460,13 +475,38 @@ namespace UI.View.EmployeeSide
 
         private async void btnInsert_Click(object sender, EventArgs e)
         {
-           
-            DateTime StartT = DateTime.Parse(txtbxST.Text);
-            DateTime EndT = DateTime.Parse(txtbxET.Text);
-            string MainName = txtbxMainName.Text;
-            Contract = 1;
-            LOGIC.ApplicationLogic.MaintenanceInsertApp maintenanceInsert = new MaintenanceInsertApp();
-            maintenanceInsert.InsertNewMain(Client, Contract, TechnicianName, SysName, StartT, EndT, MainName);
+            
+            if (ScheduleState == 1)
+            {
+                Maintenance maintenance = new Maintenance();
+                maintenance.DateStart = DateTime.Parse(txtbxST.Text);
+                maintenance.DateEnd = DateTime.Parse(txtbxET.Text);
+                maintenance.Name = txtbxMainName.Text;
+                maintenance.Contract_ID = 1;
+                maintenance.ID = MainID;
+                LOGIC.ApplicationLogic.MaintenanceInsertApp maintenanceInsertApp = new MaintenanceInsertApp();
+                await maintenanceInsertApp.UpdateMaintenance(maintenance);
+                //try
+                //{
+                //    await maintenanceInsertApp.UpdateMaintenance(maintenance);
+                //}
+                //catch (Exception)
+                //{
+
+                //    MessageBox.Show("Error");
+                //    throw;
+                //}
+                
+            }
+            else if(ScheduleState == 0)
+            {
+                DateTime StartT = DateTime.Parse(txtbxST.Text);
+                DateTime EndT = DateTime.Parse(txtbxET.Text);
+                string MainName = txtbxMainName.Text;
+                Contract = 1;
+                LOGIC.ApplicationLogic.MaintenanceInsertApp maintenanceInsert = new MaintenanceInsertApp();
+                maintenanceInsert.InsertNewMain(Client, Contract, TechnicianName, SysName, StartT, EndT, MainName);
+            }           
 
 
         }
@@ -476,6 +516,46 @@ namespace UI.View.EmployeeSide
             LOGIC.ApplicationLogic.TechnicianApp technicianApp = new LOGIC.ApplicationLogic.TechnicianApp();
             TechnicianEmp technician = await technicianApp.TechnicianEmp(cbcScheTechname.Text);
             TechnicianName = (int)technician.ID;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtbxST.Clear();
+            txtbxET.Clear();
+            txtbxMainName.Clear();
+
+        }
+
+        private void btnUpdateSchedule_Click(object sender, EventArgs e)
+        {
+           
+            
+            ScheduleState = 1;
+            tbpMainSche.Hide();
+            tbpNewSche.Show();
+            txtbxMainName.Text = lstbxMaintenanceDue.Text;
+            txtbxST.Text = txtbxScheTimeS.Text;
+            txtbxET.Text = txtbxScheTimeE.Text;
+            cbxScheClintName.Enabled = false;
+            cbxScheSysName.Enabled = false;
+            cbxScheClintName.Text = cbxClientName.Text;
+            cbxScheSysName.Text = cbxClientSys.Text;
+            List<string> TechNLoad = LOGIC.ApplicationLogic.TechnicianApp.TechNLoadApp();
+            foreach (var item in TechNLoad)
+            {
+                cbcScheTechname.Items.Add(item);
+            }
+            cbxClientName.Items.Clear();
+            txtbxScheTechName.Clear();
+            lstbxMaintenanceDue.Items.Clear();
+            cbxClientSys.Items.Clear();
+            cbxClientName.Items.Clear();
+            cbxClientSys.Items.Clear();
+        }
+
+        private void btnUpdateClient_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

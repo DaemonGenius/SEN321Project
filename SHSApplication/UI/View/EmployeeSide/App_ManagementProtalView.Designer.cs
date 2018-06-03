@@ -196,7 +196,7 @@
             this.cbcScheTechname = new System.Windows.Forms.ComboBox();
             this.label63 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnEnter = new System.Windows.Forms.Button();
             this.cbxScheClintName = new System.Windows.Forms.ComboBox();
             this.cbxScheSysName = new System.Windows.Forms.ComboBox();
             this.label58 = new System.Windows.Forms.Label();
@@ -1948,7 +1948,7 @@
             this.panel12.Controls.Add(this.cbcScheTechname);
             this.panel12.Controls.Add(this.label63);
             this.panel12.Controls.Add(this.btnCancel);
-            this.panel12.Controls.Add(this.btnInsert);
+            this.panel12.Controls.Add(this.btnEnter);
             this.panel12.Controls.Add(this.cbxScheClintName);
             this.panel12.Controls.Add(this.cbxScheSysName);
             this.panel12.Controls.Add(this.label58);
@@ -1993,17 +1993,18 @@
             this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnInsert
+            // btnEnter
             // 
-            this.btnInsert.ForeColor = System.Drawing.Color.Black;
-            this.btnInsert.Location = new System.Drawing.Point(54, 208);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(75, 23);
-            this.btnInsert.TabIndex = 22;
-            this.btnInsert.Text = "Insert";
-            this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            this.btnEnter.ForeColor = System.Drawing.Color.Black;
+            this.btnEnter.Location = new System.Drawing.Point(54, 208);
+            this.btnEnter.Name = "btnEnter";
+            this.btnEnter.Size = new System.Drawing.Size(75, 23);
+            this.btnEnter.TabIndex = 22;
+            this.btnEnter.Text = "Enter";
+            this.btnEnter.UseVisualStyleBackColor = true;
+            this.btnEnter.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // cbxScheClintName
             // 
@@ -2148,6 +2149,7 @@
             this.btnUpdateSchedule.TabIndex = 1;
             this.btnUpdateSchedule.Text = "Update";
             this.btnUpdateSchedule.UseVisualStyleBackColor = true;
+            this.btnUpdateSchedule.Click += new System.EventHandler(this.btnUpdateSchedule_Click);
             // 
             // btnNewSchedule
             // 
@@ -2302,6 +2304,7 @@
             this.btnUpdateClient.TabIndex = 2;
             this.btnUpdateClient.Text = "Update Client";
             this.btnUpdateClient.UseVisualStyleBackColor = true;
+            this.btnUpdateClient.Click += new System.EventHandler(this.btnUpdateClient_Click);
             // 
             // btnSearchCli
             // 
@@ -2590,7 +2593,7 @@
         private System.Windows.Forms.TabPage tbpNewSche;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.ComboBox cbxScheClintName;
         private System.Windows.Forms.ComboBox cbxScheSysName;
         private System.Windows.Forms.Label label58;

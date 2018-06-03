@@ -34,5 +34,10 @@ namespace LOGIC.ApplicationLogic
             maintenanceInsertProcess.InsertMaintenance(maintenance);
             return true;
         }
+
+        public async Task<Maintenance> UpdateMaintenance(Maintenance maintenance)
+        {
+            return await BusinessLogic.MaintenanceInsertProcess.UpdateMainten(maintenance);
+        }
     }
 }

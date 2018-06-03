@@ -23,5 +23,22 @@ namespace LOGIC.BusinessLogic
         }
 
         #endregion
+
+        #region MaintenanceUpdate
+        public static async Task<Maintenance> UpdateMainten(Maintenance maintenance)
+        {
+            using (var db = new SHSdb())
+            {
+                Maintenance existing = db.maintenances.FirstOrDefault(x => x.ID == maintenance.ID);
+                if (existing == null) { throw new KeyNotFoundException(); }                
+                existing.Contract_ID = maintenance.Contract_ID;
+                existing.DateStart = maintenance.DateStart;
+                existing.DateEnd = maintenance.DateEnd;
+                existing.Name = maintenance.Name;
+                db.SubmitChanges();
+                return existing;
+            }
+        }
+        #endregion
     }
 }
