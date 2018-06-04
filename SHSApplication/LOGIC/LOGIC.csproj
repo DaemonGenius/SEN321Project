@@ -47,16 +47,22 @@
     <Compile Include="ApplicationLogic\EmployeeApp.cs" />
     <Compile Include="ApplicationLogic\MaintenanceInsertApp.cs" />
     <Compile Include="ApplicationLogic\ProductInfoApp.cs" />
+    <Compile Include="ApplicationLogic\ProductInsertApp.cs" />
+    <Compile Include="ApplicationLogic\ProductManagementUpdateApp.cs" />
     <Compile Include="ApplicationLogic\RegisterValidation.cs" />
     <Compile Include="ApplicationLogic\TechnicianApp.cs" />
+    <Compile Include="ApplicationLogic\WarrentyLoadApp.cs" />
     <Compile Include="BusinessLogic\AdminProcesses.cs" />
     <Compile Include="BusinessLogic\ClientProcesses.cs" />
     <Compile Include="BusinessLogic\EmployeeProcess.cs" />
     <Compile Include="BusinessLogic\LoginProcess.cs" />
     <Compile Include="BusinessLogic\MaintenanceInsertProcess.cs" />
     <Compile Include="BusinessLogic\ProductInfoProcess.cs" />
+    <Compile Include="BusinessLogic\ProductInsertProcess.cs" />
+    <Compile Include="BusinessLogic\ProductManagementUpdates.cs" />
     <Compile Include="BusinessLogic\RegistrationProcess.cs" />
     <Compile Include="BusinessLogic\TechnicianProcesses.cs" />
+    <Compile Include="BusinessLogic\WarrentyLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

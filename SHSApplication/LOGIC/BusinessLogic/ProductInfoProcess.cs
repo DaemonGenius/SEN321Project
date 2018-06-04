@@ -20,6 +20,7 @@ namespace LOGIC.BusinessLogic
                 ConvienceProduct convienceProduct = dbe.convienceProducts.FirstOrDefault((x => x.Name == name));
                 return new ConvienceProduct()
                 {
+                    ID = convienceProduct.ID,
                     Name = convienceProduct.Name,
                     Discription = convienceProduct.Discription,
                     Price = convienceProduct.Price,
@@ -43,6 +44,7 @@ namespace LOGIC.BusinessLogic
                 SafetyProduct safetyProducts = dbe.safetyProducts.FirstOrDefault((x => x.Name == name));
                 return new SafetyProduct()
                 {
+                    ID = safetyProducts.ID,
                     Name = safetyProducts.Name,
                     Discription = safetyProducts.Discription,
                     Price = safetyProducts.Price,
@@ -66,6 +68,7 @@ namespace LOGIC.BusinessLogic
                 EnergyProduct energyProducts = dbe.energyProducts.FirstOrDefault((x => x.Name == name));
                 return new EnergyProduct()
                 {
+                    ID = energyProducts.ID,
                     Name = energyProducts.Name,
                     Discription = energyProducts.Discription,
                     Price = energyProducts.Price,

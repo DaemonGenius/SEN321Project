@@ -17,10 +17,10 @@ namespace UI.View.EmployeeSide
     {
         
         
-        public string LoggedUser;
+        public string LoggedUser, ProductIdent;
         public int Client;
-        public int Contract;
-        public int TechnicianName;
+        public int Contract, WarrentyID;
+        public int TechnicianName, ProductID;
         public int SysName, MainID, TechID;
         public int ScheduleState;
         public App_ManagementProtalView()
@@ -178,7 +178,16 @@ namespace UI.View.EmployeeSide
 
         private async void btnProductManage_Click(object sender, EventArgs e)
         {
+            lstbxEneProducts.Items.Clear();
+            lstbxsafProducts.Items.Clear();
+            lstbxConProducts.Items.Clear();
             LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+            LOGIC.ApplicationLogic.WarrentyLoadApp warrentyLoadApp = new WarrentyLoadApp();
+            List<string> ListWar = LOGIC.ApplicationLogic.WarrentyLoadApp.WarrentyLoad();
+            foreach (var item in ListWar)
+            {
+                cbxProductWarr.Items.Add(item.ToString());
+            }
             tbpProductManagement.Show();
             tbpClients.Hide();
             tbpProducts.Hide();
@@ -283,6 +292,8 @@ namespace UI.View.EmployeeSide
             rtxtbxProductDiscr.Text = safProduct.Discription;
             txtProductPrice.Text = safProduct.Price.ToString();
             cbxProductWarr.Text = safProduct.Warrenty.Duration;
+            ProductID = safProduct.ID;
+            ProductIdent = "SaftyProduct";
         }
 
         private async void lstbxEneProducts_SelectedIndexChanged(object sender, EventArgs e)
@@ -296,6 +307,9 @@ namespace UI.View.EmployeeSide
             rtxtbxProductDiscr.Text = energyProduct.Discription;
             txtProductPrice.Text = energyProduct.Price.ToString();
             cbxProductWarr.Text = energyProduct.Warrenty.Duration;
+            ProductID = energyProduct.ID;
+           
+            ProductIdent = "EnergyProduct";
         }
 
         private async void lstbxConProducts_SelectedIndexChanged(object sender, EventArgs e)
@@ -309,6 +323,8 @@ namespace UI.View.EmployeeSide
             rtxtbxProductDiscr.Text = convienceProduct.Discription;
             txtProductPrice.Text = convienceProduct.Price.ToString();
             cbxProductWarr.Text = convienceProduct.Warrenty.Duration;
+            ProductID = convienceProduct.ID;
+            ProductIdent = "ConvienceProduct";
         }
 
         private async void btnSchSearch_Click(object sender, EventArgs e)
@@ -487,16 +503,7 @@ namespace UI.View.EmployeeSide
                 maintenance.ID = MainID;
                 LOGIC.ApplicationLogic.MaintenanceInsertApp maintenanceInsertApp = new MaintenanceInsertApp();
                 await maintenanceInsertApp.UpdateMaintenance(maintenance);
-                //try
-                //{
-                //    await maintenanceInsertApp.UpdateMaintenance(maintenance);
-                //}
-                //catch (Exception)
-                //{
-
-                //    MessageBox.Show("Error");
-                //    throw;
-                //}
+               
                 
             }
             else if(ScheduleState == 0)
@@ -526,6 +533,98 @@ namespace UI.View.EmployeeSide
             txtbxST.Clear();
             txtbxET.Clear();
             txtbxMainName.Clear();
+
+        }
+
+        private void btnNewProduct_Click(object sender, EventArgs e)
+        {
+            label64.Visible = true;
+            btnInsertProduct.Visible = true;
+            cbxGroupType.Visible = true;
+            txtProductPrice.Clear();
+            cbxProductWarr.Text = "";
+            rtxtbxProductDiscr.Clear();
+            txtbxProdctName.Clear();
+        }
+
+        private void btnInsertProduct_Click(object sender, EventArgs e)
+        {
+            LOGIC.ApplicationLogic.ProductInsertApp productInsertApp = new ProductInsertApp();
+            string PName = txtbxProdctName.Text;
+            string Disctip = rtxtbxProductDiscr.Text;
+            double Price = Convert.ToDouble(txtProductPrice.Text);
+
+            if (cbxGroupType.Text == "Safety Product")
+            {
+                productInsertApp.SafetyProductInsert(PName, Disctip, Price, WarrentyID);
+            }
+            else if (cbxGroupType.Text == "Energy Product")
+            {
+                productInsertApp.EnergyProductInsert(PName, Disctip, Price, WarrentyID);
+            }
+            else if(cbxGroupType.Text == "Home Product")
+            {
+                productInsertApp.ConvProductInsert(PName, Disctip, Price, WarrentyID);
+            }
+        }
+
+        private async void cbxProductWarr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LOGIC.ApplicationLogic.WarrentyLoadApp warrentyLoadApp = new WarrentyLoadApp();
+            Warrenty warrenty = await warrentyLoadApp.GetWarrentyDetail(cbxProductWarr.Text);
+            WarrentyID = warrenty.ID;
+        }
+
+        private async void btnProductUpdate_Click(object sender, EventArgs e)
+        {
+            if (ProductIdent == "EnergyProduct")
+            {
+                LOGIC.ApplicationLogic.ProductManagementUpdateApp productManagementUpdateApp = new ProductManagementUpdateApp();
+                EnergyProduct energyProduct = new EnergyProduct();
+                energyProduct.ID = ProductID;
+                energyProduct.Name = txtbxProdctName.Text;
+                energyProduct.Discription = rtxtbxProductDiscr.Text;
+                energyProduct.Price = Convert.ToDouble(txtProductPrice.Text);
+                energyProduct.Warrenty_ID = WarrentyID;
+                await productManagementUpdateApp.UpdateEnergyProduct(energyProduct);
+
+            }
+            else if(ProductIdent == "SaftyProduct")
+            {
+                LOGIC.ApplicationLogic.ProductManagementUpdateApp productManagementUpdateApp = new ProductManagementUpdateApp();
+                SafetyProduct safetyProduct = new SafetyProduct();
+                safetyProduct.ID = ProductID;
+                safetyProduct.Name = txtbxProdctName.Text;
+                safetyProduct.Discription = rtxtbxProductDiscr.Text;
+                safetyProduct.Price = Convert.ToDouble(txtProductPrice.Text);
+                safetyProduct.Warrenty_ID = WarrentyID;
+                await productManagementUpdateApp.UpdateSafetyProduct(safetyProduct);
+
+            }
+            else if(ProductIdent == "ConvienceProduct")
+            {
+                LOGIC.ApplicationLogic.ProductManagementUpdateApp productManagementUpdateApp = new ProductManagementUpdateApp();
+                ConvienceProduct convienceProduct = new ConvienceProduct();
+                convienceProduct.ID = ProductID;
+                convienceProduct.Name = txtbxProdctName.Text;
+                convienceProduct.Discription = rtxtbxProductDiscr.Text;
+                convienceProduct.Price = Convert.ToDouble(txtProductPrice.Text);
+                convienceProduct.Warrenty_ID = WarrentyID;
+                try
+                {
+                    await productManagementUpdateApp.UpdateConvienceProduct(convienceProduct);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                
+            }
+        }
+
+        private void txtbxProductGroup_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

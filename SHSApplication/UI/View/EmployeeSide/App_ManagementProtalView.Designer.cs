@@ -229,6 +229,9 @@
             this.btnSearchCli = new System.Windows.Forms.Button();
             this.btnAddnew = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.cbxGroupType = new System.Windows.Forms.ComboBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.btnInsertProduct = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1620,6 +1623,7 @@
             this.btnProductUpdate.TabIndex = 27;
             this.btnProductUpdate.Text = "Update";
             this.btnProductUpdate.UseVisualStyleBackColor = true;
+            this.btnProductUpdate.Click += new System.EventHandler(this.btnProductUpdate_Click);
             // 
             // btnNewProduct
             // 
@@ -1629,6 +1633,7 @@
             this.btnNewProduct.TabIndex = 26;
             this.btnNewProduct.Text = "New";
             this.btnNewProduct.UseVisualStyleBackColor = true;
+            this.btnNewProduct.Click += new System.EventHandler(this.btnNewProduct_Click);
             // 
             // label48
             // 
@@ -1641,6 +1646,9 @@
             // 
             // groupBox13
             // 
+            this.groupBox13.Controls.Add(this.btnInsertProduct);
+            this.groupBox13.Controls.Add(this.cbxGroupType);
+            this.groupBox13.Controls.Add(this.label64);
             this.groupBox13.Controls.Add(this.cbxProductWarr);
             this.groupBox13.Controls.Add(this.rtxtbxProductDiscr);
             this.groupBox13.Controls.Add(this.txtbxProdctName);
@@ -1659,18 +1667,15 @@
             // cbxProductWarr
             // 
             this.cbxProductWarr.FormattingEnabled = true;
-            this.cbxProductWarr.Items.AddRange(new object[] {
-            "Home Department",
-            "Enegry Department",
-            "Safety Department"});
-            this.cbxProductWarr.Location = new System.Drawing.Point(110, 177);
+            this.cbxProductWarr.Location = new System.Drawing.Point(117, 177);
             this.cbxProductWarr.Name = "cbxProductWarr";
             this.cbxProductWarr.Size = new System.Drawing.Size(132, 21);
             this.cbxProductWarr.TabIndex = 25;
+            this.cbxProductWarr.SelectedIndexChanged += new System.EventHandler(this.cbxProductWarr_SelectedIndexChanged);
             // 
             // rtxtbxProductDiscr
             // 
-            this.rtxtbxProductDiscr.Location = new System.Drawing.Point(110, 68);
+            this.rtxtbxProductDiscr.Location = new System.Drawing.Point(117, 68);
             this.rtxtbxProductDiscr.Name = "rtxtbxProductDiscr";
             this.rtxtbxProductDiscr.Size = new System.Drawing.Size(132, 70);
             this.rtxtbxProductDiscr.TabIndex = 21;
@@ -1678,7 +1683,7 @@
             // 
             // txtbxProdctName
             // 
-            this.txtbxProdctName.Location = new System.Drawing.Point(110, 19);
+            this.txtbxProdctName.Location = new System.Drawing.Point(117, 19);
             this.txtbxProdctName.Name = "txtbxProdctName";
             this.txtbxProdctName.Size = new System.Drawing.Size(132, 20);
             this.txtbxProdctName.TabIndex = 22;
@@ -1686,7 +1691,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(13, 22);
+            this.label42.Location = new System.Drawing.Point(20, 22);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(78, 13);
             this.label42.TabIndex = 0;
@@ -1695,7 +1700,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(13, 71);
+            this.label47.Location = new System.Drawing.Point(20, 71);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(99, 13);
             this.label47.TabIndex = 12;
@@ -1704,7 +1709,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(13, 157);
+            this.label46.Location = new System.Drawing.Point(20, 157);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(34, 13);
             this.label46.TabIndex = 13;
@@ -1713,7 +1718,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(13, 180);
+            this.label45.Location = new System.Drawing.Point(20, 180);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(53, 13);
             this.label45.TabIndex = 14;
@@ -1721,7 +1726,7 @@
             // 
             // txtProductPrice
             // 
-            this.txtProductPrice.Location = new System.Drawing.Point(110, 151);
+            this.txtProductPrice.Location = new System.Drawing.Point(117, 151);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(132, 20);
             this.txtProductPrice.TabIndex = 17;
@@ -1773,9 +1778,10 @@
             // 
             this.tabControl3.Controls.Add(this.tbpMainSche);
             this.tabControl3.Controls.Add(this.tbpNewSche);
-            this.tabControl3.ItemSize = new System.Drawing.Size(10, 10);
+            this.tabControl3.ItemSize = new System.Drawing.Size(1, 1);
             this.tabControl3.Location = new System.Drawing.Point(6, 15);
             this.tabControl3.Name = "tabControl3";
+            this.tabControl3.Padding = new System.Drawing.Point(1, 1);
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(331, 320);
             this.tabControl3.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
@@ -1784,10 +1790,10 @@
             // tbpMainSche
             // 
             this.tbpMainSche.Controls.Add(this.panel11);
-            this.tbpMainSche.Location = new System.Drawing.Point(4, 14);
+            this.tbpMainSche.Location = new System.Drawing.Point(4, 5);
             this.tbpMainSche.Name = "tbpMainSche";
             this.tbpMainSche.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpMainSche.Size = new System.Drawing.Size(323, 302);
+            this.tbpMainSche.Size = new System.Drawing.Size(323, 311);
             this.tbpMainSche.TabIndex = 0;
             this.tbpMainSche.Text = "Main Sched";
             this.tbpMainSche.UseVisualStyleBackColor = true;
@@ -1934,10 +1940,10 @@
             // tbpNewSche
             // 
             this.tbpNewSche.Controls.Add(this.panel12);
-            this.tbpNewSche.Location = new System.Drawing.Point(4, 14);
+            this.tbpNewSche.Location = new System.Drawing.Point(4, 5);
             this.tbpNewSche.Name = "tbpNewSche";
             this.tbpNewSche.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpNewSche.Size = new System.Drawing.Size(323, 302);
+            this.tbpNewSche.Size = new System.Drawing.Size(323, 311);
             this.tbpNewSche.TabIndex = 1;
             this.tbpNewSche.Text = "NewSche";
             this.tbpNewSche.UseVisualStyleBackColor = true;
@@ -2328,6 +2334,40 @@
             this.btnAddnew.UseVisualStyleBackColor = true;
             this.btnAddnew.Click += new System.EventHandler(this.btnAddnew_Click);
             // 
+            // cbxGroupType
+            // 
+            this.cbxGroupType.FormattingEnabled = true;
+            this.cbxGroupType.Items.AddRange(new object[] {
+            "Home Product",
+            "Energy Product",
+            "Safety Product"});
+            this.cbxGroupType.Location = new System.Drawing.Point(117, 204);
+            this.cbxGroupType.Name = "cbxGroupType";
+            this.cbxGroupType.Size = new System.Drawing.Size(132, 21);
+            this.cbxGroupType.TabIndex = 27;
+            this.cbxGroupType.Visible = false;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(20, 207);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(79, 13);
+            this.label64.TabIndex = 26;
+            this.label64.Text = "Group Product:";
+            this.label64.Visible = false;
+            // 
+            // btnInsertProduct
+            // 
+            this.btnInsertProduct.Location = new System.Drawing.Point(66, 243);
+            this.btnInsertProduct.Name = "btnInsertProduct";
+            this.btnInsertProduct.Size = new System.Drawing.Size(113, 24);
+            this.btnInsertProduct.TabIndex = 28;
+            this.btnInsertProduct.Text = "Insert Product";
+            this.btnInsertProduct.UseVisualStyleBackColor = true;
+            this.btnInsertProduct.Visible = false;
+            this.btnInsertProduct.Click += new System.EventHandler(this.btnInsertProduct_Click);
+            // 
             // App_ManagementProtalView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2607,5 +2647,8 @@
         private System.Windows.Forms.Button btnSearchSche;
         private System.Windows.Forms.ComboBox cbcScheTechname;
         private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Button btnInsertProduct;
+        private System.Windows.Forms.ComboBox cbxGroupType;
+        private System.Windows.Forms.Label label64;
     }
 }
