@@ -45,6 +45,7 @@
     <Compile Include="ApplicationLogic\AdminProcessing.cs" />
     <Compile Include="ApplicationLogic\CallinsertApp.cs" />
     <Compile Include="ApplicationLogic\ClientProcessesApp.cs" />
+    <Compile Include="ApplicationLogic\ContactApp.cs" />
     <Compile Include="ApplicationLogic\EmployeeApp.cs" />
     <Compile Include="ApplicationLogic\MaintenanceInsertApp.cs" />
     <Compile Include="ApplicationLogic\ProductInfoApp.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="BusinessLogic\CallInsertProcess.cs" />
     <Compile Include="BusinessLogic\CallLogProcess.cs" />
     <Compile Include="BusinessLogic\ClientProcesses.cs" />
+    <Compile Include="BusinessLogic\ContractProccess.cs" />
     <Compile Include="BusinessLogic\EmployeeProcess.cs" />
     <Compile Include="BusinessLogic\LoginProcess.cs" />
     <Compile Include="BusinessLogic\MaintenanceInsertProcess.cs" />

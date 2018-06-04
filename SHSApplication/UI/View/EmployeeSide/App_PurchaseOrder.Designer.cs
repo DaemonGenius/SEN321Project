@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxCName = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbxTechname = new System.Windows.Forms.ComboBox();
             this.txtbxCartContract = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,7 +69,7 @@
             this.btnSysSpecAppro = new System.Windows.Forms.Button();
             this.txtbxSystem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.cbxProductWarr = new System.Windows.Forms.ComboBox();
+            this.cbxProductContract = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
             this.lstbxConProducts = new System.Windows.Forms.ListBox();
             this.label56 = new System.Windows.Forms.Label();
@@ -76,6 +78,8 @@
             this.lstbxsafProducts = new System.Windows.Forms.ListBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
+            this.cbxSaleEmp = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -99,6 +103,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbxSaleEmp);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.cbxCName);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.cbxTechname);
             this.groupBox2.Controls.Add(this.txtbxCartContract);
             this.groupBox2.Controls.Add(this.label8);
@@ -122,6 +130,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cart:";
             // 
+            // cbxCName
+            // 
+            this.cbxCName.FormattingEnabled = true;
+            this.cbxCName.Location = new System.Drawing.Point(312, 149);
+            this.cbxCName.Name = "cbxCName";
+            this.cbxCName.Size = new System.Drawing.Size(133, 21);
+            this.cbxCName.TabIndex = 53;
+            this.cbxCName.SelectedIndexChanged += new System.EventHandler(this.cbxCName_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(243, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Client Name:";
+            // 
             // cbxTechname
             // 
             this.cbxTechname.FormattingEnabled = true;
@@ -129,6 +155,7 @@
             this.cbxTechname.Name = "cbxTechname";
             this.cbxTechname.Size = new System.Drawing.Size(132, 21);
             this.cbxTechname.TabIndex = 51;
+            this.cbxTechname.SelectedIndexChanged += new System.EventHandler(this.cbxTechname_SelectedIndexChanged);
             // 
             // txtbxCartContract
             // 
@@ -408,7 +435,7 @@
             this.groupBox3.Controls.Add(this.btnSysSpecAppro);
             this.groupBox3.Controls.Add(this.txtbxSystem);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.cbxProductWarr);
+            this.groupBox3.Controls.Add(this.cbxProductContract);
             this.groupBox3.Controls.Add(this.label45);
             this.groupBox3.Location = new System.Drawing.Point(192, 131);
             this.groupBox3.Name = "groupBox3";
@@ -477,13 +504,14 @@
             this.label9.TabIndex = 36;
             this.label9.Text = "System Name:";
             // 
-            // cbxProductWarr
+            // cbxProductContract
             // 
-            this.cbxProductWarr.FormattingEnabled = true;
-            this.cbxProductWarr.Location = new System.Drawing.Point(114, 53);
-            this.cbxProductWarr.Name = "cbxProductWarr";
-            this.cbxProductWarr.Size = new System.Drawing.Size(132, 21);
-            this.cbxProductWarr.TabIndex = 35;
+            this.cbxProductContract.FormattingEnabled = true;
+            this.cbxProductContract.Location = new System.Drawing.Point(114, 53);
+            this.cbxProductContract.Name = "cbxProductContract";
+            this.cbxProductContract.Size = new System.Drawing.Size(132, 21);
+            this.cbxProductContract.TabIndex = 35;
+            this.cbxProductContract.SelectedIndexChanged += new System.EventHandler(this.cbxProductContract_SelectedIndexChanged);
             // 
             // label45
             // 
@@ -562,6 +590,24 @@
             this.label41.TabIndex = 4;
             this.label41.Text = "Purchase Order:";
             // 
+            // cbxSaleEmp
+            // 
+            this.cbxSaleEmp.FormattingEnabled = true;
+            this.cbxSaleEmp.Location = new System.Drawing.Point(312, 181);
+            this.cbxSaleEmp.Name = "cbxSaleEmp";
+            this.cbxSaleEmp.Size = new System.Drawing.Size(133, 21);
+            this.cbxSaleEmp.TabIndex = 55;
+            this.cbxSaleEmp.SelectedIndexChanged += new System.EventHandler(this.cbxSaleEmp_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(243, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 54;
+            this.label10.Text = "SaleEmp:";
+            // 
             // App_PurchaseOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,7 +645,7 @@
         private System.Windows.Forms.ListBox lstbxEneProducts;
         private System.Windows.Forms.ListBox lstbxsafProducts;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.ComboBox cbxProductWarr;
+        private System.Windows.Forms.ComboBox cbxProductContract;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -637,5 +683,9 @@
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.TextBox txtbxScheTimeE;
         private System.Windows.Forms.ComboBox cbxTechname;
+        private System.Windows.Forms.ComboBox cbxCName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxSaleEmp;
+        private System.Windows.Forms.Label label10;
     }
 }

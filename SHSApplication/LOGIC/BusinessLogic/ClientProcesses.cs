@@ -25,8 +25,8 @@ namespace LOGIC.BusinessLogic
             {
                 People person = dbe.peoples.FirstOrDefault((x => x.EmailAddress == Username));
                 cID = person.ID;
-                
-                
+
+
                 return new People()
                 {
                     ID = person.ID,
@@ -72,7 +72,7 @@ namespace LOGIC.BusinessLogic
             using (var dbe = new SHSdb())
             {
                 Client client = dbe.Clients.FirstOrDefault((x => x.Person_ID == cID));
-                Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Cart_ID == client.ID));
+                Transaction transaction = dbe.transactions.FirstOrDefault((x => x.Client_ID== client.ID));
                 ProductSystem productSystems = dbe.productSystems.FirstOrDefault((x => x.Cart_ID == transaction.Cart_ID));
                 SysConProduct sysConProduct = dbe.sysConProducts.FirstOrDefault(x => x.ProductSystem.ID == x.ConvienceProduct.ID);
 
@@ -157,7 +157,7 @@ namespace LOGIC.BusinessLogic
             using (var dbe = new SHSdb())
             {
                 Client client = dbe.Clients.FirstOrDefault((x => x.ID == ClientID));
-                           
+
                 return new Client()
                 {
                     ID = client.ID,
@@ -167,6 +167,21 @@ namespace LOGIC.BusinessLogic
             }
         }
         #endregion
+
+
+        public static async Task<Client> ClientLoad(string fname)
+        {
+            using (var dbe = new SHSdb())
+            {
+                People person = dbe.peoples.FirstOrDefault((x => x.FirstName == fname));
+                Client client = dbe.Clients.FirstOrDefault((x => x.Person_ID == person.ID));
+                return new Client()
+                {
+                    ID = client.ID,
+                    Person_ID = client.Person_ID,
+                };
+            }
+        }
     }
 }
     

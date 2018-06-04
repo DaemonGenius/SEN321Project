@@ -46,6 +46,23 @@ namespace UI.View.EmployeeSide
             {
                 cbxTechname.Items.Add(item);
             }
+            List<string> ClientLoad = LOGIC.ApplicationLogic.ClientProcessesApp.ClientFNLoadApp();
+            foreach (var item in ClientLoad)
+            {
+                cbxCName.Items.Add(item);
+            }
+            List<string> ContactLoad = LOGIC.ApplicationLogic.ContactApp.ContractLoad();
+            foreach (var item in ContactLoad)
+            {
+                cbxProductContract.Items.Add(item);
+            }
+            LOGIC.ApplicationLogic.EmployeeApp employeeApp = new LOGIC.ApplicationLogic.EmployeeApp();
+            List<string> Sales = employeeApp.LoadSaleEmp();
+            foreach (var item in Sales)
+            {
+                cbxSaleEmp.Items.Add(item);
+            }
+            
         }
         public List<double> conPricelst = new List<double>();
         public List<double> safPricelst = new List<double>();
@@ -75,13 +92,16 @@ namespace UI.View.EmployeeSide
             }
         }
 
-        private void btnSysSpecAppro_Click(object sender, EventArgs e)
+        private async void btnSysSpecAppro_Click(object sender, EventArgs e)
         {
             txtbxCartSysName.Text = txtbxSystem.Text;
-            txtbxCartContract.Text = cbxProductWarr.Text;
+            txtbxCartContract.Text = cbxProductContract.Text;
             Maintenance maintenance = new Maintenance();
             maintenance.DateStart = DateTime.Parse(txtbxScheTimeS.Text);
             maintenance.DateEnd = DateTime.Parse(txtbxScheTimeE.Text);
+            LOGIC.ApplicationLogic.ContactApp contactApp = new LOGIC.ApplicationLogic.ContactApp();
+            Contract contract = await contactApp.GetContractIDAsync(txtbxCartContract.Text);
+            ContID = contract.ID;
             
             rtxtbxMainSche.Text = "Start: " + maintenance.DateStart + " End : " + maintenance.DateEnd;
         }
@@ -105,11 +125,43 @@ namespace UI.View.EmployeeSide
             {
                 transactionInsertApp.sysEneProduct(item, transactionInsertApp.productID);
             }
-            //transactionInsertApp.InsertTransaction(clientID, saleEMpID, techID, ContID);
+            
+                transactionInsertApp.InsertTransaction(clientID, SaleID, TechID, ContID);
+            
+           
+            
         }
         #region PriceCalculation
         public double conPrice;
         public double safPrice;
+
+        private async void cbxTechname_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LOGIC.ApplicationLogic.TechnicianApp technicianApp = new LOGIC.ApplicationLogic.TechnicianApp();
+            TechnicianEmp technician =  await technicianApp.TechnicianEmp(cbxTechname.Text);
+            TechID = (int)technician.ID;
+
+        }
+
+        private async void cbxCName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LOGIC.ApplicationLogic.ClientProcessesApp cpa = new LOGIC.ApplicationLogic.ClientProcessesApp();
+            Client client = await cpa.ClientLoad(cbxCName.Text);
+            clientID = client.ID;
+        }
+
+        private void cbxProductContract_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void cbxSaleEmp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LOGIC.ApplicationLogic.EmployeeApp emp = new LOGIC.ApplicationLogic.EmployeeApp();
+            Sale_Emp Saemp = await emp.Sale_EmpAsync(cbxSaleEmp.Text);
+            SaleID = Saemp.ID;
+        }
+
         public double EnPrice;
         public double ProductPriceCalc()
         {

@@ -16,7 +16,7 @@ namespace UI.View.EmployeeSide
     public partial class App_ManagementProtalView : Form
     {
         #region General Public var
-        public string LoggedUser, ProductIdent;
+        public string LoggedUser, ProductIdent, LoggedName;
         public int Client;
         public int Contract, WarrentyID;
         public int TechnicianName, ProductID;
@@ -32,6 +32,7 @@ namespace UI.View.EmployeeSide
         public App_ManagementProtalView()
         {
             InitializeComponent();
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -362,7 +363,10 @@ namespace UI.View.EmployeeSide
         private async void App_ManagementProtalView_Load(object sender, EventArgs e)
         {
             LOGIC.ApplicationLogic.EmployeeApp employeeApp = new LOGIC.ApplicationLogic.EmployeeApp();
-           
+            LoggedName = View.SharedViews.App_Start.LoggedName;
+
+
+
             List<string> Technicians =  employeeApp.LoadEmp();
             List<string> Sales = employeeApp.LoadSaleEmp();
             List<string> Admins = employeeApp.LoadAdminEmp();

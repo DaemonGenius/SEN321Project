@@ -34,6 +34,23 @@ namespace LOGIC.BusinessLogic
             }
         }
 
+        public static async Task<Sale_Emp> Sale_EmpAsync(string fName)
+        {
+            using (var dbe = new SHSdb())
+            {
+                Sale_Emp sale_Emp = dbe.sale_Emps.FirstOrDefault(x => x.People.FirstName == fName);
+
+                return new Sale_Emp()
+                {
+                    ID = sale_Emp.ID,
+                    People = new People() {
+                        FirstName = sale_Emp.People.FirstName
+                    }
+                   
+                };
+            }
+        }
+
 
     }
 }

@@ -18,6 +18,12 @@ namespace LOGIC.ApplicationLogic
         {
             return BusinessLogic.EmployeeProcess.LoadSale();
         }
+
+        public async Task<Sale_Emp> Sale_EmpAsync(string fname)
+        {
+            return await BusinessLogic.EmployeeProcess.Sale_EmpAsync(fname);
+        }
+
         public List<string> LoadAdminEmp()
         {
             return BusinessLogic.EmployeeProcess.LoadAdmin();
