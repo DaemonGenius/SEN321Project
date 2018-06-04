@@ -30,11 +30,11 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxTechname = new System.Windows.Forms.ComboBox();
             this.txtbxCartContract = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtbxTotalPrice = new System.Windows.Forms.TextBox();
             this.btnBuy = new System.Windows.Forms.Button();
-            this.txtbxTechnicianN = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.rtxtbxMainSche = new System.Windows.Forms.RichTextBox();
@@ -51,7 +51,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxWarrty = new System.Windows.Forms.ComboBox();
             this.txtbxProductName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -60,9 +60,11 @@
             this.label24 = new System.Windows.Forms.Label();
             this.txtbxPrice = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtbxScheTimeS = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.txtbxScheTimeE = new System.Windows.Forms.TextBox();
             this.btnSysSpecAppro = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtbxSystem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbxProductWarr = new System.Windows.Forms.ComboBox();
@@ -93,14 +95,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(947, 456);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbxTechname);
             this.groupBox2.Controls.Add(this.txtbxCartContract);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtbxTotalPrice);
             this.groupBox2.Controls.Add(this.btnBuy);
-            this.groupBox2.Controls.Add(this.txtbxTechnicianN);
             this.groupBox2.Controls.Add(this.label29);
             this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.Controls.Add(this.txtbxCartSysName);
@@ -119,8 +122,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cart:";
             // 
+            // cbxTechname
+            // 
+            this.cbxTechname.FormattingEnabled = true;
+            this.cbxTechname.Location = new System.Drawing.Point(104, 208);
+            this.cbxTechname.Name = "cbxTechname";
+            this.cbxTechname.Size = new System.Drawing.Size(132, 21);
+            this.cbxTechname.TabIndex = 51;
+            // 
             // txtbxCartContract
             // 
+            this.txtbxCartContract.Enabled = false;
             this.txtbxCartContract.Location = new System.Drawing.Point(104, 179);
             this.txtbxCartContract.Name = "txtbxCartContract";
             this.txtbxCartContract.Size = new System.Drawing.Size(133, 20);
@@ -137,6 +149,7 @@
             // 
             // txtbxTotalPrice
             // 
+            this.txtbxTotalPrice.Enabled = false;
             this.txtbxTotalPrice.Location = new System.Drawing.Point(336, 330);
             this.txtbxTotalPrice.Name = "txtbxTotalPrice";
             this.txtbxTotalPrice.Size = new System.Drawing.Size(109, 20);
@@ -150,13 +163,7 @@
             this.btnBuy.TabIndex = 47;
             this.btnBuy.Text = "Place Order:";
             this.btnBuy.UseVisualStyleBackColor = true;
-            // 
-            // txtbxTechnicianN
-            // 
-            this.txtbxTechnicianN.Location = new System.Drawing.Point(105, 208);
-            this.txtbxTechnicianN.Name = "txtbxTechnicianN";
-            this.txtbxTechnicianN.Size = new System.Drawing.Size(132, 20);
-            this.txtbxTechnicianN.TabIndex = 46;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // label29
             // 
@@ -179,6 +186,7 @@
             // 
             // rtxtbxMainSche
             // 
+            this.rtxtbxMainSche.Enabled = false;
             this.rtxtbxMainSche.Location = new System.Drawing.Point(6, 19);
             this.rtxtbxMainSche.Name = "rtxtbxMainSche";
             this.rtxtbxMainSche.Size = new System.Drawing.Size(240, 99);
@@ -187,6 +195,7 @@
             // 
             // txtbxCartSysName
             // 
+            this.txtbxCartSysName.Enabled = false;
             this.txtbxCartSysName.Location = new System.Drawing.Point(104, 149);
             this.txtbxCartSysName.Name = "txtbxCartSysName";
             this.txtbxCartSysName.Size = new System.Drawing.Size(133, 20);
@@ -212,6 +221,7 @@
             // 
             // lstbxCartHome
             // 
+            this.lstbxCartHome.Enabled = false;
             this.lstbxCartHome.FormattingEnabled = true;
             this.lstbxCartHome.Location = new System.Drawing.Point(303, 33);
             this.lstbxCartHome.Margin = new System.Windows.Forms.Padding(2);
@@ -239,15 +249,18 @@
             // 
             // lstbxCartEnergy
             // 
+            this.lstbxCartEnergy.Enabled = false;
             this.lstbxCartEnergy.FormattingEnabled = true;
             this.lstbxCartEnergy.Location = new System.Drawing.Point(11, 33);
             this.lstbxCartEnergy.Margin = new System.Windows.Forms.Padding(2);
             this.lstbxCartEnergy.Name = "lstbxCartEnergy";
+            this.lstbxCartEnergy.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lstbxCartEnergy.Size = new System.Drawing.Size(142, 95);
             this.lstbxCartEnergy.TabIndex = 37;
             // 
             // lstbxCartSafe
             // 
+            this.lstbxCartSafe.Enabled = false;
             this.lstbxCartSafe.FormattingEnabled = true;
             this.lstbxCartSafe.Location = new System.Drawing.Point(157, 33);
             this.lstbxCartSafe.Margin = new System.Windows.Forms.Padding(2);
@@ -284,9 +297,9 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(337, 354);
+            this.btnLogin.Location = new System.Drawing.Point(337, 363);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(98, 40);
+            this.btnLogin.Size = new System.Drawing.Size(98, 31);
             this.btnLogin.TabIndex = 37;
             this.btnLogin.Text = "Back";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -295,7 +308,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnSelect);
-            this.groupBox4.Controls.Add(this.comboBox1);
+            this.groupBox4.Controls.Add(this.cbxWarrty);
             this.groupBox4.Controls.Add(this.txtbxProductName);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.label26);
@@ -305,31 +318,28 @@
             this.groupBox4.Controls.Add(this.txtbxPrice);
             this.groupBox4.Location = new System.Drawing.Point(9, 131);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(177, 211);
+            this.groupBox4.Size = new System.Drawing.Size(177, 226);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Product Warrenty:";
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(46, 176);
+            this.btnSelect.Location = new System.Drawing.Point(35, 192);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(70, 23);
             this.btnSelect.TabIndex = 38;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // comboBox1
+            // cbxWarrty
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Home Department",
-            "Enegry Department",
-            "Safety Department"});
-            this.comboBox1.Location = new System.Drawing.Point(62, 149);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(109, 21);
-            this.comboBox1.TabIndex = 39;
+            this.cbxWarrty.FormattingEnabled = true;
+            this.cbxWarrty.Location = new System.Drawing.Point(62, 149);
+            this.cbxWarrty.Name = "cbxWarrty";
+            this.cbxWarrty.Size = new System.Drawing.Size(109, 21);
+            this.cbxWarrty.TabIndex = 39;
             // 
             // txtbxProductName
             // 
@@ -391,44 +401,65 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtbxScheTimeS);
+            this.groupBox3.Controls.Add(this.label51);
+            this.groupBox3.Controls.Add(this.label52);
+            this.groupBox3.Controls.Add(this.txtbxScheTimeE);
             this.groupBox3.Controls.Add(this.btnSysSpecAppro);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtbxSystem);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.cbxProductWarr);
             this.groupBox3.Controls.Add(this.label45);
             this.groupBox3.Location = new System.Drawing.Point(192, 131);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(251, 211);
+            this.groupBox3.Size = new System.Drawing.Size(251, 226);
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "System Specifics";
             // 
+            // txtbxScheTimeS
+            // 
+            this.txtbxScheTimeS.Location = new System.Drawing.Point(114, 84);
+            this.txtbxScheTimeS.Name = "txtbxScheTimeS";
+            this.txtbxScheTimeS.Size = new System.Drawing.Size(118, 20);
+            this.txtbxScheTimeS.TabIndex = 43;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.ForeColor = System.Drawing.Color.Black;
+            this.label51.Location = new System.Drawing.Point(17, 113);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(55, 13);
+            this.label51.TabIndex = 41;
+            this.label51.Text = "End Time:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.ForeColor = System.Drawing.Color.Black;
+            this.label52.Location = new System.Drawing.Point(17, 87);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(58, 13);
+            this.label52.TabIndex = 42;
+            this.label52.Text = "Start Time:";
+            // 
+            // txtbxScheTimeE
+            // 
+            this.txtbxScheTimeE.Location = new System.Drawing.Point(114, 110);
+            this.txtbxScheTimeE.Name = "txtbxScheTimeE";
+            this.txtbxScheTimeE.Size = new System.Drawing.Size(118, 20);
+            this.txtbxScheTimeE.TabIndex = 44;
+            // 
             // btnSysSpecAppro
             // 
-            this.btnSysSpecAppro.Location = new System.Drawing.Point(76, 121);
+            this.btnSysSpecAppro.Location = new System.Drawing.Point(81, 176);
             this.btnSysSpecAppro.Name = "btnSysSpecAppro";
             this.btnSysSpecAppro.Size = new System.Drawing.Size(70, 23);
             this.btnSysSpecAppro.TabIndex = 40;
             this.btnSysSpecAppro.Text = "Select";
             this.btnSysSpecAppro.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(114, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(133, 20);
-            this.textBox1.TabIndex = 39;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Date for Install:";
+            this.btnSysSpecAppro.Click += new System.EventHandler(this.btnSysSpecAppro_Click);
             // 
             // txtbxSystem
             // 
@@ -449,10 +480,6 @@
             // cbxProductWarr
             // 
             this.cbxProductWarr.FormattingEnabled = true;
-            this.cbxProductWarr.Items.AddRange(new object[] {
-            "Home Department",
-            "Enegry Department",
-            "Safety Department"});
             this.cbxProductWarr.Location = new System.Drawing.Point(114, 53);
             this.cbxProductWarr.Name = "cbxProductWarr";
             this.cbxProductWarr.Size = new System.Drawing.Size(132, 21);
@@ -475,6 +502,7 @@
             this.lstbxConProducts.Name = "lstbxConProducts";
             this.lstbxConProducts.Size = new System.Drawing.Size(142, 95);
             this.lstbxConProducts.TabIndex = 33;
+            this.lstbxConProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxConProducts_SelectedIndexChanged);
             // 
             // label56
             // 
@@ -502,6 +530,7 @@
             this.lstbxEneProducts.Name = "lstbxEneProducts";
             this.lstbxEneProducts.Size = new System.Drawing.Size(142, 95);
             this.lstbxEneProducts.TabIndex = 31;
+            this.lstbxEneProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxEneProducts_SelectedIndexChanged);
             // 
             // lstbxsafProducts
             // 
@@ -511,6 +540,7 @@
             this.lstbxsafProducts.Name = "lstbxsafProducts";
             this.lstbxsafProducts.Size = new System.Drawing.Size(142, 95);
             this.lstbxsafProducts.TabIndex = 29;
+            this.lstbxsafProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxsafProducts_SelectedIndexChanged);
             // 
             // label44
             // 
@@ -538,6 +568,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 449);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "App_PurchaseOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "App_PurchaseOrder";
@@ -572,7 +603,7 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxWarrty;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtbxSystem;
         private System.Windows.Forms.Label label9;
@@ -592,17 +623,19 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtbxPrice;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.RichTextBox rtxtbxMainSche;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtbxTotalPrice;
         private System.Windows.Forms.Button btnBuy;
-        private System.Windows.Forms.TextBox txtbxTechnicianN;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button btnSysSpecAppro;
         private System.Windows.Forms.TextBox txtbxCartContract;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.TextBox txtbxScheTimeS;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TextBox txtbxScheTimeE;
+        private System.Windows.Forms.ComboBox cbxTechname;
     }
 }

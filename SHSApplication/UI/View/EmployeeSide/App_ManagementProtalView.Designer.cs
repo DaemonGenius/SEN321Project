@@ -163,6 +163,9 @@
             this.btnNewProduct = new System.Windows.Forms.Button();
             this.label48 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.btnInsertProduct = new System.Windows.Forms.Button();
+            this.cbxGroupType = new System.Windows.Forms.ComboBox();
+            this.label64 = new System.Windows.Forms.Label();
             this.cbxProductWarr = new System.Windows.Forms.ComboBox();
             this.rtxtbxProductDiscr = new System.Windows.Forms.RichTextBox();
             this.txtbxProdctName = new System.Windows.Forms.TextBox();
@@ -229,9 +232,6 @@
             this.btnSearchCli = new System.Windows.Forms.Button();
             this.btnAddnew = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cbxGroupType = new System.Windows.Forms.ComboBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.btnInsertProduct = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1105,7 +1105,7 @@
             this.panel4.Controls.Add(this.groupBox11);
             this.panel4.Location = new System.Drawing.Point(-4, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(557, 399);
+            this.panel4.Size = new System.Drawing.Size(557, 403);
             this.panel4.TabIndex = 0;
             // 
             // label30
@@ -1134,7 +1134,7 @@
             this.tabControl2.Controls.Add(this.tbpCCAdmin);
             this.tabControl2.Controls.Add(this.tblCCClient);
             this.tabControl2.Controls.Add(this.tblCCLogs);
-            this.tabControl2.ItemSize = new System.Drawing.Size(50, 20);
+            this.tabControl2.ItemSize = new System.Drawing.Size(1, 1);
             this.tabControl2.Location = new System.Drawing.Point(6, 19);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -1145,10 +1145,10 @@
             // tblCaller
             // 
             this.tblCaller.Controls.Add(this.panel10);
-            this.tblCaller.Location = new System.Drawing.Point(4, 24);
+            this.tblCaller.Location = new System.Drawing.Point(4, 5);
             this.tblCaller.Name = "tblCaller";
             this.tblCaller.Padding = new System.Windows.Forms.Padding(3);
-            this.tblCaller.Size = new System.Drawing.Size(299, 296);
+            this.tblCaller.Size = new System.Drawing.Size(299, 315);
             this.tblCaller.TabIndex = 3;
             this.tblCaller.Text = "Calling";
             this.tblCaller.UseVisualStyleBackColor = true;
@@ -1164,7 +1164,7 @@
             this.panel10.Controls.Add(this.cbxEmployee);
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(309, 310);
+            this.panel10.Size = new System.Drawing.Size(309, 319);
             this.panel10.TabIndex = 1;
             this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
@@ -1176,6 +1176,7 @@
             this.btnEndCall.TabIndex = 5;
             this.btnEndCall.Text = "End";
             this.btnEndCall.UseVisualStyleBackColor = true;
+            this.btnEndCall.Click += new System.EventHandler(this.btnEndCall_Click);
             // 
             // btnCall
             // 
@@ -1185,11 +1186,12 @@
             this.btnCall.TabIndex = 4;
             this.btnCall.Text = "Call";
             this.btnCall.UseVisualStyleBackColor = true;
+            this.btnCall.Click += new System.EventHandler(this.btnCall_Click);
             // 
             // lblCallDuration
             // 
             this.lblCallDuration.AutoSize = true;
-            this.lblCallDuration.Location = new System.Drawing.Point(96, 79);
+            this.lblCallDuration.Location = new System.Drawing.Point(96, 73);
             this.lblCallDuration.Name = "lblCallDuration";
             this.lblCallDuration.Size = new System.Drawing.Size(0, 13);
             this.lblCallDuration.TabIndex = 3;
@@ -1197,7 +1199,7 @@
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(20, 79);
+            this.label57.Location = new System.Drawing.Point(20, 73);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(70, 13);
             this.label57.TabIndex = 2;
@@ -1223,10 +1225,10 @@
             // tbpCCAdmin
             // 
             this.tbpCCAdmin.Controls.Add(this.panel5);
-            this.tbpCCAdmin.Location = new System.Drawing.Point(4, 24);
+            this.tbpCCAdmin.Location = new System.Drawing.Point(4, 5);
             this.tbpCCAdmin.Name = "tbpCCAdmin";
             this.tbpCCAdmin.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpCCAdmin.Size = new System.Drawing.Size(299, 296);
+            this.tbpCCAdmin.Size = new System.Drawing.Size(299, 315);
             this.tbpCCAdmin.TabIndex = 0;
             this.tbpCCAdmin.Text = "Admin";
             this.tbpCCAdmin.UseVisualStyleBackColor = true;
@@ -1300,10 +1302,10 @@
             // tblCCClient
             // 
             this.tblCCClient.Controls.Add(this.panel6);
-            this.tblCCClient.Location = new System.Drawing.Point(4, 24);
+            this.tblCCClient.Location = new System.Drawing.Point(4, 5);
             this.tblCCClient.Name = "tblCCClient";
             this.tblCCClient.Padding = new System.Windows.Forms.Padding(3);
-            this.tblCCClient.Size = new System.Drawing.Size(299, 296);
+            this.tblCCClient.Size = new System.Drawing.Size(299, 315);
             this.tblCCClient.TabIndex = 1;
             this.tblCCClient.Text = "Client";
             this.tblCCClient.UseVisualStyleBackColor = true;
@@ -1377,9 +1379,9 @@
             // tblCCLogs
             // 
             this.tblCCLogs.Controls.Add(this.panel7);
-            this.tblCCLogs.Location = new System.Drawing.Point(4, 24);
+            this.tblCCLogs.Location = new System.Drawing.Point(4, 5);
             this.tblCCLogs.Name = "tblCCLogs";
-            this.tblCCLogs.Size = new System.Drawing.Size(299, 296);
+            this.tblCCLogs.Size = new System.Drawing.Size(299, 315);
             this.tblCCLogs.TabIndex = 2;
             this.tblCCLogs.Text = "Logs";
             this.tblCCLogs.UseVisualStyleBackColor = true;
@@ -1663,6 +1665,40 @@
             this.groupBox13.TabIndex = 1;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Product Information";
+            // 
+            // btnInsertProduct
+            // 
+            this.btnInsertProduct.Location = new System.Drawing.Point(66, 243);
+            this.btnInsertProduct.Name = "btnInsertProduct";
+            this.btnInsertProduct.Size = new System.Drawing.Size(113, 24);
+            this.btnInsertProduct.TabIndex = 28;
+            this.btnInsertProduct.Text = "Insert Product";
+            this.btnInsertProduct.UseVisualStyleBackColor = true;
+            this.btnInsertProduct.Visible = false;
+            this.btnInsertProduct.Click += new System.EventHandler(this.btnInsertProduct_Click);
+            // 
+            // cbxGroupType
+            // 
+            this.cbxGroupType.FormattingEnabled = true;
+            this.cbxGroupType.Items.AddRange(new object[] {
+            "Home Product",
+            "Energy Product",
+            "Safety Product"});
+            this.cbxGroupType.Location = new System.Drawing.Point(117, 204);
+            this.cbxGroupType.Name = "cbxGroupType";
+            this.cbxGroupType.Size = new System.Drawing.Size(132, 21);
+            this.cbxGroupType.TabIndex = 27;
+            this.cbxGroupType.Visible = false;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(20, 207);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(79, 13);
+            this.label64.TabIndex = 26;
+            this.label64.Text = "Group Product:";
+            this.label64.Visible = false;
             // 
             // cbxProductWarr
             // 
@@ -2334,39 +2370,10 @@
             this.btnAddnew.UseVisualStyleBackColor = true;
             this.btnAddnew.Click += new System.EventHandler(this.btnAddnew_Click);
             // 
-            // cbxGroupType
+            // timer1
             // 
-            this.cbxGroupType.FormattingEnabled = true;
-            this.cbxGroupType.Items.AddRange(new object[] {
-            "Home Product",
-            "Energy Product",
-            "Safety Product"});
-            this.cbxGroupType.Location = new System.Drawing.Point(117, 204);
-            this.cbxGroupType.Name = "cbxGroupType";
-            this.cbxGroupType.Size = new System.Drawing.Size(132, 21);
-            this.cbxGroupType.TabIndex = 27;
-            this.cbxGroupType.Visible = false;
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(20, 207);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(79, 13);
-            this.label64.TabIndex = 26;
-            this.label64.Text = "Group Product:";
-            this.label64.Visible = false;
-            // 
-            // btnInsertProduct
-            // 
-            this.btnInsertProduct.Location = new System.Drawing.Point(66, 243);
-            this.btnInsertProduct.Name = "btnInsertProduct";
-            this.btnInsertProduct.Size = new System.Drawing.Size(113, 24);
-            this.btnInsertProduct.TabIndex = 28;
-            this.btnInsertProduct.Text = "Insert Product";
-            this.btnInsertProduct.UseVisualStyleBackColor = true;
-            this.btnInsertProduct.Visible = false;
-            this.btnInsertProduct.Click += new System.EventHandler(this.btnInsertProduct_Click);
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // App_ManagementProtalView
             // 

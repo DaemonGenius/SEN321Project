@@ -15,14 +15,20 @@ namespace UI.View.EmployeeSide
 {
     public partial class App_ManagementProtalView : Form
     {
-        
-        
+        #region General Public var
         public string LoggedUser, ProductIdent;
         public int Client;
         public int Contract, WarrentyID;
         public int TechnicianName, ProductID;
         public int SysName, MainID, TechID;
         public int ScheduleState;
+        public int CallDuration = 0;
+        public int CallSecond = 0;
+        public int CallMin = 0;
+        public int CallHour = 0;
+        
+        #endregion
+
         public App_ManagementProtalView()
         {
             InitializeComponent();
@@ -139,6 +145,7 @@ namespace UI.View.EmployeeSide
             tbpProductManagement.Hide();
             tbpCallCentre.Hide();
             tbpProducts.Show();
+            
         }
 
         private void btnViewClient_Click(object sender, EventArgs e)
@@ -194,21 +201,7 @@ namespace UI.View.EmployeeSide
             tbpScheduleMain.Hide();
             tbpCallCentre.Hide();
 
-            List<string> ListEn = LOGIC.ApplicationLogic.ProductInfoApp.EnProduct();
-            foreach (var item in ListEn)
-            {
-                lstbxEneProducts.Items.Add(item.ToString());
-            }
-            List<string> ListSaf = LOGIC.ApplicationLogic.ProductInfoApp.SafProduct();
-            foreach (var item in ListSaf)
-            {
-                lstbxsafProducts.Items.Add(item.ToString());
-            }
-            List<string> ListCon = LOGIC.ApplicationLogic.ProductInfoApp.ConProduct();
-            foreach (var item in ListCon)
-            {
-                lstbxConProducts.Items.Add(item.ToString());
-            }
+             
 
         }
 
@@ -359,10 +352,6 @@ namespace UI.View.EmployeeSide
             txtbxScheTimeE.Text = maintenance.DateEnd.ToShortDateString();
             cbxClientSys.Text = maintenance.ProductSystem.Name;
             MainID = maintenance.ID;
-            
-
-
-
         }
 
         private void panel10_Paint(object sender, PaintEventArgs e)
@@ -566,6 +555,46 @@ namespace UI.View.EmployeeSide
             {
                 productInsertApp.ConvProductInsert(PName, Disctip, Price, WarrentyID);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //
+            CallSecond++;
+            
+            if (CallSecond == 60)
+            {
+                CallSecond = 0;
+                CallMin++;
+                if (CallMin == 60)
+                {
+                    CallMin = 0;
+                    CallHour++;
+                }
+
+            }
+            lblCallDuration.Text =  CallHour.ToString() + ":" + CallMin +":"+ CallSecond;
+        }
+
+        private void btnCall_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+            
+        }
+
+        private void btnEndCall_Click(object sender, EventArgs e)
+        {
+            string receiver = cbxEmployee.Text;
+            string senders = "employee";
+            string Duration = lblCallDuration.Text;
+            DateTime callStarted =  DateTime.Now;
+            LOGIC.ApplicationLogic.CallinsertApp callinsertApp = new CallinsertApp();
+            
+            callinsertApp.CallInsert(receiver, senders, Duration, callStarted);
+            timer1.Stop();
+
+
+
         }
 
         private async void cbxProductWarr_SelectedIndexChanged(object sender, EventArgs e)
