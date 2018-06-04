@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LOGIC.BusinessLogic
 {
@@ -29,6 +30,7 @@ namespace LOGIC.BusinessLogic
                 existing.FirstName = person.FirstName;
                 existing.LastName = person.LastName;
                 existing.Gender = person.Gender;
+                existing.SSID = person.SSID;
                 existing.DOB = person.DOB;
                 existing.Address.City = person.Address.City;
                 existing.Address.Country = person.Address.Country;
@@ -36,17 +38,25 @@ namespace LOGIC.BusinessLogic
                 existing.Address.StreetNum = person.Address.StreetNum;
                 existing.Address.Street = person.Address.Street;
                 existing.Address.Province = person.Address.Province;
-                existing.Billinginfoes = (from Bilinfo in person.Billinginfoes
-                                          select new Billinginfoe
-                                          {
-                                              CardName = Bilinfo.CardName,
-                                              CardNum = Bilinfo.CardNum,
-                                              CardCVV = Bilinfo.CardCVV,
-                                              CardExpireDate = Bilinfo.CardExpireDate,
-                                              CardType = Bilinfo.CardType,
-                                          }).ToEntitySet();
 
 
+                db.SubmitChanges();
+                MessageBox.Show("Updated");
+                return existing;
+            }
+        }
+        public static async Task<Billinginfoe> UpdateBillinginfoe(Billinginfoe billinginfoe)
+        {
+            using (var db = new SHSdb())
+            {
+                Billinginfoe existing = db.BillingInfo.FirstOrDefault(x => x.Person_ID == billinginfoe.Person_ID);
+                if (existing == null) { throw new KeyNotFoundException(); }
+                //existing.ID = billinginfoe.ID;
+                existing.CardName = billinginfoe.CardName;
+                existing.CardCVV = billinginfoe.CardCVV;
+                existing.CardExpireDate = billinginfoe.CardExpireDate;
+                existing.CardType = billinginfoe.CardType;
+                existing.Person_ID = billinginfoe.Person_ID;
                 db.SubmitChanges();
                 return existing;
             }

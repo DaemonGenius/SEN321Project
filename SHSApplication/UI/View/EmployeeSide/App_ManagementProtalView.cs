@@ -21,12 +21,13 @@ namespace UI.View.EmployeeSide
         public int Contract, WarrentyID;
         public int TechnicianName, ProductID;
         public int SysName, MainID, TechID;
-        public int ScheduleState;
+        public int ScheduleState, personID;
         public int CallDuration = 0;
         public int CallSecond = 0;
         public int CallMin = 0;
         public int CallHour = 0;
-        
+        public string gender;
+
         #endregion
 
         public App_ManagementProtalView()
@@ -43,46 +44,56 @@ namespace UI.View.EmployeeSide
         private async void btnSearchCli_Click(object sender, EventArgs e)
         {
             #region Search Client
-            LOGIC.ApplicationLogic.ClientProcessesApp cpa = new LOGIC.ApplicationLogic.ClientProcessesApp();
-            People people = await cpa.ClientSearch(txtbxSCUSername.Text);
-
-            if (people.Gender == "Male")
+            try
             {
-                radbtnMale.Checked =! false;
-            }
-            else if (people.Gender == "Female")
-            {
-                radbtnFemale.Checked = !false;
-            }
-            else if (people.Gender == "Other")
-            {
-                radbtnOther.Checked = !false;
-            }
-            
-            txtbxCFName.Text = people.FirstName;
-            txtbxCLName.Text = people.LastName;
-            txtbxcEmail.Text = people.EmailAddress;
-            txtbxCPassword.Text = people.Password;
-            txtbxCDOB.Text = people.DOB;
-            txtbxCSSID.Text = people.SSID;
-            txtbxCcellNumber.Text = people.CellNumber;
-            txtbxEStreetNum.Text = people.Address.StreetNum.ToString();
-            txtbxEStreetName.Text = people.Address.Street;
-            txtbxEZipCode.Text = people.Address.Zipcode;
-            txtbxEProvince.Text = people.Address.Province;
-            txtbxECity.Text = people.Address.City;
-            txtbxECountry.Text = people.Address.Country;
-            foreach (var item in people.Billinginfoes)
-            {
-                if (people.FirstName == item.People.FirstName)
+                LOGIC.ApplicationLogic.ClientProcessesApp cpa = new LOGIC.ApplicationLogic.ClientProcessesApp();
+                People people = await cpa.ClientSearch(txtbxSCUSername.Text);
+                if (people.Gender == "Male")
                 {
-                    txtbxECardName.Text = item.CardName;
-                    txtbxECardNum.Text = item.CardNum;
-                    txtbxECardType.Text = item.CardType;
-                    txtbxECVC.Text = item.CardCVV;
-                    txtbxEExpDate.Text = item.CardExpireDate;
+                    radbtnMale.Checked = !false;
+                }
+                else if (people.Gender == "Female")
+                {
+                    radbtnFemale.Checked = !false;
+                }
+                else if (people.Gender == "Other")
+                {
+                    radbtnOther.Checked = !false;
+                }
+                personID = people.ID;
+                txtbxCFName.Text = people.FirstName;
+                txtbxCLName.Text = people.LastName;
+                txtbxcEmail.Text = people.EmailAddress;
+                txtbxCPassword.Text = people.Password;
+                txtbxCDOB.Text = people.DOB;
+                txtbxCSSID.Text = people.SSID;
+                txtbxCcellNumber.Text = people.CellNumber;
+                txtbxEStreetNum.Text = people.Address.StreetNum.ToString();
+                txtbxEStreetName.Text = people.Address.Street;
+                txtbxEZipCode.Text = people.Address.Zipcode;
+                txtbxEProvince.Text = people.Address.Province;
+                txtbxECity.Text = people.Address.City;
+                txtbxECountry.Text = people.Address.Country;
+                foreach (var item in people.Billinginfoes)
+                {
+                    if (people.FirstName == item.People.FirstName)
+                    {
+                        txtbxECardName.Text = item.CardName;
+                        txtbxECardNum.Text = item.CardNum;
+                        txtbxECardType.Text = item.CardType;
+                        txtbxECVC.Text = item.CardCVV;
+                        txtbxEExpDate.Text = item.CardExpireDate;
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Enter email address");
+            }
+            
+
+           
             #endregion
 
             
@@ -191,18 +202,45 @@ namespace UI.View.EmployeeSide
             lstbxConProducts.Items.Clear();
             LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
             LOGIC.ApplicationLogic.WarrentyLoadApp warrentyLoadApp = new WarrentyLoadApp();
-            List<string> ListWar = LOGIC.ApplicationLogic.WarrentyLoadApp.WarrentyLoad();
-            foreach (var item in ListWar)
+            try
             {
-                cbxProductWarr.Items.Add(item.ToString());
+                List<string> ListWar = LOGIC.ApplicationLogic.WarrentyLoadApp.WarrentyLoad();
+                foreach (var item in ListWar)
+                {
+                    cbxProductWarr.Items.Add(item.ToString());
+                }
+                List<string> ListEn = LOGIC.ApplicationLogic.ProductInfoApp.EnProduct();
+                foreach (var item in ListEn)
+                {
+                    lstbxEneProducts.Items.Add(item.ToString());
+                }
+                List<string> ListSaf = LOGIC.ApplicationLogic.ProductInfoApp.SafProduct();
+                foreach (var item in ListSaf)
+                {
+                    lstbxsafProducts.Items.Add(item.ToString());
+                }
+                List<string> ListCon = LOGIC.ApplicationLogic.ProductInfoApp.ConProduct();
+                foreach (var item in ListCon)
+                {
+                    lstbxConProducts.Items.Add(item.ToString());
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Try again");
+            }
+           
             tbpProductManagement.Show();
             tbpClients.Hide();
             tbpProducts.Hide();
             tbpScheduleMain.Hide();
             tbpCallCentre.Hide();
+            label64.Visible = false;
+            cbxGroupType.Visible = false;
 
-             
+
+
 
         }
 
@@ -227,44 +265,58 @@ namespace UI.View.EmployeeSide
         #region ClientSystem
         private async void lstbxSaftPro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = lstbxSaftPro.SelectedItem.ToString();
-            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+            try
+            {
+                string name = lstbxSaftPro.SelectedItem.ToString();
+                LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+                SafetyProduct safetyProduct = await productInfoApp.SafProductLoad(name);
 
-            SafetyProduct safetyProduct = await productInfoApp.SafProductLoad(name);
-
-            txtbxProductName.Text = safetyProduct.Name;
-            rtxtbxDisc.Text = safetyProduct.Discription;
-            txtbxPrice.Text = safetyProduct.Price.ToString();
-            txtbxWarr.Text = safetyProduct.Warrenty.Duration;
-
-
-
+                txtbxProductName.Text = safetyProduct.Name;
+                rtxtbxDisc.Text = safetyProduct.Discription;
+                txtbxPrice.Text = safetyProduct.Price.ToString();
+                txtbxWarr.Text = safetyProduct.Warrenty.Duration;
+            }
+            catch (Exception)
+            {
+             
+            }
         }
 
         private async void lstbxConvPro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = lstbxConvPro.SelectedItem.ToString();
-            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
-
-            ConvienceProduct convienceProduct = await productInfoApp.ConProductLoad(name);
-
-            txtbxProductName.Text = convienceProduct.Name;
-            rtxtbxDisc.Text = convienceProduct.Discription;
-            txtbxPrice.Text = convienceProduct.Price.ToString();
-            txtbxWarr.Text = convienceProduct.Warrenty.Duration;
+            try
+            {
+                string name = lstbxConvPro.SelectedItem.ToString();
+                LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+                ConvienceProduct convienceProduct = await productInfoApp.ConProductLoad(name);
+                txtbxProductName.Text = convienceProduct.Name;
+                rtxtbxDisc.Text = convienceProduct.Discription;
+                txtbxPrice.Text = convienceProduct.Price.ToString();
+                txtbxWarr.Text = convienceProduct.Warrenty.Duration;
+            }
+            catch (Exception)
+            {
+                
+            }
+            
         }
 
         private async void lstbxEnergPro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = lstbxEnergPro.SelectedItem.ToString();
-            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
-
-            EnergyProduct energyProduct = await productInfoApp.ENProductLoad(name);
-
-            txtbxProductName.Text = energyProduct.Name;
-            rtxtbxDisc.Text = energyProduct.Discription;
-            txtbxPrice.Text = energyProduct.Price.ToString();
-            txtbxWarr.Text = energyProduct.Warrenty.Duration;
+            try
+            {
+                string name = lstbxEnergPro.SelectedItem.ToString();
+                LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+                EnergyProduct energyProduct = await productInfoApp.ENProductLoad(name);
+                txtbxProductName.Text = energyProduct.Name;
+                rtxtbxDisc.Text = energyProduct.Discription;
+                txtbxPrice.Text = energyProduct.Price.ToString();
+                txtbxWarr.Text = energyProduct.Warrenty.Duration;
+            }
+            catch (Exception)
+            {
+            }
+            
         }
         #endregion
 
@@ -277,48 +329,62 @@ namespace UI.View.EmployeeSide
 
         private async void lstbxsafProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = lstbxsafProducts.SelectedItem.ToString();
-            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
-
-            SafetyProduct safProduct = await productInfoApp.SafProductLoad(name);
-
-            txtbxProdctName.Text = safProduct.Name;
-            rtxtbxProductDiscr.Text = safProduct.Discription;
-            txtProductPrice.Text = safProduct.Price.ToString();
-            cbxProductWarr.Text = safProduct.Warrenty.Duration;
-            ProductID = safProduct.ID;
-            ProductIdent = "SaftyProduct";
+            try
+            {
+                string name = lstbxsafProducts.SelectedItem.ToString();
+                LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+                SafetyProduct safProduct = await productInfoApp.SafProductLoad(name);
+                txtbxProdctName.Text = safProduct.Name;
+                rtxtbxProductDiscr.Text = safProduct.Discription;
+                txtProductPrice.Text = safProduct.Price.ToString();
+                cbxProductWarr.Text = safProduct.Warrenty.Duration;
+                ProductID = safProduct.ID;
+                ProductIdent = "SaftyProduct";
+            }
+            catch (Exception)
+            {
+            }
+            
         }
 
         private async void lstbxEneProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = lstbxEneProducts.SelectedItem.ToString();
-            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
-
-            EnergyProduct energyProduct = await productInfoApp.ENProductLoad(name);
-
-            txtbxProdctName.Text = energyProduct.Name;
-            rtxtbxProductDiscr.Text = energyProduct.Discription;
-            txtProductPrice.Text = energyProduct.Price.ToString();
-            cbxProductWarr.Text = energyProduct.Warrenty.Duration;
-            ProductID = energyProduct.ID;
-           
-            ProductIdent = "EnergyProduct";
+            try
+            {
+                string name = lstbxEneProducts.SelectedItem.ToString();
+                LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+                EnergyProduct energyProduct = await productInfoApp.ENProductLoad(name);
+                txtbxProdctName.Text = energyProduct.Name;
+                rtxtbxProductDiscr.Text = energyProduct.Discription;
+                txtProductPrice.Text = energyProduct.Price.ToString();
+                cbxProductWarr.Text = energyProduct.Warrenty.Duration;
+                ProductID = energyProduct.ID;
+                ProductIdent = "EnergyProduct";
+            }
+            catch (Exception)
+            {
+            }
+            
         }
 
         private async void lstbxConProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = lstbxConProducts.SelectedItem.ToString();
-            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
-
-            ConvienceProduct convienceProduct = await productInfoApp.ConProductLoad(name);
-
-            txtbxProdctName.Text = convienceProduct.Name;
-            rtxtbxProductDiscr.Text = convienceProduct.Discription;
-            txtProductPrice.Text = convienceProduct.Price.ToString();
-            cbxProductWarr.Text = convienceProduct.Warrenty.Duration;
-            ProductID = convienceProduct.ID;
-            ProductIdent = "ConvienceProduct";
+            try
+            {
+                string name = lstbxConProducts.SelectedItem.ToString();
+                LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+                ConvienceProduct convienceProduct = await productInfoApp.ConProductLoad(name);
+                txtbxProdctName.Text = convienceProduct.Name;
+                rtxtbxProductDiscr.Text = convienceProduct.Discription;
+                txtProductPrice.Text = convienceProduct.Price.ToString();
+                cbxProductWarr.Text = convienceProduct.Warrenty.Duration;
+                ProductID = convienceProduct.ID;
+                ProductIdent = "ConvienceProduct";
+            }
+            catch (Exception)
+            {
+            }
+            
         }
 
         private async void btnSchSearch_Click(object sender, EventArgs e)
@@ -688,9 +754,66 @@ namespace UI.View.EmployeeSide
             cbxClientSys.Items.Clear();
         }
 
-        private void btnUpdateClient_Click(object sender, EventArgs e)
+        private async void btnUpdateClient_Click(object sender, EventArgs e)
         {
+            
+            LOGIC.ApplicationLogic.PersonUpdateApp personUpdateApp = new PersonUpdateApp();
+            if (radbtnMale.Checked)
+            {
+                gender = "Male";
+            }
+            else if (radbtnFemale.Checked)
+            {
+                gender = "Female";
+            }
+            else if (radbtnOther.Checked)
+            {
+                gender = "Other";
+            }
+              
+            try
+            {
+                People person = new People()
+                {
+                    ID = personID,
+                    FirstName = txtbxCFName.Text,
+                    LastName = txtbxCLName.Text,
+                    EmailAddress = txtbxcEmail.Text,
+                    Password = txtbxCPassword.Text,
+                    DOB = txtbxCDOB.Text,
+                    Gender = gender,
+                    SSID = txtbxCSSID.Text,
+                    CellNumber = txtbxCcellNumber.Text,
+                    Address = new Address()
+                    {
+                        StreetNum = Convert.ToInt16(txtbxEStreetNum.Text),
+                        Street = txtbxEStreetName.Text,
+                        Zipcode = txtbxEZipCode.Text,
+                        Province = txtbxEProvince.Text,
+                        City = txtbxECity.Text,
+                        Country = txtbxECountry.Text,
+                    },
+                };
 
+                Billinginfoe billinginfoe = new Billinginfoe()
+                {
+                    Person_ID = personID,
+                    CardName = txtbxECardName.Text,
+                    CardNum = txtbxECardNum.Text,
+                    CardType = txtbxECardType.Text,
+                    CardCVV = txtbxECVC.Text,
+                    CardExpireDate = txtbxEExpDate.Text,
+                };
+                await personUpdateApp.UpdateBil(billinginfoe);
+                await personUpdateApp.UpdatePerson(person);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Are you missing something?");
+            }
+            
+          
+            
         }
     }
 }

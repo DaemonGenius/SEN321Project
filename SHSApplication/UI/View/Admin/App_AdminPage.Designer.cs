@@ -104,6 +104,29 @@
             this.btnUAdminPortal = new System.Windows.Forms.Button();
             this.btnUEmpPortal = new System.Windows.Forms.Button();
             this.btnUClientPort = new System.Windows.Forms.Button();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.lstbxConProducts = new System.Windows.Forms.ListBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.lstbxEneProducts = new System.Windows.Forms.ListBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.lstbxsafProducts = new System.Windows.Forms.ListBox();
+            this.btnArchiveProduct = new System.Windows.Forms.Button();
+            this.btnProductUpdate = new System.Windows.Forms.Button();
+            this.btnNewProduct = new System.Windows.Forms.Button();
+            this.label48 = new System.Windows.Forms.Label();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.btnInsertProduct = new System.Windows.Forms.Button();
+            this.cbxGroupType = new System.Windows.Forms.ComboBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.cbxProductWarr = new System.Windows.Forms.ComboBox();
+            this.rtxtbxProductDiscr = new System.Windows.Forms.RichTextBox();
+            this.txtbxProdctName = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.txtProductPrice = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -114,12 +137,15 @@
             this.groupBox6.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.tbpProducts.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.tbpSystems.SuspendLayout();
             this.tbpLogs.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -729,6 +755,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel3.Controls.Add(this.groupBox14);
+            this.panel3.Controls.Add(this.groupBox13);
+            this.panel3.Controls.Add(this.label39);
             this.panel3.Location = new System.Drawing.Point(-2, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(533, 473);
@@ -911,6 +940,237 @@
             this.btnUClientPort.UseVisualStyleBackColor = true;
             this.btnUClientPort.Click += new System.EventHandler(this.button1_Click);
             // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.lstbxConProducts);
+            this.groupBox14.Controls.Add(this.label56);
+            this.groupBox14.Controls.Add(this.lstbxEneProducts);
+            this.groupBox14.Controls.Add(this.label44);
+            this.groupBox14.Controls.Add(this.lstbxsafProducts);
+            this.groupBox14.Controls.Add(this.btnArchiveProduct);
+            this.groupBox14.Controls.Add(this.btnProductUpdate);
+            this.groupBox14.Controls.Add(this.btnNewProduct);
+            this.groupBox14.Controls.Add(this.label48);
+            this.groupBox14.Location = new System.Drawing.Point(3, 35);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(251, 366);
+            this.groupBox14.TabIndex = 5;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Search Product";
+            // 
+            // lstbxConProducts
+            // 
+            this.lstbxConProducts.FormattingEnabled = true;
+            this.lstbxConProducts.Location = new System.Drawing.Point(99, 219);
+            this.lstbxConProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.lstbxConProducts.Name = "lstbxConProducts";
+            this.lstbxConProducts.Size = new System.Drawing.Size(142, 95);
+            this.lstbxConProducts.TabIndex = 33;
+            this.lstbxConProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxConProducts_SelectedIndexChanged);
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(16, 219);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(78, 13);
+            this.label56.TabIndex = 32;
+            this.label56.Text = "Home Product:";
+            // 
+            // lstbxEneProducts
+            // 
+            this.lstbxEneProducts.FormattingEnabled = true;
+            this.lstbxEneProducts.Location = new System.Drawing.Point(99, 117);
+            this.lstbxEneProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.lstbxEneProducts.Name = "lstbxEneProducts";
+            this.lstbxEneProducts.Size = new System.Drawing.Size(142, 95);
+            this.lstbxEneProducts.TabIndex = 31;
+            this.lstbxEneProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxEneProducts_SelectedIndexChanged);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(16, 117);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(83, 13);
+            this.label44.TabIndex = 30;
+            this.label44.Text = "Energy Product:";
+            // 
+            // lstbxsafProducts
+            // 
+            this.lstbxsafProducts.FormattingEnabled = true;
+            this.lstbxsafProducts.Location = new System.Drawing.Point(99, 18);
+            this.lstbxsafProducts.Margin = new System.Windows.Forms.Padding(2);
+            this.lstbxsafProducts.Name = "lstbxsafProducts";
+            this.lstbxsafProducts.Size = new System.Drawing.Size(142, 95);
+            this.lstbxsafProducts.TabIndex = 29;
+            this.lstbxsafProducts.SelectedIndexChanged += new System.EventHandler(this.lstbxsafProducts_SelectedIndexChanged);
+            // 
+            // btnArchiveProduct
+            // 
+            this.btnArchiveProduct.Location = new System.Drawing.Point(6, 319);
+            this.btnArchiveProduct.Name = "btnArchiveProduct";
+            this.btnArchiveProduct.Size = new System.Drawing.Size(75, 39);
+            this.btnArchiveProduct.TabIndex = 28;
+            this.btnArchiveProduct.Text = "Archive";
+            this.btnArchiveProduct.UseVisualStyleBackColor = true;
+            // 
+            // btnProductUpdate
+            // 
+            this.btnProductUpdate.Location = new System.Drawing.Point(166, 319);
+            this.btnProductUpdate.Name = "btnProductUpdate";
+            this.btnProductUpdate.Size = new System.Drawing.Size(75, 39);
+            this.btnProductUpdate.TabIndex = 27;
+            this.btnProductUpdate.Text = "Update";
+            this.btnProductUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnNewProduct
+            // 
+            this.btnNewProduct.Location = new System.Drawing.Point(87, 319);
+            this.btnNewProduct.Name = "btnNewProduct";
+            this.btnNewProduct.Size = new System.Drawing.Size(75, 39);
+            this.btnNewProduct.TabIndex = 26;
+            this.btnNewProduct.Text = "New";
+            this.btnNewProduct.UseVisualStyleBackColor = true;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(16, 18);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(80, 13);
+            this.label48.TabIndex = 23;
+            this.label48.Text = "Safety Product:";
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.btnInsertProduct);
+            this.groupBox13.Controls.Add(this.cbxGroupType);
+            this.groupBox13.Controls.Add(this.label64);
+            this.groupBox13.Controls.Add(this.cbxProductWarr);
+            this.groupBox13.Controls.Add(this.rtxtbxProductDiscr);
+            this.groupBox13.Controls.Add(this.txtbxProdctName);
+            this.groupBox13.Controls.Add(this.label42);
+            this.groupBox13.Controls.Add(this.label47);
+            this.groupBox13.Controls.Add(this.label46);
+            this.groupBox13.Controls.Add(this.label45);
+            this.groupBox13.Controls.Add(this.txtProductPrice);
+            this.groupBox13.Location = new System.Drawing.Point(260, 35);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(269, 366);
+            this.groupBox13.TabIndex = 4;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Product Information";
+            // 
+            // btnInsertProduct
+            // 
+            this.btnInsertProduct.Location = new System.Drawing.Point(66, 243);
+            this.btnInsertProduct.Name = "btnInsertProduct";
+            this.btnInsertProduct.Size = new System.Drawing.Size(113, 24);
+            this.btnInsertProduct.TabIndex = 28;
+            this.btnInsertProduct.Text = "Insert Product";
+            this.btnInsertProduct.UseVisualStyleBackColor = true;
+            this.btnInsertProduct.Visible = false;
+            // 
+            // cbxGroupType
+            // 
+            this.cbxGroupType.FormattingEnabled = true;
+            this.cbxGroupType.Items.AddRange(new object[] {
+            "Home Product",
+            "Energy Product",
+            "Safety Product"});
+            this.cbxGroupType.Location = new System.Drawing.Point(117, 204);
+            this.cbxGroupType.Name = "cbxGroupType";
+            this.cbxGroupType.Size = new System.Drawing.Size(132, 21);
+            this.cbxGroupType.TabIndex = 27;
+            this.cbxGroupType.Visible = false;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(20, 207);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(79, 13);
+            this.label64.TabIndex = 26;
+            this.label64.Text = "Group Product:";
+            this.label64.Visible = false;
+            // 
+            // cbxProductWarr
+            // 
+            this.cbxProductWarr.FormattingEnabled = true;
+            this.cbxProductWarr.Location = new System.Drawing.Point(117, 177);
+            this.cbxProductWarr.Name = "cbxProductWarr";
+            this.cbxProductWarr.Size = new System.Drawing.Size(132, 21);
+            this.cbxProductWarr.TabIndex = 25;
+            // 
+            // rtxtbxProductDiscr
+            // 
+            this.rtxtbxProductDiscr.Location = new System.Drawing.Point(117, 68);
+            this.rtxtbxProductDiscr.Name = "rtxtbxProductDiscr";
+            this.rtxtbxProductDiscr.Size = new System.Drawing.Size(132, 70);
+            this.rtxtbxProductDiscr.TabIndex = 21;
+            this.rtxtbxProductDiscr.Text = "";
+            // 
+            // txtbxProdctName
+            // 
+            this.txtbxProdctName.Location = new System.Drawing.Point(117, 19);
+            this.txtbxProdctName.Name = "txtbxProdctName";
+            this.txtbxProdctName.Size = new System.Drawing.Size(132, 20);
+            this.txtbxProdctName.TabIndex = 22;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(20, 22);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(78, 13);
+            this.label42.TabIndex = 0;
+            this.label42.Text = "Product Name:";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(20, 71);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(99, 13);
+            this.label47.TabIndex = 12;
+            this.label47.Text = "Product Discription:";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(20, 157);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(34, 13);
+            this.label46.TabIndex = 13;
+            this.label46.Text = "Price:";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(20, 180);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(53, 13);
+            this.label45.TabIndex = 14;
+            this.label45.Text = "Warrenty:";
+            // 
+            // txtProductPrice
+            // 
+            this.txtProductPrice.Location = new System.Drawing.Point(117, 151);
+            this.txtProductPrice.Name = "txtProductPrice";
+            this.txtProductPrice.Size = new System.Drawing.Size(132, 20);
+            this.txtProductPrice.TabIndex = 17;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Segoe UI Light", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(149, 10);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(203, 30);
+            this.label39.TabIndex = 3;
+            this.label39.Text = "Product Management";
+            // 
             // App_AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -935,6 +1195,8 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.tbpProducts.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.tbpSystems.ResumeLayout(false);
             this.tbpLogs.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -942,6 +1204,10 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1024,5 +1290,28 @@
         private System.Windows.Forms.Button btnUsearch;
         private System.Windows.Forms.TextBox txtbxUusersearch;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.ListBox lstbxConProducts;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.ListBox lstbxEneProducts;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.ListBox lstbxsafProducts;
+        private System.Windows.Forms.Button btnArchiveProduct;
+        private System.Windows.Forms.Button btnProductUpdate;
+        private System.Windows.Forms.Button btnNewProduct;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.Button btnInsertProduct;
+        private System.Windows.Forms.ComboBox cbxGroupType;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.ComboBox cbxProductWarr;
+        private System.Windows.Forms.RichTextBox rtxtbxProductDiscr;
+        private System.Windows.Forms.TextBox txtbxProdctName;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox txtProductPrice;
+        private System.Windows.Forms.Label label39;
     }
 }

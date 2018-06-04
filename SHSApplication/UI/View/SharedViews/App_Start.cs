@@ -23,7 +23,15 @@ namespace UI.View.SharedViews
             thread.Start();
             Thread.Sleep(5000);
             InitializeComponent();
-            thread.Abort();
+            try
+            {
+                thread.Abort();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Thread Error");
+            }
         }
         public void StartForm()
         {

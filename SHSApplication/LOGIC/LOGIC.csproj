@@ -48,6 +48,7 @@
     <Compile Include="ApplicationLogic\ContactApp.cs" />
     <Compile Include="ApplicationLogic\EmployeeApp.cs" />
     <Compile Include="ApplicationLogic\MaintenanceInsertApp.cs" />
+    <Compile Include="ApplicationLogic\PersonUpdateApp.cs" />
     <Compile Include="ApplicationLogic\ProductInfoApp.cs" />
     <Compile Include="ApplicationLogic\ProductInsertApp.cs" />
     <Compile Include="ApplicationLogic\ProductManagementUpdateApp.cs" />

@@ -1,4 +1,5 @@
 ﻿using DATALAYER.Controllers;
+using LOGIC.ApplicationLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,54 @@ namespace UI.View.Admin
     {
         public LOGIC.ApplicationLogic.AdminProcessing adminProcessing = new LOGIC.ApplicationLogic.AdminProcessing();
         public int ID;
+        #region General Public var
+        public string LoggedUser, ProductIdent, LoggedName;
+        public int Client;
+        public int Contract, WarrentyID;
+        public int TechnicianName, ProductID;
+        public int SysName, MainID, TechID;
+        public int ScheduleState;
+        public int CallDuration = 0;
+        public int CallSecond = 0;
+        public int CallMin = 0;
+        public int CallHour = 0;
+
+        #endregion
         public App_AdminPage()
         {
             InitializeComponent();
            
+        }
+
+        private async void lstbxEneProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = lstbxEneProducts.SelectedItem.ToString();
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+
+            EnergyProduct energyProduct = await productInfoApp.ENProductLoad(name);
+
+            txtbxProdctName.Text = energyProduct.Name;
+            rtxtbxProductDiscr.Text = energyProduct.Discription;
+            txtProductPrice.Text = energyProduct.Price.ToString();
+            cbxProductWarr.Text = energyProduct.Warrenty.Duration;
+            ProductID = energyProduct.ID;
+
+            ProductIdent = "EnergyProduct";
+        }
+
+        private async void lstbxConProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = lstbxConProducts.SelectedItem.ToString();
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+
+            ConvienceProduct convienceProduct = await productInfoApp.ConProductLoad(name);
+
+            txtbxProdctName.Text = convienceProduct.Name;
+            rtxtbxProductDiscr.Text = convienceProduct.Discription;
+            txtProductPrice.Text = convienceProduct.Price.ToString();
+            cbxProductWarr.Text = convienceProduct.Warrenty.Duration;
+            ProductID = convienceProduct.ID;
+            ProductIdent = "ConvienceProduct";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,12 +78,23 @@ namespace UI.View.Admin
             managementProtalView.Show();
         }
 
-        private void App_AdminPage_Load(object sender, EventArgs e)
+        private async void App_AdminPage_Load(object sender, EventArgs e)
         {
             
             
             rtxtbxEmp.AppendText(adminProcessing.GetAllEmp().ToString());
-            
+            lstbxEneProducts.Items.Clear();
+            lstbxsafProducts.Items.Clear();
+            lstbxConProducts.Items.Clear();
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+            LOGIC.ApplicationLogic.WarrentyLoadApp warrentyLoadApp = new WarrentyLoadApp();
+            List<string> ListWar = LOGIC.ApplicationLogic.WarrentyLoadApp.WarrentyLoad();
+            foreach (var item in ListWar)
+            {
+                cbxProductWarr.Items.Add(item.ToString());
+            }
+           
+
 
         }
 
@@ -98,6 +154,21 @@ namespace UI.View.Admin
             person.Department = txtbxUDepartment.Text;
             person.DOB = txtbxUDOB.Text;
             await adminProcessing.UpdatePerson(person);
+        }
+
+        private async void lstbxsafProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = lstbxsafProducts.SelectedItem.ToString();
+            LOGIC.ApplicationLogic.ProductInfoApp productInfoApp = new LOGIC.ApplicationLogic.ProductInfoApp();
+
+            SafetyProduct safProduct = await productInfoApp.SafProductLoad(name);
+
+            txtbxProdctName.Text = safProduct.Name;
+            rtxtbxProductDiscr.Text = safProduct.Discription;
+            txtProductPrice.Text = safProduct.Price.ToString();
+            cbxProductWarr.Text = safProduct.Warrenty.Duration;
+            ProductID = safProduct.ID;
+            ProductIdent = "SaftyProduct";
         }
     }
 }
