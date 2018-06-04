@@ -7,37 +7,62 @@ using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using DATALAYER.DatabaseConnection;
 
 namespace LOGIC.BusinessLogic
 {
     public class RegistrationProcess
     {
         public RegistrationProcess() { }
-        //DATALAYER.DatabaseConnection.SHSdb db1 = new DATALAYER.DatabaseConnection.SHSdb();
-        static DataContext db = new DataContext("Data Source=.;Initial Catalog=SHSdb4;Integrated Security=True;");
-        Table<People> People =  db.GetTable<People>();
-        #region RegisterUser
-
-        public void RegisterUser(string fname, string lname, string email, string cell, string pass, string DOB, string ssid)
+     
+       
+        public Billinginfoe RegisterUser(Billinginfoe billinginfoe)
         {
-            People persons = new People
+            using (var dbe = new SHSdb())
             {
-                FirstName = fname,
-                LastName = lname,
-                EmailAddress = email,
-                CellNumber = cell,
-                Password = pass,
-                DOB = DOB,
-                SSID = ssid
-            };
-                People.InsertOnSubmit(persons);
-                db.SubmitChanges();            
-            
+                dbe.BillingInfo.InsertOnSubmit(billinginfoe);                
+                dbe.SubmitChanges();
+                return billinginfoe;                
+            }
         }
-        
 
-        
-        #endregion
+        public Client RegisterClient(Client client)
+        {
+            using (var dbe = new SHSdb())
+            {
+                dbe.Clients.InsertOnSubmit(client);
+                dbe.SubmitChanges();
+                return client;
+            }
+        }
+        public Admin RegisterAdmin(Admin admin)
+        {
+            using (var dbe = new SHSdb())
+            {
+                dbe.admins.InsertOnSubmit(admin);
+                dbe.SubmitChanges();
+                return admin;
+            }
+        }
+        public TechnicianEmp RegisterTech(TechnicianEmp technicianEmp)
+        {
+            using (var dbe = new SHSdb())
+            {
+                dbe.technicianEmps.InsertOnSubmit(technicianEmp);
+                dbe.SubmitChanges();
+                return technicianEmp;
+            }
+        }
+        public Sale_Emp RegisterSales(Sale_Emp sale_Emp)
+        {
+            using (var dbe = new SHSdb())
+            {
+                dbe.sale_Emps.InsertOnSubmit(sale_Emp);
+                dbe.SubmitChanges();
+                return sale_Emp;
+            }
+        }
+
 
     }
 }

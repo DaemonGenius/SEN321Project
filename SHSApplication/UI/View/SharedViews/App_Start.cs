@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,16 +13,40 @@ namespace UI.View.SharedViews
 {
     public partial class App_Start : Form
     {
+        public string LoggedUser;
+        public static string LoggedName;
+        public static string EmployeeType;
+
         public App_Start()
         {
+            Thread thread = new Thread(new ThreadStart(StartForm));
+            thread.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
+            try
+            {
+                thread.Abort();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Thread Error");
+            }
+        }
+        public void StartForm()
+        {
+            Application.Run(new View.AppliocationStart.App_Launch());
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
+            EmployeeSide.App_ManagementProtalView app_ManagementProtalView = new EmployeeSide.App_ManagementProtalView();
             LOGIC.ApplicationLogic.RegisterValidation registerValidation = new LOGIC.ApplicationLogic.RegisterValidation();
             if (registerValidation.EmailValidation(txtbxEmail.Text, txtbxPass.Text) == true)
             {
+
+                
                 if (registerValidation.DepartmentType() == "Client")
                 {
                     View.ClientSide.ClientPortalView clientPortal = new ClientSide.ClientPortalView();
@@ -31,12 +56,18 @@ namespace UI.View.SharedViews
                 else if (registerValidation.DepartmentType() == "Admin")
                 {
                     
+                    View.Admin.App_AdminPage adminPage = new Admin.App_AdminPage();
+                    adminPage.Show();
                 }
                 else if (registerValidation.DepartmentType() == "Employee")
                 {
+                    EmployeeType = registerValidation.DepartmentType();
+                    LoggedName = registerValidation.fname;
+                    LoggedUser = registerValidation.Loggedin;
                     View.EmployeeSide.App_ManagementProtalView managementProtalView = new EmployeeSide.App_ManagementProtalView();
-                    managementProtalView.Show();
+                    managementProtalView.Show();                    
                     lblErrorEmail.Visible = false;
+                    this.Visible = false;
                 }
 
             }
@@ -44,6 +75,8 @@ namespace UI.View.SharedViews
             {
                 lblErrorEmail.Visible = true;
                 txtbxEmail.Clear();
+                lblErrorpass.Visible = true;
+                txtbxPass.Clear();
             }
             
         }

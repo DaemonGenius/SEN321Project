@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,9 +42,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationLogic\AdminProcessing.cs" />
+    <Compile Include="ApplicationLogic\CallinsertApp.cs" />
+    <Compile Include="ApplicationLogic\ClientProcessesApp.cs" />
+    <Compile Include="ApplicationLogic\ContactApp.cs" />
+    <Compile Include="ApplicationLogic\EmployeeApp.cs" />
+    <Compile Include="ApplicationLogic\MaintenanceInsertApp.cs" />
+    <Compile Include="ApplicationLogic\PersonUpdateApp.cs" />
+    <Compile Include="ApplicationLogic\ProductInfoApp.cs" />
+    <Compile Include="ApplicationLogic\ProductInsertApp.cs" />
+    <Compile Include="ApplicationLogic\ProductManagementUpdateApp.cs" />
     <Compile Include="ApplicationLogic\RegisterValidation.cs" />
+    <Compile Include="ApplicationLogic\TechnicianApp.cs" />
+    <Compile Include="ApplicationLogic\TransactionInsertApp.cs" />
+    <Compile Include="ApplicationLogic\WarrentyLoadApp.cs" />
+    <Compile Include="BusinessLogic\AdminProcesses.cs" />
+    <Compile Include="BusinessLogic\CallInsertProcess.cs" />
+    <Compile Include="BusinessLogic\CallLogProcess.cs" />
+    <Compile Include="BusinessLogic\ClientProcesses.cs" />
+    <Compile Include="BusinessLogic\ContractProccess.cs" />
+    <Compile Include="BusinessLogic\EmployeeProcess.cs" />
     <Compile Include="BusinessLogic\LoginProcess.cs" />
+    <Compile Include="BusinessLogic\MaintenanceInsertProcess.cs" />
+    <Compile Include="BusinessLogic\ProductInfoProcess.cs" />
+    <Compile Include="BusinessLogic\ProductInsertProcess.cs" />
+    <Compile Include="BusinessLogic\ProductManagementUpdates.cs" />
     <Compile Include="BusinessLogic\RegistrationProcess.cs" />
+    <Compile Include="BusinessLogic\TechnicianProcesses.cs" />
+    <Compile Include="BusinessLogic\TransactionInsert.cs" />
+    <Compile Include="BusinessLogic\WarrentyLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

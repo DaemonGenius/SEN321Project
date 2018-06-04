@@ -44,16 +44,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Address.cs" />
+    <Compile Include="Controllers\Admin.cs" />
     <Compile Include="Controllers\BillingInfo.cs" />
+    <Compile Include="Controllers\Carts.cs" />
     <Compile Include="Controllers\Client.cs" />
+    <Compile Include="Controllers\Contract.cs" />
+    <Compile Include="Controllers\ConvienceProduct.cs" />
+    <Compile Include="Controllers\EnergyProducts.cs" />
+    <Compile Include="Controllers\Maintenance.cs" />
+    <Compile Include="Controllers\Messaging.cs" />
     <Compile Include="Controllers\People.cs" />
+    <Compile Include="Controllers\ProductSystem.cs" />
+    <Compile Include="Controllers\SafetyProduct.cs" />
+    <Compile Include="Controllers\Sale_Emp.cs" />
+    <Compile Include="Controllers\SysConProduct.cs" />
+    <Compile Include="Controllers\SysEneProduct.cs" />
+    <Compile Include="Controllers\SysSafProduct.cs" />
+    <Compile Include="Controllers\Systems.cs" />
+    <Compile Include="Controllers\TechnicianEmp.cs" />
+    <Compile Include="Controllers\Transaction.cs" />
+    <Compile Include="Controllers\Warrenty.cs" />
     <Compile Include="DatabaseConnection\SHSdb.cs" />
-    <Compile Include="DataHandler\Address.cs" />
-    <Compile Include="DataHandler\Client.cs" />
-    <Compile Include="DataHandler\Db.cs" />
-    <Compile Include="DataHandler\Department.cs" />
-    <Compile Include="DataHandler\Persons.cs" />
-    <Compile Include="DataHandler\SHSdb2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -61,7 +72,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
@@ -72,5 +82,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
